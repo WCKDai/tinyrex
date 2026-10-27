@@ -3,3 +3,6 @@ work/
 .wrangler/
 __pycache__/
 .DS_Store
+.venv-mujoco/
+work-bin/
+work-*/
