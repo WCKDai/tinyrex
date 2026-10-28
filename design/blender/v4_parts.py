@@ -45,7 +45,7 @@ def made(objs, body=None):
     return [o.name.split(".")[0] for o in objs]
 
 
-WALL = 2.4  # printed shell wall, mm
+WALL = 2.0  # printed shell wall, mm (5 perimeters of a 0.4 mm nozzle)
 
 
 def hollow(o, wall=WALL, even=True):
@@ -454,24 +454,27 @@ def part_head():
         parts.append(ball(f"EyeShine_{side}", coll, SHINE, 1.6, frame @ Vector((5.0, 3.0, 5.3))))
     # The cream upper lip: a band below the snout, as on the boards (lime above, cream below),
     # following the head's facets just proud of them.
-    muzzle = loft_trap("Muzzle", [(x, wb + 0.8, wt + 0.8, z0 - 0.5, z1 + 0.8) for x, wb, wt, z0, z1 in HEAD_SECTIONS], CREAM, facet=CHAMFER)
-    hollow(muzzle, 1.6)
+    # (a panel of the head itself, not a layer on it: the shell is cut where it goes)
+    muzzle = loft_trap("Muzzle", HEAD_SECTIONS, CREAM, facet=CHAMFER)
+    hollow(muzzle)
     slab = bpy.data.objects.new("Cut_MuzzleSlab", box_mesh("Cut_MuzzleSlab", (56, -70, 218.1), (120, 70, 230.5)))
     bpy.data.collections[f"{SCENE}: rig"].objects.link(slab)
     boolean_cut(muzzle, slab, HEAD, "INTERSECT")
+    boolean_cut(shell, slab, HEAD)
     parts.append(muzzle)
     # The back of the head in cream, as on the boards: a cap over the shell behind the cheeks,
     # its front edge a panel seam.
-    back = loft_trap("HeadBack", [(x, wb + 0.8, wt + 0.8, z0 - 0.5, z1 + 0.8) for x, wb, wt, z0, z1 in HEAD_SECTIONS], CREAM, facet=CHAMFER)
-    hollow(back, 1.6)
+    back = loft_trap("HeadBack", HEAD_SECTIONS, CREAM, facet=CHAMFER)
+    hollow(back)
     bslab = bpy.data.objects.new("Cut_BackSlab", box_mesh("Cut_BackSlab", (-60, -70, 190), (4, 70, 300)))
     bpy.data.collections[f"{SCENE}: rig"].objects.link(bslab)
     boolean_cut(back, bslab, HEAD, "INTERSECT")
-    boolean_cut(back, cutter_cylinder("Cut_NeckBack", 28.6, 0, 26.0, Vector((NECK_AXIS.x, 0, 185.5)), "Z"), HEAD)
+    boolean_cut(back, cutter_cylinder("Cut_NeckBack", 28.0, 0, 26.0, Vector((NECK_AXIS.x, 0, 186)), "Z"), HEAD)
+    boolean_cut(shell, bslab, HEAD)
     parts.append(back)
     for sy, side in ((1, "L"), (-1, "R")):  # the back cap's screws, just behind its seam
         for k, z in enumerate((212, 236)):
-            parts.append(screw(f"HeadScrew_B{side}{k}", (-2, sy * (side_y(HEAD_SECTIONS, -2, z) + 0.6), z), "Y" if sy > 0 else "-Y"))
+            parts.append(screw(f"HeadScrew_B{side}{k}", (-2, sy * (side_y(HEAD_SECTIONS, -2, z) - 0.4), z), "Y" if sy > 0 else "-Y"))
     # Head IMU (LSM6DSV16X breakout) on the head frame. (The speaker vents through the mouth.)
     parts.append(rounded("HeadIMU", coll, mat("IMUPCB", "#1D3F8F", 0.5), (10, -26, 237.4), (28, -13, 239.0), 0.4))
     names = made(parts, HEAD)
