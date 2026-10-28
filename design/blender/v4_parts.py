@@ -132,7 +132,7 @@ def part_body():
     for o in list(scene.objects):
         if o.name.split(".")[0] in ("Cut_Belly", "Cut_TailSlot", "Cut_TailHorn"):
             bpy.data.objects.remove(o, do_unlink=True)
-    clear(("Body", "BatteryPod", "Backpack", "PackScrew", "BatteryDoor", "ChargePort", "PowerSwitch"))
+    clear(("Body", "BatteryPod", "Backpack", "PackScrew", "BodyMount", "BatteryDoor", "ChargePort", "PowerSwitch"))
     objs = [
         # One smooth body: full above (|y| <= 34), narrow below the back (|y| <= 22) round the
         # battery's lower half, so the thighs swinging in on hip roll pass it.
@@ -149,8 +149,12 @@ def part_body():
     ]
     for k, x in enumerate((-34, -6)):
         for sy in (1, -1):
-            screw_dot(f"PackScrew{k}{'L' if sy > 0 else 'R'}", coll, (x, sy * 15, 159.6 if k else 157.8), "Z")
+            screw_dot(f"PackScrew{k}{'L' if sy > 0 else 'R'}", coll, (x, sy * 15, 159.1 if k else 157.8), "Z")
             objs.append(bpy.data.objects[f"PackScrew{k}{'L' if sy > 0 else 'R'}"])
+    # Mounting bosses: the shell screws to the trunk plate's edges (|y| 28.5, z 106..109).
+    for k, (xa, xb) in enumerate(((-16, -11), (8, 13))):
+        for sy in (1, -1):
+            objs.append(rounded(f"BodyMount{k}{'L' if sy > 0 else 'R'}", coll, CREAM, (xa, min(sy * 28.6, sy * 31.8), 106.2), (xb, max(sy * 28.6, sy * 31.8), 109.5), 0.6))
     names = made(objs, TRUNK)
     body = objs[0]
     # Openings: the belly, for the hip yaw servos and bearings; the back, for the tail servo.
@@ -161,7 +165,7 @@ def part_body():
     belly = bpy.data.objects.new("Cut_Belly", box_mesh("Cut_Belly", (-12, -42, 80), (32, 42, 107.5)))
     bpy.data.collections[f"{SCENE}: rig"].objects.link(belly)
     boolean_cut(body, belly, TRUNK)
-    boolean_cut(body, cutter_cylinder("Cut_TailHorn", 10.2, 0, 8, Vector((-74.5, 0, 127.5)), "Z"), TRUNK)
+    boolean_cut(body, cutter_cylinder("Cut_TailHorn", 10.6, 0, 14, Vector((-74.5, 0, 127.5)), "Z"), TRUNK)
     bpy.context.view_layer.update()
     print("battery corners outside the body:", battery_enclosed())
     return names, HIPS
@@ -211,20 +215,22 @@ def part_tail():
     # It continues the back line, rising gently and tapering; its front stays 21.5 mm from the yaw
     # axis, clear of the root pod's corners (17.4 mm) over the whole swing.
     TPU = mat("TPU", "#1C1D1F", 0.85)
-    moving = [disc("TailCoupling", coll, LIME, 9.8, 3.0, (TAIL_AXIS.x, 0, 130.6), "Z", bevel_w=0.8)]
+    moving = [disc("TailCoupling", coll, LIME, 9.8, 6.0, (TAIL_AXIS.x, 0, 130.6), "Z", bevel_w=0.8)]  # (up through the root's horn opening to the arm)
     for k, dy in enumerate((-5.5, 5.5)):
-        moving.append(disc(f"TailMagnet{k}", coll, SILVER, 3.0, 0.6, (TAIL_AXIS.x - 3, dy, 133.6), "Z", n=20))
+        moving.append(disc(f"TailMagnet{k}", coll, SILVER, 3.0, 0.6, (TAIL_AXIS.x - 3, dy, 136.6), "Z", n=20))
     moving.append(loft_skin("TailArm", coll, CREAM, [(-68, 8.5, 136.5, 142), (-88, 9, 136.5, 143), (-102, 10, 131, 143)], subsurf=2, keep=0.45))
-    segs = [(-99, -127, 17.5, 15.5, 127, 130), (-131, -155, 14.5, 12.5, 131, 134), (-160, -180, 11.5, 9.5, 135, 138)]
+    # (thick at the root and tapering, sweeping up toward the tip as on the boards)
+    segs = [(-99, -127, 19.0, 17.0, 128, 133), (-131, -155, 16.0, 14.0, 135, 143), (-160, -180, 13.0, 11.0, 146, 156)]
     for k, (x0, x1, r0, r1, z0, z1) in enumerate(segs):
         moving.append(loft_skin(f"TailSeg{k}", coll, CREAM, [(x0, r0 * 0.95, z0 - r0, z0 + r0 * 0.92), ((x0 + x1) / 2, (r0 + r1) / 2, (z0 + z1) / 2 - (r0 + r1) / 2, (z0 + z1) / 2 + (r0 + r1) / 2 * 0.92), (x1, r1 * 0.95, z1 - r1, z1 + r1 * 0.92)], subsurf=3, keep=0.2))
         for sy in (1, -1):
             moving.append(disc(f"TailScrew{k}{'L' if sy > 0 else 'R'}", coll, INK, 1.5, 1.0, ((x0 + x1) / 2, sy * ((r0 + r1) / 2 - 0.3), (z0 + z1) / 2 + 2), "Y" if sy > 0 else "-Y", n=16, bevel_w=0.4))
         nxt = segs[k + 1] if k + 1 < len(segs) else None
-        xa = x1 - 2.5
+        # (each ring reaches 1.5 mm into both neighbours: bonded, it holds them together)
+        x_next = nxt[0] if nxt else -182
         ra = (r1 if nxt is None else (r1 + nxt[2]) / 2) * 0.82
-        moving.append(disc(f"TailFlex{k}", coll, TPU, ra, 5, (xa, 0, z1 - 0.5), "-X", bevel_w=1.6))
-    moving.append(loft_skin("TailTip", coll, LIME, [(-182, 9.5, 128.5, 147), (-200, 7.5, 134, 150), (-218, 4.5, 142, 155), (-233, 1.6, 152, 157)], subsurf=3, keep=0.3))
+        moving.append(disc(f"TailFlex{k}", coll, TPU, ra, (x1 - x_next) + 3.0, (x1 + 1.5, 0, z1 - 0.5), "-X", bevel_w=1.2))
+    moving.append(loft_skin("TailTip", coll, LIME, [(-182, 10.5, 146, 166), (-198, 8.5, 154, 171), (-214, 5.5, 164, 176), (-228, 2.0, 175, 180)], subsurf=3, keep=0.3))
     bpy.context.view_layer.update()
     names += made(moving, "tail")
     return names, ["tail", "upper_leg_left", "upper_leg_right", "hip_l", "hip_l_2"]
@@ -298,8 +304,12 @@ def cutter_cylinder(name, r, z0, z1, at, axis):
 
 
 CHAMFER = 3.5  # mm: the shells' edge chamfer
-CAM_SHIFT = Vector((0, 0, 0))  # the M12 camera stays on Microduck's centre line, behind the snout window
-CAM_AT = Vector((105.0, 0.0, 238.1))  # its window in the snout front (the lens axis, at the face)
+# The M12 camera (and the ToF sensor beside it) look out of a brow visor on the head's top, the
+# black slot the boards show above the snout: they see forward over the snout, out of harm's way.
+CAM_GLASS = Vector((89.9, 0.0, 238.1))  # Microduck's camera: the front of its glass
+CAM_TO = Vector((85.0, -4.0, 261.0))    # where that point goes, in the visor
+CAM_TILT = math.radians(5)              # looking slightly down, at the floor ahead
+CAM_POSE = Matrix.Translation(CAM_TO) @ Matrix.Rotation(CAM_TILT, 4, "Y") @ Matrix.Translation(-CAM_GLASS)
 
 
 def hemidome(name, material, r, at, depth=0.6, n=40, rings=14):
@@ -324,14 +334,19 @@ def hemidome(name, material, r, at, depth=0.6, n=40, rings=14):
 
 
 def move_camera():
-    """Put the M12 camera (holder, lens, glass) behind the right eye, once."""
+    """Put the M12 camera (holder, lens, glass) in the brow visor: undo whatever pose it was given
+    before, apply CAM_POSE (it rides on a CSI ribbon, so it needn't sit on the compute board)."""
     rest_all()
     bpy.context.view_layer.update()
     for o in scene.objects:
         if o.type == "MESH" and not o.get("skin") and o.name.split(".")[0] in ("CameraHolder", "CameraLens", "CameraGlass"):
-            done = Vector(o.get("cam_shift", (0, 0, 0)))
-            o.matrix_world = Matrix.Translation(CAM_SHIFT - done) @ o.matrix_world
-            o["cam_shift"] = list(CAM_SHIFT)
+            if "cam_pose" in o:
+                done = Matrix([o["cam_pose"][i * 4:i * 4 + 4] for i in range(4)])
+            else:
+                done = Matrix.Translation(Vector(o.get("cam_shift", (0, 0, 0))))
+            o.matrix_world = CAM_POSE @ done.inverted() @ o.matrix_world
+            o["cam_pose"] = [v for row in CAM_POSE for v in row]
+            o["cam_shift"] = [0, 0, 0]
 
 
 def part_head():
@@ -339,9 +354,9 @@ def part_head():
     low behind, a bore for the camera, an opening round the neck for the head to turn; glossy eyes,
     the ToF window and board, the head IMU, the speaker grille, the red LED; and a cream jaw on
     its own joint on the jaw servo's axis, in front of the neck opening."""
-    clear(("Head", "Eye", "Brow", "Cam", "ToF", "HeadIMU", "Grille", "LED", "StatusLED", "Camera", "Cheek", "Jaw", "Mouth", "Tongue", "Fang", "Blush", "Crest", "Chin", "Nostril", "Muzzle"))
+    clear(("Head", "Eye", "Brow", "Visor", "Cam", "ToF", "HeadIMU", "Grille", "LED", "StatusLED", "Camera", "Cheek", "Jaw", "Mouth", "Tongue", "Fang", "Blush", "Crest", "Chin", "Nostril", "Muzzle"))
     for o in list(scene.objects):
-        if o.name.split(".")[0] in ("Cut_Camera", "Cut_Neck", "Cut_EyeL", "Cut_EyeR", "Cut_MuzzleSlab", "Cut_MuzzleCurve", "Cut_ToF"):
+        if o.name.split(".")[0] in ("Cut_Camera", "Cut_Neck", "Cut_EyeL", "Cut_EyeR", "Cut_MuzzleSlab", "Cut_MuzzleCurve", "Cut_ToF", "Cut_VisorBay", "Cut_VisorFloor", "Cut_VisorSlot", "Cut_Hinge", "Cut_BackSlab", "Cut_NeckBack"):
             bpy.data.objects.remove(o, do_unlink=True)
     jaw_body()
     move_camera()
@@ -350,24 +365,35 @@ def part_head():
     # A wedge: a tall crown behind, the sides one flat facet each from the cheek to the snout (the
     # eye sockets sit on it), a flat snout front carrying the camera window, the ToF window and the
     # status LED - the sensors look out where the boards put them.
-    HEAD_SECTIONS = [(-34, 30, 24, 205, 248), (-24, 42, 34, 199, 258), (6, 48, 40, 199, 263), (40, 49, 41, 199, 263), (54, 47, 40, 209, 262), (60, 44, 39, 218.6, 261), (98, 26, 21, 223, 250), (105, 20, 16, 226, 249)]
+    HEAD_SECTIONS = [(-34, 30, 24, 205, 240), (-24, 42, 37, 199, 247), (6, 48, 43, 199, 251), (40, 49, 43, 199, 257), (54, 47, 40, 209, 260.5), (60, 44, 39, 218.6, 261), (98, 26, 21, 223, 250), (105, 20, 16, 226, 249)]
     shell = loft_trap("Head", HEAD_SECTIONS, LIME, facet=CHAMFER)
     hollow(shell)
     # (wide enough for the head to roll 25 degrees over the neck bracket and servo)
     boolean_cut(shell, cutter_cylinder("Cut_Neck", 28.0, 0, 26.0, Vector((NECK_AXIS.x, 0, 186)), "Z"), HEAD)
     parts = [shell]
-    # Snout front: the camera looks through a bore to its glass (x 90), behind a black bezel; a
-    # black tube lines the bore. The ToF sensor sits in its own window left of it, the LED right.
-    boolean_cut(shell, cutter_cylinder("Cut_Camera", 5.8, 0, 22, CAM_AT - Vector((18, 0, 0)), "X"), HEAD)
-    parts.append(part("CamBezel", coll, INK, cyl_mesh("CamBezel", 8.0, 0, 1.6, 48, r_in=5.6), Matrix.Translation(CAM_AT - Vector((0.4, 0, 0))) @ axis_matrix("X"), Matrix.Identity(4), smooth=True))
-    parts.append(part("CamTube", coll, INK, cyl_mesh("CamTube", 5.6, 0, 14.5, 32, r_in=5.0), Matrix.Translation((90.2, CAM_AT.y, CAM_AT.z)) @ axis_matrix("X"), Matrix.Identity(4), smooth=True))
-    tof = Vector((CAM_AT.x, 11.5, CAM_AT.z))
-    tcut = bpy.data.objects.new("Cut_ToF", box_mesh("Cut_ToF", (96, tof.y - 2.6, tof.z - 3.6), (110, tof.y + 2.6, tof.z + 3.6)))
-    bpy.data.collections[f"{SCENE}: rig"].objects.link(tcut)
-    boolean_cut(shell, tcut, HEAD)
-    parts.append(rounded("ToFWindow", coll, mat("ToFGlass", "#141418", 0.08), (tof.x - 0.6, tof.y - 3.4, tof.z - 4.4), (tof.x + 0.7, tof.y + 3.4, tof.z + 4.4), 0.6))
-    parts.append(rounded("ToFBoard", coll, mat("ToFPCB", "#5B2C8F", 0.5), (tof.x - 5.4, tof.y - 4.5, tof.z - 6), (tof.x - 3.8, tof.y + 4.5, tof.z + 6), 0.4))
-    parts.append(disc("StatusLED", coll, LED_RED, 1.8, 1.4, (CAM_AT.x - 0.4, -11.5, CAM_AT.z), "X"))
+    # The brow visor: a raised lime ridge over the snout, open into the head below; a smoked strip
+    # across its front hides the camera (right of centre) and the ToF sensor (left). The head's top
+    # is opened under it for the camera module.
+    hcut = bpy.data.objects.new("Cut_VisorBay", box_mesh("Cut_VisorBay", (50, -18.5, 245), (86, 18.5, 290)))
+    bpy.data.collections[f"{SCENE}: rig"].objects.link(hcut)
+    boolean_cut(shell, hcut, HEAD)
+    visor = loft_trap("Visor", [(44, 20, 15, 254, 266), (58, 20, 18.5, 254, 277), (80, 20, 18.5, 252, 277), (90, 20, 18.5, 249, 274)], LIME, facet=2.5)
+    hollow(visor, 2.0)
+    vfloor = bpy.data.objects.new("Cut_VisorFloor", box_mesh("Cut_VisorFloor", (40, -18.1, 240), (95, 18.1, 256.5)))
+    bpy.data.collections[f"{SCENE}: rig"].objects.link(vfloor)
+    boolean_cut(visor, vfloor, HEAD)
+    vslot = bpy.data.objects.new("Cut_VisorSlot", box_mesh("Cut_VisorSlot", (86, -16, 257.5), (96, 16, 266.5)))
+    bpy.data.collections[f"{SCENE}: rig"].objects.link(vslot)
+    boolean_cut(visor, vslot, HEAD)
+    parts.append(visor)
+    parts.append(rounded("VisorGlass", coll, mat("Smoke", "#101114", 0.06), (88.9, -16.6, 256.9), (90.3, 16.6, 267.1), 0.5))
+    tof = Vector((84.0, 12.0, 262.0))
+    parts.append(rounded("ToFBoard", coll, mat("ToFPCB", "#5B2C8F", 0.5), (tof.x - 1.6, tof.y - 4.5, tof.z - 6), (tof.x, 18.4, tof.z + 6), 0.4))  # (screwed to the visor wall)
+    parts.append(rounded("ToFSensor", coll, CHIP, (tof.x, tof.y - 3.2, tof.z - 1.5), (tof.x + 1.0, tof.y + 3.2, tof.z + 1.5), 0.3))
+    # (and a camera mount: a black cradle from the visor's side wall to the holder)
+    parts.append(rounded("CamMount", coll, INK, (60, -18.4, 254.8), (72, -16.2, 258.5), 0.5))
+    # The status LED: a red dot on the snout front, as on the boards.
+    parts.append(disc("StatusLED", coll, LED_RED, 1.8, 1.0, (104.6, 0, 240.0), "X"))
     # Eye sockets on the side facets: a black angular socket, a glossy black lens, a lime brow.
     A, B, C, D = (Vector(v) for v in ((60, 44, 218.6), (60, 39, 261), (98, 21, 250), (98, 26, 223)))
     for sy, side in ((1, "L"), (-1, "R")):
@@ -415,8 +441,17 @@ def part_head():
     bpy.data.collections[f"{SCENE}: rig"].objects.link(slab)
     boolean_cut(muzzle, slab, HEAD, "INTERSECT")
     parts.append(muzzle)
+    # The back of the head in cream, as on the boards: a cap over the shell behind the cheeks,
+    # its front edge a panel seam.
+    back = loft_trap("HeadBack", [(x, wb + 0.8, wt + 0.8, z0 - 0.5, z1 + 0.8) for x, wb, wt, z0, z1 in HEAD_SECTIONS], CREAM, facet=CHAMFER)
+    hollow(back, 1.6)
+    bslab = bpy.data.objects.new("Cut_BackSlab", box_mesh("Cut_BackSlab", (-60, -70, 190), (4, 70, 300)))
+    bpy.data.collections[f"{SCENE}: rig"].objects.link(bslab)
+    boolean_cut(back, bslab, HEAD, "INTERSECT")
+    boolean_cut(back, cutter_cylinder("Cut_NeckBack", 28.6, 0, 26.0, Vector((NECK_AXIS.x, 0, 185.5)), "Z"), HEAD)
+    parts.append(back)
     # Head IMU (LSM6DSV16X breakout) on the head frame. (The speaker vents through the mouth.)
-    parts.append(rounded("HeadIMU", coll, mat("IMUPCB", "#1D3F8F", 0.5), (10, -26, 238), (28, -13, 239.6), 0.4))
+    parts.append(rounded("HeadIMU", coll, mat("IMUPCB", "#1D3F8F", 0.5), (10, -26, 237.4), (28, -13, 239.0), 0.4))
     names = made(parts, HEAD)
     # Jaw: cream, x 53..96 (in front of the neck opening and the jaw servo's case), arms up the
     # sides to cheek caps on the hinge axis; a dark mouth floor, a tongue, two rounded fangs on the
@@ -428,10 +463,17 @@ def part_head():
     jaw = [loft_trap("Jaw", [(61.5, 38, 42, 206, 217.4), (72, 37, 40.5, 204, 217.6), (86, 30, 33, 206, 217.6), (95, 21, 23.5, 209, 217.6), (99.5, 12, 14, 212.5, 217.2)], CREAM, facet=2.5)]
     jaw.append(loft_trap("Mouth", [(64, 33, 34, 216.2, 217.7), (88, 27, 28, 216.2, 217.8), (97, 15, 16, 216.2, 217.8)], INK, facet=0.5))
     jaw.append(rounded("Tongue", coll, mat("Tongue", "#FF7A8A", 0.6), (66, -12, 215.2), (86, 12, 217.4), 1.2))
+    # The jaw hangs on its servo: cream arms run back outside the cheeks to the hinge, a shaft
+    # through the head wall on each side - onto the jaw servo's horn (left) and an idler boss on the
+    # head frame (right) - capped by black hubs, like the boards' exposed joints.
+    boolean_cut(shell, cutter_cylinder("Cut_Hinge", 4.2, -60, 60, HINGE, "Y"), HEAD)
     for sy, side in ((1, "L"), (-1, "R")):
-        caps = [disc(f"CheekCap_{side}", coll, INK, 8.5, 3.0, (HINGE.x, sy * 49.6, HINGE.z), "Y" if sy > 0 else "-Y", bevel_w=1.4),
-                disc(f"CheekPin_{side}", coll, SILVER, 3.2, 1.0, (HINGE.x, sy * 52.6, HINGE.z), "Y" if sy > 0 else "-Y")]
-        names += made(caps, HEAD)
+        ax = "Y" if sy > 0 else "-Y"
+        jaw.append(loft_skin(f"JawArm_{side}", coll, CREAM, [(17, 1.5, 216, 235), (34, 1.5, 213, 231), (50, 1.5, 206, 222), (66, 1.5, 205, 217.2)], subsurf=2, keep=0.3, yc=sy * 51.0))
+        jaw.append(rounded(f"JawCheek_{side}", coll, CREAM, (61, min(sy * 39.5, sy * 52.0), 205.5), (70, max(sy * 39.5, sy * 52.0), 217.2), 1.2))
+        jaw.append(disc(f"JawShaft_{side}", coll, SILVER, 3.2, 13.0 if sy > 0 else 13.5, (HINGE.x, sy * (39.9 if sy > 0 else 39.4), HINGE.z), ax, n=24))
+        jaw.append(disc(f"CheekCap_{side}", coll, INK, 8.5, 3.0, (HINGE.x, sy * 52.4, HINGE.z), ax, n=8, bevel_w=1.0))
+        jaw.append(disc(f"CheekPin_{side}", coll, SILVER, 3.2, 1.0, (HINGE.x, sy * 55.3, HINGE.z), ax))
     bpy.context.view_layer.update()
     names += made(jaw, "jaw")
     fangs = []
@@ -486,7 +528,7 @@ LEG_JOINTS = {"L": ["yaw2roll", "hip_l", "upper_leg_left", "leg", "ankle_left"],
 
 
 def part_legs():
-    """Lime drumstick plates over the thighs, cream shin guards on the knee-to-ankle servo, cream
+    """Chamfered lime armour plates on the thighs (the ankle bracket sweeps the shins, so they stay bare), cream
     feet on black soles with three lime toe caps; the servos stay in view at every joint.
     Measured (left; the right mirrors): thigh hardware x -45..16, y 39..71, z 55..103, the knee
     axis at (-31.8, z 67.5); the shin servo x -42..-22, y 37..65, z 16..50; the ankle bracket
@@ -497,14 +539,13 @@ def part_legs():
     for side, sy in (("L", 1), ("R", -1)):
         up, shin, ankle = SIDE[side]
         # (a chamfered square armour plate, as on the boards, a screw in each corner)
-        thigh = [pad(f"Thigh_{side}", LIME, -14, 79, 44, 33, tilt, sy * 71.8, sy * 80, taper=0.86, n=4)]
+        thigh = [pad(f"Thigh_{side}", LIME, -14, 79, 44, 33, tilt, sy * 70.6, sy * 78.8, taper=0.86, n=4)]
         ca, sa = math.cos(tilt), math.sin(tilt)
         for k, (u, w) in enumerate(((19, 14), (-19, 14), (-19, -14), (19, -14))):
             x, z = -14 + u * ca - w * sa, 79 + u * sa + w * ca
-            screw_dot(f"ThighScrew_{side}{k}", coll, (x, sy * 79.6, z), "Y" if sy > 0 else "-Y")
+            screw_dot(f"ThighScrew_{side}{k}", coll, (x, sy * 78.4, z), "Y" if sy > 0 else "-Y")
             thigh.append(next(o for o in coll.objects if o.name.split(".")[0] == f"ThighScrew_{side}{k}"))
         names += made(thigh, up)
-        names += made([pad(f"Shin_{side}", CREAM, -32, 31, 13, 19, 0.0, sy * 68.4, sy * 71.3, taper=0.8)], shin)
         yf = sy * 50
         foot = [rounded(f"Sole_{side}", coll, RUBBER, (-53, yf - 21.5, 0), (3, yf + 21.5, 3.6), 1.6),
                 loft_skin(f"Foot_{side}", coll, CREAM, [(-52, 20, 3, 8.2), (-30, 21, 3, 8.4), (-4, 20.5, 3, 8.2)], subsurf=2, keep=0.4, yc=yf)]
@@ -541,8 +582,15 @@ def part_dress():
     """A lime collar round the neck servos (on the neck: it pitches with them) and two small
     T-rex arms tucked in front of the chest (passive, on friction pins: the head does the
     expression, the arms just complete the silhouette)."""
-    clear(("NeckCollar", "Arm", "Hand", "Claw", "Shoulder"))
-    names = made([oval_ring("NeckCollar", INK, Vector((26, 0, 173.2)), 19.5, 23.5, 4.6, n=8, m=4)], "neck")
+    clear(("NeckCollar", "Throat", "Arm", "Hand", "Claw", "Shoulder"))
+    # (a cream frame clamped round the upper neck servo's case, x 16..36, |y| 13)
+    z0, z1 = 170.5, 175.5
+    # (and a cream throat plate down the front of the lower neck servo, the boards' neck armour)
+    names = made([rounded("Throat", coll, CREAM, (36.5, -12, 147), (40.0, 12, 170.4), 1.2),
+                  rounded("NeckCollar0", coll, CREAM, (36.1, -17.5, z0), (40.5, 17.5, z1), 1.0),
+                  rounded("NeckCollar1", coll, CREAM, (11.5, -17.5, z0), (15.9, 17.5, z1), 1.0),
+                  rounded("NeckCollar2", coll, CREAM, (15.9, 13.1, z0), (36.1, 17.5, z1), 1.0),
+                  rounded("NeckCollar3", coll, CREAM, (15.9, -17.5, z0), (36.1, -13.1, z1), 1.0)], "neck")
     arm = []
     for side, sy in (("L", 1), ("R", -1)):
         arm.append(disc(f"Shoulder_{side}", coll, INK, 9.0, 4.0, (25, sy * 30.0, 128), "Y" if sy > 0 else "-Y", n=8, bevel_w=1.0))

@@ -313,3 +313,65 @@ elif RIG_ACTION == "clips":
     print(json.dumps({"rest_clips": len(h), "pairs": h[:60]}, indent=1))
 elif RIG_ACTION == "sweep":
     print(json.dumps(sweep(), indent=1))
+
+
+def supports(tol=0.4, sample=1500):
+    """Nothing floats: on each body, parts that touch (surfaces within `tol` mm or crossing) form a
+    graph; every shell part must reach that body's hardware through it. Returns the shell parts
+    that don't, each with its gap to the nearest part on its body."""
+    bpy.context.view_layer.update()
+    deps = bpy.context.evaluated_depsgraph_get()
+    parts = {}
+    for o in scene.objects:
+        if o.type != "MESH" or "body" not in o or o.hide_get():
+            continue
+        ev = o.evaluated_get(deps)
+        me = ev.to_mesh()
+        if len(me.polygons):
+            mw = o.matrix_world
+            vs = [mw @ v.co for v in me.vertices]
+            # (face centres too: two flat faces resting on each other share no vertex)
+            pts = vs + [mw @ p.center for p in me.polygons]
+            step = max(1, len(pts) // sample)
+            parts[o.name] = (o["body"], bool(o.get("skin")), BVHTree.FromPolygons(vs, [tuple(p.vertices) for p in me.polygons]), pts[::step])
+        ev.to_mesh_clear()
+    names = list(parts)
+    hw = {body for body, skin, _, _ in parts.values() if not skin}
+    edges = {n: set() for n in names}
+    nearest = {n: (1e9, "") for n in names}
+    for i, a in enumerate(names):
+        ba, _, ta, va = parts[a]
+        for b in names[i + 1:]:
+            bb, sb, tb, vb = parts[b]
+            if ba != bb:
+                # A body with no hardware of its own (the tail, the jaw) hangs on its parent's
+                # hardware: its servo's horn, or a boss on the frame.
+                sa = parts[a][1]
+                hangs = (sa and not sb and ba not in hw and BODIES.get(ba, (None,))[0] == bb) or \
+                        (sb and not sa and bb not in hw and BODIES.get(bb, (None,))[0] == ba)
+                if not hangs:
+                    continue
+            if ta.overlap(tb):
+                d = 0.0
+            else:
+                d = min(min((tb.find_nearest(p)[3] or 1e9) for p in va), min((ta.find_nearest(p)[3] or 1e9) for p in vb))
+            if d <= tol:
+                edges[a].add(b)
+                edges[b].add(a)
+            for x, y in ((a, b), (b, a)):
+                if d < nearest[x][0]:
+                    nearest[x] = (d, y)
+    reach = set(n for n in names if not parts[n][1])
+    frontier = list(reach)
+    while frontier:
+        n = frontier.pop()
+        for m in edges[n]:
+            if m not in reach:
+                reach.add(m)
+                frontier.append(m)
+    out = {}
+    for n in names:
+        if parts[n][1] and n not in reach:
+            d, m = nearest[n]
+            out[n.split(".")[0]] = {"touches": sorted(m.split(".")[0] for m in edges[n]), "nearest": m.split(".")[0], "gap": round(d, 2)}
+    return out
