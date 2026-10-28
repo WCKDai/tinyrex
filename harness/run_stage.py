@@ -43,6 +43,12 @@ env = {k: v for k, v in os.environ.items() if k != "CLAUDECODE"}  # POLYKROM_MUJ
 timeout = int(os.environ.get("TINYREX_TIMEOUT", "10800"))
 t0 = time.time()
 log = work / f"{st['id']}.transcript.jsonl"
+if os.environ.get("CONTINUE") and log.exists():
+    # Keep the interrupted run's transcript: the continuation writes its own.
+    n = 1
+    while (part := work / f"{st['id']}.transcript.part{n}.jsonl").exists():
+        n += 1
+    log.rename(part)
 cmd = ["claude", "-p", prompt, "--mcp-config", str(cfg), "--strict-mcp-config", "--allowedTools", "mcp__polykrom", "--disallowedTools", "Bash,Read,Write,Edit,MultiEdit,NotebookEdit,Glob,Grep,WebFetch,WebSearch,Task,LSP",
        "--output-format", "stream-json", "--verbose", "--max-turns", os.environ.get("TINYREX_MAX_TURNS", "300")]
 # Streamed to disk as it runs, so a stage that times out keeps its transcript.
