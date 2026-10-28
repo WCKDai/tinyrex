@@ -199,7 +199,7 @@ def part_body():
         boolean_cut(body, pk, TRUNK)
     for sy in (1, -1):  # windows where the shin brackets swing in on hip yaw and roll: the battery
         # holders are the side walls there, as on Microduck, which keeps its full hip range
-        wn = bpy.data.objects.new(f"Cut_LegWindow{sy}", box_mesh(f"Cut_LegWindow{sy}", (-47, min(sy * 23.5, sy * 38), 48), (-16, max(sy * 23.5, sy * 38), 84)))
+        wn = bpy.data.objects.new(f"Cut_LegWindow{sy}", box_mesh(f"Cut_LegWindow{sy}", (-47, min(sy * 23.5, sy * 38), 46), (-1, max(sy * 23.5, sy * 38), 84)))
         bpy.data.collections[f"{SCENE}: rig"].objects.link(wn)
         boolean_cut(body, wn, TRUNK)
     boolean_cut(body, cutter_cylinder("Cut_TailHorn", 10.6, 0, 14, Vector((-74.5, 0, 127.5)), "Z"), TRUNK)
@@ -725,14 +725,14 @@ def part_dress():
     # (and a cream throat plate down the front of the lower neck servo, the boards' neck armour)
     # (and a cream nape plate down its back, on the servo's case-screw bosses)
     names = made([rounded("Throat", coll, CREAM, (36.5, -12, 147), (40.0, 12, 170.4), 1.6),
-                  rounded("Nape", coll, CREAM, (11.4, -11, 158.5), (15.5, 11, 170.4), 1.6),
+                  rounded("Nape", coll, CREAM, (11.4, -11, 158.5), (15.5, 11, 170.4), 1.6),  # (on the case screw bosses)
                   rounded("NeckCollar0", coll, CREAM, (36.1, -17.5, z0), (40.5, 17.5, z1), 1.9),
                   rounded("NeckCollar1", coll, CREAM, (11.5, -17.5, z0), (15.9, 17.5, z1), 1.9),
                   rounded("NeckCollar2", coll, CREAM, (15.9, 13.1, z0), (36.1, 17.5, z1), 1.9),
                   rounded("NeckCollar3", coll, CREAM, (15.9, -17.5, z0), (36.1, -13.1, z1), 1.9)]
-                 + [screw(f"ThroatScrew{k}", (40.0, dy, z), "X") for k, (dy, z) in enumerate(((-7, 152), (7, 152), (-7, 165), (7, 165)))]
+                 + [screw(f"ThroatScrew{k}", (40.0, dy, z), "X") for k, (dy, z) in enumerate(((-8, 160.4), (8, 160.4)))]  # (into the servo's own case screw holes)
                  + [screw(f"CollarScrew{k}", (40.5, dy, 173), "X") for k, dy in enumerate((-12, 12))]
-                 + [screw(f"NapeScrew{k}", (11.4, dy, 164.5), "-X") for k, dy in enumerate((-8, 8))], "neck")
+                 + [screw(f"NapeScrew{k}", (11.4, dy, 160.4), "-X") for k, dy in enumerate((-8, 8))], "neck")
     return names, ["neck", "neck_pitch", "yaw_roll_motion"] + LEG_JOINTS["L"][:3] + LEG_JOINTS["R"][:3]
 
 
@@ -884,13 +884,180 @@ def part_arms():
     return names, joints
 
 
+def tube(name, material, pts, r, n=10):
+    """A round cable through the points (mm), radius r."""
+    pts = [Vector(p) for p in pts]
+    v, f = [], []
+    for i, p in enumerate(pts):
+        t = (pts[min(i + 1, len(pts) - 1)] - pts[max(i - 1, 0)]).normalized()
+        a = t.cross(Vector((0, 0, 1)) if abs(t.z) < 0.9 else Vector((1, 0, 0))).normalized()
+        b = t.cross(a)
+        v += [tuple(p + (a * math.cos(2 * math.pi * k / n) + b * math.sin(2 * math.pi * k / n)) * r) for k in range(n)]
+    for i in range(len(pts) - 1):
+        f += [(i * n + k, i * n + (k + 1) % n, (i + 1) * n + (k + 1) % n, (i + 1) * n + k) for k in range(n)]
+    f += [tuple(range(n))[::-1], tuple(range((len(pts) - 1) * n, len(pts) * n))]
+    me = bpy.data.meshes.new(name)
+    me.from_pydata(v, [], f)
+    return obj_from(name, me, coll, material, smooth=True)
+
+
+def ribbon(name, material, pts, width, normals, thick=0.3):
+    """A flat flex cable through the points, at each point lying against a surface facing that
+    point's normal."""
+    pts = [Vector(p) for p in pts]
+    v, f = [], []
+    for i, p in enumerate(pts):
+        nrm = Vector(normals[i]).normalized()
+        t = (pts[min(i + 1, len(pts) - 1)] - pts[max(i - 1, 0)]).normalized()
+        w = t.cross(nrm).normalized() * width / 2
+        h = nrm * thick / 2
+        v += [tuple(p - w - h), tuple(p + w - h), tuple(p + w + h), tuple(p - w + h)]
+    for i in range(len(pts) - 1):
+        f += [(i * 4 + k, i * 4 + (k + 1) % 4, (i + 1) * 4 + (k + 1) % 4, (i + 1) * 4 + k) for k in range(4)]
+    f += [(3, 2, 1, 0), tuple(range((len(pts) - 1) * 4, len(pts) * 4))]
+    me = bpy.data.meshes.new(name)
+    me.from_pydata(v, [], f)
+    import bmesh
+    bm = bmesh.new()
+    bm.from_mesh(me)
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    bm.to_mesh(me)
+    bm.free()
+    return obj_from(name, me, coll, material, smooth=True)
+
+
+def part_cables():
+    """The cables that leave a part's own body or run past moving parts:
+    - the camera's 22-way CSI ribbon (11.5 mm), from under the camera in the visor, over the
+      compute board's top edge, down its face to the CSI connector at its short edge;
+    - each arm servo's Dynamixel lead (2.5 mm), from its bottom socket back between the arm and
+      hip-yaw servos, up and over the battery holders into Microduck's bus board (the banana PCB)
+      at the back of the trunk.
+    They are hardware (fixed to their body, clipped against every shell and moving part)."""
+    clear(("Cable", "Compute.csi"))
+    names = []
+    csi = rounded("Compute.csi", coll, mat("Connector", "#E8E2D0", 0.5), (68.9, 26.8, 230.5), (71.4, 32.3, 246.4), 0.3)
+    # (flat under the camera, inside the visor's opening; over the board's top edge; down and
+    # across its face at mid-height, clear of the visor walls; into the connector)
+    flex = ribbon("CableCamera", mat("Flex", "#C8862A", 0.5),
+                  [(64, 2, 253.8), (69.0, 2, 253.8), (72.0, 2, 252.6), (72.7, 2, 248), (72.7, 4, 241), (72.7, 16, 238.5), (72.5, 25, 238.5), (71.7, 29.5, 238.5)], 11.5,
+                  [(0, 0, 1), (0, 0, 1), (1, 0, 1), (1, 0, 0), (1, 0, 0), (1, 0, 0), (1, 0, 0), (1, 0, 0)])
+    for o in (csi, flex):
+        attach(o, HEAD)
+        names.append(o.name.split(".")[0] if o is flex else "Compute.csi")
+    lead = mat("Cable", "#121214", 0.6)
+    for side, sy in (("L", 1), ("R", -1)):
+        o = tube(f"CableArm{side}", lead, [(21.5, sy * 28.8, 114.1), (14.5, sy * 28.8, 114.1), (14.5, sy * 28.8, 147.6), (-10, sy * 28.0, 148.0), (-29.0, sy * 20, 148.0), (-31.8, sy * 20, 146.5)], 1.25)
+        attach(o, TRUNK)
+        names.append(o.name.split(".")[0])
+    return names, [b for b, (_, _, j, _) in BODIES.items() if j]
+
+
+DEBUG_SCREWS = globals().get("DEBUG_SCREWS", ())
+ENGAGE = 3.0      # mm of material an M2 screw needs behind the panel it holds (insert or thread)
+BOSS_R = 2.6      # boss radius: an M2 heat-set insert (3.2 mm) with a 1 mm wall
+BOSS_LEN = 5.0
+
+
+def ray_intervals(trees, origin, d, reach=20.0):
+    """(start, end, name) of every part the ray passes through, from origin along d."""
+    out = []
+    for name, t in trees.items():
+        hits, o = [], origin.copy()
+        travelled = 0.0
+        while True:
+            loc, _, _, dist = t.ray_cast(o, d, reach - travelled)
+            if loc is None:
+                break
+            travelled += dist
+            hits.append(travelled)
+            o = loc + d * 0.01
+            travelled += 0.01
+        if len(hits) % 2:
+            hits.append(reach)  # (still inside at the end of the reach)
+        for a, b in zip(hits[0::2], hits[1::2]):
+            out.append((a, b, name))
+    return sorted(out)
+
+
+def part_bosses():
+    """Every screw needs something to bite: fire a ray inward along it, measure the material
+    behind the panel it passes through (servo horns count - they are threaded); where it's under
+    ENGAGE, print a boss behind the panel for an M2 heat-set insert, as deep as the room allows."""
+    from mathutils.bvhtree import BVHTree
+    clear(("Boss_",))
+    rest_all()
+    bpy.context.view_layer.update()
+    deps = bpy.context.evaluated_depsgraph_get()
+    meshes = {}
+    for o in scene.objects:
+        if o.type == "MESH" and "body" in o and not o.name.split(".")[0].startswith("Boss_"):
+            ev = o.evaluated_get(deps)
+            me = ev.to_mesh()
+            mw = o.matrix_world
+            meshes[o.name] = (o, BVHTree.FromPolygons([mw @ v.co for v in me.vertices], [tuple(p.vertices) for p in me.polygons]))
+            ev.to_mesh_clear()
+    report, names = {}, []
+    for o in [m[0] for m in meshes.values() if m[0].get("skin") and "Screw" in m[0].name]:
+        body = o["body"]
+        near = {body, BODIES.get(body, (None,))[0]} | {b for b, v in BODIES.items() if v[0] == body}
+        trees = {n: t for n, (oo, t) in meshes.items() if oo.get("body") in near and n != o.name and "Screw" not in n}
+        axis = (o.matrix_world.to_3x3() @ Vector((0, 0, 1))).normalized()
+        head = o.matrix_world.translation
+        start = head + axis * 3.0
+        iv = [(a - 3.0, b - 3.0, n) for a, b, n in ray_intervals(trees, start, -axis)]
+        iv = [t for t in iv if t[1] > -0.5]
+        if o.name.split(".")[0] in DEBUG_SCREWS:
+            print("DBG", o.name, [round(v, 2) for v in axis], [(round(a, 1), round(b, 1), n.split(".")[0]) for a, b, n in iv][:8])
+        if not iv:
+            report[o.name.split(".")[0]] = "nothing behind it"
+            continue
+        # The panel the head sits on is the first part along the ray; the screw clamps it and
+        # bites whatever lies behind (overlapping parts - a plate set into a shell - are one stack).
+        plate_end, plate = iv[0][1], iv[0][2]
+        # (a horn is threaded; a solid printed part over 6 mm thick takes the screw itself)
+        threaded = any(".horn" in n for _, _, n in iv[1:3]) or iv[0][1] - max(iv[0][0], 0) >= 6.0
+        engage = sum(min(b, plate_end + 8) - max(a, plate_end) for a, b, n in iv[1:] if a < plate_end + 8 and b > plate_end)
+        if threaded or engage >= ENGAGE:
+            continue
+        stack_end = plate_end
+        for a, b, _ in iv[1:]:
+            if a <= stack_end + 0.05:
+                stack_end = max(stack_end, b)
+        free = next((a for a, _, _ in iv[1:] if a > stack_end + 0.05), stack_end + 20) - stack_end - 0.4
+        # (the boss is 2 x BOSS_R across: check the room on a ring of rays at its radius too)
+        side = axis.orthogonal().normalized()
+        for k in range(8):
+            off = Quaternion(axis, 2 * math.pi * k / 8) @ side * (BOSS_R + 0.3)
+            ring = [(a - 3.0, b - 3.0, n) for a, b, n in ray_intervals(trees, start + off, -axis)]
+            ring_end = stack_end
+            for a, b, n in ring:
+                if a <= ring_end + 0.05 and b > -0.5:
+                    ring_end = max(ring_end, b)
+            first = next((a for a, _, _ in ring if a > ring_end + 0.05), stack_end + 20)
+            free = min(free, first - stack_end - 0.4)
+        plate_end = stack_end
+        length = min(BOSS_LEN, free)
+        tag = o.name.split(".")[0]
+        if length < 2.0:
+            report[tag] = f"no room for a boss behind {plate.split('.')[0]} ({free:.1f} mm)"
+            continue
+        at = head - axis * (plate_end - 0.3)
+        b = part(f"Boss_{tag}", coll, meshes[plate][0].active_material or CREAM, cyl_mesh(f"Boss_{tag}", BOSS_R, 0, length + 0.3, 20),
+                 Matrix.Translation(at) @ (axis * -1).to_track_quat("Z", "Y").to_matrix().to_4x4(), Matrix.Identity(4), smooth=True)
+        names += made([b], body)
+        report[tag] = f"boss {length + 0.3:.1f} mm behind {plate.split('.')[0]}"
+    print("BOSSES", json.dumps(report))
+    return names, []
+
+
 def part_all():
     """No new part: check every shell against every joint (the extra tail and jaw included)."""
     names = [o.name.split(".")[0] for o in coll.objects if o.get("skin")]
     return names, [b for b, (_, _, j, _) in BODIES.items() if j]
 
 
-BUILDERS = {"body": part_body, "tail": part_tail, "head": part_head, "legs": part_legs, "dress": part_dress, "arms": part_arms, "all": part_all}
+BUILDERS = {"body": part_body, "tail": part_tail, "head": part_head, "legs": part_legs, "dress": part_dress, "arms": part_arms, "cables": part_cables, "bosses": part_bosses, "all": part_all}
 for _side in ("L", "R"):
     if PART != "arms" and f"B:arm_{_side}" in [o.name.split(".")[0] for o in scene.objects]:
         arm_body(_side)

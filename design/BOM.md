@@ -26,6 +26,14 @@ Software joint limits (collision-free ranges, from a sweep of the full model): `
 - Speaker, in the head
 - NP-F970-type battery in the body, swapped through the belly door; USB-C charge port and power switch on the tail root
 
+## Cables
+
+- Camera: 22-way 0.5 mm-pitch CSI flex, about 60 mm. It runs from under the camera in the visor, over the
+  compute board's top edge, and across its face to the CSI connector.
+- Arm servos: 2 × Dynamixel 3-pin TTL leads, about 120 mm each. Each runs from the servo's bottom socket, back
+  between the arm and hip-yaw servos, and over the battery holders into Microduck's bus board.
+- The tail servo and all of Microduck's servos use Microduck's harness.
+
 ## Printed and other parts
 
 - Shells (PLA, 2.4 mm walls): head, head back cap, muzzle band, brow visor, body, backpack, battery door
@@ -36,4 +44,11 @@ Software joint limits (collision-free ranges, from a sweep of the full model): `
 - Soles and toe soles: TPU / rubber
 - Smoked acrylic visor strip (IR-transparent for the ToF)
 - Hinge shafts (2), cheek pins (2), elbow pins (2): 6 mm / 4 mm steel
-- 50 visible M2 button-head screws (plus each XL330's own horn and case screws)
+- About 60 visible M2 button-head screws (plus each XL330's own horn and case screws). Each one bites into one of:
+  - a servo horn;
+  - an XL330 case screw hole (nape, throat);
+  - a solid printed part;
+  - a printed boss behind its panel.
+- 12 printed bosses, 2.5–5.3 mm, each with an M2 × 3 mm heat-set insert. They are generated and
+  checked by `part_bosses` in `v4_parts.py`: a ray along each screw measures what's behind it,
+  and a ring of rays measures the boss's room.

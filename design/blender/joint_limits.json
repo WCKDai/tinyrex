@@ -59,7 +59,7 @@
    ],
    "collision_free": [
     -77,
-    21
+    18
    ]
   },
   "head_pitch": {
@@ -182,5 +182,20 @@
     74
    ]
   }
+ },
+ "standing_pose_rad": {
+  "tinyrex_home": {
+   "left_hip_roll": -0.0873,
+   "right_hip_roll": 0.0873,
+   "left_hip_pitch": -0.3113,
+   "right_hip_pitch": 0.3113,
+   "left_knee": -0.0049,
+   "right_knee": 0.0049,
+   "left_ankle": 0.3113,
+   "right_ankle": -0.3113,
+   "neck_pitch": 0.3491,
+   "head_pitch": 0.3491
+  },
+  "note": "Microduck's HOME (mjlab_microduck microduck_constants.HOME_FRAME) with hip pitch / ankle at 17.85 deg instead of 26.2, so TinyREX's centre of mass sits over its ankle axis; feet flat; clip-free"
  }
 }

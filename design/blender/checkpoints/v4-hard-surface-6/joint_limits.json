@@ -1,0 +1,201 @@
+{
+ "units": "degrees",
+ "source": "design/blender: rig.py sweep + bisection against every TinyREX v4 part (clip = any surface crossing)",
+ "joints": {
+  "left_hip_yaw": {
+   "servo_range": [
+    -25,
+    30
+   ],
+   "collision_free": [
+    -8,
+    28
+   ]
+  },
+  "left_hip_roll": {
+   "servo_range": [
+    -22,
+    22
+   ],
+   "collision_free": [
+    -12,
+    13
+   ]
+  },
+  "left_hip_pitch": {
+   "servo_range": [
+    -90,
+    90
+   ],
+   "collision_free": [
+    -90,
+    53
+   ]
+  },
+  "left_knee": {
+   "servo_range": [
+    -90,
+    90
+   ],
+   "collision_free": [
+    -90,
+    40
+   ]
+  },
+  "left_ankle": {
+   "servo_range": [
+    -90,
+    90
+   ],
+   "collision_free": [
+    -60,
+    89
+   ]
+  },
+  "neck_pitch": {
+   "servo_range": [
+    -90,
+    60
+   ],
+   "collision_free": [
+    -77,
+    18
+   ]
+  },
+  "head_pitch": {
+   "servo_range": [
+    -90,
+    90
+   ],
+   "collision_free": [
+    -45,
+    90
+   ]
+  },
+  "head_yaw": {
+   "servo_range": [
+    -170,
+    170
+   ],
+   "collision_free": [
+    -170,
+    169
+   ]
+  },
+  "head_roll": {
+   "servo_range": [
+    -25,
+    25
+   ],
+   "collision_free": [
+    -19,
+    19
+   ]
+  },
+  "right_hip_yaw": {
+   "servo_range": [
+    -30,
+    25
+   ],
+   "collision_free": [
+    -28,
+    8
+   ]
+  },
+  "right_hip_roll": {
+   "servo_range": [
+    -22,
+    22
+   ],
+   "collision_free": [
+    -13,
+    12
+   ]
+  },
+  "right_hip_pitch": {
+   "servo_range": [
+    -90,
+    90
+   ],
+   "collision_free": [
+    -53,
+    89
+   ]
+  },
+  "right_knee": {
+   "servo_range": [
+    -90,
+    90
+   ],
+   "collision_free": [
+    -40,
+    89
+   ]
+  },
+  "right_ankle": {
+   "servo_range": [
+    -90,
+    90
+   ],
+   "collision_free": [
+    -90,
+    60
+   ]
+  },
+  "jaw": {
+   "servo_range": [
+    0,
+    29
+   ],
+   "collision_free": [
+    0.0,
+    28
+   ]
+  },
+  "tail_yaw": {
+   "servo_range": [
+    -40,
+    40
+   ],
+   "collision_free": [
+    -40,
+    40
+   ]
+  },
+  "l_shoulder": {
+   "servo_range": [
+    -74,
+    26
+   ],
+   "collision_free": [
+    -74,
+    25
+   ]
+  },
+  "r_shoulder": {
+   "servo_range": [
+    -26,
+    74
+   ],
+   "collision_free": [
+    -25,
+    74
+   ]
+  }
+ },
+ "standing_pose_rad": {
+  "tinyrex_home": {
+   "left_hip_roll": -0.0873,
+   "right_hip_roll": 0.0873,
+   "left_hip_pitch": -0.3113,
+   "right_hip_pitch": 0.3113,
+   "left_knee": -0.0049,
+   "right_knee": 0.0049,
+   "left_ankle": 0.3113,
+   "right_ankle": -0.3113,
+   "neck_pitch": 0.3491,
+   "head_pitch": 0.3491
+  },
+  "note": "Microduck's HOME (mjlab_microduck microduck_constants.HOME_FRAME) with hip pitch / ankle at 17.85 deg instead of 26.2, so TinyREX's centre of mass sits over its ankle axis; feet flat; clip-free"
+ }
+}
