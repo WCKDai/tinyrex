@@ -9,5 +9,5 @@ CLI="${2:-${POLYKROM_CLI:-}}"
 WORK="${TINYREX_WORK:-$H/../work}"; mkdir -p "$WORK"; export TINYREX_WORK="$WORK"
 id=$(python3 -c "import sys; sys.path.insert(0, '$H/../spec'); import stages; print(stages.STAGES[$i]['id'])")
 CONTINUE=1 python3 "$H/run_stage.py" "$CLI" $i > "$WORK/stage${i}c.out" 2>&1
-python3 -c "import json,sys; r=json.load(open('$WORK/$id.json')); print(r['stage'], r['seconds'], 's', r['cost'], 'saved', r['saved']); sys.exit(0 if r['saved'] and 'limit' not in (r['reply'] or '') else 1)" || exit 1
+python3 -c "import json,sys; r=json.load(open('$WORK/$id.json')); print(r['stage'], r['seconds'], 's', r['cost'], 'saved', r['saved']); sys.exit(0 if r['saved'] and not any(m in (r['reply'] or '') for m in ('session limit', 'usage limit', 'hit your')) else 1)" || exit 1
 START=$((i+1)) "$H/run_all.sh" "$CLI"
