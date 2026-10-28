@@ -78,13 +78,34 @@ def obj_from(name, me, coll, material, matrix=None, smooth=False):
     return o
 
 
+def pc_tag(me, node):
+    """Record a mesh's exact construction (PolyCore recipe node, in the mesh's own coordinates) on
+    its data, for the PolyCore STEP exporter (tools/polycore-blender)."""
+    import json
+    me["pc_recipe"] = json.dumps(node)
+    return me
+
+
+def pc_loft(rings, axis):
+    """A ruled-loft node through planar rings of 3D points, each in a plane across `axis`."""
+    k = "xyz".index(axis)
+    u, w = [i for i in range(3) if i != k]
+    unit = [[1.0 if i == j else 0.0 for i in range(3)] for j in range(3)]
+    secs = []
+    for ring in rings:
+        o = [0.0, 0.0, 0.0]
+        o[k] = float(ring[0][k])
+        secs.append({"origin": o, "x": unit[u], "y": unit[w], "points": [[float(p[u]), float(p[w])] for p in ring]})
+    return {"loft": {"sections": secs}}
+
+
 def box_mesh(name, lo, hi):
     (x0, y0, z0), (x1, y1, z1) = lo, hi
     v = [(x0, y0, z0), (x1, y0, z0), (x1, y1, z0), (x0, y1, z0), (x0, y0, z1), (x1, y0, z1), (x1, y1, z1), (x0, y1, z1)]
     f = [(0, 3, 2, 1), (4, 5, 6, 7), (0, 1, 5, 4), (1, 2, 6, 5), (2, 3, 7, 6), (3, 0, 4, 7)]
     me = bpy.data.meshes.new(name)
     me.from_pydata(v, [], f)
-    return me
+    return pc_tag(me, {"box": {"min": [float(c) for c in (x0, y0, z0)], "max": [float(c) for c in (x1, y1, z1)]}})
 
 
 def cyl_mesh(name, r, z0, z1, n=32, r_in=0.0):
@@ -110,6 +131,10 @@ def cyl_mesh(name, r, z0, z1, n=32, r_in=0.0):
             f.append((k, j, n + j, n + k))
     me = bpy.data.meshes.new(name)
     me.from_pydata(v, [], f)
+    node = {"cylinder": {"base": [0.0, 0.0, float(z0)], "axis": [0.0, 0.0, 1.0], "radius": float(r), "height": float(z1 - z0)}}
+    if r_in:
+        node = {"cut": [node, {"cylinder": {"base": [0.0, 0.0, float(z0) - 0.1], "axis": [0.0, 0.0, 1.0], "radius": float(r_in), "height": float(z1 - z0) + 0.2}}]}
+    pc_tag(me, node)
     return me
 
 
@@ -216,7 +241,8 @@ def mjcf_geoms():
     def walk(body, parent):
         world = parent @ tf(body)
         for g in body.findall("geom"):
-            if g.get("mesh"):
+            # (a mesh placed again as a collision-only geom is the same part: skip the copy)
+            if g.get("mesh") and "collision" not in (g.get("class") or ""):
                 out.append((g.get("mesh"), world @ tf(g)))
         for child in body.findall("body"):
             walk(child, world)
@@ -326,6 +352,7 @@ def loft_skin(name, coll, material, sections, subsurf=2, keep=0.3, yc=0.0):
     f.append((4 * (n - 1), 4 * (n - 1) + 1, 4 * (n - 1) + 2, 4 * (n - 1) + 3))
     me = bpy.data.meshes.new(name)
     me.from_pydata(v, [], f)
+    pc_tag(me, pc_loft([v[4 * i:4 * i + 4] for i in range(n)], "x"))
     o = obj_from(name, me, coll, material, smooth=True)
     if keep:
         b = o.modifiers.new("Hold", "BEVEL")
@@ -346,7 +373,15 @@ def ball(name, coll, material, r, at, scale=(1, 1, 1)):
     o.scale = scale
     o.data.materials.append(material)
     o.data.shade_smooth()
+    pc_tag(o.data, {"sphere": {"center": [0.0, 0.0, 0.0], "radius": float(r)}})
     return o
+
+
+def pc_cone(r1, r2, depth, n):
+    """A primitive cone's recipe (along local Z, centred): a loft through its two rims."""
+    ring = lambda r: [[r * math.cos(2 * math.pi * k / n), r * math.sin(2 * math.pi * k / n)] for k in range(n)]
+    return {"loft": {"sections": [{"origin": [0.0, 0.0, -depth / 2], "x": [1.0, 0.0, 0.0], "y": [0.0, 1.0, 0.0], "points": ring(r1)},
+                                  {"origin": [0.0, 0.0, depth / 2], "x": [1.0, 0.0, 0.0], "y": [0.0, 1.0, 0.0], "points": ring(r2)}]}}
 
 
 def disc(name, coll, material, r, h, at, axis, n=40, bevel_w=0.0):

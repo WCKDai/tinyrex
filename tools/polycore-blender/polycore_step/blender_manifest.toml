@@ -1,0 +1,14 @@
+schema_version = "1.0.0"
+
+id = "polycore_step"
+version = "0.1.0"
+name = "PolyCore STEP"
+tagline = "Export exact B-rep STEP assemblies through the PolyCore kernel"
+maintainer = "WCKDai"
+type = "add-on"
+blender_version_min = "4.2.0"
+license = ["SPDX:Apache-2.0"]
+category = "Import-Export"
+
+[permissions]
+files = "Writes the STEP, its recipe and report; runs the polycore-step tool"

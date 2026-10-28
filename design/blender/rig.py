@@ -39,7 +39,7 @@ def mjcf_bodies():
             joint = (j.get("name"), Vector([float(v) for v in j.get("axis", "0 0 1").split()]), (lo, hi))
         geoms = []
         for g in body.findall("geom"):
-            if g.get("mesh"):
+            if g.get("mesh") and "collision" not in (g.get("class") or ""):  # (as tinyrex_v2.mjcf_geoms)
                 geoms.append((g.get("mesh"), order[0]))
                 order[0] += 1
         local = _tf(body)

@@ -44,11 +44,13 @@ Software joint limits (collision-free ranges, from a sweep of the full model): `
 - Soles and toe soles: TPU / rubber
 - Smoked acrylic visor strip (IR-transparent for the ToF)
 - Hinge shafts (2), cheek pins (2), elbow pins (2): 6 mm / 4 mm steel
-- About 60 visible M2 button-head screws (plus each XL330's own horn and case screws). Each one bites into one of:
+- 78 visible M2 button-head screws, plus each XL330's own horn and case screws. Each one bites into one of:
   - a servo horn;
-  - an XL330 case screw hole (nape, throat);
+  - an XL330 case screw hole (nape, throat, tail root);
   - a solid printed part;
-  - a printed boss behind its panel.
-- 12 printed bosses, 2.5–5.3 mm, each with an M2 × 3 mm heat-set insert. They are generated and
-  checked by `part_bosses` in `v4_parts.py`: a ray along each screw measures what's behind it,
-  and a ring of rays measures the boss's room.
+  - a printed boss or standoff behind its panel.
+- 22 printed bosses and standoffs, each with an M2 × 3 mm heat-set insert. They are generated and checked by
+  `part_bosses` in `v4_parts.py`: a ray along each screw measures what's behind it, and a ring of rays measures the
+  boss's room.
+- Bonded (cyanoacrylate): the spikes, the eye sockets and brows, the eye domes, the toe caps and soles, the visor
+  window and the tail tip.

@@ -1,0 +1,5782 @@
+{
+  "name": "TinyREX v4",
+  "output": "tinyrex.step",
+  "parts": [
+    {
+      "name": "Bearing_00.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 813.6561134459122,
+      "seconds": 0.163072542
+    },
+    {
+      "name": "Bracket_banana_pcb_locker_2.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1257.0618884431462,
+      "seconds": 0.375471916
+    },
+    {
+      "name": "Bracket_trunk_base_3.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 5986.714820278227,
+      "seconds": 0.526217792
+    },
+    {
+      "name": "XL330_00.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17583.36452939909,
+      "seconds": 0.522650417
+    },
+    {
+      "name": "XL330_00.horn.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 381.6800062133021,
+      "seconds": 0.066302791
+    },
+    {
+      "name": "XL330_00.hub.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 117.80227530515037,
+      "seconds": 0.085855209
+    },
+    {
+      "name": "XL330_00.hs0.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458764,
+      "seconds": 0.082527
+    },
+    {
+      "name": "XL330_00.hs1.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587577,
+      "seconds": 0.088844708
+    },
+    {
+      "name": "XL330_00.hs2.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587573,
+      "seconds": 0.083336083
+    },
+    {
+      "name": "XL330_00.hs3.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587564,
+      "seconds": 0.09437625
+    },
+    {
+      "name": "XL330_00.cs1(-8, 6).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444276,
+      "seconds": 0.085267208
+    },
+    {
+      "name": "XL330_00.cs1(8, 6).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444245,
+      "seconds": 0.060576791
+    },
+    {
+      "name": "XL330_00.cs1(-8, -21).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444282,
+      "seconds": 0.065813333
+    },
+    {
+      "name": "XL330_00.cs1(8, -21).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544427,
+      "seconds": 0.06100075
+    },
+    {
+      "name": "XL330_00.cs-1(-8, 6).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444258,
+      "seconds": 0.035800667
+    },
+    {
+      "name": "XL330_00.cs-1(8, 6).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444236,
+      "seconds": 0.037903958
+    },
+    {
+      "name": "XL330_00.cs-1(-8, -21).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444276,
+      "seconds": 0.0419745
+    },
+    {
+      "name": "XL330_00.cs-1(8, -21).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544423,
+      "seconds": 0.036646875
+    },
+    {
+      "name": "XL330_00.jst0.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.00000000000001,
+      "seconds": 0.014712792
+    },
+    {
+      "name": "XL330_00.jst1.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.00000000000006,
+      "seconds": 0.014947834
+    },
+    {
+      "name": "Bracket_power_support_5.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 77067.4789328297,
+      "seconds": 0.546856833
+    },
+    {
+      "name": "Bracket_power_support_6.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 77067.4789328297,
+      "seconds": 0.465649958
+    },
+    {
+      "name": "XL330_01.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17583.36452939907,
+      "seconds": 0.494150208
+    },
+    {
+      "name": "XL330_01.horn.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 381.6800062133023,
+      "seconds": 0.021761917
+    },
+    {
+      "name": "XL330_01.hub.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 117.80227530515033,
+      "seconds": 0.070541084
+    },
+    {
+      "name": "XL330_01.hs0.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587533,
+      "seconds": 0.097580708
+    },
+    {
+      "name": "XL330_01.hs1.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458763,
+      "seconds": 0.063812084
+    },
+    {
+      "name": "XL330_01.hs2.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587595,
+      "seconds": 0.076977333
+    },
+    {
+      "name": "XL330_01.hs3.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458756,
+      "seconds": 0.107983791
+    },
+    {
+      "name": "XL330_01.cs1(-8, 6).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444262,
+      "seconds": 0.125199791
+    },
+    {
+      "name": "XL330_01.cs1(8, 6).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444245,
+      "seconds": 0.060427042
+    },
+    {
+      "name": "XL330_01.cs1(-8, -21).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544428,
+      "seconds": 0.046299916
+    },
+    {
+      "name": "XL330_01.cs1(8, -21).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544423,
+      "seconds": 0.017940125
+    },
+    {
+      "name": "XL330_01.cs-1(-8, 6).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444267,
+      "seconds": 0.030817959
+    },
+    {
+      "name": "XL330_01.cs-1(8, 6).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444251,
+      "seconds": 0.033659292
+    },
+    {
+      "name": "XL330_01.cs-1(-8, -21).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444282,
+      "seconds": 0.033214
+    },
+    {
+      "name": "XL330_01.cs-1(8, -21).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444256,
+      "seconds": 0.075214625
+    },
+    {
+      "name": "XL330_01.jst0.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.0,
+      "seconds": 0.058768459
+    },
+    {
+      "name": "XL330_01.jst1.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.00000000000006,
+      "seconds": 0.040578792
+    },
+    {
+      "name": "Bearing_01.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 813.6561134459115,
+      "seconds": 0.139995583
+    },
+    {
+      "name": "Bracket_yaw2roll_11.002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 11298.123247256286,
+      "seconds": 0.532837375
+    },
+    {
+      "name": "XL330_02.002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17583.364529416373,
+      "seconds": 0.470635666
+    },
+    {
+      "name": "XL330_02.horn.002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 381.680006213302,
+      "seconds": 0.0570895
+    },
+    {
+      "name": "XL330_02.hub.002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 117.80227530515019,
+      "seconds": 0.056578417
+    },
+    {
+      "name": "XL330_02.hs0.002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587506,
+      "seconds": 0.079562167
+    },
+    {
+      "name": "XL330_02.hs1.002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587493,
+      "seconds": 0.063089583
+    },
+    {
+      "name": "XL330_02.hs2.002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458752,
+      "seconds": 0.034831042
+    },
+    {
+      "name": "XL330_02.hs3.002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587484,
+      "seconds": 0.048718666
+    },
+    {
+      "name": "XL330_02.cs1(-8, 6).002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444258,
+      "seconds": 0.056724166
+    },
+    {
+      "name": "XL330_02.cs1(8, 6).002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444256,
+      "seconds": 0.029533958
+    },
+    {
+      "name": "XL330_02.cs1(-8, -21).002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444227,
+      "seconds": 0.041310417
+    },
+    {
+      "name": "XL330_02.cs1(8, -21).002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544423,
+      "seconds": 0.050774084
+    },
+    {
+      "name": "XL330_02.cs-1(-8, 6).002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444273,
+      "seconds": 0.0716655
+    },
+    {
+      "name": "XL330_02.cs-1(8, 6).002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444267,
+      "seconds": 0.068127417
+    },
+    {
+      "name": "XL330_02.cs-1(-8, -21).002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444231,
+      "seconds": 0.114897375
+    },
+    {
+      "name": "XL330_02.cs-1(8, -21).002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444227,
+      "seconds": 0.111570834
+    },
+    {
+      "name": "XL330_02.jst0.002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.00000000000007,
+      "seconds": 0.017516375
+    },
+    {
+      "name": "XL330_02.jst1.002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.0000000000001,
+      "seconds": 0.008483875
+    },
+    {
+      "name": "Bearing_02.002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 813.6561134459183,
+      "seconds": 0.208862875
+    },
+    {
+      "name": "Bracket_bearing_roll_14.002",
+      "body": "yaw2roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2644.8943785591778,
+      "seconds": 0.626986291
+    },
+    {
+      "name": "Bearing_03.002",
+      "body": "hip_l",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 813.6561134459176,
+      "seconds": 0.207901833
+    },
+    {
+      "name": "Bracket_hip_l_16.002",
+      "body": "hip_l",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 20207.656367369535,
+      "seconds": 0.378824542
+    },
+    {
+      "name": "Bracket_upper_leg_left_17.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 81211.92934572321,
+      "seconds": 0.44200575
+    },
+    {
+      "name": "XL330_03.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17583.36452939925,
+      "seconds": 0.630255333
+    },
+    {
+      "name": "XL330_03.horn.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 381.6800062133021,
+      "seconds": 0.179963542
+    },
+    {
+      "name": "XL330_03.hub.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 117.80227530514986,
+      "seconds": 0.034350708
+    },
+    {
+      "name": "XL330_03.hs0.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587493,
+      "seconds": 0.044886958
+    },
+    {
+      "name": "XL330_03.hs1.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587773,
+      "seconds": 0.032363958
+    },
+    {
+      "name": "XL330_03.hs2.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587755,
+      "seconds": 0.058366917
+    },
+    {
+      "name": "XL330_03.hs3.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458756,
+      "seconds": 0.064443459
+    },
+    {
+      "name": "XL330_03.cs1(-8, 6).002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444296,
+      "seconds": 0.05829075
+    },
+    {
+      "name": "XL330_03.cs1(8, 6).002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444296,
+      "seconds": 0.057400625
+    },
+    {
+      "name": "XL330_03.cs1(-8, -21).002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444242,
+      "seconds": 0.062838125
+    },
+    {
+      "name": "XL330_03.cs1(8, -21).002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444276,
+      "seconds": 0.056018375
+    },
+    {
+      "name": "XL330_03.cs-1(-8, 6).002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444313,
+      "seconds": 0.032448375
+    },
+    {
+      "name": "XL330_03.cs-1(8, 6).002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544429,
+      "seconds": 0.048161834
+    },
+    {
+      "name": "XL330_03.cs-1(-8, -21).002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544431,
+      "seconds": 0.021993959
+    },
+    {
+      "name": "XL330_03.cs-1(8, -21).002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444322,
+      "seconds": 0.040414791
+    },
+    {
+      "name": "XL330_03.jst0.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 111.99999999999999,
+      "seconds": 0.027608333
+    },
+    {
+      "name": "XL330_03.jst1.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.0,
+      "seconds": 0.028785083
+    },
+    {
+      "name": "Bracket_upper_leg_rigidity_plate_19.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2596.5000722958184,
+      "seconds": 0.479065125
+    },
+    {
+      "name": "Bearing_04.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 813.6561134459197,
+      "seconds": 0.143856041
+    },
+    {
+      "name": "XL330_04.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17583.364529416813,
+      "seconds": 0.5090165
+    },
+    {
+      "name": "XL330_04.horn.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 381.68000621330157,
+      "seconds": 0.051846084
+    },
+    {
+      "name": "XL330_04.hub.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 117.8022753051502,
+      "seconds": 0.030914167
+    },
+    {
+      "name": "XL330_04.hs0.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587613,
+      "seconds": 0.085768042
+    },
+    {
+      "name": "XL330_04.hs1.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587595,
+      "seconds": 0.041439458
+    },
+    {
+      "name": "XL330_04.hs2.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458758,
+      "seconds": 0.085044
+    },
+    {
+      "name": "XL330_04.hs3.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587613,
+      "seconds": 0.070478292
+    },
+    {
+      "name": "XL330_04.cs1(-8, 6).002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444256,
+      "seconds": 0.080151958
+    },
+    {
+      "name": "XL330_04.cs1(8, 6).002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444265,
+      "seconds": 0.066166
+    },
+    {
+      "name": "XL330_04.cs1(-8, -21).002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444282,
+      "seconds": 0.05584575
+    },
+    {
+      "name": "XL330_04.cs1(8, -21).002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544419,
+      "seconds": 0.034892334
+    },
+    {
+      "name": "XL330_04.cs-1(-8, 6).002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444265,
+      "seconds": 0.052541583
+    },
+    {
+      "name": "XL330_04.cs-1(8, 6).002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444276,
+      "seconds": 0.032929375
+    },
+    {
+      "name": "XL330_04.cs-1(-8, -21).002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444242,
+      "seconds": 0.030965541
+    },
+    {
+      "name": "XL330_04.cs-1(8, -21).002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544425,
+      "seconds": 0.031992625
+    },
+    {
+      "name": "XL330_04.jst0.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.0,
+      "seconds": 0.018200625
+    },
+    {
+      "name": "XL330_04.jst1.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.00000000000004,
+      "seconds": 0.017265917
+    },
+    {
+      "name": "Bracket_leg_22.002",
+      "body": "leg",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 8210.090989460148,
+      "seconds": 0.339520958
+    },
+    {
+      "name": "XL330_05.002",
+      "body": "leg",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17583.36452941643,
+      "seconds": 0.602331417
+    },
+    {
+      "name": "XL330_05.horn.002",
+      "body": "leg",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 381.6800062133016,
+      "seconds": 0.042136667
+    },
+    {
+      "name": "XL330_05.hub.002",
+      "body": "leg",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 117.80227530515002,
+      "seconds": 0.034331708
+    },
+    {
+      "name": "XL330_05.hs0.002",
+      "body": "leg",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587644,
+      "seconds": 0.03801975
+    },
+    {
+      "name": "XL330_05.hs1.002",
+      "body": "leg",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458758,
+      "seconds": 0.070126458
+    },
+    {
+      "name": "XL330_05.hs2.002",
+      "body": "leg",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587586,
+      "seconds": 0.087691166
+    },
+    {
+      "name": "XL330_05.hs3.002",
+      "body": "leg",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587595,
+      "seconds": 0.054557542
+    },
+    {
+      "name": "XL330_05.cs1(-8, 6).002",
+      "body": "leg",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444316,
+      "seconds": 0.054958208
+    },
+    {
+      "name": "XL330_05.cs1(8, 6).002",
+      "body": "leg",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444338,
+      "seconds": 0.059249334
+    },
+    {
+      "name": "XL330_05.cs1(-8, -21).002",
+      "body": "leg",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444273,
+      "seconds": 0.048859458
+    },
+    {
+      "name": "XL330_05.cs1(8, -21).002",
+      "body": "leg",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444265,
+      "seconds": 0.052676042
+    },
+    {
+      "name": "XL330_05.cs-1(-8, 6).002",
+      "body": "leg",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544424,
+      "seconds": 0.039212917
+    },
+    {
+      "name": "XL330_05.cs-1(8, 6).002",
+      "body": "leg",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544423,
+      "seconds": 0.070364833
+    },
+    {
+      "name": "XL330_05.cs-1(-8, -21).002",
+      "body": "leg",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444222,
+      "seconds": 0.089374333
+    },
+    {
+      "name": "XL330_05.cs-1(8, -21).002",
+      "body": "leg",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444265,
+      "seconds": 0.119069
+    },
+    {
+      "name": "XL330_05.jst0.002",
+      "body": "leg",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.0,
+      "seconds": 0.027005791
+    },
+    {
+      "name": "XL330_05.jst1.002",
+      "body": "leg",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.00000000000004,
+      "seconds": 0.045645375
+    },
+    {
+      "name": "Bearing_05.002",
+      "body": "ankle_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 379.3316121076792,
+      "seconds": 0.223579333
+    },
+    {
+      "name": "Bracket_ankle_left_29.002",
+      "body": "ankle_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 35455.506706352804,
+      "seconds": 0.321580458
+    },
+    {
+      "name": "Bracket_neck_30.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 415.5677830412705,
+      "seconds": 0.431675625
+    },
+    {
+      "name": "XL330_06.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17583.36452941661,
+      "seconds": 0.413938834
+    },
+    {
+      "name": "XL330_06.horn.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 381.6800062133023,
+      "seconds": 0.025415166
+    },
+    {
+      "name": "XL330_06.hub.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 117.80227530515019,
+      "seconds": 0.035868208
+    },
+    {
+      "name": "XL330_06.hs0.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587586,
+      "seconds": 0.050772916
+    },
+    {
+      "name": "XL330_06.hs1.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458758,
+      "seconds": 0.087722458
+    },
+    {
+      "name": "XL330_06.hs2.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458758,
+      "seconds": 0.044674375
+    },
+    {
+      "name": "XL330_06.hs3.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458757,
+      "seconds": 0.123802833
+    },
+    {
+      "name": "XL330_06.cs1(-8, 6).002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544426,
+      "seconds": 0.039495584
+    },
+    {
+      "name": "XL330_06.cs1(8, 6).002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444287,
+      "seconds": 0.052759209
+    },
+    {
+      "name": "XL330_06.cs1(-8, -21).002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444307,
+      "seconds": 0.048664792
+    },
+    {
+      "name": "XL330_06.cs1(8, -21).002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444227,
+      "seconds": 0.04377925
+    },
+    {
+      "name": "XL330_06.cs-1(-8, 6).002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544429,
+      "seconds": 0.052151958
+    },
+    {
+      "name": "XL330_06.cs-1(8, 6).002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444256,
+      "seconds": 0.101821417
+    },
+    {
+      "name": "XL330_06.cs-1(-8, -21).002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544419,
+      "seconds": 0.101267083
+    },
+    {
+      "name": "XL330_06.cs-1(8, -21).002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444327,
+      "seconds": 0.07573475
+    },
+    {
+      "name": "XL330_06.jst0.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 111.99999999999996,
+      "seconds": 0.02692375
+    },
+    {
+      "name": "XL330_06.jst1.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 111.99999999999996,
+      "seconds": 0.024953625
+    },
+    {
+      "name": "XL330_07.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17583.364529416573,
+      "seconds": 0.325201
+    },
+    {
+      "name": "XL330_07.horn.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 381.6800062133022,
+      "seconds": 0.070971375
+    },
+    {
+      "name": "XL330_07.hub.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 117.8022753051502,
+      "seconds": 0.046404292
+    },
+    {
+      "name": "XL330_07.hs0.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587586,
+      "seconds": 0.069232042
+    },
+    {
+      "name": "XL330_07.hs1.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587604,
+      "seconds": 0.084015709
+    },
+    {
+      "name": "XL330_07.hs2.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587555,
+      "seconds": 0.066160583
+    },
+    {
+      "name": "XL330_07.hs3.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458759,
+      "seconds": 0.053369542
+    },
+    {
+      "name": "XL330_07.cs1(-8, 6).002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544427,
+      "seconds": 0.124471125
+    },
+    {
+      "name": "XL330_07.cs1(8, 6).002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444282,
+      "seconds": 0.037072584
+    },
+    {
+      "name": "XL330_07.cs1(-8, -21).002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544422,
+      "seconds": 0.0950375
+    },
+    {
+      "name": "XL330_07.cs1(8, -21).002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544419,
+      "seconds": 0.067244458
+    },
+    {
+      "name": "XL330_07.cs-1(-8, 6).002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544419,
+      "seconds": 0.072464292
+    },
+    {
+      "name": "XL330_07.cs-1(8, 6).002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444398,
+      "seconds": 0.030636333
+    },
+    {
+      "name": "XL330_07.cs-1(-8, -21).002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444296,
+      "seconds": 0.042254042
+    },
+    {
+      "name": "XL330_07.cs-1(8, -21).002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544426,
+      "seconds": 0.083506458
+    },
+    {
+      "name": "XL330_07.jst0.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.0,
+      "seconds": 0.079770916
+    },
+    {
+      "name": "XL330_07.jst1.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 111.99999999999996,
+      "seconds": 0.072194083
+    },
+    {
+      "name": "Bracket_neck_33.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 415.5677830412915,
+      "seconds": 0.382154541
+    },
+    {
+      "name": "Bracket_neck_pitch_34.002",
+      "body": "neck_pitch",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17299.559664386357,
+      "seconds": 0.525056209
+    },
+    {
+      "name": "Bearing_06.002",
+      "body": "neck_pitch",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 813.6561134459184,
+      "seconds": 0.115324084
+    },
+    {
+      "name": "Bracket_yaw_roll_motion_36.002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 27289.44726056707,
+      "seconds": 0.605318875
+    },
+    {
+      "name": "XL330_08.002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17583.36452941639,
+      "seconds": 0.613669833
+    },
+    {
+      "name": "XL330_08.horn.002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 381.6800062133015,
+      "seconds": 0.045120834
+    },
+    {
+      "name": "XL330_08.hub.002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 117.80227530515016,
+      "seconds": 0.050097709
+    },
+    {
+      "name": "XL330_08.hs0.002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.28064814545875,
+      "seconds": 0.042708416
+    },
+    {
+      "name": "XL330_08.hs1.002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458752,
+      "seconds": 0.050862084
+    },
+    {
+      "name": "XL330_08.hs2.002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458755,
+      "seconds": 0.108991042
+    },
+    {
+      "name": "XL330_08.hs3.002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458747,
+      "seconds": 0.053940708
+    },
+    {
+      "name": "XL330_08.cs1(-8, 6).002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544428,
+      "seconds": 0.027987916
+    },
+    {
+      "name": "XL330_08.cs1(8, 6).002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544426,
+      "seconds": 0.025597292
+    },
+    {
+      "name": "XL330_08.cs1(-8, -21).002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444242,
+      "seconds": 0.030139167
+    },
+    {
+      "name": "XL330_08.cs1(8, -21).002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444333,
+      "seconds": 0.068834417
+    },
+    {
+      "name": "XL330_08.cs-1(-8, 6).002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444247,
+      "seconds": 0.088641666
+    },
+    {
+      "name": "XL330_08.cs-1(8, 6).002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444265,
+      "seconds": 0.050017791
+    },
+    {
+      "name": "XL330_08.cs-1(-8, -21).002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444256,
+      "seconds": 0.075569667
+    },
+    {
+      "name": "XL330_08.cs-1(8, -21).002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444251,
+      "seconds": 0.073324
+    },
+    {
+      "name": "XL330_08.jst0.002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.00000000000004,
+      "seconds": 0.009287958
+    },
+    {
+      "name": "XL330_08.jst1.002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.00000000000007,
+      "seconds": 0.071888625
+    },
+    {
+      "name": "Bearing_07.002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 813.656113445919,
+      "seconds": 0.240781042
+    },
+    {
+      "name": "Bearing_08.002",
+      "body": "yaw_roll_motion",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 813.6561134459185,
+      "seconds": 0.229554625
+    },
+    {
+      "name": "XL330_09.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17583.364529416813,
+      "seconds": 0.423042583
+    },
+    {
+      "name": "XL330_09.horn.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 381.6800062133021,
+      "seconds": 0.039050417
+    },
+    {
+      "name": "XL330_09.hub.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 117.80227530515005,
+      "seconds": 0.125661917
+    },
+    {
+      "name": "XL330_09.hs0.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458757,
+      "seconds": 0.0427005
+    },
+    {
+      "name": "XL330_09.hs1.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587577,
+      "seconds": 0.069385792
+    },
+    {
+      "name": "XL330_09.hs2.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.28064814545875,
+      "seconds": 0.033103
+    },
+    {
+      "name": "XL330_09.hs3.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458752,
+      "seconds": 0.075522125
+    },
+    {
+      "name": "XL330_09.cs1(-8, 6).002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444378,
+      "seconds": 0.06890375
+    },
+    {
+      "name": "XL330_09.cs1(8, 6).002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444247,
+      "seconds": 0.065877875
+    },
+    {
+      "name": "XL330_09.cs1(-8, -21).002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444145,
+      "seconds": 0.178802583
+    },
+    {
+      "name": "XL330_09.cs1(8, -21).002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444245,
+      "seconds": 0.0814605
+    },
+    {
+      "name": "XL330_09.cs-1(-8, 6).002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544433,
+      "seconds": 0.036009916
+    },
+    {
+      "name": "XL330_09.cs-1(8, 6).002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544431,
+      "seconds": 0.024396708
+    },
+    {
+      "name": "XL330_09.cs-1(-8, -21).002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544417,
+      "seconds": 0.082062958
+    },
+    {
+      "name": "XL330_09.cs-1(8, -21).002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444191,
+      "seconds": 0.023512959
+    },
+    {
+      "name": "XL330_09.jst0.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 111.99999999999999,
+      "seconds": 0.003127083
+    },
+    {
+      "name": "XL330_09.jst1.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.0,
+      "seconds": 0.004940083
+    },
+    {
+      "name": "Bracket_motor_support_44.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 74614.91370131918,
+      "seconds": 0.423036833
+    },
+    {
+      "name": "XL330_10.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17583.36452941683,
+      "seconds": 0.475206875
+    },
+    {
+      "name": "XL330_10.horn.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 381.6800062133022,
+      "seconds": 0.073041667
+    },
+    {
+      "name": "XL330_10.hub.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 117.80227530515013,
+      "seconds": 0.104035541
+    },
+    {
+      "name": "XL330_10.hs0.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458756,
+      "seconds": 0.087310083
+    },
+    {
+      "name": "XL330_10.hs1.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458759,
+      "seconds": 0.055608666
+    },
+    {
+      "name": "XL330_10.hs2.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587604,
+      "seconds": 0.037288166
+    },
+    {
+      "name": "XL330_10.hs3.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458756,
+      "seconds": 0.138466667
+    },
+    {
+      "name": "XL330_10.cs1(-8, 6).002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444262,
+      "seconds": 0.065022
+    },
+    {
+      "name": "XL330_10.cs1(8, 6).002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444298,
+      "seconds": 0.061435416
+    },
+    {
+      "name": "XL330_10.cs1(-8, -21).002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444251,
+      "seconds": 0.108328625
+    },
+    {
+      "name": "XL330_10.cs1(8, -21).002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444256,
+      "seconds": 0.07631425
+    },
+    {
+      "name": "XL330_10.cs-1(-8, 6).002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444262,
+      "seconds": 0.105005958
+    },
+    {
+      "name": "XL330_10.cs-1(8, 6).002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444265,
+      "seconds": 0.045245208
+    },
+    {
+      "name": "XL330_10.cs-1(-8, -21).002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444207,
+      "seconds": 0.072649542
+    },
+    {
+      "name": "XL330_10.cs-1(8, -21).002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444322,
+      "seconds": 0.039681042
+    },
+    {
+      "name": "XL330_10.jst0.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.0,
+      "seconds": 0.00177875
+    },
+    {
+      "name": "XL330_10.jst1.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 111.99999999999996,
+      "seconds": 0.084769042
+    },
+    {
+      "name": "Bearing_09.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 379.3316121076793,
+      "seconds": 0.153115167
+    },
+    {
+      "name": "Bracket_yaw2roll_56.002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 11298.123247256282,
+      "seconds": 0.376797125
+    },
+    {
+      "name": "XL330_11.002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17583.364529416376,
+      "seconds": 0.531122625
+    },
+    {
+      "name": "XL330_11.horn.002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 381.68000621330174,
+      "seconds": 0.058483625
+    },
+    {
+      "name": "XL330_11.hub.002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 117.80227530515022,
+      "seconds": 0.026955458
+    },
+    {
+      "name": "XL330_11.hs0.002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587475,
+      "seconds": 0.074780625
+    },
+    {
+      "name": "XL330_11.hs1.002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458752,
+      "seconds": 0.075690291
+    },
+    {
+      "name": "XL330_11.hs2.002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587515,
+      "seconds": 0.072032459
+    },
+    {
+      "name": "XL330_11.hs3.002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458752,
+      "seconds": 0.061116916
+    },
+    {
+      "name": "XL330_11.cs1(-8, 6).002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444271,
+      "seconds": 0.057535417
+    },
+    {
+      "name": "XL330_11.cs1(8, 6).002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444265,
+      "seconds": 0.1236875
+    },
+    {
+      "name": "XL330_11.cs1(-8, -21).002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444234,
+      "seconds": 0.052032292
+    },
+    {
+      "name": "XL330_11.cs1(8, -21).002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444222,
+      "seconds": 0.03848125
+    },
+    {
+      "name": "XL330_11.cs-1(-8, 6).002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444265,
+      "seconds": 0.032845667
+    },
+    {
+      "name": "XL330_11.cs-1(8, 6).002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544426,
+      "seconds": 0.050123042
+    },
+    {
+      "name": "XL330_11.cs-1(-8, -21).002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444231,
+      "seconds": 0.042244833
+    },
+    {
+      "name": "XL330_11.cs-1(8, -21).002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544422,
+      "seconds": 0.042286125
+    },
+    {
+      "name": "XL330_11.jst0.002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.00000000000007,
+      "seconds": 0.017107042
+    },
+    {
+      "name": "XL330_11.jst1.002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.00000000000007,
+      "seconds": 0.013938625
+    },
+    {
+      "name": "Bracket_bearing_roll_58.002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2644.894378559187,
+      "seconds": 0.490353917
+    },
+    {
+      "name": "Bearing_10.002",
+      "body": "bearing_roll",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 813.6561134459176,
+      "seconds": 0.1787295
+    },
+    {
+      "name": "Bracket_hip_l_60.002",
+      "body": "hip_l_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 20207.656367377927,
+      "seconds": 0.279760333
+    },
+    {
+      "name": "Bearing_11.002",
+      "body": "hip_l_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 813.6561134459181,
+      "seconds": 0.099728125
+    },
+    {
+      "name": "XL330_12.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17583.36452939901,
+      "seconds": 0.560733083
+    },
+    {
+      "name": "XL330_12.horn.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 381.680006213302,
+      "seconds": 0.081277958
+    },
+    {
+      "name": "XL330_12.hub.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 117.80227530515009,
+      "seconds": 0.059003
+    },
+    {
+      "name": "XL330_12.hs0.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458755,
+      "seconds": 0.091438541
+    },
+    {
+      "name": "XL330_12.hs1.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458738,
+      "seconds": 0.05519
+    },
+    {
+      "name": "XL330_12.hs2.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458741,
+      "seconds": 0.053288958
+    },
+    {
+      "name": "XL330_12.hs3.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587515,
+      "seconds": 0.037532708
+    },
+    {
+      "name": "XL330_12.cs1(-8, 6).002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444211,
+      "seconds": 0.0242095
+    },
+    {
+      "name": "XL330_12.cs1(8, 6).002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444305,
+      "seconds": 0.046006041
+    },
+    {
+      "name": "XL330_12.cs1(-8, -21).002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444287,
+      "seconds": 0.028402542
+    },
+    {
+      "name": "XL330_12.cs1(8, -21).002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444282,
+      "seconds": 0.04522075
+    },
+    {
+      "name": "XL330_12.cs-1(-8, 6).002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444207,
+      "seconds": 0.079977917
+    },
+    {
+      "name": "XL330_12.cs-1(8, 6).002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444198,
+      "seconds": 0.044465708
+    },
+    {
+      "name": "XL330_12.cs-1(-8, -21).002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444236,
+      "seconds": 0.070603042
+    },
+    {
+      "name": "XL330_12.cs-1(8, -21).002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444225,
+      "seconds": 0.177635125
+    },
+    {
+      "name": "XL330_12.jst0.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.00000000000004,
+      "seconds": 0.023155125
+    },
+    {
+      "name": "XL330_12.jst1.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.0,
+      "seconds": 0.006021167
+    },
+    {
+      "name": "Bearing_12.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 813.6561134459188,
+      "seconds": 0.170440917
+    },
+    {
+      "name": "Bracket_upper_leg_rigidity_plate_64.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2596.50007229586,
+      "seconds": 0.276377792
+    },
+    {
+      "name": "Bracket_upper_leg_right_65.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 81211.92934572369,
+      "seconds": 0.561270917
+    },
+    {
+      "name": "XL330_13.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17583.364529417064,
+      "seconds": 0.558784333
+    },
+    {
+      "name": "XL330_13.horn.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 381.68000621330185,
+      "seconds": 0.05946975
+    },
+    {
+      "name": "XL330_13.hub.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 117.8022753051501,
+      "seconds": 0.055764
+    },
+    {
+      "name": "XL330_13.hs0.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587617,
+      "seconds": 0.101628792
+    },
+    {
+      "name": "XL330_13.hs1.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587604,
+      "seconds": 0.055529334
+    },
+    {
+      "name": "XL330_13.hs2.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587617,
+      "seconds": 0.053608167
+    },
+    {
+      "name": "XL330_13.hs3.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458763,
+      "seconds": 0.045897333
+    },
+    {
+      "name": "XL330_13.cs1(-8, 6).002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544425,
+      "seconds": 0.034895833
+    },
+    {
+      "name": "XL330_13.cs1(8, 6).002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444251,
+      "seconds": 0.030825625
+    },
+    {
+      "name": "XL330_13.cs1(-8, -21).002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544427,
+      "seconds": 0.023575208
+    },
+    {
+      "name": "XL330_13.cs1(8, -21).002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544427,
+      "seconds": 0.01457975
+    },
+    {
+      "name": "XL330_13.cs-1(-8, 6).002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444258,
+      "seconds": 0.02247125
+    },
+    {
+      "name": "XL330_13.cs-1(8, 6).002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444287,
+      "seconds": 0.033966375
+    },
+    {
+      "name": "XL330_13.cs-1(-8, -21).002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444278,
+      "seconds": 0.057270375
+    },
+    {
+      "name": "XL330_13.cs-1(8, -21).002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444282,
+      "seconds": 0.027663
+    },
+    {
+      "name": "XL330_13.jst0.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.00000000000013,
+      "seconds": 0.010641375
+    },
+    {
+      "name": "XL330_13.jst1.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.00000000000011,
+      "seconds": 0.010001917
+    },
+    {
+      "name": "XL330_14.002",
+      "body": "leg_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17583.36452939904,
+      "seconds": 0.541029625
+    },
+    {
+      "name": "XL330_14.horn.002",
+      "body": "leg_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 381.6800062133023,
+      "seconds": 0.045368166
+    },
+    {
+      "name": "XL330_14.hub.002",
+      "body": "leg_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 117.8022753051505,
+      "seconds": 0.045116166
+    },
+    {
+      "name": "XL330_14.hs0.002",
+      "body": "leg_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587453,
+      "seconds": 0.116051459
+    },
+    {
+      "name": "XL330_14.hs1.002",
+      "body": "leg_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587484,
+      "seconds": 0.079984709
+    },
+    {
+      "name": "XL330_14.hs2.002",
+      "body": "leg_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587537,
+      "seconds": 0.075778375
+    },
+    {
+      "name": "XL330_14.hs3.002",
+      "body": "leg_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458754,
+      "seconds": 0.0714915
+    },
+    {
+      "name": "XL330_14.cs1(-8, 6).002",
+      "body": "leg_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444105,
+      "seconds": 0.050742625
+    },
+    {
+      "name": "XL330_14.cs1(8, 6).002",
+      "body": "leg_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444085,
+      "seconds": 0.088450333
+    },
+    {
+      "name": "XL330_14.cs1(-8, -21).002",
+      "body": "leg_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444218,
+      "seconds": 0.07151425
+    },
+    {
+      "name": "XL330_14.cs1(8, -21).002",
+      "body": "leg_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.01779841354442,
+      "seconds": 0.051490417
+    },
+    {
+      "name": "XL330_14.cs-1(-8, 6).002",
+      "body": "leg_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444287,
+      "seconds": 0.0535675
+    },
+    {
+      "name": "XL330_14.cs-1(8, 6).002",
+      "body": "leg_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444236,
+      "seconds": 0.032455125
+    },
+    {
+      "name": "XL330_14.cs-1(-8, -21).002",
+      "body": "leg_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444202,
+      "seconds": 0.047784375
+    },
+    {
+      "name": "XL330_14.cs-1(8, -21).002",
+      "body": "leg_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444198,
+      "seconds": 0.082426375
+    },
+    {
+      "name": "XL330_14.jst0.002",
+      "body": "leg_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 111.99999999999996,
+      "seconds": 0.007937292
+    },
+    {
+      "name": "XL330_14.jst1.002",
+      "body": "leg_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 111.99999999999996,
+      "seconds": 0.023634916
+    },
+    {
+      "name": "Bracket_leg_68.002",
+      "body": "leg_2",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 8210.090965766944,
+      "seconds": 0.289987709
+    },
+    {
+      "name": "Bracket_ankle_right_70.002",
+      "body": "ankle_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 35455.50670635157,
+      "seconds": 0.289600833
+    },
+    {
+      "name": "Bearing_13.002",
+      "body": "ankle_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 379.3316121076801,
+      "seconds": 0.51333325
+    },
+    {
+      "name": "Battery.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 55861.39453442803,
+      "seconds": 0.474300666
+    },
+    {
+      "name": "Battery.label.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 13062.906464728176,
+      "seconds": 0.651096208
+    },
+    {
+      "name": "Battery.term0.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.599999999999941,
+      "seconds": 0.004326375
+    },
+    {
+      "name": "Battery.term1.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.59999999999994,
+      "seconds": 0.004615125
+    },
+    {
+      "name": "Battery.term2.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.59999999999994,
+      "seconds": 0.157543167
+    },
+    {
+      "name": "CameraLens.003",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 3679.3196943978505,
+      "seconds": 0.081349
+    },
+    {
+      "name": "RobotHat.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1552.613602699684,
+      "seconds": 0.585535083
+    },
+    {
+      "name": "RobotHat.bus0.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 196.06706366013444,
+      "seconds": 0.510548792
+    },
+    {
+      "name": "RobotHat.bus1.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 196.06706366013813,
+      "seconds": 0.645347459
+    },
+    {
+      "name": "RobotHat.bus2.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 196.06706366014416,
+      "seconds": 0.873508042
+    },
+    {
+      "name": "RobotHat.bus3.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 196.0670636601378,
+      "seconds": 0.780436958
+    },
+    {
+      "name": "RobotHat.cap.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 231.59720722046674,
+      "seconds": 0.097850084
+    },
+    {
+      "name": "RobotHat.reg.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 113.85932785322059,
+      "seconds": 0.513675875
+    },
+    {
+      "name": "CameraHolder.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 5637.469784037501,
+      "seconds": 0.702412375
+    },
+    {
+      "name": "Compute.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 3106.798067913764,
+      "seconds": 0.612115917
+    },
+    {
+      "name": "Compute.soc.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 199.5321576387951,
+      "seconds": 0.572225959
+    },
+    {
+      "name": "Compute.ram.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 98.4117805811696,
+      "seconds": 0.587933708
+    },
+    {
+      "name": "Compute.usbc.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 110.48022668699785,
+      "seconds": 0.456074292
+    },
+    {
+      "name": "Compute.wifi.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 138.38083715446473,
+      "seconds": 0.442605083
+    },
+    {
+      "name": "Compute.pin00.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321333,
+      "seconds": 0.089845
+    },
+    {
+      "name": "Compute.pin01.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321263,
+      "seconds": 0.186717125
+    },
+    {
+      "name": "Compute.pin10.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321388,
+      "seconds": 0.19570725
+    },
+    {
+      "name": "Compute.pin11.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321238,
+      "seconds": 0.123031458
+    },
+    {
+      "name": "Compute.pin20.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.235590875043214,
+      "seconds": 0.068805833
+    },
+    {
+      "name": "Compute.pin21.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.2355908750432131,
+      "seconds": 0.033632291
+    },
+    {
+      "name": "Compute.pin30.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321266,
+      "seconds": 0.049545208
+    },
+    {
+      "name": "Compute.pin31.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.2355908750432134,
+      "seconds": 0.042546
+    },
+    {
+      "name": "Compute.pin40.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321427,
+      "seconds": 0.129847875
+    },
+    {
+      "name": "Compute.pin41.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321394,
+      "seconds": 0.07778325
+    },
+    {
+      "name": "Compute.pin50.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.2355908750432141,
+      "seconds": 0.11693825
+    },
+    {
+      "name": "Compute.pin51.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.2355908750432135,
+      "seconds": 0.120068042
+    },
+    {
+      "name": "Compute.pin60.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321444,
+      "seconds": 0.104998458
+    },
+    {
+      "name": "Compute.pin61.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321444,
+      "seconds": 0.092988916
+    },
+    {
+      "name": "Compute.pin70.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.235590875043214,
+      "seconds": 0.041762834
+    },
+    {
+      "name": "Compute.pin71.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321388,
+      "seconds": 0.031620042
+    },
+    {
+      "name": "Compute.pin80.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321297,
+      "seconds": 0.03557625
+    },
+    {
+      "name": "Compute.pin81.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321363,
+      "seconds": 0.051577333
+    },
+    {
+      "name": "Compute.pin90.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321327,
+      "seconds": 0.076486334
+    },
+    {
+      "name": "Compute.pin91.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321366,
+      "seconds": 0.059745375
+    },
+    {
+      "name": "Compute.pin100.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321322,
+      "seconds": 0.037750541
+    },
+    {
+      "name": "Compute.pin101.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321483,
+      "seconds": 0.040022416
+    },
+    {
+      "name": "Compute.pin110.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321363,
+      "seconds": 0.04191825
+    },
+    {
+      "name": "Compute.pin111.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321333,
+      "seconds": 0.031182125
+    },
+    {
+      "name": "Compute.pin120.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321416,
+      "seconds": 0.044570959
+    },
+    {
+      "name": "Compute.pin121.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321383,
+      "seconds": 0.047712
+    },
+    {
+      "name": "Compute.pin130.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321496,
+      "seconds": 0.070180958
+    },
+    {
+      "name": "Compute.pin131.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321422,
+      "seconds": 0.029759625
+    },
+    {
+      "name": "Compute.pin140.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321444,
+      "seconds": 0.032027667
+    },
+    {
+      "name": "Compute.pin141.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321427,
+      "seconds": 0.020993333
+    },
+    {
+      "name": "Compute.pin150.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321427,
+      "seconds": 0.03671425
+    },
+    {
+      "name": "Compute.pin151.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321327,
+      "seconds": 0.034342458
+    },
+    {
+      "name": "Compute.pin160.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.2355908750432135,
+      "seconds": 0.02887125
+    },
+    {
+      "name": "Compute.pin161.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321388,
+      "seconds": 0.03437125
+    },
+    {
+      "name": "Compute.pin170.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321427,
+      "seconds": 0.027816791
+    },
+    {
+      "name": "Compute.pin171.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321366,
+      "seconds": 0.029298042
+    },
+    {
+      "name": "Compute.pin180.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.2355908750432141,
+      "seconds": 0.024599125
+    },
+    {
+      "name": "Compute.pin181.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.2355908750432135,
+      "seconds": 0.022122792
+    },
+    {
+      "name": "Compute.pin190.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321283,
+      "seconds": 0.02625575
+    },
+    {
+      "name": "Compute.pin191.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.23559087504321338,
+      "seconds": 0.040276417
+    },
+    {
+      "name": "Compute.hole-29-11.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2547775098460368,
+      "seconds": 0.064027208
+    },
+    {
+      "name": "Compute.hole-2911.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2547775098460114,
+      "seconds": 0.070286166
+    },
+    {
+      "name": "Compute.hole29-11.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.254777509845841,
+      "seconds": 0.082706666
+    },
+    {
+      "name": "Compute.hole2911.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2547775098460203,
+      "seconds": 0.053848833
+    },
+    {
+      "name": "Speaker.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 5905.527138569606,
+      "seconds": 0.362325292
+    },
+    {
+      "name": "Speaker.g00.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.30784133989560475,
+      "seconds": 0.026212541
+    },
+    {
+      "name": "Speaker.g01.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.30784133989560486,
+      "seconds": 0.019935125
+    },
+    {
+      "name": "Speaker.g02.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.3078413398956053,
+      "seconds": 0.016826875
+    },
+    {
+      "name": "Speaker.g10.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.307841339895605,
+      "seconds": 0.020099542
+    },
+    {
+      "name": "Speaker.g11.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.30784133989560536,
+      "seconds": 0.020297167
+    },
+    {
+      "name": "Speaker.g12.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.30784133989560547,
+      "seconds": 0.015840209
+    },
+    {
+      "name": "Speaker.g20.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.30784133989560464,
+      "seconds": 0.019293208
+    },
+    {
+      "name": "Speaker.g21.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.30784133989560447,
+      "seconds": 0.025546458
+    },
+    {
+      "name": "Speaker.g22.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.3078413398956061,
+      "seconds": 0.019371333
+    },
+    {
+      "name": "Speaker.g30.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.30784133989560547,
+      "seconds": 0.023121666
+    },
+    {
+      "name": "Speaker.g31.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.30784133989560486,
+      "seconds": 0.016056416
+    },
+    {
+      "name": "Speaker.g32.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.30784133989560486,
+      "seconds": 0.024122625
+    },
+    {
+      "name": "Speaker.g40.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.3078413398956052,
+      "seconds": 0.02294025
+    },
+    {
+      "name": "Speaker.g41.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.3078413398956055,
+      "seconds": 0.022136667
+    },
+    {
+      "name": "Speaker.g42.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 0.3078413398956049,
+      "seconds": 0.021561833
+    },
+    {
+      "name": "Compute.csi",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 216.81244088712882,
+      "seconds": 0.305862416
+    },
+    {
+      "name": "Compute.csi.001",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 216.81244088712882,
+      "seconds": 0.469505041
+    },
+    {
+      "name": "Compute.csi.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 216.8124408871288,
+      "seconds": 0.265182666
+    },
+    {
+      "name": "XL330_TailYaw.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17583.364529399063,
+      "seconds": 0.458615417
+    },
+    {
+      "name": "XL330_TailYaw.horn.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 381.68000621330185,
+      "seconds": 0.022333458
+    },
+    {
+      "name": "XL330_TailYaw.hub.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 117.80227530514962,
+      "seconds": 0.019959334
+    },
+    {
+      "name": "XL330_TailYaw.hs0.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458773,
+      "seconds": 0.049086583
+    },
+    {
+      "name": "XL330_TailYaw.hs1.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587755,
+      "seconds": 0.041179666
+    },
+    {
+      "name": "XL330_TailYaw.hs2.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458775,
+      "seconds": 0.023552042
+    },
+    {
+      "name": "XL330_TailYaw.hs3.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458774,
+      "seconds": 0.056818625
+    },
+    {
+      "name": "XL330_TailYaw.cs1(-8, 6).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135443952,
+      "seconds": 0.017467125
+    },
+    {
+      "name": "XL330_TailYaw.cs1(8, 6).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135443972,
+      "seconds": 0.022551
+    },
+    {
+      "name": "XL330_TailYaw.cs1(-8, -21).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444313,
+      "seconds": 0.0471075
+    },
+    {
+      "name": "XL330_TailYaw.cs1(8, -21).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444136,
+      "seconds": 0.028006958
+    },
+    {
+      "name": "XL330_TailYaw.cs-1(-8, 6).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135443967,
+      "seconds": 0.0214025
+    },
+    {
+      "name": "XL330_TailYaw.cs-1(8, 6).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544398,
+      "seconds": 0.045828208
+    },
+    {
+      "name": "XL330_TailYaw.cs-1(-8, -21).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444318,
+      "seconds": 0.056296084
+    },
+    {
+      "name": "XL330_TailYaw.cs-1(8, -21).002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544414,
+      "seconds": 0.066718208
+    },
+    {
+      "name": "XL330_TailYaw.jst0.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 111.99999999999993,
+      "seconds": 0.002979084
+    },
+    {
+      "name": "XL330_TailYaw.jst1.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 111.99999999999993,
+      "seconds": 0.006971792
+    },
+    {
+      "name": "TailRootScrewL",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103478,
+      "seconds": 1.519393167
+    },
+    {
+      "name": "TailRootScrewR",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103861,
+      "seconds": 0.995041833
+    },
+    {
+      "name": "TailCoupling",
+      "body": "tail",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1793.6771251150183,
+      "seconds": 0.926050833
+    },
+    {
+      "name": "TailMagnet0",
+      "body": "tail",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 16.963555831663204,
+      "seconds": 0.07580525
+    },
+    {
+      "name": "TailMagnet1",
+      "body": "tail",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 16.96355583166318,
+      "seconds": 0.094507209
+    },
+    {
+      "name": "TailArm",
+      "body": "tail",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/fillet: fillet 4 on all 17 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces; the largest radius that fits is 3.028 mm); applied edge by edge to 4 of them (1 at 2)"
+      ],
+      "volume_mm3": 5857.293713705812,
+      "seconds": 6.248903625
+    },
+    {
+      "name": "TailSeg0",
+      "body": "tail",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/fillet: fillet 4 on all 16 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 387) (the operation failed: not supported yet: only straight edges can be blended)); applied edge by edge to 6 of them (4 at 2)"
+      ],
+      "volume_mm3": 32701.65336868059,
+      "seconds": 13.614667916
+    },
+    {
+      "name": "TailScrew0L",
+      "body": "tail",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 6.459562719458674,
+      "seconds": 1.264162459
+    },
+    {
+      "name": "TailScrew0R",
+      "body": "tail",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 6.459562719458531,
+      "seconds": 0.984133833
+    },
+    {
+      "name": "Spike_T0",
+      "body": "tail",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 120.1252406459738,
+      "seconds": 2.664176416
+    },
+    {
+      "name": "TailFlex0",
+      "body": "tail",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 3974.143561565999,
+      "seconds": 0.913717875
+    },
+    {
+      "name": "TailSeg1",
+      "body": "tail",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/fillet: fillet 4 on all 16 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 387) (the operation failed: not supported yet: only straight edges can be blended)); applied edge by edge to 6 of them (4 at 2)"
+      ],
+      "volume_mm3": 19888.719884422862,
+      "seconds": 11.566225834
+    },
+    {
+      "name": "TailScrew1L.001",
+      "body": "tail",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 6.459562719458501,
+      "seconds": 1.3269029159999999
+    },
+    {
+      "name": "TailScrew1R.001",
+      "body": "tail",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 6.459562719458538,
+      "seconds": 1.262324375
+    },
+    {
+      "name": "Spike_T1",
+      "body": "tail",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 82.46162285658912,
+      "seconds": 1.660485375
+    },
+    {
+      "name": "TailFlex1",
+      "body": "tail",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 3037.8565695767834,
+      "seconds": 0.632808
+    },
+    {
+      "name": "TailSeg2",
+      "body": "tail",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/fillet: fillet 4 on all 16 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 387) (the operation failed: not supported yet: only straight edges can be blended)); applied edge by edge to 6 of them (4 at 2)"
+      ],
+      "volume_mm3": 10449.024035554938,
+      "seconds": 10.846520208
+    },
+    {
+      "name": "TailScrew2L.001",
+      "body": "tail",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 6.459562719458508,
+      "seconds": 0.882073292
+    },
+    {
+      "name": "TailScrew2R.001",
+      "body": "tail",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 6.459562719458559,
+      "seconds": 1.070563083
+    },
+    {
+      "name": "Spike_T2",
+      "body": "tail",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/fillet: fillet 1.399999976158142 failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 1853) (the operation failed: not supported yet: only straight edges can be blended); the largest radius that fits is 1.185 mm); used 1.185"
+      ],
+      "volume_mm3": 56.527247072206954,
+      "seconds": 2.233806375
+    },
+    {
+      "name": "TailFlex2",
+      "body": "tail",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1132.0341057203473,
+      "seconds": 0.480640834
+    },
+    {
+      "name": "TailTip.003",
+      "body": "tail",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/fillet: fillet 4 on all 20 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces; the largest radius that fits is 1.733 mm); applied edge by edge to 5 of them (3 at 2)"
+      ],
+      "volume_mm3": 9341.15164455974,
+      "seconds": 8.863409417
+    },
+    {
+      "name": "Thigh_L.002",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 30485.179250872596,
+      "seconds": 0.488725833
+    },
+    {
+      "name": "ThighScrew_L0.003",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103572,
+      "seconds": 0.733131125
+    },
+    {
+      "name": "ThighScrew_L1.003",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103698,
+      "seconds": 0.876153417
+    },
+    {
+      "name": "ThighScrew_L2",
+      "body": "upper_leg_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103943,
+      "seconds": 0.749729
+    },
+    {
+      "name": "Sole_L.003",
+      "body": "ankle_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 8448.680626578824,
+      "seconds": 0.2019475
+    },
+    {
+      "name": "Foot_L.003",
+      "body": "ankle_left",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/fillet: fillet 4 on all 16 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces; the largest radius that fits is 2.6 mm); applied edge by edge to 2 of them (0 at 2)"
+      ],
+      "volume_mm3": 10221.762127520333,
+      "seconds": 5.3737215
+    },
+    {
+      "name": "ToeCap_L0.001",
+      "body": "ankle_left",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/fillet: fillet 4 on all 17 edges together failed (the operation failed: the operation failed: not supported yet: the ball doesn't fit along the edge (the operation failed: not supported yet: only straight edges can be blended); the largest radius that fits is 2.927 mm); applied edge by edge to 7 of them (4 at 2)"
+      ],
+      "volume_mm3": 3896.955938466503,
+      "seconds": 14.718308375
+    },
+    {
+      "name": "ToeSole_L0.001",
+      "body": "ankle_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1350.1297661858891,
+      "seconds": 0.217591333
+    },
+    {
+      "name": "ToeCap_L2",
+      "body": "ankle_left",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/fillet: fillet 4 on all 17 edges together failed (the operation failed: the operation failed: not supported yet: the ball doesn't fit along the edge (the operation failed: not supported yet: only straight edges can be blended); the largest radius that fits is 2.927 mm); applied edge by edge to 7 of them (4 at 2)"
+      ],
+      "volume_mm3": 3896.9559384731733,
+      "seconds": 13.880263417
+    },
+    {
+      "name": "ToeSole_L2",
+      "body": "ankle_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1350.1297661858837,
+      "seconds": 0.229546417
+    },
+    {
+      "name": "FootGuardO_L",
+      "body": "ankle_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2169.8101205425055,
+      "seconds": 1.190372959
+    },
+    {
+      "name": "FootGuardI_L",
+      "body": "ankle_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1850.751254730085,
+      "seconds": 0.914985417
+    },
+    {
+      "name": "GuardScrew_LO",
+      "body": "ankle_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103009,
+      "seconds": 0.7742795
+    },
+    {
+      "name": "GuardScrew_LI",
+      "body": "ankle_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103744,
+      "seconds": 0.71250325
+    },
+    {
+      "name": "FootScrew_L0",
+      "body": "ankle_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103247,
+      "seconds": 0.604319084
+    },
+    {
+      "name": "FootScrew_L1",
+      "body": "ankle_left",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103826,
+      "seconds": 0.853341167
+    },
+    {
+      "name": "Thigh_R.002",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 30485.179248645556,
+      "seconds": 0.394137667
+    },
+    {
+      "name": "ThighScrew_R0.003",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.82360558910367,
+      "seconds": 0.813637583
+    },
+    {
+      "name": "ThighScrew_R1.003",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103733,
+      "seconds": 0.775466083
+    },
+    {
+      "name": "ThighScrew_R2",
+      "body": "upper_leg_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103531,
+      "seconds": 0.705640791
+    },
+    {
+      "name": "Sole_R.003",
+      "body": "ankle_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 8448.680626578143,
+      "seconds": 0.258353542
+    },
+    {
+      "name": "Foot_R.003",
+      "body": "ankle_right",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/fillet: fillet 4 on all 16 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 387) (the operation failed: not supported yet: only straight edges can be blended); the largest radius that fits is 2.6 mm); applied edge by edge to 2 of them (0 at 2)"
+      ],
+      "volume_mm3": 10221.762127348142,
+      "seconds": 5.021595917
+    },
+    {
+      "name": "ToeCap_R0.001",
+      "body": "ankle_right",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/fillet: fillet 4 on all 17 edges together failed (the operation failed: the operation failed: not supported yet: the ball doesn't fit along the edge (the operation failed: not supported yet: only straight edges can be blended); the largest radius that fits is 2.927 mm); applied edge by edge to 9 of them (7 at 2)"
+      ],
+      "volume_mm3": 3910.5640623620784,
+      "seconds": 17.048412792
+    },
+    {
+      "name": "ToeSole_R0.001",
+      "body": "ankle_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1350.1297661854214,
+      "seconds": 0.154228292
+    },
+    {
+      "name": "ToeCap_R2",
+      "body": "ankle_right",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/fillet: fillet 4 on all 17 edges together failed (the operation failed: the operation failed: not supported yet: the ball doesn't fit along the edge (the operation failed: not supported yet: only straight edges can be blended); the largest radius that fits is 2.927 mm); applied edge by edge to 9 of them (7 at 2)"
+      ],
+      "volume_mm3": 3910.5640623331524,
+      "seconds": 31.558776042
+    },
+    {
+      "name": "ToeSole_R2",
+      "body": "ankle_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1350.1297661853864,
+      "seconds": 0.1737275
+    },
+    {
+      "name": "FootGuardO_R",
+      "body": "ankle_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2169.81014516674,
+      "seconds": 1.150966916
+    },
+    {
+      "name": "FootGuardI_R",
+      "body": "ankle_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1850.7512529185435,
+      "seconds": 0.989315667
+    },
+    {
+      "name": "GuardScrew_RO",
+      "body": "ankle_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.82360558910293,
+      "seconds": 0.633217708
+    },
+    {
+      "name": "GuardScrew_RI",
+      "body": "ankle_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103877,
+      "seconds": 1.122126375
+    },
+    {
+      "name": "FootScrew_R0",
+      "body": "ankle_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.82360558910323,
+      "seconds": 0.950242167
+    },
+    {
+      "name": "FootScrew_R1",
+      "body": "ankle_right",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103318,
+      "seconds": 0.986813291
+    },
+    {
+      "name": "Throat",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1859.167095902237,
+      "seconds": 0.281491042
+    },
+    {
+      "name": "Nape",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 995.3137354572056,
+      "seconds": 0.26372225
+    },
+    {
+      "name": "NeckCollar0.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 641.5214650905407,
+      "seconds": 0.319512
+    },
+    {
+      "name": "NeckCollar1.002",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 641.5214650905286,
+      "seconds": 0.168466125
+    },
+    {
+      "name": "NeckCollar2",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 361.8145275106688,
+      "seconds": 0.22361925
+    },
+    {
+      "name": "NeckCollar3",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 361.81452751065035,
+      "seconds": 0.22067375
+    },
+    {
+      "name": "ThroatScrew0",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103321,
+      "seconds": 0.874040209
+    },
+    {
+      "name": "ThroatScrew1",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103147,
+      "seconds": 0.792208458
+    },
+    {
+      "name": "CollarScrew0",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103416,
+      "seconds": 0.960137292
+    },
+    {
+      "name": "CollarScrew1",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103318,
+      "seconds": 0.86267175
+    },
+    {
+      "name": "NapeScrew0",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.82360558910302,
+      "seconds": 0.681833584
+    },
+    {
+      "name": "NapeScrew1",
+      "body": "neck",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103154,
+      "seconds": 0.716432
+    },
+    {
+      "name": "Compute.csi.003",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 216.81244088712882,
+      "seconds": 0.329820708
+    },
+    {
+      "name": "CableCamera",
+      "body": "jaw_soft",
+      "status": "faceted",
+      "representation": "faceted_brep",
+      "warnings": [],
+      "volume_mm3": 153.14068896790062,
+      "seconds": 0.021212875
+    },
+    {
+      "name": "CableArmL",
+      "body": "trunk_base",
+      "status": "faceted",
+      "representation": "faceted_brep",
+      "warnings": [],
+      "volume_mm3": 352.70917601072034,
+      "seconds": 0.039501125
+    },
+    {
+      "name": "CableArmR",
+      "body": "trunk_base",
+      "status": "faceted",
+      "representation": "faceted_brep",
+      "warnings": [],
+      "volume_mm3": 354.0683665719337,
+      "seconds": 0.093510458
+    },
+    {
+      "name": "BodyL",
+      "body": "trunk_base",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/fillet: fillet 4 on all 53 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 387) (the operation failed: not supported yet: only straight edges can be blended)); applied edge by edge to 7 of them (4 at 2)"
+      ],
+      "volume_mm3": 23504.61579640114,
+      "seconds": 41.760444666
+    },
+    {
+      "name": "Backpack.001",
+      "body": "trunk_base",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/fillet: fillet 4 on all 16 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces; the largest radius that fits is 3.5 mm); applied edge by edge to 6 of them (4 at 2)"
+      ],
+      "volume_mm3": 15173.911290440674,
+      "seconds": 9.373902625
+    },
+    {
+      "name": "BatteryDoor.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2061.640913373621,
+      "seconds": 0.258618208
+    },
+    {
+      "name": "ChargePort.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 51.60299093491151,
+      "seconds": 0.217579416
+    },
+    {
+      "name": "PowerSwitch.002",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 74.02465971953144,
+      "seconds": 0.212185458
+    },
+    {
+      "name": "PackScrew0L",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103733,
+      "seconds": 0.974610416
+    },
+    {
+      "name": "PackScrew0R",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103737,
+      "seconds": 0.843720042
+    },
+    {
+      "name": "PackScrew1L",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.82360558910354,
+      "seconds": 0.84021475
+    },
+    {
+      "name": "PackScrew1R",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103703,
+      "seconds": 0.707873584
+    },
+    {
+      "name": "BodyMount0L",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 49.53360472406388,
+      "seconds": 0.313602459
+    },
+    {
+      "name": "BodyMount0R",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 49.53360472406385,
+      "seconds": 0.34156975
+    },
+    {
+      "name": "BodyMount1L",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 49.53360472406388,
+      "seconds": 0.29873125
+    },
+    {
+      "name": "BodyMount1R",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 49.533604724063856,
+      "seconds": 0.330332083
+    },
+    {
+      "name": "BodyScrew0L",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103662,
+      "seconds": 0.848552
+    },
+    {
+      "name": "BodyScrew0R",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103723,
+      "seconds": 0.816577958
+    },
+    {
+      "name": "Flank_L",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 3266.9587518330245,
+      "seconds": 1.10568125
+    },
+    {
+      "name": "FlankScrew_L0",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103625,
+      "seconds": 0.660029
+    },
+    {
+      "name": "FlankScrew_L1",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103659,
+      "seconds": 0.820514209
+    },
+    {
+      "name": "Flank_R",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 3266.958751833023,
+      "seconds": 1.157964417
+    },
+    {
+      "name": "FlankScrew_R0",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103824,
+      "seconds": 0.721497083
+    },
+    {
+      "name": "FlankScrew_R1",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.8236055891035,
+      "seconds": 0.741957541
+    },
+    {
+      "name": "Spike_B0",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 215.5299832311227,
+      "seconds": 1.684085709
+    },
+    {
+      "name": "DoorScrew0.001",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103769,
+      "seconds": 0.713112459
+    },
+    {
+      "name": "DoorScrew1.001",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.82360558910377,
+      "seconds": 0.810975125
+    },
+    {
+      "name": "BodyR",
+      "body": "trunk_base",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/intersect[0]/cut[0]/fillet: fillet 4 on all 53 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 387) (the operation failed: not supported yet: only straight edges can be blended)); applied edge by edge to 7 of them (4 at 2)"
+      ],
+      "volume_mm3": 23558.78450321952,
+      "seconds": 39.996222
+    },
+    {
+      "name": "Boss_TailRootScrewL",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 85.2639718857677,
+      "seconds": 0.045732667
+    },
+    {
+      "name": "Boss_TailRootScrewR",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 85.17690932886383,
+      "seconds": 0.035642958
+    },
+    {
+      "name": "Boss_FlankScrew_L0",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 92.8787603992504,
+      "seconds": 0.051609083
+    },
+    {
+      "name": "Boss_FlankScrew_R0",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 91.97203572126197,
+      "seconds": 0.048894209
+    },
+    {
+      "name": "Boss_DoorScrew0",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 152.67587265236992,
+      "seconds": 0.101667042
+    },
+    {
+      "name": "Boss_DoorScrew1",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 152.67587265236966,
+      "seconds": 0.114575542
+    },
+    {
+      "name": "Boss_HeadScrew_VL1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.54428087424132,
+      "seconds": 0.08608075
+    },
+    {
+      "name": "Boss_HeadScrew_VR1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.54428087424073,
+      "seconds": 0.04405975
+    },
+    {
+      "name": "Boss_HeadScrew_BL0",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.5442808742417,
+      "seconds": 0.040109916
+    },
+    {
+      "name": "Boss_HeadScrew_BL1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.54428087424157,
+      "seconds": 0.07042625
+    },
+    {
+      "name": "Boss_HeadScrew_BR0",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.54428087424147,
+      "seconds": 0.051473916
+    },
+    {
+      "name": "Boss_HeadScrew_BR1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 53.74929338312176,
+      "seconds": 0.037838458
+    },
+    {
+      "name": "Boss_HeadScrew_FL",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 241.18085810819457,
+      "seconds": 0.046150542
+    },
+    {
+      "name": "Boss_HeadScrew_TL0",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.54428087424147,
+      "seconds": 0.0712265
+    },
+    {
+      "name": "Boss_HeadScrew_TL1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.5442808742413,
+      "seconds": 0.047541458
+    },
+    {
+      "name": "Boss_MuzzleScrew_L",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.54428087424104,
+      "seconds": 0.058660625
+    },
+    {
+      "name": "Boss_HeadScrew_FR",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 124.50795027885437,
+      "seconds": 0.048955583
+    },
+    {
+      "name": "Boss_HeadScrew_TR0",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.54428087424144,
+      "seconds": 0.079612
+    },
+    {
+      "name": "Boss_HeadScrew_TR1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.54428087424117,
+      "seconds": 0.051504541
+    },
+    {
+      "name": "Boss_MuzzleScrew_R",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.5442808742414,
+      "seconds": 0.059594459
+    },
+    {
+      "name": "Boss_JawScrew_L0",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 59.59944008321088,
+      "seconds": 0.055433958
+    },
+    {
+      "name": "Boss_JawScrew_R0",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 58.89442283431122,
+      "seconds": 0.060460625
+    },
+    {
+      "name": "HeadTop",
+      "body": "jaw_soft",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/fillet: fillet 6 on all 62 edges together failed (the operation failed: the operation failed: not supported yet: a vertex of the edge chain where other faces meet (the operation failed: not supported yet: both faces next to the edge must be planar)); applied edge by edge to 10 of them (6 at 3)"
+      ],
+      "volume_mm3": 18684.33741973625,
+      "seconds": 51.540644708
+    },
+    {
+      "name": "Visor",
+      "body": "jaw_soft",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/cut[0]/cut[0]/cut[0]/fillet: fillet 4.5 on all 24 edges together failed (the operation failed: the operation failed: not supported yet: a vertex of the edge chain where other faces meet (the operation failed: not supported yet: both faces next to the edge must be planar)); applied edge by edge to 5 of them (1 at 2.25)"
+      ],
+      "volume_mm3": 6202.713486793672,
+      "seconds": 24.152150917
+    },
+    {
+      "name": "HeadScrew_VL0",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103824,
+      "seconds": 1.234332458
+    },
+    {
+      "name": "HeadScrew_VL1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103787,
+      "seconds": 1.192581125
+    },
+    {
+      "name": "HeadScrew_VR0",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103549,
+      "seconds": 1.197329
+    },
+    {
+      "name": "HeadScrew_VR1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589104131,
+      "seconds": 0.968804334
+    },
+    {
+      "name": "VisorGlass",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 323.9906319888968,
+      "seconds": 0.31986975
+    },
+    {
+      "name": "CamMount1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 215.23660598905101,
+      "seconds": 0.245797833
+    },
+    {
+      "name": "CamMount-1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 215.23660598905724,
+      "seconds": 0.297404417
+    },
+    {
+      "name": "StatusLED",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 10.178099161551442,
+      "seconds": 0.075597166
+    },
+    {
+      "name": "ToFWindow.001",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 59.09345611181346,
+      "seconds": 0.305920416
+    },
+    {
+      "name": "ToFBoard",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 164.06104293627996,
+      "seconds": 0.429495875
+    },
+    {
+      "name": "ToFSensor",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 12.451818686939411,
+      "seconds": 0.273126375
+    },
+    {
+      "name": "EyeSocket_L.001",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 951.2487378714253,
+      "seconds": 0.470388833
+    },
+    {
+      "name": "Brow_L.001",
+      "body": "jaw_soft",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/fillet: fillet 0.699999988079071 on all 18 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 1853) (the operation failed: not supported yet: only straight edges can be blended)); applied edge by edge to 10 of them (1 at 0.3499999940395355)"
+      ],
+      "volume_mm3": 585.0915074455435,
+      "seconds": 35.397831625
+    },
+    {
+      "name": "Eye_L.003",
+      "body": "jaw_soft",
+      "status": "faceted",
+      "representation": "faceted_brep",
+      "warnings": [
+        "exact body not exportable: the operation failed: not supported yet: STEP export of this body (Transform does not keep the surface one of revolution.); wrote its tessellation (265.9 -> 265.8 mm3)"
+      ],
+      "volume_mm3": 265.81921393175867,
+      "seconds": 8.272785083
+    },
+    {
+      "name": "EyeShine_L.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17.156067662268278,
+      "seconds": 0.462628458
+    },
+    {
+      "name": "EyeSocket_R.001",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 951.2487377630081,
+      "seconds": 0.275720208
+    },
+    {
+      "name": "Brow_R.001",
+      "body": "jaw_soft",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/fillet: fillet 0.699999988079071 on all 18 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 1853) (the operation failed: not supported yet: only straight edges can be blended)); applied edge by edge to 10 of them (1 at 0.3499999940395355)"
+      ],
+      "volume_mm3": 585.0915069020239,
+      "seconds": 35.452113167
+    },
+    {
+      "name": "Eye_R.003",
+      "body": "jaw_soft",
+      "status": "faceted",
+      "representation": "faceted_brep",
+      "warnings": [
+        "exact body not exportable: the operation failed: not supported yet: STEP export of this body (Transform does not keep the surface one of revolution.); wrote its tessellation (265.9 -> 265.8 mm3)"
+      ],
+      "volume_mm3": 265.8192140281348,
+      "seconds": 8.072999375
+    },
+    {
+      "name": "EyeShine_R.002",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17.15606766226802,
+      "seconds": 0.384296167
+    },
+    {
+      "name": "Muzzle",
+      "body": "jaw_soft",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/cut[0]/intersect[0]/fillet: fillet 6 on all 62 edges together failed (the operation failed: the operation failed: not supported yet: a vertex of the edge chain where other faces meet (the operation failed: not supported yet: both faces next to the edge must be planar)); applied edge by edge to 10 of them (6 at 3)"
+      ],
+      "volume_mm3": 7587.124622362327,
+      "seconds": 44.790736333
+    },
+    {
+      "name": "HeadBack",
+      "body": "jaw_soft",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/cut[0]/cut[0]/intersect[0]/fillet: fillet 6 on all 62 edges together failed (the operation failed: the operation failed: not supported yet: a vertex of the edge chain where other faces meet (the operation failed: not supported yet: both faces next to the edge must be planar)); applied edge by edge to 10 of them (6 at 3)"
+      ],
+      "volume_mm3": 19956.75531806939,
+      "seconds": 44.045315709
+    },
+    {
+      "name": "HeadScrew_BL0",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103929,
+      "seconds": 1.062187292
+    },
+    {
+      "name": "HeadScrew_BL1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.82360558910399,
+      "seconds": 0.928966208
+    },
+    {
+      "name": "HeadScrew_BR0",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103934,
+      "seconds": 1.135220708
+    },
+    {
+      "name": "HeadScrew_BR1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.82360558910367,
+      "seconds": 1.089495833
+    },
+    {
+      "name": "HeadIMU",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 370.00545916731426,
+      "seconds": 0.488566583
+    },
+    {
+      "name": "Spike_H0",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 164.48628336376132,
+      "seconds": 3.295594625
+    },
+    {
+      "name": "Spike_H1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 243.55771345248195,
+      "seconds": 2.7049840830000003
+    },
+    {
+      "name": "Spike_H2",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 304.6158360442626,
+      "seconds": 1.809489708
+    },
+    {
+      "name": "Spike_H3",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 273.2528295680801,
+      "seconds": 2.097719375
+    },
+    {
+      "name": "HeadScrew_FL",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103954,
+      "seconds": 1.07640975
+    },
+    {
+      "name": "HeadScrew_TL0",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103789,
+      "seconds": 0.948081042
+    },
+    {
+      "name": "HeadScrew_TL1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103733,
+      "seconds": 0.797466584
+    },
+    {
+      "name": "MuzzleScrew_L",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.82360558910384,
+      "seconds": 0.784777125
+    },
+    {
+      "name": "HeadScrew_FR",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103504,
+      "seconds": 0.690212583
+    },
+    {
+      "name": "HeadScrew_TR0",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589104066,
+      "seconds": 0.852399375
+    },
+    {
+      "name": "HeadScrew_TR1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103728,
+      "seconds": 0.850792875
+    },
+    {
+      "name": "MuzzleScrew_R",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103623,
+      "seconds": 0.744136083
+    },
+    {
+      "name": "Jaw.003",
+      "body": "jaw",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/fillet: fillet 4 on all 24 edges together failed (the operation failed: the operation failed: not supported yet: a vertex of the edge chain where other faces meet (the operation failed: not supported yet: both faces next to the edge must be planar)); applied edge by edge to 6 of them (2 at 2)"
+      ],
+      "volume_mm3": 28506.778276590543,
+      "seconds": 15.642242042
+    },
+    {
+      "name": "Mouth.003",
+      "body": "jaw",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/fillet: fillet 0.5 on all 18 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 387) (the operation failed: not supported yet: only straight edges can be blended)); applied edge by edge to 10 of them (2 at 0.25)"
+      ],
+      "volume_mm3": 2877.2684724489955,
+      "seconds": 25.439740583
+    },
+    {
+      "name": "Tongue.002",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1013.8007400884791,
+      "seconds": 0.22146775
+    },
+    {
+      "name": "JawArm_L.002",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2618.266372778676,
+      "seconds": 1.455775792
+    },
+    {
+      "name": "JawCheek_L",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1158.9730195453892,
+      "seconds": 0.306336292
+    },
+    {
+      "name": "JawShaft_L",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 418.1534569893974,
+      "seconds": 0.062539833
+    },
+    {
+      "name": "CheekCap_L.002",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 474.9052812260532,
+      "seconds": 0.40743075
+    },
+    {
+      "name": "CheekPin_L",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 25.445291465912288,
+      "seconds": 0.055108
+    },
+    {
+      "name": "CheekScrew_L0.001",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.8848298569124446,
+      "seconds": 0.03711575
+    },
+    {
+      "name": "CheekScrew_L1.001",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.8848298569124398,
+      "seconds": 0.064386375
+    },
+    {
+      "name": "CheekScrew_L2.001",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.8848298569124402,
+      "seconds": 0.040526959
+    },
+    {
+      "name": "CheekScrew_L3.001",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.8848298569124442,
+      "seconds": 0.037857208
+    },
+    {
+      "name": "JawScrew_L0",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103703,
+      "seconds": 0.723180208
+    },
+    {
+      "name": "JawScrew_L1",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103865,
+      "seconds": 0.649127292
+    },
+    {
+      "name": "JawArm_R.002",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2618.2663731419,
+      "seconds": 1.067370959
+    },
+    {
+      "name": "JawCheek_R",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1158.9730195453844,
+      "seconds": 0.214275125
+    },
+    {
+      "name": "JawShaft_R",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 434.23628225819874,
+      "seconds": 0.066394
+    },
+    {
+      "name": "CheekCap_R.002",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 474.90528122605616,
+      "seconds": 0.374514042
+    },
+    {
+      "name": "CheekPin_R",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 25.445291465912362,
+      "seconds": 0.053317625
+    },
+    {
+      "name": "CheekScrew_R0.001",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.8848298569124413,
+      "seconds": 0.039210833
+    },
+    {
+      "name": "CheekScrew_R1.001",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.8848298569124422,
+      "seconds": 0.199425375
+    },
+    {
+      "name": "CheekScrew_R2.001",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.8848298569124473,
+      "seconds": 0.04816825
+    },
+    {
+      "name": "CheekScrew_R3.001",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.8848298569124449,
+      "seconds": 0.041161458
+    },
+    {
+      "name": "JawScrew_R0",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103794,
+      "seconds": 0.649603583
+    },
+    {
+      "name": "JawScrew_R1",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103993,
+      "seconds": 0.783434042
+    },
+    {
+      "name": "Fang_L.003",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 99.31086646238542,
+      "seconds": 1.105323209
+    },
+    {
+      "name": "Fang_R.003",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 99.31086646364413,
+      "seconds": 1.021703958
+    },
+    {
+      "name": "HeadBase",
+      "body": "jaw_soft",
+      "status": "exact_with_warnings",
+      "representation": "brep",
+      "warnings": [
+        "solid/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/intersect[0]/cut[0]/fillet: fillet 6 on all 62 edges together failed (the operation failed: the operation failed: not supported yet: a vertex of the edge chain where other faces meet (the operation failed: not supported yet: both faces next to the edge must be planar)); applied edge by edge to 10 of them (6 at 3)"
+      ],
+      "volume_mm3": 13409.63479567837,
+      "seconds": 43.2641505
+    },
+    {
+      "name": "XL330_ArmL",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17583.364529416354,
+      "seconds": 0.226999625
+    },
+    {
+      "name": "XL330_ArmL.horn",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 381.680006213302,
+      "seconds": 0.027977458
+    },
+    {
+      "name": "XL330_ArmL.hub",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 117.80227530515033,
+      "seconds": 0.047237375
+    },
+    {
+      "name": "XL330_ArmL.hs0",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458749,
+      "seconds": 0.038045833
+    },
+    {
+      "name": "XL330_ArmL.hs1",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.28064814545875,
+      "seconds": 0.044738666
+    },
+    {
+      "name": "XL330_ArmL.hs2",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458766,
+      "seconds": 0.055347125
+    },
+    {
+      "name": "XL330_ArmL.hs3",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458762,
+      "seconds": 0.047112417
+    },
+    {
+      "name": "XL330_ArmL.cs1(-8, 6)",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444365,
+      "seconds": 0.049883625
+    },
+    {
+      "name": "XL330_ArmL.cs1(8, 6)",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444291,
+      "seconds": 0.062039042
+    },
+    {
+      "name": "XL330_ArmL.cs1(-8, -21)",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544434,
+      "seconds": 0.030051625
+    },
+    {
+      "name": "XL330_ArmL.cs1(8, -21)",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444322,
+      "seconds": 0.032429167
+    },
+    {
+      "name": "XL330_ArmL.cs-1(-8, 6)",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544419,
+      "seconds": 0.042974459
+    },
+    {
+      "name": "XL330_ArmL.cs-1(8, 6)",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.01779841354443,
+      "seconds": 0.05546175
+    },
+    {
+      "name": "XL330_ArmL.cs-1(-8, -21)",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444207,
+      "seconds": 0.03438625
+    },
+    {
+      "name": "XL330_ArmL.cs-1(8, -21)",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444302,
+      "seconds": 0.032584375
+    },
+    {
+      "name": "XL330_ArmL.jst0",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 111.99999999999996,
+      "seconds": 0.009287584
+    },
+    {
+      "name": "XL330_ArmL.jst1",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 111.99999999999996,
+      "seconds": 0.018587834
+    },
+    {
+      "name": "ArmUpper_L",
+      "body": "arm_L",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 7215.829759905432,
+      "seconds": 0.440899042
+    },
+    {
+      "name": "ArmElbow_L.001",
+      "body": "arm_L",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 220.49418071327344,
+      "seconds": 0.416986416
+    },
+    {
+      "name": "ArmPin_L",
+      "body": "arm_L",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 179.39407914369497,
+      "seconds": 0.053601834
+    },
+    {
+      "name": "ArmFore_L",
+      "body": "arm_L",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2844.157602036666,
+      "seconds": 0.349735041
+    },
+    {
+      "name": "Hand_L.001",
+      "body": "arm_L",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1726.2602697574712,
+      "seconds": 0.501892792
+    },
+    {
+      "name": "ArmScrew_L0",
+      "body": "arm_L",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.82360558910307,
+      "seconds": 1.086643208
+    },
+    {
+      "name": "ArmScrew_L1",
+      "body": "arm_L",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589102991,
+      "seconds": 1.168142958
+    },
+    {
+      "name": "ArmScrew_L2",
+      "body": "arm_L",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589102845,
+      "seconds": 0.619948333
+    },
+    {
+      "name": "ArmScrew_L3",
+      "body": "arm_L",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103018,
+      "seconds": 0.683722708
+    },
+    {
+      "name": "Claw_L0",
+      "body": "arm_L",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 39.56004044361558,
+      "seconds": 0.047381584
+    },
+    {
+      "name": "Claw_L1",
+      "body": "arm_L",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 39.560040444612994,
+      "seconds": 0.037003916
+    },
+    {
+      "name": "HandScrew_L",
+      "body": "arm_L",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103133,
+      "seconds": 0.659377417
+    },
+    {
+      "name": "XL330_ArmR",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 17583.364529416358,
+      "seconds": 0.296338709
+    },
+    {
+      "name": "XL330_ArmR.horn",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 381.68000621330185,
+      "seconds": 0.034251542
+    },
+    {
+      "name": "XL330_ArmR.hub",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 117.8022753051502,
+      "seconds": 0.033207208
+    },
+    {
+      "name": "XL330_ArmR.hs0",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587524,
+      "seconds": 0.0349085
+    },
+    {
+      "name": "XL330_ArmR.hs1",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587533,
+      "seconds": 0.04819125
+    },
+    {
+      "name": "XL330_ArmR.hs2",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.2806481454587644,
+      "seconds": 0.044919292
+    },
+    {
+      "name": "XL330_ArmR.hs3",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2.280648145458765,
+      "seconds": 0.081293625
+    },
+    {
+      "name": "XL330_ArmR.cs1(-8, 6)",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544436,
+      "seconds": 0.071232875
+    },
+    {
+      "name": "XL330_ArmR.cs1(8, 6)",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444345,
+      "seconds": 0.080474292
+    },
+    {
+      "name": "XL330_ArmR.cs1(-8, -21)",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544416,
+      "seconds": 0.057912458
+    },
+    {
+      "name": "XL330_ArmR.cs1(8, -21)",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444347,
+      "seconds": 0.077606542
+    },
+    {
+      "name": "XL330_ArmR.cs-1(-8, 6)",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444214,
+      "seconds": 0.060231125
+    },
+    {
+      "name": "XL330_ArmR.cs-1(8, 6)",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.01779841354442,
+      "seconds": 0.048350459
+    },
+    {
+      "name": "XL330_ArmR.cs-1(-8, -21)",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.017798413544423,
+      "seconds": 0.053227209
+    },
+    {
+      "name": "XL330_ArmR.cs-1(8, -21)",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1.0177984135444138,
+      "seconds": 0.039485291
+    },
+    {
+      "name": "XL330_ArmR.jst0",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 111.99999999999996,
+      "seconds": 0.003930375
+    },
+    {
+      "name": "XL330_ArmR.jst1",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 111.99999999999996,
+      "seconds": 0.006602083
+    },
+    {
+      "name": "ArmUpper_R",
+      "body": "arm_R",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 7215.829759905434,
+      "seconds": 0.612848333
+    },
+    {
+      "name": "ArmElbow_R.001",
+      "body": "arm_R",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 220.4941807132732,
+      "seconds": 0.402297458
+    },
+    {
+      "name": "ArmPin_R",
+      "body": "arm_R",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 179.39407914369517,
+      "seconds": 0.048523584
+    },
+    {
+      "name": "ArmFore_R",
+      "body": "arm_R",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 2844.157602036669,
+      "seconds": 0.31050075
+    },
+    {
+      "name": "Hand_R.001",
+      "body": "arm_R",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 1726.2602697574778,
+      "seconds": 0.336547375
+    },
+    {
+      "name": "ArmScrew_R0",
+      "body": "arm_R",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589102991,
+      "seconds": 0.698775
+    },
+    {
+      "name": "ArmScrew_R1",
+      "body": "arm_R",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.82360558910307,
+      "seconds": 0.731485042
+    },
+    {
+      "name": "ArmScrew_R2",
+      "body": "arm_R",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103018,
+      "seconds": 0.720085666
+    },
+    {
+      "name": "ArmScrew_R3",
+      "body": "arm_R",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589102845,
+      "seconds": 0.640817334
+    },
+    {
+      "name": "Claw_R0",
+      "body": "arm_R",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 39.56004044481935,
+      "seconds": 0.044999584
+    },
+    {
+      "name": "Claw_R1",
+      "body": "arm_R",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 39.56004044092226,
+      "seconds": 0.0374285
+    },
+    {
+      "name": "HandScrew_R",
+      "body": "arm_R",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 9.823605589103185,
+      "seconds": 0.614748084
+    }
+  ],
+  "totals": {
+    "parts": 634,
+    "exact": 605,
+    "exact_with_warnings": 24,
+    "faceted": 5,
+    "failed": 0,
+    "volume_mm3": 1470405.8638344798,
+    "seconds": 89.028782709
+  },
+  "assembly_warnings": [],
+  "validation": {
+    "valid": true,
+    "entities": 649213,
+    "reimported": true,
+    "solids_expected": 634,
+    "solids_read": 634,
+    "solids_open": 0
+  }
+}

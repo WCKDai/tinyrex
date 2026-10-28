@@ -47,8 +47,45 @@ def facet(o, width=4.0):
     o.modifiers.move(len(o.modifiers) - 1, 0)
 
 
+def orient(o):
+    """Outward normals on a generated closed mesh (a loft built back to front comes out inside out)."""
+    me = o.data
+    vol = 0.0
+    for p in me.polygons:
+        a = me.vertices[p.vertices[0]].co
+        for k in range(1, len(p.vertices) - 1):
+            vol += a.dot(me.vertices[p.vertices[k]].co.cross(me.vertices[p.vertices[k + 1]].co))
+    if vol < 0 and o.matrix_world.determinant() > 0 or vol > 0 and o.matrix_world.determinant() < 0:
+        import bmesh
+        bm = bmesh.new()
+        bm.from_mesh(me)
+        bmesh.ops.reverse_faces(bm, faces=bm.faces)
+        bm.to_mesh(me)
+        bm.free()
+
+
+def split(o, body, axis, at, names):
+    """Split a finished shell into two printed parts at a plane: `names` = (the part on the high
+    side of `at` along `axis`, the part on the low side). The low part shares the mesh and every
+    opening; each keeps its own half."""
+    lo = [-600.0, -600.0, -600.0]
+    hi = [600.0, 600.0, 600.0]
+    hi["xyz".index(axis)] = at
+    other = o.copy()
+    for c in o.users_collection:
+        c.objects.link(other)
+    o.name, other.name = names
+    cut = bpy.data.objects.new(f"Cut_Split{names[0]}", box_mesh(f"Cut_Split{names[0]}", tuple(lo), tuple(hi)))
+    bpy.data.collections[f"{SCENE}: rig"].objects.link(cut)
+    boolean_cut(o, cut, body, guard=False)
+    boolean_cut(other, cut, body, "INTERSECT", guard=False)
+    return other
+
+
 def made(objs, body=None):
     for o in objs:
+        if o.type == "MESH" and o.data.users == 1:
+            orient(o)
         if o.type == "MESH" and not o.get("keep_round"):
             facet(o)
         if o.name not in coll.objects:
@@ -89,6 +126,7 @@ def loft_trap(name, sections, material, subsurf=3, keep=0.42, yc=0.0, bevel=None
     f.append((4 * (n - 1), 4 * (n - 1) + 1, 4 * (n - 1) + 2, 4 * (n - 1) + 3))
     me = bpy.data.meshes.new(name)
     me.from_pydata(v, [], f)
+    pc_tag(me, pc_loft([v[4 * i:4 * i + 4] for i in range(n)], "x"))
     o = obj_from(name, me, coll, material, smooth=not facet)
     if facet:
         # The concept boards' look: flat panels with softly filleted edges, not a pebble.
@@ -106,7 +144,7 @@ def loft_trap(name, sections, material, subsurf=3, keep=0.42, yc=0.0, bevel=None
 def battery_enclosed():
     from mathutils.bvhtree import BVHTree
     deps = bpy.context.evaluated_depsgraph_get()
-    o = next(x for x in coll.objects if x.name.split(".")[0] == "Body")
+    o = next(x for x in coll.objects if x.name.split(".")[0] in ("Body", "BodyL"))
     off = [m for m in o.modifiers if m.type in ("SOLIDIFY", "BOOLEAN") and m.show_viewport]
     for m in off:
         m.show_viewport = False
@@ -146,9 +184,9 @@ def part_body():
     narrow pod below the back for the battery's lower half (x -47..-25, |y| 19, down to z 67),
     between the thighs (|y| >= 42)."""
     for o in list(scene.objects):
-        if o.name.split(".")[0] in ("Cut_Belly", "Cut_TailSlot", "Cut_TailHorn", "Cut_Shoulder1", "Cut_Shoulder-1", "Cut_LegWindow1", "Cut_LegWindow-1"):
+        if o.name.split(".")[0] in ("Cut_Belly", "Cut_TailSlot", "Cut_TailHorn", "Cut_BatteryOpening", "Cut_SplitBodyL", "Cut_Shoulder1", "Cut_Shoulder-1", "Cut_LegWindow1", "Cut_LegWindow-1"):
             bpy.data.objects.remove(o, do_unlink=True)
-    clear(("Body", "BatteryPod", "Backpack", "PackScrew", "BodyMount", "BodyScrew", "Flank", "Spike_B", "BatteryDoor", "ChargePort", "PowerSwitch"))
+    clear(("Body", "BatteryPod", "Backpack", "PackScrew", "BodyMount", "BodyScrew", "Flank", "Spike_B", "DoorScrew", "BatteryDoor", "ChargePort", "PowerSwitch"))
     objs = [
         # One smooth body: full above (|y| <= 34), narrow below the back (|y| <= 22) round the
         # battery's lower half, so the thighs swinging in on hip roll pass it.
@@ -159,7 +197,8 @@ def part_body():
         hollow(loft_trap("Body", BODY, CREAM, subsurf=3, keep=0.28), even=False),
         loft_skin("Backpack", coll, LIME, [(-46, 19, 150, 157), (-22, 23, 152, 160), (2, 20, 151, 158.5)], subsurf=2, keep=0.42),
         # The battery swaps through a door underneath; USB-C and the power switch on the tail root.
-        rounded("BatteryDoor", coll, mat("Seam", "#BDB6A8", 0.6), (-46, -15, 56.8), (-27, 15, 58.6), 1.6),
+        # (a cover plate under the floor, over the opening the battery swaps through, three screws)
+        rounded("BatteryDoor", coll, mat("Seam", "#BDB6A8", 0.6), (-48.5, -22.5, 52.2), (-22.5, 22.5, 54.0), 1.4),
         rounded("ChargePort", coll, INK, (-80, -17.6, 108), (-73, -15.4, 112), 1.0),
         rounded("PowerSwitch", coll, LIME, (-80, 15.4, 107.5), (-73, 18, 112.5), 1.3),
     ]
@@ -183,8 +222,13 @@ def part_body():
     # Dorsal spikes continue down the back, behind the backpack, on the tail root.
     for k, (x, h) in enumerate(((-55, 8.0),)):
         objs.append(spike(f"Spike_B{k}", x, side_top(BODY, x), h))
+    for k, (x, y) in enumerate(((-23.8, 17.0), (-23.8, -17.0))):  # (its rear edge hooks under the floor's lip)
+        objs.append(screw(f"DoorScrew{k}", (x, y, 52.6), "-Z"))
     names = made(objs, TRUNK)
     body = objs[0]
+    door = bpy.data.objects.new("Cut_BatteryOpening", box_mesh("Cut_BatteryOpening", (-47.5, -20, 40), (-24.5, 20, 57.0)))
+    bpy.data.collections[f"{SCENE}: rig"].objects.link(door)
+    boolean_cut(body, door, TRUNK)
     # Openings: the belly, for the hip yaw servos and bearings; the back, for the tail servo.
     # Openings: the floor under the hip yaw servos and bearings; the top of the tail root for the
     # tail servo's horn.
@@ -205,6 +249,10 @@ def part_body():
     boolean_cut(body, cutter_cylinder("Cut_TailHorn", 10.6, 0, 14, Vector((-74.5, 0, 127.5)), "Z"), TRUNK)
     bpy.context.view_layer.update()
     print("battery corners outside the body:", battery_enclosed())
+    # Printed as two halves, left and right, as Microduck's shells are: each screws to the trunk
+    # plate on its own bosses; the backpack and the battery door bridge them.
+    names.append(split(body, TRUNK, "y", 0.0, ("BodyL", "BodyR")).name.split(".")[0])
+    names[names.index("Body")] = "BodyL"
     return names, HIPS
 
 
@@ -298,7 +346,7 @@ def jaw_body():
     return e
 
 
-def boolean_cut(o, cutter, body=None, op="DIFFERENCE"):
+def boolean_cut(o, cutter, body=None, op="DIFFERENCE", guard=True):
     """Cut `cutter` out of `o`; the cutter rides with the part's body (or the openings would stay
     put while the part moves) and is not checked itself."""
     if body:
@@ -320,7 +368,7 @@ def boolean_cut(o, cutter, body=None, op="DIFFERENCE"):
         ev.to_mesh_clear()
         return k
     before = verts(False)
-    floor = 0.5 if op == "DIFFERENCE" else 0.05  # an intersect keeps a part by design
+    floor = (0.5 if op == "DIFFERENCE" else 0.05) if guard else 0.0  # (an intersect, or a split, keeps a part by design)
     if verts(True) < before * floor:
         m.solver = "FLOAT"
         if verts(True) < before * floor:
@@ -369,6 +417,11 @@ def hemidome(name, material, r, at, depth=0.6, n=40, rings=14):
     sol = o.modifiers.new("Wall", "SOLIDIFY")
     sol.thickness = 1.2
     sol.offset = -1.0
+    # (its recipe: a half ellipsoid, hollowed - the wall included)
+    half = {"intersect": [{"sphere": {"center": [0.0, 0.0, 0.0], "radius": r}}, {"box": {"min": [0.0, -r - 1, -r - 1], "max": [r + 1, r + 1, r + 1]}}]}
+    shell = {"cut": [half, {"sphere": {"center": [0.0, 0.0, 0.0], "radius": r - 1.2}}]}
+    pc_tag(me, {"transform": {"body": shell, "matrix": [depth, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]}})
+    me["pc_recipe_covers"] = "Wall"
     return o
 
 
@@ -393,9 +446,9 @@ def part_head():
     low behind, a bore for the camera, an opening round the neck for the head to turn; glossy eyes,
     the ToF window and board, the head IMU, the speaker grille, the red LED; and a cream jaw on
     its own joint on the jaw servo's axis, in front of the neck opening."""
-    clear(("Head", "HeadScrew", "Spike_H", "Eye", "Brow", "Visor", "Cam", "ToF", "HeadIMU", "Grille", "LED", "StatusLED", "Camera", "Cheek", "Jaw", "Mouth", "Tongue", "Fang", "Blush", "Crest", "Chin", "Nostril", "Muzzle"))
+    clear(("Head", "HeadScrew", "MuzzleScrew", "Spike_H", "Eye", "Brow", "Visor", "Cam", "ToF", "HeadIMU", "Grille", "LED", "StatusLED", "Camera", "Cheek", "Jaw", "Mouth", "Tongue", "Fang", "Blush", "Crest", "Chin", "Nostril", "Muzzle"))
     for o in list(scene.objects):
-        if o.name.split(".")[0] in ("Cut_Camera", "Cut_Neck", "Cut_EyeL", "Cut_EyeR", "Cut_MuzzleSlab", "Cut_MuzzleCurve", "Cut_ToF", "Cut_VisorBay", "Cut_VisorFloor", "Cut_VisorSlot", "Cut_Hinge", "Cut_BackSlab", "Cut_NeckBack"):
+        if o.name.split(".")[0] in ("Cut_Camera", "Cut_Neck", "Cut_EyeL", "Cut_EyeR", "Cut_MuzzleSlab", "Cut_MuzzleCurve", "Cut_ToF", "Cut_VisorBay", "Cut_VisorFloor", "Cut_VisorSlot", "Cut_Hinge", "Cut_BackSlab", "Cut_NeckBack", "Cut_SplitHeadTop"):
             bpy.data.objects.remove(o, do_unlink=True)
     jaw_body()
     move_camera()
@@ -424,7 +477,7 @@ def part_head():
     VISOR = [(40, 14, 6, 252, 258), (56, 20, 14.5, 254, 274.5), (80, 20, 14.5, 252, 275), (93, 18.5, 11.5, 247, 269)]
     visor = loft_trap("Visor", VISOR, LIME, facet=4.5)
     hollow(visor, 2.0)
-    vfloor = bpy.data.objects.new("Cut_VisorFloor", box_mesh("Cut_VisorFloor", (40, -18.1, 240), (95, 18.1, 256.5)))
+    vfloor = bpy.data.objects.new("Cut_VisorFloor", box_mesh("Cut_VisorFloor", (38, -25, 240), (97, 25, 257.0)))
     bpy.data.collections[f"{SCENE}: rig"].objects.link(vfloor)
     boolean_cut(visor, vfloor, HEAD)
     vslot = bpy.data.objects.new("Cut_VisorSlot", box_mesh("Cut_VisorSlot", (86, -11, 257.5), (97, 11, 266.5)))
@@ -513,6 +566,14 @@ def part_head():
     for k, (x, h) in enumerate(((-22, 7.0), (-6, 8.5), (10, 9.5), (26, 9.0))):
         top = hex_at(HEAD_SECTIONS, x)[6]
         parts.append(spike(f"Spike_H{k}", x, top, h))
+    # Fixings: the head base screws to the head frame through standoffs; the top screws down onto
+    # tabs on the base at the crease; the muzzle panel screws to the base.
+    for sy, side in ((1, "L"), (-1, "R")):
+        ax = "Y" if sy > 0 else "-Y"
+        parts.append(screw(f"HeadScrew_F{side}", (8, sy * (hex_side(HEAD_SECTIONS, 8, 228) - 0.4), 228), ax))
+        for k, x in enumerate((32, 52)):  # (behind the eye socket)
+            parts.append(screw(f"HeadScrew_T{side}{k}", (x, sy * (hex_side(HEAD_SECTIONS, x, 242.0) - 0.4), 242.0), ax))
+        parts.append(screw(f"MuzzleScrew_{side}", (82, sy * (hex_side(HEAD_SECTIONS, 82, 226.5) - 0.4), 226.5), ax))
     names = made(parts, HEAD)
     # Jaw: cream, x 53..96 (in front of the neck opening and the jaw servo's case), arms up the
     # sides to cheek caps on the hinge axis; a dark mouth floor, a tongue, two rounded fangs on the
@@ -549,6 +610,7 @@ def part_head():
         # (small rounded cones: a cute overbite, not buck teeth)
         bpy.ops.mesh.primitive_cone_add(vertices=24, radius1=3.2, radius2=0.7, depth=7.5, location=(102.6, sy * 9.0, 224.9), rotation=(math.pi, 0, 0))
         fang = bpy.context.active_object
+        pc_tag(fang.data, pc_cone(3.2, 0.7, 7.5, 24))
         fang.name = f"Fang_{side}"
         for c in fang.users_collection:
             c.objects.unlink(fang)
@@ -558,6 +620,10 @@ def part_head():
         fang.modifiers.new("Soft", "BEVEL").width = 0.4
         fangs.append(fang)
     names += made(fangs, HEAD)
+    # The lime shell prints as two parts split at its shoulder crease (z 236), as Microduck's head
+    # is top and bottom: the base goes on over the head frame, the top drops on and screws down.
+    names.append(split(shell, HEAD, "z", 236.0, ("HeadTop", "HeadBase")).name.split(".")[0])
+    names[names.index("Head")] = "HeadTop"
     return names, ["neck", "neck_pitch", "yaw_roll_motion", HEAD, "jaw"]
 
 
@@ -638,6 +704,7 @@ def shield(name, material, outline, y0, y1, dome=(1.0, 0.96, 0.84, 0.62)):
         f += [(r * n + i, r * n + (i + 1) % n, (r + 1) * n + (i + 1) % n, (r + 1) * n + i) for i in range(n)]
     me = bpy.data.meshes.new(name)
     me.from_pydata(v, [], f)
+    pc_tag(me, pc_loft([v[r * n:(r + 1) * n] for r in range(4)], "y"))
     import bmesh
     bm = bmesh.new()
     bm.from_mesh(me)
@@ -663,7 +730,7 @@ def part_legs():
     Measured (left; the right mirrors): thigh hardware x -45..16, y 39..71, z 55..103, the knee
     axis at (-31.8, z 67.5); the shin servo x -42..-22, y 37..65, z 16..50; the ankle bracket
     x -46..-10, y 30..70, z 9..34; Microduck's sole x -52..2, y 29..70."""
-    clear(("Thigh", "Shin", "Foot", "Toe", "Sole", "Knee"))  # (FootGuard* too)
+    clear(("Thigh", "Shin", "Foot", "Toe", "Sole", "Knee", "GuardScrew"))  # (FootGuard* too)
     names = []
     tilt = math.atan2(22.0, 35.8)  # the thigh's line, hip pitch axis to knee
     for side, sy in (("L", 1), ("R", -1)):
@@ -690,6 +757,12 @@ def part_legs():
         guard = teardrop((-30, 21), 14.0, (-15, 15), 8.5)
         foot.append(slab(f"FootGuardO_{side}", CREAM, guard, *sorted((sy * GUARD_Y[0], sy * (GUARD_Y[0] + 2.8))), chamfer=1.2))
         foot.append(slab(f"FootGuardI_{side}", CREAM, guard, *sorted((sy * GUARD_Y[1], sy * (GUARD_Y[1] - 2.4))), chamfer=1.2))
+        # (the guards screw to the cradle's sides; the foot plate to its underside, from below,
+        # before the sole is bonded on)
+        for gname, gy, ax in (("O", GUARD_Y[0] + 2.4, "Y"), ("I", GUARD_Y[1] - 2.0, "-Y")):
+            foot.append(screw(f"GuardScrew_{side}{gname}", (-27, sy * gy, 21), ax if sy > 0 else ("-Y" if ax == "Y" else "Y")))
+        for k, dx in enumerate((-40, -18)):
+            foot.append(screw(f"FootScrew_{side}{k}", (dx, yf, 3.4), "-Z"))
         names += made(foot, ankle)
     return names, LEG_JOINTS["L"] + LEG_JOINTS["R"]
 
@@ -758,6 +831,7 @@ def loft_hex(name, sections, material, facet=CHAMFER if "CHAMFER" in globals() e
     f.append(tuple(range(6 * (n - 1), 6 * n)))
     me = bpy.data.meshes.new(name)
     me.from_pydata(v, [], f)
+    pc_tag(me, pc_loft([v[6 * i:6 * i + 6] for i in range(n)], "x"))
     import bmesh
     bm = bmesh.new()
     bm.from_mesh(me)
@@ -809,6 +883,7 @@ def slab(name, material, outline, y0, y1, chamfer=2.2):
     fs = [tuple(range(k)), tuple(range(k, 2 * k))[::-1]] + [(i, k + i, k + (i + 1) % k, (i + 1) % k) for i in range(k)]
     me = bpy.data.meshes.new(name)
     me.from_pydata(vs, [], fs)
+    pc_tag(me, pc_loft([vs[:k], vs[k:]], "y"))
     import bmesh
     bm = bmesh.new()
     bm.from_mesh(me)
@@ -852,7 +927,7 @@ def part_arms():
     tuck, wave). The servo case sits in a pocket in the body's upper side, horn out; the arm - a
     cream upper arm, a black elbow hub on a fixed bent elbow, a cream forearm, a lime hand with
     two claws - is screwed to the horn."""
-    clear(("XL330_Arm", "ArmUpper", "ArmFore", "ArmElbow", "ArmPin", "Hand", "Claw", "ArmScrew", "Shoulder"))
+    clear(("XL330_Arm", "ArmUpper", "ArmFore", "ArmElbow", "ArmPin", "Hand", "Claw", "ArmScrew", "Shoulder"))  # (HandScrew too)
     names = []
     for side, sy in (("L", 1), ("R", -1)):
         arm_body(side)
@@ -865,7 +940,7 @@ def part_arms():
             return (sy * a, sy * b) if sy > 0 else (sy * b, sy * a)
         arm = [slab(f"ArmUpper_{side}", CREAM, [(16.5, 144), (22, 151.5), (33, 151.5), (38.5, 144), (44, 113), (38, 104), (29.5, 106)], *ys(45.6, 54.6)),
                disc(f"ArmElbow_{side}", coll, INK, 6.0, 2.0, (38, sy * 54.6, 110), "Y" if sy > 0 else "-Y", n=8, bevel_w=0.6),
-               disc(f"ArmPin_{side}", coll, SILVER, 2.2, 0.8, (38, sy * 56.6, 110), "Y" if sy > 0 else "-Y", n=16),
+               disc(f"ArmPin_{side}", coll, SILVER, 2.2, 11.8, (38, sy * 45.6, 110), "Y" if sy > 0 else "-Y", n=16),  # (through both arm parts)
                slab(f"ArmFore_{side}", CREAM, [(33, 116), (60, 118.5), (64, 111), (60, 103.5), (35, 102)], *ys(46.4, 53.8)),
                slab(f"Hand_{side}", LIME, [(58, 121), (69, 119.5), (72.5, 111), (68.5, 103), (58, 102)], *ys(45.9, 54.3))]
         for k, a in enumerate((math.pi / 4, 3 * math.pi / 4, 5 * math.pi / 4, 7 * math.pi / 4)):
@@ -873,12 +948,14 @@ def part_arms():
         for k, dy in enumerate((2.6, 7.4)):
             bpy.ops.mesh.primitive_cone_add(vertices=6, radius1=2.1, radius2=0.5, depth=8.0, location=(74.5, sy * (45.9 + dy), 108.5), rotation=(0, math.radians(115), 0))
             claw = bpy.context.active_object
+            pc_tag(claw.data, pc_cone(2.1, 0.5, 8.0, 6))
             claw.name = f"Claw_{side}{k}"
             for cc in claw.users_collection:
                 cc.objects.unlink(claw)
             coll.objects.link(claw)
             claw.data.materials.append(CREAM)
             arm.append(claw)
+        arm.append(screw(f"HandScrew_{side}", (59.6, sy * 54.0, 111), "Y" if sy > 0 else "-Y"))
         names += made(arm, f"arm_{side}")
     joints = ["arm_L", "arm_R", "neck", "neck_pitch", "yaw_roll_motion", HEAD, "jaw"] + LEG_JOINTS["L"][:3] + LEG_JOINTS["R"][:3]
     return names, joints
@@ -1024,7 +1101,12 @@ def part_bosses():
         for a, b, _ in iv[1:]:
             if a <= stack_end + 0.05:
                 stack_end = max(stack_end, b)
-        free = next((a for a, _, _ in iv[1:] if a > stack_end + 0.05), stack_end + 20) - stack_end - 0.4
+        nxt = next(((a, n) for a, _, n in iv[1:] if a > stack_end + 0.05), (stack_end + 20, None))
+        free = nxt[0] - stack_end - 0.4
+        # (a frame part within 15 mm behind: a standoff that reaches it, the screw going through to
+        # bite the frame)
+        standoff = (nxt[1] is not None and nxt[1].split(".")[0].startswith(("Bracket_", "XL330")) and "." not in nxt[1].split(".")[0]
+                    and nxt[0] - stack_end <= 15.0)
         # (the boss is 2 x BOSS_R across: check the room on a ring of rays at its radius too)
         side = axis.orthogonal().normalized()
         for k in range(8):
@@ -1037,7 +1119,7 @@ def part_bosses():
             first = next((a for a, _, _ in ring if a > ring_end + 0.05), stack_end + 20)
             free = min(free, first - stack_end - 0.4)
         plate_end = stack_end
-        length = min(BOSS_LEN, free)
+        length = free + 0.3 if standoff else min(BOSS_LEN, free)
         tag = o.name.split(".")[0]
         if length < 2.0:
             report[tag] = f"no room for a boss behind {plate.split('.')[0]} ({free:.1f} mm)"
@@ -1046,7 +1128,7 @@ def part_bosses():
         b = part(f"Boss_{tag}", coll, meshes[plate][0].active_material or CREAM, cyl_mesh(f"Boss_{tag}", BOSS_R, 0, length + 0.3, 20),
                  Matrix.Translation(at) @ (axis * -1).to_track_quat("Z", "Y").to_matrix().to_4x4(), Matrix.Identity(4), smooth=True)
         names += made([b], body)
-        report[tag] = f"boss {length + 0.3:.1f} mm behind {plate.split('.')[0]}"
+        report[tag] = f"{'standoff to ' + nxt[1].split('.')[0] + ',' if standoff else 'boss'} {length + 0.3:.1f} mm behind {plate.split('.')[0]}"
     print("BOSSES", json.dumps(report))
     return names, []
 
