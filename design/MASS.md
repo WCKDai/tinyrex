@@ -51,7 +51,7 @@ Each figure is the moment of everything above each joint of the stance leg, abou
 | knee | 0.241 | 0.222 | 0.126 | 0.075 | 0.112 | 43 % |
 | ankle | 0.241 | 0.222 | 0.002 | 0.092 | 0.003 | 43 % |
 
-In TinyREX HOME, the knees and ankles carry less than Microduck in its HOME. Hip roll carries the extra
+In TinyREX HOME the knees carry less than Microduck's in its HOME, and the ankles about the same. Hip roll carries the extra
 mass, at 40 % of stall. Two things remain:
 - this is static only;
 - Microduck's walking policy must be retrained for the new mass, centre of mass and pose.
