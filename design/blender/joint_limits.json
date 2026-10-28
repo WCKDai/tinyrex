@@ -59,7 +59,7 @@
    ],
    "collision_free": [
     -77,
-    32
+    21
    ]
   },
   "head_pitch": {
@@ -68,7 +68,7 @@
     90
    ],
    "collision_free": [
-    -44,
+    -45,
     90
    ]
   },

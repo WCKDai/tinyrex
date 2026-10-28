@@ -19,8 +19,8 @@ Software joint limits (collision-free ranges, from a sweep of the full model): `
 ## Electronics
 
 - Raspberry Pi Zero 2 W + robot hat, in the head
-- M12 camera module on a CSI ribbon, in the brow visor (looks out through the smoked visor strip)
-- VL53L5CX ToF board, in the brow visor beside the camera
+- M12 camera module on a CSI ribbon, centred in the brow visor on two rails (looks out through the smoked visor strip)
+- VL53L5CX ToF board, behind a small window in the snout front under the status LED
 - LSM6DSV16X head IMU on the head frame
 - Status LED (red) on the snout front
 - Speaker, in the head

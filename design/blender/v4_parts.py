@@ -346,7 +346,7 @@ CHAMFER = 6.0  # mm: the shells' edge fillet
 # The M12 camera (and the ToF sensor beside it) look out of a brow visor on the head's top, the
 # black slot the boards show above the snout: they see forward over the snout, out of harm's way.
 CAM_GLASS = Vector((89.9, 0.0, 238.1))  # Microduck's camera: the front of its glass
-CAM_TO = Vector((85.0, -4.0, 261.0))    # where that point goes, in the visor
+CAM_TO = Vector((85.0, 0.0, 261.0))    # where that point goes, in the visor
 CAM_TILT = math.radians(5)              # looking slightly down, at the floor ahead
 CAM_POSE = Matrix.Translation(CAM_TO) @ Matrix.Rotation(CAM_TILT, 4, "Y") @ Matrix.Translation(-CAM_GLASS)
 
@@ -404,8 +404,12 @@ def part_head():
     # A wedge: a tall crown behind, the sides one flat facet each from the cheek to the snout (the
     # eye sockets sit on it), a flat snout front carrying the camera window, the ToF window and the
     # status LED - the sensors look out where the boards put them.
-    HEAD_SECTIONS = [(-34, 30, 24, 205, 240), (-24, 42, 37, 199, 247), (6, 48, 43, 199, 251), (40, 49, 43, 199, 257), (54, 47, 40, 209, 260.5), (60, 44, 39, 218.6, 261), (98, 26, 21, 223, 250), (105, 20, 16, 226, 249)]
-    shell = loft_trap("Head", HEAD_SECTIONS, LIME, facet=CHAMFER)
+    # (x, |y| bottom, |y| shoulder, shoulder z, |y| top, z bottom, z top): wide at the shoulder,
+    # where the jaw servo and the head frame are, domed above it, rounded off behind - a skull.
+    HEAD_SECTIONS = [(-36, 16, 20, 222, 10, 210, 236), (-28, 32, 36, 228, 18, 203, 244), (-16, 40, 44, 234, 24, 199, 249),
+                     (6, 44, 48, 236, 30, 199, 252), (40, 45, 48.5, 236, 31, 199, 256), (54, 44, 47, 236, 34, 209, 259.5),
+                     (60, 42, 44, 236, 38, 218.6, 261), (98, 25, 26, 236, 20, 223, 250), (105, 19, 20, 238, 15, 226, 249)]
+    shell = loft_hex("Head", HEAD_SECTIONS, LIME)
     hollow(shell)
     # (wide enough for the head to roll 25 degrees over the neck bracket and servo)
     boolean_cut(shell, cutter_cylinder("Cut_Neck", 28.0, 0, 26.0, Vector((NECK_AXIS.x, 0, 186)), "Z"), HEAD)
@@ -417,29 +421,34 @@ def part_head():
     bpy.data.collections[f"{SCENE}: rig"].objects.link(hcut)
     boolean_cut(shell, hcut, HEAD)
     # (a brow ridge: it rises from the crown, runs forward over the eyes and drops to the snout)
-    VISOR = [(40, 15, 6, 252, 258), (56, 20, 18.5, 254, 273.8), (80, 20, 18.5, 252, 274.4), (92, 19.5, 15, 248, 270)]
+    VISOR = [(40, 14, 6, 252, 258), (56, 20, 14.5, 254, 274.5), (80, 20, 14.5, 252, 275), (93, 18.5, 11.5, 247, 269)]
     visor = loft_trap("Visor", VISOR, LIME, facet=4.5)
     hollow(visor, 2.0)
     vfloor = bpy.data.objects.new("Cut_VisorFloor", box_mesh("Cut_VisorFloor", (40, -18.1, 240), (95, 18.1, 256.5)))
     bpy.data.collections[f"{SCENE}: rig"].objects.link(vfloor)
     boolean_cut(visor, vfloor, HEAD)
-    vslot = bpy.data.objects.new("Cut_VisorSlot", box_mesh("Cut_VisorSlot", (86, -16, 257.5), (96, 16, 266.5)))
+    vslot = bpy.data.objects.new("Cut_VisorSlot", box_mesh("Cut_VisorSlot", (86, -11, 257.5), (97, 11, 266.5)))
     bpy.data.collections[f"{SCENE}: rig"].objects.link(vslot)
     boolean_cut(visor, vslot, HEAD)
     parts.append(visor)
     for sy, side in ((1, "L"), (-1, "R")):  # the visor screws down into the head on each side
         for k, x in enumerate((62, 82)):
             parts.append(screw(f"HeadScrew_V{side}{k}", (x, sy * (side_y(VISOR, x, 263) - 0.5), 263), "Y" if sy > 0 else "-Y"))
-    parts.append(rounded("VisorGlass", coll, mat("Smoke", "#101114", 0.06), (88.9, -16.6, 256.9), (90.3, 16.6, 267.1), 0.5))
-    tof = Vector((84.0, 12.0, 262.0))
-    parts.append(rounded("ToFBoard", coll, mat("ToFPCB", "#5B2C8F", 0.5), (tof.x - 1.6, tof.y - 4.5, tof.z - 6), (tof.x, 18.4, tof.z + 6), 0.4))  # (screwed to the visor wall)
-    parts.append(rounded("ToFSensor", coll, CHIP, (tof.x, tof.y - 3.2, tof.z - 1.5), (tof.x + 1.0, tof.y + 3.2, tof.z + 1.5), 0.3))
-    # (and a camera mount: a black cradle from the visor's side wall to the holder)
-    parts.append(rounded("CamMount", coll, INK, (60, -18.4, 254.8), (72, -16.2, 258.5), 0.5))
-    # The status LED: a red dot on the snout front, as on the boards.
-    parts.append(disc("StatusLED", coll, LED_RED, 1.8, 1.0, (104.6, 0, 240.0), "X"))
+    parts.append(rounded("VisorGlass", coll, mat("Smoke", "#101114", 0.06), (89.6, -11.6, 256.9), (91.0, 11.6, 267.1), 0.5))
+    # (the camera rides on two black rails from the visor's side walls)
+    for sy in (1, -1):
+        parts.append(rounded(f"CamMount{sy}", coll, INK, (60, min(sy * 18.3, sy * 12.2), 255.5), (72, max(sy * 18.3, sy * 12.2), 258.5), 0.5))
+    # The snout front: the red status LED, and below it the ToF sensor's small window - looking
+    # straight ahead at obstacle height; its board is screwed inside the snout.
+    parts.append(disc("StatusLED", coll, LED_RED, 1.8, 1.0, (104.6, 0, 242.0), "X"))
+    tcut = bpy.data.objects.new("Cut_ToF", box_mesh("Cut_ToF", (99, -3.4, 232.0), (110, 3.4, 236.0)))
+    bpy.data.collections[f"{SCENE}: rig"].objects.link(tcut)
+    boolean_cut(shell, tcut, HEAD)
+    parts.append(rounded("ToFWindow", coll, mat("ToFGlass", "#141418", 0.08), (104.0, -4.2, 231.3), (105.4, 4.2, 236.7), 0.6))
+    parts.append(rounded("ToFBoard", coll, mat("ToFPCB", "#5B2C8F", 0.5), (101.4, -6, 230.8), (103.0, 6, 239.5), 0.4))
+    parts.append(rounded("ToFSensor", coll, CHIP, (103.0, -2.6, 232.6), (103.9, 2.6, 235.4), 0.3))
     # Eye sockets on the side facets: a black angular socket, a glossy black lens, a lime brow.
-    A, B, C, D = (Vector(v) for v in ((60, 44, 218.6), (60, 39, 261), (98, 21, 250), (98, 26, 223)))
+    A, B, C, D = (Vector(v) for v in ((60, 44, 236), (60, 38, 261), (98, 20, 250), (98, 26, 236)))
     for sy, side in ((1, "L"), (-1, "R")):
         m = Vector((1, sy, 1))
         a, b, c, d = (v * 1 for v in (A, B, C, D))
@@ -453,9 +462,7 @@ def part_head():
             v = -v
         # a point on the facet at the eye: x 82, z 243
         t = (82 - 60) / 38.0
-        wb, wt = 44 + (26 - 44) * t, 39 + (21 - 39) * t
-        z0, z1 = 218.6 + (223 - 218.6) * t, 261 + (250 - 261) * t
-        eye = Vector((82, sy * (wb + (wt - wb) * (243 - z0) / (z1 - z0)), 243))
+        eye = Vector((82, sy * hex_side(HEAD_SECTIONS, 82, 246), 246))
         frame = Matrix((tuple(u) + (0,), tuple(v) + (0,), tuple(n) + (0,), (0, 0, 0, 1))).transposed()
         frame.translation = eye
 
@@ -479,16 +486,16 @@ def part_head():
     # The cream upper lip: a band below the snout, as on the boards (lime above, cream below),
     # following the head's facets just proud of them.
     # (a panel of the head itself, not a layer on it: the shell is cut where it goes)
-    muzzle = loft_trap("Muzzle", HEAD_SECTIONS, CREAM, facet=CHAMFER)
+    muzzle = loft_hex("Muzzle", HEAD_SECTIONS, CREAM)
     hollow(muzzle)
-    slab = bpy.data.objects.new("Cut_MuzzleSlab", box_mesh("Cut_MuzzleSlab", (56, -70, 218.1), (120, 70, 230.5)))
-    bpy.data.collections[f"{SCENE}: rig"].objects.link(slab)
-    boolean_cut(muzzle, slab, HEAD, "INTERSECT")
-    boolean_cut(shell, slab, HEAD)
+    mslab = bpy.data.objects.new("Cut_MuzzleSlab", box_mesh("Cut_MuzzleSlab", (56, -70, 218.1), (120, 70, 230.5)))
+    bpy.data.collections[f"{SCENE}: rig"].objects.link(mslab)
+    boolean_cut(muzzle, mslab, HEAD, "INTERSECT")
+    boolean_cut(shell, mslab, HEAD)
     parts.append(muzzle)
     # The back of the head in cream, as on the boards: a cap over the shell behind the cheeks,
     # its front edge a panel seam.
-    back = loft_trap("HeadBack", HEAD_SECTIONS, CREAM, facet=CHAMFER)
+    back = loft_hex("HeadBack", HEAD_SECTIONS, CREAM)
     hollow(back)
     bslab = bpy.data.objects.new("Cut_BackSlab", box_mesh("Cut_BackSlab", (-60, -70, 190), (4, 70, 300)))
     bpy.data.collections[f"{SCENE}: rig"].objects.link(bslab)
@@ -498,13 +505,13 @@ def part_head():
     parts.append(back)
     for sy, side in ((1, "L"), (-1, "R")):  # the back cap's screws, just behind its seam
         for k, z in enumerate((212, 236)):
-            parts.append(screw(f"HeadScrew_B{side}{k}", (-2, sy * (side_y(HEAD_SECTIONS, -2, z) - 0.4), z), "Y" if sy > 0 else "-Y"))
+            parts.append(screw(f"HeadScrew_B{side}{k}", (-2, sy * (hex_side(HEAD_SECTIONS, -2, z) - 0.4), z), "Y" if sy > 0 else "-Y"))
     # Head IMU (LSM6DSV16X breakout) on the head frame. (The speaker vents through the mouth.)
     parts.append(rounded("HeadIMU", coll, mat("IMUPCB", "#1D3F8F", 0.5), (10, -26, 237.4), (28, -13, 239.0), 0.4))
     # Dorsal spikes: little lime fins down the crown, the dino's tell (they continue down the
     # back and the tail).
     for k, (x, h) in enumerate(((-22, 7.0), (-6, 8.5), (10, 9.5), (26, 9.0))):
-        top = next(z1 + (z1b - z1) * (x - xa) / (xb - xa) for (xa, _, _, _, z1), (xb, _, _, _, z1b) in zip(HEAD_SECTIONS, HEAD_SECTIONS[1:]) if xa <= x <= xb)
+        top = hex_at(HEAD_SECTIONS, x)[6]
         parts.append(spike(f"Spike_H{k}", x, top, h))
     names = made(parts, HEAD)
     # Jaw: cream, x 53..96 (in front of the neck opening and the jaw servo's case), arms up the
@@ -523,11 +530,16 @@ def part_head():
     boolean_cut(shell, cutter_cylinder("Cut_Hinge", 4.2, -60, 60, HINGE, "Y"), HEAD)
     for sy, side in ((1, "L"), (-1, "R")):
         ax = "Y" if sy > 0 else "-Y"
-        jaw.append(loft_skin(f"JawArm_{side}", coll, CREAM, [(17, 1.5, 216, 235), (34, 1.5, 213, 231), (50, 1.5, 206, 222), (66, 1.5, 205, 217.2)], subsurf=2, keep=0.3, yc=sy * 51.0))
+        # (shaped like a jaw bone: a round boss on the hinge, tapering forward to the jaw)
+        jaw.append(slab(f"JawArm_{side}", CREAM, teardrop((HINGE.x, HINGE.z), 10.5, (63, 211.0), 6.5), *sorted((sy * 49.5, sy * 52.5)), chamfer=1.4))
         jaw.append(rounded(f"JawCheek_{side}", coll, CREAM, (61, min(sy * 39.5, sy * 52.0), 205.5), (70, max(sy * 39.5, sy * 52.0), 217.2), 2.5))
         jaw.append(disc(f"JawShaft_{side}", coll, SILVER, 3.2, 13.0 if sy > 0 else 13.5, (HINGE.x, sy * (39.9 if sy > 0 else 39.4), HINGE.z), ax, n=24))
-        jaw.append(disc(f"CheekCap_{side}", coll, INK, 8.5, 3.0, (HINGE.x, sy * 52.4, HINGE.z), ax, n=8, bevel_w=1.0))
-        jaw.append(disc(f"CheekPin_{side}", coll, SILVER, 3.2, 1.0, (HINGE.x, sy * 55.3, HINGE.z), ax))
+        # (the hinge reads as a servo horn: a black horn disc, four screws, a silver hub)
+        jaw.append(disc(f"CheekCap_{side}", coll, INK, 8.0, 2.4, (HINGE.x, sy * 52.4, HINGE.z), ax, n=40, bevel_w=0.6))
+        jaw.append(disc(f"CheekPin_{side}", coll, SILVER, 3.0, 0.9, (HINGE.x, sy * 54.7, HINGE.z), ax))
+        for k in range(4):
+            a = math.pi / 4 + k * math.pi / 2
+            jaw.append(disc(f"CheekScrew_{side}{k}", coll, SILVER, 1.0, 0.6, (HINGE.x + 5.4 * math.cos(a), sy * 54.7, HINGE.z + 5.4 * math.sin(a)), ax, n=12))
         for k, (x, z) in enumerate(((44, 216.5), (62, 210.5))):
             jaw.append(screw(f"JawScrew_{side}{k}", (x, sy * 52.4, z), ax))
     bpy.context.view_layer.update()
@@ -639,6 +651,9 @@ def shield(name, material, outline, y0, y1, dome=(1.0, 0.96, 0.84, 0.62)):
     return o, (lambda fx, fz: (cx + fx, cz + fz))
 
 
+GUARD_Y = (70.05, 29.95)  # the ankle cradle's outer and inner faces (|y|), measured
+
+
 LEG_JOINTS = {"L": ["yaw2roll", "hip_l", "upper_leg_left", "leg", "ankle_left"], "R": ["bearing_roll", "hip_l_2", "upper_leg_right", "leg_2", "ankle_right"]}
 
 
@@ -648,7 +663,7 @@ def part_legs():
     Measured (left; the right mirrors): thigh hardware x -45..16, y 39..71, z 55..103, the knee
     axis at (-31.8, z 67.5); the shin servo x -42..-22, y 37..65, z 16..50; the ankle bracket
     x -46..-10, y 30..70, z 9..34; Microduck's sole x -52..2, y 29..70."""
-    clear(("Thigh", "Shin", "Foot", "Toe", "Sole", "Knee"))
+    clear(("Thigh", "Shin", "Foot", "Toe", "Sole", "Knee"))  # (FootGuard* too)
     names = []
     tilt = math.atan2(22.0, 35.8)  # the thigh's line, hip pitch axis to knee
     for side, sy in (("L", 1), ("R", -1)):
@@ -670,6 +685,11 @@ def part_legs():
             yt = yf + t * 10.5
             foot.append(loft_skin(f"ToeCap_{side}{t + 1}", coll, LIME, [(-10, 9.5, 3, 15), (4, 9.0, 3, 14), (13, 6.0, 3, 8)], subsurf=2, keep=0.45, yc=yt))
             foot.append(rounded(f"ToeSole_{side}{t + 1}", coll, RUBBER, (-10, yt - 9.5, 0), (12, yt + 9.5, 3.4), 1.4))
+        # Ankle guards: rounded cream plates over both faces of the ankle cradle - with the toes
+        # and sole, the foot reads as a shoe.
+        guard = teardrop((-30, 21), 14.0, (-15, 15), 8.5)
+        foot.append(slab(f"FootGuardO_{side}", CREAM, guard, *sorted((sy * GUARD_Y[0], sy * (GUARD_Y[0] + 2.8))), chamfer=1.2))
+        foot.append(slab(f"FootGuardI_{side}", CREAM, guard, *sorted((sy * GUARD_Y[1], sy * (GUARD_Y[1] - 2.4))), chamfer=1.2))
         names += made(foot, ankle)
     return names, LEG_JOINTS["L"] + LEG_JOINTS["R"]
 
@@ -699,17 +719,20 @@ def part_dress():
     """A lime collar round the neck servos (on the neck: it pitches with them) and two small
     T-rex arms tucked in front of the chest (passive, on friction pins: the head does the
     expression, the arms just complete the silhouette)."""
-    clear(("NeckCollar", "Throat", "CollarScrew", "ThroatScrew"))
+    clear(("NeckCollar", "Throat", "CollarScrew", "ThroatScrew", "Nape"))
     # (a cream frame clamped round the upper neck servo's case, x 16..36, |y| 13)
     z0, z1 = 170.5, 175.5
     # (and a cream throat plate down the front of the lower neck servo, the boards' neck armour)
+    # (and a cream nape plate down its back, on the servo's case-screw bosses)
     names = made([rounded("Throat", coll, CREAM, (36.5, -12, 147), (40.0, 12, 170.4), 1.6),
+                  rounded("Nape", coll, CREAM, (11.4, -11, 158.5), (15.5, 11, 170.4), 1.6),
                   rounded("NeckCollar0", coll, CREAM, (36.1, -17.5, z0), (40.5, 17.5, z1), 1.9),
                   rounded("NeckCollar1", coll, CREAM, (11.5, -17.5, z0), (15.9, 17.5, z1), 1.9),
                   rounded("NeckCollar2", coll, CREAM, (15.9, 13.1, z0), (36.1, 17.5, z1), 1.9),
                   rounded("NeckCollar3", coll, CREAM, (15.9, -17.5, z0), (36.1, -13.1, z1), 1.9)]
                  + [screw(f"ThroatScrew{k}", (40.0, dy, z), "X") for k, (dy, z) in enumerate(((-7, 152), (7, 152), (-7, 165), (7, 165)))]
-                 + [screw(f"CollarScrew{k}", (40.5, dy, 173), "X") for k, dy in enumerate((-12, 12))], "neck")
+                 + [screw(f"CollarScrew{k}", (40.5, dy, 173), "X") for k, dy in enumerate((-12, 12))]
+                 + [screw(f"NapeScrew{k}", (11.4, dy, 164.5), "-X") for k, dy in enumerate((-8, 8))], "neck")
     return names, ["neck", "neck_pitch", "yaw_roll_motion"] + LEG_JOINTS["L"][:3] + LEG_JOINTS["R"][:3]
 
 
@@ -717,6 +740,47 @@ def screw(name, at, axis):
     """A visible M2 button-head screw (black), its head on the surface at `at`."""
     screw_dot(name, coll, at, axis)
     return next(o for o in coll.objects if o.name.split(".")[0] == name)
+
+
+def loft_hex(name, sections, material, facet=CHAMFER if "CHAMFER" in globals() else 6.0):
+    """A panelled shell through six-point sections (x, half width at the bottom, at the shoulder,
+    shoulder height, half width at the top, z bottom, z top): wide only at the shoulder, domed
+    above it."""
+    v, f = [], []
+    for x, wb, wm, zm, wt, z0, z1 in sections:
+        v += [(x, -wb, z0), (x, wb, z0), (x, wm, zm), (x, wt, z1), (x, -wt, z1), (x, -wm, zm)]
+    n = len(sections)
+    f.append(tuple(range(6))[::-1])
+    for i in range(n - 1):
+        a, b = 6 * i, 6 * (i + 1)
+        for k in range(6):
+            f.append((a + k, a + (k + 1) % 6, b + (k + 1) % 6, b + k))
+    f.append(tuple(range(6 * (n - 1), 6 * n)))
+    me = bpy.data.meshes.new(name)
+    me.from_pydata(v, [], f)
+    import bmesh
+    bm = bmesh.new()
+    bm.from_mesh(me)
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    bm.to_mesh(me)
+    bm.free()
+    o = obj_from(name, me, coll, material)
+    soft_edges(o, facet)
+    return o
+
+
+def hex_at(sections, x):
+    for a, b in zip(sections, sections[1:]):
+        if a[0] <= x <= b[0]:
+            t = (x - a[0]) / (b[0] - a[0])
+            return tuple(p + (q - p) * t for p, q in zip(a, b))
+    raise ValueError(x)
+
+
+def hex_side(sections, x, z):
+    """|y| of a loft_hex's side at (x, z)."""
+    _, wb, wm, zm, wt, z0, z1 = hex_at(sections, x)
+    return wb + (wm - wb) * (z - z0) / (zm - z0) if z <= zm else wm + (wt - wm) * (z - zm) / (z1 - zm)
 
 
 def side_top(sections, x):
