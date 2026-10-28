@@ -35,6 +35,7 @@ MD_BODY = {"left_shell": "trunk_base", "right_shell": "trunk_base", "foot_left":
 HOME = {"left_hip_roll": -0.0873, "right_hip_roll": 0.0873, "left_hip_pitch": -0.4579, "right_hip_pitch": 0.4579,
         "left_knee": -0.0049, "right_knee": 0.0049, "left_ankle": 0.4530, "right_ankle": -0.4530,
         "neck_pitch": 0.3491, "head_pitch": 0.3491}
+NECK_HOME = 0.29  # rad: Microduck's 20 deg neck pitch is past TinyREX's 18 deg collision-free limit
 SOLES = {"Sole_L", "Sole_R", "ToeSole_L0", "ToeSole_L2", "ToeSole_R0", "ToeSole_R2"}
 
 
@@ -177,9 +178,10 @@ def report(items_md, items_tr, angles):
 
 def trex_home(items_tr):
     """Microduck's HOME, with the legs' pitch chain leaned so that TinyREX's centre of mass sits
-    over its ankle axis (feet flat: ankle = -hip pitch, knee as in HOME)."""
+    over its ankle axis (feet flat: ankle = -hip pitch, knee as in HOME), the neck inside its
+    collision-free range."""
     def ahead(a):
-        angles = dict(HOME, left_hip_pitch=-a, right_hip_pitch=a, left_ankle=a, right_ankle=-a)
+        angles = dict(HOME, left_hip_pitch=-a, right_hip_pitch=a, left_ankle=a, right_ankle=-a, neck_pitch=NECK_HOME)
         pose(angles)
         ankle = (E("ankle_left").matrix_world.translation + E("ankle_right").matrix_world.translation) / 2
         return com(items_tr)[1].x - ankle.x, angles

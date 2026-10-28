@@ -12,16 +12,29 @@ borrows that idea: a small, characterful biped with a big personality, built to 
 - Policy training (MuJoCo, PPO, sim2real): [pollen-robotics/microduck_rl](https://github.com/pollen-robotics/microduck_rl)
   (Apache-2.0 code; its 3D model files are CC BY-NC-SA 4.0)
 
-**What TinyRex uses from Microduck:** inspiration only: the class of robot, the scale, and the approach of checking the
-walk in MuJoCo before building it. TinyRex contains **no Microduck CAD, meshes, MJCF or code**. Its geometry was
-designed from an empty file in Polykrom. If you combine TinyRex with Microduck's model files, those files keep their
-CC BY-NC-SA 4.0 licence.
+**What TinyRex uses from Microduck:**
+
+- **Its frame layout (the v4 design, `design/blender/`).** TinyRex places its own models of the
+  servos, brackets and electronics where Microduck's joints and parts sit. Those placements are read
+  from Microduck's MJCF (`robot_walk.xml`, Apache-2.0) at design time. Like Microduck, TinyRex uses
+  Dynamixel XL330 servos.
+- **Its MJCF, for simulation.** `design/sim/tinyrex.xml` is generated from that MJCF by
+  `design/sim/build_mjcf.py`, which keeps Microduck's kinematic tree and its joint and actuator
+  models. The script makes these changes: every body's geometry and inertia are replaced with
+  TinyRex's own; the joint ranges are TinyRex's collision-free limits; jaw, tail and shoulder joints
+  are added; the feet get new contacts.
+- **Its HOME standing pose** (`microduck_constants.py`, Apache-2.0), as the starting point for
+  TinyRex's.
+
+The repository contains **no Microduck mesh**. Microduck's 3D model files (CC BY-NC-SA 4.0) were
+used only locally, as a size and layout reference and to measure the shells TinyRex replaces. If you
+combine TinyRex with those files, they keep their CC BY-NC-SA 4.0 licence.
 
 ## Open Duck Mini — Antoine Pirrone and contributors
 
 [Open Duck Mini](https://github.com/apirrone/Open_Duck_Mini) (Apache-2.0) is an open miniature of Disney's BDX droid,
-sponsored by Hugging Face and Pollen Robotics. TinyRex's choice of parts follows it closely: Feetech STS3215 serial
-servos and a Raspberry Pi Zero 2 W. Open Duck Mini's runtime and MuJoCo Playground environments are the obvious place
+sponsored by Hugging Face and Pollen Robotics. Earlier TinyRex designs followed its choice of parts: Feetech STS3215
+serial servos and a Raspberry Pi Zero 2 W. The v4 design moved to Microduck's XL330 layout and keeps the Pi Zero 2 W. Open Duck Mini's runtime and MuJoCo Playground environments are the obvious place
 to start for learned walking.
 
 ## The tools
