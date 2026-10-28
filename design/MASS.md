@@ -13,8 +13,8 @@ Each added part's mass is its mesh volume × material density, placed at its cen
 
 | | Microduck | TinyREX |
 |---|---|---|
-| Mass | 737.2 g | 950.1 g (+29 %) |
-| Centre of mass (x, y, z mm) | [1.7, -0.0, 133.2] | [-8.3, -0.1, 133.7] |
+| Mass | 737.2 g | 973.1 g (+32 %) |
+| Centre of mass (x, y, z mm) | [1.7, -0.0, 133.2] | [-8.3, -0.0, 132.9] |
 | Feet, front to back (x mm) | [-51.8, 2.2] | [-53.0, 12.0] |
 | CoM to the feet's front / back edge | 0.5 / 53.5 mm | 20.3 / 44.7 mm |
 
@@ -28,12 +28,12 @@ This is the moment of everything above each joint of the stance leg, about that 
 | Joint | Microduck (N·m) | TinyREX (N·m) | TinyREX / XL330 stall (0.52 N·m @ 5 V) |
 |---|---|---|---|
 | hip_yaw | 0.000 | 0.000 | 0 % |
-| hip_roll | 0.161 | 0.206 | 40 % |
-| hip_pitch | 0.011 | 0.087 | 17 % |
-| knee | 0.241 | 0.216 | 42 % |
-| ankle | 0.241 | 0.216 | 42 % |
+| hip_roll | 0.161 | 0.211 | 41 % |
+| hip_pitch | 0.011 | 0.090 | 17 % |
+| knee | 0.241 | 0.221 | 42 % |
+| ankle | 0.241 | 0.221 | 42 % |
 
-TinyREX is 29 % heavier, yet its knee and ankle load is *lower* than Microduck's: the centre of mass
+TinyREX is 32 % heavier, yet its knee and ankle load is *lower* than Microduck's: the centre of mass
 sits nearer their axes. The extra weight shows at the hip roll, +28 %, and the hip pitch. Every joint
 stays under about 45 % of stall here. Two things still need checking: a crouched walking pose, and
 retraining Microduck's walking policy for the new mass.

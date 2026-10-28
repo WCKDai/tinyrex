@@ -16,7 +16,26 @@ def clear(prefixes):
             bpy.data.objects.remove(o, do_unlink=True)
 
 
-def facet(o, width=2.5):
+SOFT = 3  # fillet segments on every panel edge: soft product edges, flat faces kept
+
+
+def soft_edges(o, width, segments=SOFT):
+    """Round a panel's edges with a small fillet (flat faces stay flat, shaded crisp); named
+    "Chamfer" so later passes recognise it."""
+    b = o.modifiers.new("Chamfer", "BEVEL")
+    b.width, b.segments, b.limit_method = width, segments, "ANGLE"
+    b.angle_limit = math.radians(25)
+    b.profile = 0.6
+    b.harden_normals = True
+    o.data.shade_smooth()
+    try:
+        o.data.set_sharp_from_angle(angle=math.radians(40))
+    except AttributeError:
+        pass
+    return b
+
+
+def facet(o, width=4.0):
     """Turn a subdivided shell into the boards' hard-surface panel: drop the smoothing, chamfer its
     edges (before its wall and openings), flat shading."""
     subs = [m for m in o.modifiers if m.type == "SUBSURF" or m.name == "Hold"]
@@ -24,16 +43,13 @@ def facet(o, width=2.5):
         return
     for m in subs:
         o.modifiers.remove(m)
-    b = o.modifiers.new("Chamfer", "BEVEL")
-    b.width, b.segments, b.limit_method = width, 1, "ANGLE"
+    soft_edges(o, width)
     o.modifiers.move(len(o.modifiers) - 1, 0)
-    for poly in o.data.polygons:
-        poly.use_smooth = False
 
 
 def made(objs, body=None):
     for o in objs:
-        if o.type == "MESH" and o.name.split(".")[0] != "NeckCollar":
+        if o.type == "MESH" and not o.get("keep_round"):
             facet(o)
         if o.name not in coll.objects:
             for c in o.users_collection:
@@ -75,11 +91,8 @@ def loft_trap(name, sections, material, subsurf=3, keep=0.42, yc=0.0, bevel=None
     me.from_pydata(v, [], f)
     o = obj_from(name, me, coll, material, smooth=not facet)
     if facet:
-        # The concept boards' look: flat panels with chamfered edges, not a pebble.
-        b = o.modifiers.new("Chamfer", "BEVEL")
-        b.width, b.segments = facet, 1
-        b.limit_method = "ANGLE"
-        b.harden_normals = False
+        # The concept boards' look: flat panels with softly filleted edges, not a pebble.
+        soft_edges(o, facet)
         return o
     if keep:
         b = o.modifiers.new("Hold", "BEVEL")
@@ -135,7 +148,7 @@ def part_body():
     for o in list(scene.objects):
         if o.name.split(".")[0] in ("Cut_Belly", "Cut_TailSlot", "Cut_TailHorn", "Cut_Shoulder1", "Cut_Shoulder-1", "Cut_LegWindow1", "Cut_LegWindow-1"):
             bpy.data.objects.remove(o, do_unlink=True)
-    clear(("Body", "BatteryPod", "Backpack", "PackScrew", "BodyMount", "BodyScrew", "BatteryDoor", "ChargePort", "PowerSwitch"))
+    clear(("Body", "BatteryPod", "Backpack", "PackScrew", "BodyMount", "BodyScrew", "Flank", "Spike_B", "BatteryDoor", "ChargePort", "PowerSwitch"))
     objs = [
         # One smooth body: full above (|y| <= 34), narrow below the back (|y| <= 22) round the
         # battery's lower half, so the thighs swinging in on hip roll pass it.
@@ -158,9 +171,18 @@ def part_body():
     for k, (xa, xb) in enumerate(((-16, -11), (8, 13))):
         for sy in (1, -1):
             objs.append(rounded(f"BodyMount{k}{'L' if sy > 0 else 'R'}", coll, CREAM, (xa, min(sy * 28.6, sy * 31.8), 106.2), (xb, max(sy * 28.6, sy * 31.8), 109.5), 0.6))
-    for sy in (1, -1):  # the screws into the rear bosses, and two more into the battery holders' tops
-        for k, (x, z) in enumerate(((-13.5, 108.5), (-22.5, 140))):
+    for sy in (1, -1):  # the screws into the rear bosses
+        for k, (x, z) in enumerate(((-13.5, 108.5),)):
             objs.append(screw(f"BodyScrew{k}{'L' if sy > 0 else 'R'}", (x, sy * (side_y(BODY, x, z) - 0.4), z), "Y" if sy > 0 else "-Y"))
+    # Lime flank armour: a teardrop plate on each side, over the battery holders, two screws each.
+    for sy, side in ((1, "L"), (-1, "R")):
+        y0, y1 = (32.2, 35.6) if sy > 0 else (-35.6, -32.2)
+        objs.append(slab(f"Flank_{side}", LIME, teardrop((-6, 133), 14.5, (-27, 124), 9.0), y0, y1, chamfer=1.6))
+        for k, (x, z) in enumerate(((-4, 134), (-24, 125))):
+            objs.append(screw(f"FlankScrew_{side}{k}", (x, sy * 35.2, z), "Y" if sy > 0 else "-Y"))
+    # Dorsal spikes continue down the back, behind the backpack, on the tail root.
+    for k, (x, h) in enumerate(((-55, 8.0),)):
+        objs.append(spike(f"Spike_B{k}", x, side_top(BODY, x), h))
     names = made(objs, TRUNK)
     body = objs[0]
     # Openings: the belly, for the hip yaw servos and bearings; the back, for the tail servo.
@@ -210,7 +232,7 @@ def tail_body():
 def part_tail():
     """A cream root pod round the tail servo (fixed to the body), and a cute moving tail on its horn:
     a yoke over the top, three rounded beads with black rings, a round lime tip."""
-    clear(("Tail", "XL330_TailYaw"))
+    clear(("Tail", "XL330_TailYaw", "Spike_T"))
     tail_body()
     T = Matrix.Translation
     # The servo, horn up: local X (output) onto +Z, the case reaching forward to just behind the battery.
@@ -233,19 +255,21 @@ def part_tail():
     moving = [disc("TailCoupling", coll, LIME, 9.8, 6.0, (TAIL_AXIS.x, 0, 130.6), "Z", bevel_w=0.8)]  # (up through the root's horn opening to the arm)
     for k, dy in enumerate((-5.5, 5.5)):
         moving.append(disc(f"TailMagnet{k}", coll, SILVER, 3.0, 0.6, (TAIL_AXIS.x - 3, dy, 136.6), "Z", n=20))
-    moving.append(loft_skin("TailArm", coll, CREAM, [(-68, 8.5, 136.5, 142), (-88, 9, 136.5, 143), (-102, 10, 131, 143)], subsurf=2, keep=0.45))
+    moving.append(loft_skin("TailArm", coll, CREAM, [(-68, 8.5, 136.5, 142.5), (-93, 11, 136.5, 145.5), (-101, 15, 127, 147)], subsurf=2, keep=0.45))
     # (thick at the root and tapering, sweeping up toward the tip as on the boards)
-    segs = [(-99, -127, 19.0, 17.0, 128, 133), (-131, -155, 16.0, 14.0, 135, 143), (-160, -180, 13.0, 11.0, 146, 156)]
+    # (one taper: each segment starts the size the last one ended)
+    segs = [(-99, -127, 19.0, 16.5, 128, 134), (-131, -155, 16.5, 13.5, 135, 144), (-160, -180, 13.5, 10.5, 145.5, 156)]
     for k, (x0, x1, r0, r1, z0, z1) in enumerate(segs):
         moving.append(loft_skin(f"TailSeg{k}", coll, CREAM, [(x0, r0 * 0.95, z0 - r0, z0 + r0 * 0.92), ((x0 + x1) / 2, (r0 + r1) / 2, (z0 + z1) / 2 - (r0 + r1) / 2, (z0 + z1) / 2 + (r0 + r1) / 2 * 0.92), (x1, r1 * 0.95, z1 - r1, z1 + r1 * 0.92)], subsurf=3, keep=0.2))
         for sy in (1, -1):
             moving.append(disc(f"TailScrew{k}{'L' if sy > 0 else 'R'}", coll, INK, 1.5, 1.0, ((x0 + x1) / 2, sy * ((r0 + r1) / 2 - 0.3), (z0 + z1) / 2 + 2), "Y" if sy > 0 else "-Y", n=16, bevel_w=0.4))
+        moving.append(spike(f"Spike_T{k}", (x0 + x1) / 2, (z0 + z1) / 2 + (r0 + r1) / 2 * 0.92, 6.0 - k))
         nxt = segs[k + 1] if k + 1 < len(segs) else None
         # (each ring reaches 1.5 mm into both neighbours: bonded, it holds them together)
         x_next = nxt[0] if nxt else -182
         ra = (r1 if nxt is None else (r1 + nxt[2]) / 2) * 0.82
         moving.append(disc(f"TailFlex{k}", coll, TPU, ra, (x1 - x_next) + 3.0, (x1 + 1.5, 0, z1 - 0.5), "-X", bevel_w=1.2))
-    moving.append(loft_skin("TailTip", coll, LIME, [(-182, 10.5, 146, 166), (-198, 8.5, 154, 171), (-214, 5.5, 164, 176), (-228, 2.0, 175, 180)], subsurf=3, keep=0.3))
+    moving.append(loft_skin("TailTip", coll, LIME, [(-182, 10.5, 146, 166), (-198, 8.0, 154, 171), (-214, 5.0, 164, 176), (-228, 1.8, 175, 180)], subsurf=3, keep=0.3))
     bpy.context.view_layer.update()
     names += made(moving, "tail")
     return names, ["tail", "upper_leg_left", "upper_leg_right", "hip_l", "hip_l_2"]
@@ -318,7 +342,7 @@ def cutter_cylinder(name, r, z0, z1, at, axis):
     return o
 
 
-CHAMFER = 3.5  # mm: the shells' edge chamfer
+CHAMFER = 6.0  # mm: the shells' edge fillet
 # The M12 camera (and the ToF sensor beside it) look out of a brow visor on the head's top, the
 # black slot the boards show above the snout: they see forward over the snout, out of harm's way.
 CAM_GLASS = Vector((89.9, 0.0, 238.1))  # Microduck's camera: the front of its glass
@@ -369,7 +393,7 @@ def part_head():
     low behind, a bore for the camera, an opening round the neck for the head to turn; glossy eyes,
     the ToF window and board, the head IMU, the speaker grille, the red LED; and a cream jaw on
     its own joint on the jaw servo's axis, in front of the neck opening."""
-    clear(("Head", "HeadScrew", "Eye", "Brow", "Visor", "Cam", "ToF", "HeadIMU", "Grille", "LED", "StatusLED", "Camera", "Cheek", "Jaw", "Mouth", "Tongue", "Fang", "Blush", "Crest", "Chin", "Nostril", "Muzzle"))
+    clear(("Head", "HeadScrew", "Spike_H", "Eye", "Brow", "Visor", "Cam", "ToF", "HeadIMU", "Grille", "LED", "StatusLED", "Camera", "Cheek", "Jaw", "Mouth", "Tongue", "Fang", "Blush", "Crest", "Chin", "Nostril", "Muzzle"))
     for o in list(scene.objects):
         if o.name.split(".")[0] in ("Cut_Camera", "Cut_Neck", "Cut_EyeL", "Cut_EyeR", "Cut_MuzzleSlab", "Cut_MuzzleCurve", "Cut_ToF", "Cut_VisorBay", "Cut_VisorFloor", "Cut_VisorSlot", "Cut_Hinge", "Cut_BackSlab", "Cut_NeckBack"):
             bpy.data.objects.remove(o, do_unlink=True)
@@ -392,8 +416,9 @@ def part_head():
     hcut = bpy.data.objects.new("Cut_VisorBay", box_mesh("Cut_VisorBay", (50, -18.5, 245), (86, 18.5, 290)))
     bpy.data.collections[f"{SCENE}: rig"].objects.link(hcut)
     boolean_cut(shell, hcut, HEAD)
-    VISOR = [(44, 20, 15, 254, 266), (58, 20, 18.5, 254, 277), (80, 20, 18.5, 252, 277), (90, 20, 18.5, 249, 274)]
-    visor = loft_trap("Visor", VISOR, LIME, facet=2.5)
+    # (a brow ridge: it rises from the crown, runs forward over the eyes and drops to the snout)
+    VISOR = [(40, 15, 6, 252, 258), (56, 20, 18.5, 254, 273.8), (80, 20, 18.5, 252, 274.4), (92, 19.5, 15, 248, 270)]
+    visor = loft_trap("Visor", VISOR, LIME, facet=4.5)
     hollow(visor, 2.0)
     vfloor = bpy.data.objects.new("Cut_VisorFloor", box_mesh("Cut_VisorFloor", (40, -18.1, 240), (95, 18.1, 256.5)))
     bpy.data.collections[f"{SCENE}: rig"].objects.link(vfloor)
@@ -441,8 +466,7 @@ def part_head():
             me = bpy.data.meshes.new(name)
             me.from_pydata(vs, [], fs)
             o = obj_from(name, me, coll, material, frame)
-            bv = o.modifiers.new("Chamfer", "BEVEL")
-            bv.width, bv.segments = 0.6, 1
+            soft_edges(o, 0.7, 2)
             return o
 
         # (u forward along the facet, v up; sockets slant down to the front like the boards')
@@ -477,6 +501,11 @@ def part_head():
             parts.append(screw(f"HeadScrew_B{side}{k}", (-2, sy * (side_y(HEAD_SECTIONS, -2, z) - 0.4), z), "Y" if sy > 0 else "-Y"))
     # Head IMU (LSM6DSV16X breakout) on the head frame. (The speaker vents through the mouth.)
     parts.append(rounded("HeadIMU", coll, mat("IMUPCB", "#1D3F8F", 0.5), (10, -26, 237.4), (28, -13, 239.0), 0.4))
+    # Dorsal spikes: little lime fins down the crown, the dino's tell (they continue down the
+    # back and the tail).
+    for k, (x, h) in enumerate(((-22, 7.0), (-6, 8.5), (10, 9.5), (26, 9.0))):
+        top = next(z1 + (z1b - z1) * (x - xa) / (xb - xa) for (xa, _, _, _, z1), (xb, _, _, _, z1b) in zip(HEAD_SECTIONS, HEAD_SECTIONS[1:]) if xa <= x <= xb)
+        parts.append(spike(f"Spike_H{k}", x, top, h))
     names = made(parts, HEAD)
     # Jaw: cream, x 53..96 (in front of the neck opening and the jaw servo's case), arms up the
     # sides to cheek caps on the hinge axis; a dark mouth floor, a tongue, two rounded fangs on the
@@ -485,7 +514,7 @@ def part_head():
     # the hinge axis on the head's sides.)
     # The jaw is the cream lower half of the face, flush with the head's sides, a smile under the
     # snout; behind x 56 the neck opening and the jaw servo's case leave the underside lime.
-    jaw = [loft_trap("Jaw", [(61.5, 38, 42, 206, 217.4), (72, 37, 40.5, 204, 217.6), (86, 30, 33, 206, 217.6), (95, 21, 23.5, 209, 217.6), (99.5, 12, 14, 212.5, 217.2)], CREAM, facet=2.5)]
+    jaw = [loft_trap("Jaw", [(61.5, 38, 42, 206, 217.4), (72, 37, 40.5, 204, 217.6), (86, 30, 33, 206, 217.6), (95, 21, 23.5, 209, 217.6), (99.5, 12, 14, 212.5, 217.2)], CREAM, facet=4.0)]
     jaw.append(loft_trap("Mouth", [(64, 33, 34, 216.2, 217.7), (88, 27, 28, 216.2, 217.8), (97, 15, 16, 216.2, 217.8)], INK, facet=0.5))
     jaw.append(rounded("Tongue", coll, mat("Tongue", "#FF7A8A", 0.6), (66, -12, 215.2), (86, 12, 217.4), 1.2))
     # The jaw hangs on its servo: cream arms run back outside the cheeks to the hinge, a shaft
@@ -495,7 +524,7 @@ def part_head():
     for sy, side in ((1, "L"), (-1, "R")):
         ax = "Y" if sy > 0 else "-Y"
         jaw.append(loft_skin(f"JawArm_{side}", coll, CREAM, [(17, 1.5, 216, 235), (34, 1.5, 213, 231), (50, 1.5, 206, 222), (66, 1.5, 205, 217.2)], subsurf=2, keep=0.3, yc=sy * 51.0))
-        jaw.append(rounded(f"JawCheek_{side}", coll, CREAM, (61, min(sy * 39.5, sy * 52.0), 205.5), (70, max(sy * 39.5, sy * 52.0), 217.2), 1.2))
+        jaw.append(rounded(f"JawCheek_{side}", coll, CREAM, (61, min(sy * 39.5, sy * 52.0), 205.5), (70, max(sy * 39.5, sy * 52.0), 217.2), 2.5))
         jaw.append(disc(f"JawShaft_{side}", coll, SILVER, 3.2, 13.0 if sy > 0 else 13.5, (HINGE.x, sy * (39.9 if sy > 0 else 39.4), HINGE.z), ax, n=24))
         jaw.append(disc(f"CheekCap_{side}", coll, INK, 8.5, 3.0, (HINGE.x, sy * 52.4, HINGE.z), ax, n=8, bevel_w=1.0))
         jaw.append(disc(f"CheekPin_{side}", coll, SILVER, 3.2, 1.0, (HINGE.x, sy * 55.3, HINGE.z), ax))
@@ -551,6 +580,65 @@ def pad(name, material, cx, cz, a, b, ang, y0, y1, taper=0.72, n=8, subsurf=2):
     return o
 
 
+def spike(name, x, base, h, width=None, y=0.0, thick=4.4):
+    """A small rounded dorsal fin, leaning back, on a surface at height `base` (centre line)."""
+    w = width or h * 1.25
+    o = slab(name, LIME, [(x - w * 0.6, base - 1.0), (x + w * 0.4, base - 1.0), (x + w * 0.05, base + h * 0.55), (x - w * 0.3, base + h), (x - w * 0.55, base + h * 0.75)],
+             y - thick / 2, y + thick / 2, chamfer=1.4)
+    return o
+
+
+def hull2d(pts):
+    pts = sorted(set(pts))
+    def half(seq):
+        h = []
+        for p in seq:
+            while len(h) >= 2 and (h[-1][0] - h[-2][0]) * (p[1] - h[-2][1]) - (h[-1][1] - h[-2][1]) * (p[0] - h[-2][0]) <= 0:
+                h.pop()
+            h.append(p)
+        return h
+    lo, hi = half(pts), half(pts[::-1])
+    return lo[:-1] + hi[:-1]
+
+
+def teardrop(c1, r1, c2, r2, n=20):
+    """The outline round two circles (x, z centres): a teardrop, broad at c1."""
+    pts = []
+    for (cx, cz), r in ((c1, r1), (c2, r2)):
+        for i in range(n):
+            t = 2 * math.pi * i / n
+            pts.append((round(cx + r * math.cos(t), 3), round(cz + r * math.sin(t), 3)))
+    return hull2d(pts)
+
+
+def shield(name, material, outline, y0, y1, dome=(1.0, 0.96, 0.84, 0.62)):
+    """A domed armour plate: the outline (XZ) at y0 against the hardware, shrinking through three
+    rings to a flat top at y1. Returns the object and a function giving a point on its top face."""
+    cx = sum(p[0] for p in outline) / len(outline)
+    cz = sum(p[1] for p in outline) / len(outline)
+    ys = (y0, y0 + 0.35 * (y1 - y0), y0 + 0.72 * (y1 - y0), y1)
+    n = len(outline)
+    v = []
+    for y, k in zip(ys, dome):
+        v += [(cx + (x - cx) * k, y, cz + (z - cz) * k) for x, z in outline]
+    f = [tuple(range(n)), tuple(range(3 * n, 4 * n))]
+    for r in range(3):
+        f += [(r * n + i, r * n + (i + 1) % n, (r + 1) * n + (i + 1) % n, (r + 1) * n + i) for i in range(n)]
+    me = bpy.data.meshes.new(name)
+    me.from_pydata(v, [], f)
+    import bmesh
+    bm = bmesh.new()
+    bm.from_mesh(me)
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    bm.to_mesh(me)
+    bm.free()
+    o = obj_from(name, me, coll, material, smooth=True)
+    sub = o.modifiers.new("Smooth", "SUBSURF")
+    sub.levels = sub.render_levels = 2
+    o["keep_round"] = True
+    return o, (lambda fx, fz: (cx + fx, cz + fz))
+
+
 LEG_JOINTS = {"L": ["yaw2roll", "hip_l", "upper_leg_left", "leg", "ankle_left"], "R": ["bearing_roll", "hip_l_2", "upper_leg_right", "leg_2", "ankle_right"]}
 
 
@@ -565,13 +653,15 @@ def part_legs():
     tilt = math.atan2(22.0, 35.8)  # the thigh's line, hip pitch axis to knee
     for side, sy in (("L", 1), ("R", -1)):
         up, shin, ankle = SIDE[side]
-        # (a chamfered square armour plate, as on the boards, a screw in each corner)
-        thigh = [pad(f"Thigh_{side}", LIME, -14, 79, 44, 33, tilt, sy * 70.6, sy * 78.8, taper=0.86, n=4)]
+        # (a domed teardrop shield, broad over the hip, narrowing down the thigh to the knee, as
+        # on the arm board; three screws on its crown)
         ca, sa = math.cos(tilt), math.sin(tilt)
-        for k, (u, w) in enumerate(((19, 14), (-19, 14), (-19, -14), (19, -14))):
-            x, z = -14 + u * ca - w * sa, 79 + u * sa + w * ca
-            screw_dot(f"ThighScrew_{side}{k}", coll, (x, sy * 78.4, z), "Y" if sy > 0 else "-Y")
-            thigh.append(next(o for o in coll.objects if o.name.split(".")[0] == f"ThighScrew_{side}{k}"))
+        hip, knee = (-14 + 13 * ca, 79 + 13 * sa), (-14 - 25 * ca, 79 - 25 * sa)
+        plate, at = shield(f"Thigh_{side}", LIME, teardrop(hip, 31.0, knee, 15.0), sy * 70.6, sy * 81.0)
+        thigh = [plate]
+        for k, (u, w) in enumerate(((10, 9), (10, -9), (-12, 0))):
+            x, z = at(u * ca - w * sa, u * sa + w * ca)
+            thigh.append(screw(f"ThighScrew_{side}{k}", (x, sy * 80.6, z), "Y" if sy > 0 else "-Y"))
         names += made(thigh, up)
         yf = sy * 50
         foot = [rounded(f"Sole_{side}", coll, RUBBER, (-53, yf - 21.5, 0), (3, yf + 21.5, 3.6), 1.6),
@@ -613,11 +703,11 @@ def part_dress():
     # (a cream frame clamped round the upper neck servo's case, x 16..36, |y| 13)
     z0, z1 = 170.5, 175.5
     # (and a cream throat plate down the front of the lower neck servo, the boards' neck armour)
-    names = made([rounded("Throat", coll, CREAM, (36.5, -12, 147), (40.0, 12, 170.4), 1.2),
-                  rounded("NeckCollar0", coll, CREAM, (36.1, -17.5, z0), (40.5, 17.5, z1), 1.0),
-                  rounded("NeckCollar1", coll, CREAM, (11.5, -17.5, z0), (15.9, 17.5, z1), 1.0),
-                  rounded("NeckCollar2", coll, CREAM, (15.9, 13.1, z0), (36.1, 17.5, z1), 1.0),
-                  rounded("NeckCollar3", coll, CREAM, (15.9, -17.5, z0), (36.1, -13.1, z1), 1.0)]
+    names = made([rounded("Throat", coll, CREAM, (36.5, -12, 147), (40.0, 12, 170.4), 1.6),
+                  rounded("NeckCollar0", coll, CREAM, (36.1, -17.5, z0), (40.5, 17.5, z1), 1.9),
+                  rounded("NeckCollar1", coll, CREAM, (11.5, -17.5, z0), (15.9, 17.5, z1), 1.9),
+                  rounded("NeckCollar2", coll, CREAM, (15.9, 13.1, z0), (36.1, 17.5, z1), 1.9),
+                  rounded("NeckCollar3", coll, CREAM, (15.9, -17.5, z0), (36.1, -13.1, z1), 1.9)]
                  + [screw(f"ThroatScrew{k}", (40.0, dy, z), "X") for k, (dy, z) in enumerate(((-7, 152), (7, 152), (-7, 165), (7, 165)))]
                  + [screw(f"CollarScrew{k}", (40.5, dy, 173), "X") for k, dy in enumerate((-12, 12))], "neck")
     return names, ["neck", "neck_pitch", "yaw_roll_motion"] + LEG_JOINTS["L"][:3] + LEG_JOINTS["R"][:3]
@@ -627,6 +717,14 @@ def screw(name, at, axis):
     """A visible M2 button-head screw (black), its head on the surface at `at`."""
     screw_dot(name, coll, at, axis)
     return next(o for o in coll.objects if o.name.split(".")[0] == name)
+
+
+def side_top(sections, x):
+    """A loft_trap's top (centre line) at x."""
+    for (xa, _, _, _, za), (xb, _, _, _, zb) in zip(sections, sections[1:]):
+        if xa <= x <= xb:
+            return za + (zb - za) * (x - xa) / (xb - xa)
+    raise ValueError(x)
 
 
 def side_y(sections, x, z):
@@ -640,7 +738,7 @@ def side_y(sections, x, z):
     raise ValueError(x)
 
 
-def slab(name, material, outline, y0, y1, chamfer=1.2):
+def slab(name, material, outline, y0, y1, chamfer=2.2):
     """A chamfered plate: a polygon outline in the XZ plane, from y0 to y1."""
     k = len(outline)
     vs = [(x, y0, z) for x, z in outline] + [(x, y1, z) for x, z in outline]
@@ -654,8 +752,7 @@ def slab(name, material, outline, y0, y1, chamfer=1.2):
     bm.to_mesh(me)
     bm.free()
     o = obj_from(name, me, coll, material)
-    b = o.modifiers.new("Chamfer", "BEVEL")
-    b.width, b.segments, b.limit_method = chamfer, 1, "ANGLE"
+    soft_edges(o, chamfer)
     return o
 
 
