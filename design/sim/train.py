@@ -59,11 +59,13 @@ class Walker(Gait):
             self.home_pos[s] = self.base[s] + np.array([p["lean"], sy * p["width"], 0.0])
 
     def ctrl_fb(self, t, d):
+        return self.ctrl_state(t, *trunk_state(d))
+
+    def ctrl_state(self, t, roll, pitch, w):
+        """The walk's targets from the trunk's roll, pitch and rotation rate (the IMU): the same on
+        the simulator and the real robot."""
         p = self.p
-        q = dict(p)
-        q["sway"] = p["sway"]
-        ctrl = super().ctrl(t + p["sway_phase"] * p["period"] / (2 * math.pi) * 0)  # (phase handled below)
-        roll, pitch, w = trunk_state(d)
+        ctrl = super().ctrl(t)
         a = self.aid
         for n in ("left_hip_roll", "right_hip_roll"):
             ctrl[a[n]] += p["k_hip_roll"] * roll
@@ -77,37 +79,57 @@ class Walker(Gait):
         return ctrl
 
 
-def walk_episode(m, key, p, seed, secs=10.0):
+def walk_episode(m, key, p, seed, secs=10.0, real=True):
+    """A walk with random shoves. real: as the runtime runs it on the robot - targets every 20 ms
+    (50 Hz), the IMU and encoders noisy, every command a tick late, grip and trunk mass randomised
+    (the sim-to-real gap: a gait that needs perfect sensing won't survive the real robot)."""
     rng = np.random.default_rng(seed)
     d = mujoco.MjData(m)
     mujoco.mj_resetDataKeyframe(m, d, key)
     g = Walker(m, key, p)
     mass = m.body_subtreemass[1]
+    if real:
+        fr, bm = m.geom_friction[:, 0].copy(), m.body_mass[1]
+        m.geom_friction[:, 0] = fr * rng.uniform(0.7, 1.2)
+        m.body_mass[1] = bm * rng.uniform(0.9, 1.1)
     pushes = [(float(rng.uniform(2.5, 4.5)), rng.normal(0, 0.12, 3) * [0.6, 1, 0]), (float(rng.uniform(6, 8)), rng.normal(0, 0.12, 3) * [0.6, 1, 0])]
     x0 = d.qpos[0]
     dofs = [m.jnt_dofadr[m.actuator_trnid[a][0]] for a in range(m.nu)]
     fast, n = 0, 0  # (time with a joint above 75 % of the servo's no-load speed: no headroom left)
-    while d.time < secs:
-        if int(round(d.time / m.opt.timestep)) % 5 == 0:
-            d.ctrl[:] = g.ctrl_fb(d.time - 0.5, d) if d.time > 0.5 else g.home_ctrl
-        d.xfrc_applied[1, :3] = 0
-        for t0, dv in pushes:
-            if t0 <= d.time < t0 + 0.1:
-                d.xfrc_applied[1, :3] = dv * mass / 0.1
-        mujoco.mj_step(m, d)
-        n += 1
-        fast += np.abs(d.qvel[dofs]).max() > 0.75 * FREE_SPEED
-        if tilt(d) > 45 or d.qpos[2] < 0.06:
-            return (d.qpos[0] - x0) - 1.0 - 0.1 * (secs - d.time) - 2.0 * fast / n, True
-    w, x, y, z = d.qpos[3:7]
-    yaw = math.atan2(2 * (w * z + x * y), 1 - 2 * (y * y + z * z))
-    return (d.qpos[0] - x0) - 0.5 * abs(d.qpos[1]) - 0.05 * abs(yaw) - 2.0 * fast / n, False
+    every = int(round(0.02 / m.opt.timestep)) if real else 5
+    pending = g.home_ctrl.copy()
+    try:
+        while d.time < secs:
+            if int(round(d.time / m.opt.timestep)) % every == 0:
+                if real:
+                    d.ctrl[:] = pending  # (last tick's command arrives now)
+                    roll, pitch, w = trunk_state(d)
+                    roll, pitch = roll + rng.normal(0, 0.01), pitch + rng.normal(0, 0.01)
+                    w = w + rng.normal(0, 0.03, 3)
+                    pending = g.ctrl_state(d.time - 0.5, roll, pitch, w) if d.time > 0.5 else g.home_ctrl
+                else:
+                    d.ctrl[:] = g.ctrl_fb(d.time - 0.5, d) if d.time > 0.5 else g.home_ctrl
+            d.xfrc_applied[1, :3] = 0
+            for t0, dv in pushes:
+                if t0 <= d.time < t0 + 0.1:
+                    d.xfrc_applied[1, :3] = dv * mass / 0.1
+            mujoco.mj_step(m, d)
+            n += 1
+            fast += np.abs(d.qvel[dofs]).max() > 0.75 * FREE_SPEED
+            if tilt(d) > 45 or d.qpos[2] < 0.06:
+                return (d.qpos[0] - x0) - 1.0 - 0.1 * (secs - d.time) - 2.0 * fast / n, True
+        w, x, y, z = d.qpos[3:7]
+        yaw = math.atan2(2 * (w * z + x * y), 1 - 2 * (y * y + z * z))
+        return (d.qpos[0] - x0) - 0.5 * abs(d.qpos[1]) - 0.05 * abs(yaw) - 2.0 * fast / n, False
+    finally:
+        if real:
+            m.geom_friction[:, 0], m.body_mass[1] = fr, bm
 
 
 def walk_score(x):
     m, key = load()
     p = unpack(x, WALK)
-    r = [walk_episode(m, key, p, s, secs=20.0) for s in (11, 22, 33, 44)]
+    r = [walk_episode(m, key, p, s, secs=20.0) for s in (11, 22, 33, 44, 55, 66)]
     return -float(np.mean([v for v, _ in r]))
 
 
@@ -332,9 +354,12 @@ def main():
         path = os.path.join(HERE, "getup_params.json")
         out = json.load(open(path))
         dims = 6 * (len(POSE_JOINTS) + 1)  # (enough poses to rock back and forth into a roll)
-        for landing in SIDES:
+        rolls = [a for a in sys.argv[2:] if a in LANDINGS] or list(SIDES)  # (train.py roll on_back left_side ...)
+        for landing in rolls:
             fronts = {n: out[n] for n in ("face_down", "on_back")}
             x0 = out[landing]["x"] if landing in out and len(out[landing]["x"]) == dims else [0.5] * dims
+            if landing == "on_back":  # (on its back: roll onto the belly, then the face-down get-up does the rest)
+                fronts = {"face_down": out["face_down"], "on_back": out["face_down"]}
             xb, fb = optimise(f"roll {landing}", dims, roll_score, x0, 0.25, iters, workers, extra=(landing, fronts))
             m, key = load()
             res = [roll_episode(m, key, xb, landing, fronts, st) for st in starts(landing, 40)]

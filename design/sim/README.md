@@ -87,6 +87,38 @@ Results, with the stiff servo hold above:
 - From its back, a fixed pose sequence can't cope with how variously the tail and backpack leave it. A get-up
   that reacts to how it's lying needs a learned feedback policy.
 
+## Runtime: one loop for the simulator and the robot (`runtime.py`)
+
+As Microduck's sim2real has it: one 50 Hz loop reads the robot's state, picks a behaviour and writes
+joint targets, the same code on the simulator and on the real TinyREX.
+
+- `robot.py`: the robot interface. `read()` gives only what the real robot senses (joint angles and
+  speeds; the IMU's gravity direction and rotation rate in the trunk frame); `write()` takes joint
+  targets. `SimRobot` is the MuJoCo model, optionally with sensor noise and a tick of latency;
+  `DynamixelRobot` drives the 18 XL330s over the TTL bus (sync read/write, Protocol 2.0), never past
+  the collision-free limits. `servos.json` maps joints to IDs, directions and zero offsets (the IDs are
+  placeholders until the robot is wired).
+- `imu.py`: the LSM6DSV16X on the head frame, turned into the trunk frame each tick through the neck
+  and head joints (the MuJoCo model as kinematics), with a complementary filter for gravity.
+- Behaviours, hot-swapped: stand, walk (`walk_params.json`), get-up after a fall (`getup_params.json`;
+  tilted over 50° for 0.8 s, or over 25° for 2 s), and expressive moves (`emotes.py`): yes, no,
+  excited, roar, chomp, curious, sad, wave.
+
+```
+mjpython runtime.py sim                          the viewer: W walk/stand, 1-8 moves, P shove, T big shove, R reset
+python runtime.py rehearse                       headless tests with sensor noise and latency: PASS / FAIL per behaviour
+python runtime.py real --port /dev/ttyUSB0 --check    do all servos answer, within their limits? (no motion)
+python runtime.py real --port /dev/ttyUSB0 --home     torque on, ease to the standing pose
+python runtime.py real --port /dev/ttyUSB0            run: w walk/stand, 1-8 moves, q quit
+```
+
+The real-robot path is written but not yet run on hardware: the servo IDs, directions and zero offsets
+and the IMU's mounting need setting on the robot. The walk is being retrained under the runtime's
+conditions (50 Hz targets, a tick late, noisy IMU, randomised grip and mass): trained at 100 Hz with
+perfect sensing, it lost most of its speed in rehearsal.
+
+![Expressive moves](../renders/sim-emotes.png)
+
 ## Next
 
 Retrain Microduck's walking policy (`microduck_rl`, mjlab) on this model. The policy needs:
