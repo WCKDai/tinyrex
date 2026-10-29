@@ -91,12 +91,16 @@
                 <geom class="collision" type="box" name="left_toe_collision2" pos="-0.032777 -0.0237998 -0.00400007" size="0.011 0.00170001 0.00949998" />
               </body>
               <geom class="visual" type="mesh" mesh="tr_leg" rgba="0.2 0.2 0.22 1" />
+              <geom type="box" name="leg_hull" group="3" contype="2" conaffinity="1" mass="0" pos="1.6764e-08 0.020739 -0.01" size="0.0104 0.030761 0.016" />
             </body>
             <geom class="visual" type="mesh" mesh="tr_upper_leg_left" rgba="0.62 0.82 0.18 1" />
+            <geom type="box" name="upper_leg_left_hull" group="3" contype="2" conaffinity="1" mass="0" pos="0.0057855 0.015268 0.01765" size="0.031166 0.037295 0.02165" />
           </body>
           <geom class="visual" type="mesh" mesh="tr_hip_l" rgba="0.2 0.2 0.22 1" />
+          <geom type="box" name="hip_l_hull" group="3" contype="2" conaffinity="1" mass="0" pos="0.00775 -2.794e-09 -0.0115" size="0.01725 0.011 0.018" />
         </body>
         <geom class="visual" type="mesh" mesh="tr_yaw2roll" rgba="0.2 0.2 0.22 1" />
+        <geom type="box" name="yaw2roll_hull" group="3" contype="2" conaffinity="1" mass="0" pos="4.6566e-09 0.0007 0.018" size="0.01275 0.0158 0.021" />
       </body>
       <body name="neck" pos="0.026 0.0145 0.0324215" quat="0 0 0.707107 -0.707107">
         <joint axis="0 0 1" name="neck_pitch" type="hinge" range="-1.34390 0.31416" class="chosen_actuator" />
@@ -116,17 +120,22 @@
               <site group="3" name="head_imu" pos="0.0152323 0.000111069 -0.05106" quat="1 0 -0 0" />
               <site group="3" name="mouth_tip" pos="-0.00809334 -0 -0.0777383" quat="0.704015 -0 0.710185 0" />
               <geom class="visual" type="mesh" mesh="tr_jaw_soft" rgba="0.62 0.82 0.18 1" />
+              <geom type="box" name="jaw_soft_hull" group="3" contype="2" conaffinity="1" mass="0" pos="0.014354 3.7253e-09 -0.026737" size="0.037969 0.047971 0.070836" />
               <body name="jaw" pos="0.00298535 6.19475e-09 -0.018" quat="0.707107 5.3385e-08 0.707107 5.33852e-08">
                 <inertial pos="0.0306714 -0.000145575 -0.00860927" mass="0.0346246" fullinertia="4.99531e-05 2.23464e-05 6.8824e-05 -1.51081e-07 4.78492e-06 4.20595e-08" />
                 <joint class="chosen_actuator" name="jaw" type="hinge" axis="-7.86005e-14 1 1.50996e-07" range="0.00000 0.48869" />
                 <geom class="visual" type="mesh" mesh="tr_jaw" rgba="0.86 0.84 0.78 1" />
+                <geom type="box" name="jaw_hull" group="3" contype="2" conaffinity="1" mass="0" pos="0.03145 0 -0.00555" size="0.04195 0.0556 0.01605" />
               </body>
             </body>
             <geom class="visual" type="mesh" mesh="tr_yaw_roll_motion" rgba="0.2 0.2 0.22 1" />
+            <geom type="box" name="yaw_roll_motion_hull" group="3" contype="2" conaffinity="1" mass="0" pos="-0.00037499 -0.00775 0.0148" size="0.019625 0.01875 0.0148" />
           </body>
           <geom class="visual" type="mesh" mesh="tr_neck_pitch" rgba="0.2 0.2 0.22 1" />
+          <geom type="box" name="neck_pitch_hull" group="3" contype="2" conaffinity="1" mass="0" pos="-2.3283e-09 0.0058931 -0.0145" size="0.011 0.0149 0.0175" />
         </body>
         <geom class="visual" type="mesh" mesh="tr_neck" rgba="0.2 0.2 0.22 1" />
+        <geom type="box" name="neck_hull" group="3" contype="2" conaffinity="1" mass="0" pos="4.9998e-05 -0.025 0.0145" size="0.01575 0.0345 0.0175" />
       </body>
       <body name="bearing_roll" pos="0.006 -0.0175 -0.005" quat="0 -0.707107 -0.707107 0">
         <joint axis="0 0 1" name="right_hip_yaw" type="hinge" range="-0.48869 0.13963" class="chosen_actuator" />
@@ -150,28 +159,36 @@
                 <geom class="collision" type="box" name="right_toe_collision2" pos="0.0327771 -0.0237998 -0.025" size="0.011 0.0017 0.00949997" />
               </body>
               <geom class="visual" type="mesh" mesh="tr_leg_2" rgba="0.2 0.2 0.22 1" />
+              <geom type="box" name="leg_2_hull" group="3" contype="2" conaffinity="1" mass="0" pos="-0.020739 -1.8626e-08 -0.01" size="0.030761 0.0104 0.016" />
             </body>
             <geom class="visual" type="mesh" mesh="tr_upper_leg_right" rgba="0.62 0.82 0.18 1" />
+            <geom type="box" name="upper_leg_right_hull" group="3" contype="2" conaffinity="1" mass="0" pos="-0.0057855 0.015268 0.01765" size="0.031166 0.037295 0.02165" />
           </body>
           <geom class="visual" type="mesh" mesh="tr_hip_l_2" rgba="0.2 0.2 0.22 1" />
+          <geom type="box" name="hip_l_2_hull" group="3" contype="2" conaffinity="1" mass="0" pos="0.00775 7.9162e-09 -0.0115" size="0.01725 0.011 0.018" />
         </body>
         <geom class="visual" type="mesh" mesh="tr_bearing_roll" rgba="0.2 0.2 0.22 1" />
+        <geom type="box" name="bearing_roll_hull" group="3" contype="2" conaffinity="1" mass="0" pos="3.2596e-09 0.0007 0.018" size="0.01275 0.0158 0.021" />
       </body>
       <geom class="visual" type="mesh" mesh="tr_trunk_base" rgba="0.86 0.84 0.78 1" />
+      <geom type="box" name="trunk_base_hull" group="3" contype="2" conaffinity="1" mass="0" pos="-0.0263 0 -0.00115" size="0.0637 0.0461 0.05445" />
       <body name="tail" pos="-0.0745 0 0.009" quat="1 0 0 0">
         <inertial pos="-0.0619478 1.68005e-07 0.0236759" mass="0.0562224" fullinertia="1.29368e-05 6.59709e-05 6.0668e-05 -6.23771e-10 1.6115e-05 2.89283e-11" />
         <joint class="chosen_actuator" name="tail_yaw" type="hinge" axis="0 0 1" range="-0.69813 0.69813" />
         <geom class="visual" type="mesh" mesh="tr_tail" rgba="0.86 0.84 0.78 1" />
+        <geom type="box" name="tail_hull" group="3" contype="2" conaffinity="1" mass="0" pos="-0.07185 0 0.028766" size="0.08165 0.01845 0.034824" />
       </body>
       <body name="arm_L" pos="0.027 0.044 0.033" quat="1 0 0 0">
         <inertial pos="0.0118274 0.00713589 -0.0176184" mass="0.00986932" fullinertia="2.04479e-06 3.63859e-06 1.76068e-06 4.70302e-08 1.17826e-06 -6.37494e-08" />
         <joint class="chosen_actuator" name="l_shoulder" type="hinge" axis="0 1 0" range="-1.29154 0.43633" />
         <geom class="visual" type="mesh" mesh="tr_arm_L" rgba="0.2 0.2 0.22 1" />
+        <geom type="box" name="arm_L_hull" group="3" contype="2" conaffinity="1" mass="0" pos="0.020564 0.0075 -0.013184" size="0.030744 0.0059 0.024684" />
       </body>
       <body name="arm_R" pos="0.027 -0.044 0.033" quat="1 0 0 0">
         <inertial pos="0.0118274 -0.0071359 -0.0176184" mass="0.00986932" fullinertia="2.04479e-06 3.63859e-06 1.76068e-06 -4.70337e-08 1.17826e-06 6.3749e-08" />
         <joint class="chosen_actuator" name="r_shoulder" type="hinge" axis="0 -1 0" range="-0.43633 1.29154" />
         <geom class="visual" type="mesh" mesh="tr_arm_R" rgba="0.2 0.2 0.22 1" />
+        <geom type="box" name="arm_R_hull" group="3" contype="2" conaffinity="1" mass="0" pos="0.020564 -0.0075 -0.013184" size="0.030744 0.0059 0.024684" />
       </body>
     </body>
   </worldbody>

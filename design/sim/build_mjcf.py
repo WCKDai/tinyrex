@@ -47,13 +47,36 @@ def set_inertial(el, name):
                 "fullinertia": " ".join(f"{x:.6g}" for x in v["fullinertia"])}
 
 
+def stl_box(path):
+    """The bounds of a binary STL (metres)."""
+    import struct
+    with open(path, "rb") as f:
+        f.read(80)
+        (n,) = struct.unpack("<I", f.read(4))
+        lo, hi = [1e9] * 3, [-1e9] * 3
+        for _ in range(n):
+            vals = struct.unpack("<12fH", f.read(50))
+            for k in range(3):
+                for i in range(3):
+                    c = vals[3 + 3 * k + i]
+                    lo[i], hi[i] = min(lo[i], c), max(hi[i], c)
+    return lo, hi
+
+
 def dress(el, name):
-    """Replace a body's geoms with TinyREX's: its mesh (visual) and, for a foot, its contacts."""
+    """Replace a body's geoms with TinyREX's: its mesh (visual), a box round it that meets the floor
+    (falls and getting up need the whole body to touch the ground; contype 2 / conaffinity 1: the
+    floor, not each other), and, for a foot, its sole contacts."""
     for g in list(el.findall("geom")):
         el.remove(g)
     v = bodies["bodies"].get(name, {})
     if "mesh" in v:
         ET.SubElement(el, "geom", type="mesh", mesh=f"tr_{name}", attrib={"class": "visual"}, rgba=COLOURS.get(name, "0.2 0.2 0.22 1"))
+        if not bodies["feet"].get(name):
+            lo, hi = stl_box(os.path.join(HERE, "meshes", v["mesh"]))
+            size = [max((h - l) / 2, 0.002) for l, h in zip(lo, hi)]
+            ET.SubElement(el, "geom", type="box", name=f"{name}_hull", group="3", contype="2", conaffinity="1", mass="0",
+                          pos=" ".join(f"{(l + h) / 2:.5g}" for l, h in zip(lo, hi)), size=" ".join(f"{x:.5g}" for x in size))
     for k, box in enumerate(bodies["feet"].get(name, [])):
         side = "left" if name.endswith("left") else "right"
         ET.SubElement(el, "geom", type="box", name=f"{side}_foot_collision" if k == 0 else f"{side}_toe_collision{k}",
