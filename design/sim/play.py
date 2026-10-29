@@ -19,6 +19,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from gait import load, tilt  # noqa: E402
 from train import Walker, landing_of, plan  # noqa: E402
+from rl_getup import POLICY, Body, NumpyPolicy  # noqa: E402
 
 
 def getup_plan(m, key, getups, landing):
@@ -35,8 +36,11 @@ def main():
     walk = json.load(open(os.path.join(HERE, "walk_params.json")))["params"]
     getups = json.load(open(os.path.join(HERE, "getup_params.json"))) if os.path.exists(os.path.join(HERE, "getup_params.json")) else {}
     g = Walker(m, key, walk)
+    policy = NumpyPolicy() if os.path.exists(POLICY + ".npz") else None  # (the neural get-up, if trained)
+    body = Body(m, key)
     mass = m.body_subtreemass[1]
-    st = {"mode": "walk", "t0": 0.5, "push": None, "down_since": None, "plan": None, "seg": 0, "seg_t": 0.0, "prev": None}
+    st = {"mode": "walk", "t0": 0.5, "push": None, "down_since": None, "plan": None, "seg": 0, "seg_t": 0.0, "prev": None,
+          "last": np.zeros(m.nu, np.float32), "up_since": None}
 
     def key_cb(k):
         c = chr(k) if k < 256 else ""
@@ -49,18 +53,28 @@ def main():
             st["push"] = (d.time, np.array([0.9, 0.7, 0.0]))
         elif c == "R":
             mujoco.mj_resetDataKeyframe(m, d, key)
-            st.update(mode="walk", t0=0.5, plan=None, down_since=None)
+            st.update(mode="walk", t0=0.5, plan=None, down_since=None, up_since=None)
 
     with mujoco.viewer.launch_passive(m, d, key_callback=key_cb) as v:
         v.cam.distance, v.cam.elevation, v.cam.azimuth = 0.95, -15, 135
         while v.is_running():
             start = time.time()
+            if st["mode"] == "rl":  # (the policy acts at 50 Hz, once per frame)
+                a = policy(body.obs(d, st["last"]))
+                st["last"] = a.astype(np.float32)
+                d.ctrl[:] = body.target(a)
+                stood = tilt(d) < 20 and d.qpos[2] > 0.85 * body.z_home
+                st["up_since"] = (st["up_since"] or d.time) if stood else None
+                if st["up_since"] and d.time - st["up_since"] > 0.5:
+                    st.update(mode="walk", t0=d.time + 0.5, down_since=None, up_since=None)
             for _ in range(int(0.02 / m.opt.timestep)):
                 step = int(round(d.time / m.opt.timestep))
                 down = tilt(d) > 50
                 if st["mode"] in ("walk", "stand") and down:
                     st["down_since"] = st["down_since"] or d.time
-                    if d.time - st["down_since"] > 0.8 and getups:
+                    if d.time - st["down_since"] > 0.8 and policy is not None:
+                        st.update(mode="rl", last=np.zeros(m.nu, np.float32), up_since=None)
+                    elif d.time - st["down_since"] > 0.8 and getups:
                         landing = landing_of(d)
                         if landing in getups:
                             st.update(mode="getup", plan=getup_plan(m, key, getups, landing), seg=0, seg_t=d.time, prev=d.ctrl.copy())
@@ -74,7 +88,7 @@ def main():
                         st["prev"], st["seg"], st["seg_t"] = pose, st["seg"] + 1, d.time
                         if st["seg"] >= len(st["plan"]):
                             st.update(mode="walk", t0=d.time, plan=None, down_since=None)
-                elif step % 5 == 0:
+                elif st["mode"] != "rl" and step % 5 == 0:
                     if st["mode"] == "walk" and d.time > st["t0"] and not down:
                         d.ctrl[:] = g.ctrl_fb(d.time - st["t0"], d)
                     else:

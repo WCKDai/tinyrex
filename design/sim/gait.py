@@ -20,6 +20,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SCENE = os.path.join(HERE, "scene.xml")
 PARAMS = os.path.join(HERE, "gait_params.json")
 HOLD_KP, HOLD_KV = 10.0, 0.3  # (stiff position hold within the XL330's 0.96 N m - see stand_test.py)
+FREE_SPEED = 10.8  # rad/s: the XL330-M288's no-load speed at 5 V (103 rpm, datasheet)
 LEGS = {"left": ["left_hip_roll", "left_hip_pitch", "left_knee", "left_ankle"],
         "right": ["right_hip_roll", "right_hip_pitch", "right_knee", "right_ankle"]}
 
@@ -29,6 +30,11 @@ def load():
     m.actuator_gainprm[:, 0] = HOLD_KP
     m.actuator_biasprm[:, 1] = -HOLD_KP
     m.actuator_biasprm[:, 2] = -HOLD_KV
+    # Back-EMF: torque falls to zero at the datasheet's no-load speed. Microduck's identified damping
+    # (0.053) implies about 18 rad/s, which a trained walk exploits; this holds it to the datasheet.
+    for a in range(m.nu):
+        dof = m.jnt_dofadr[m.actuator_trnid[a][0]]
+        m.dof_damping[dof] = max(m.dof_damping[dof], m.actuator_forcerange[a][1] / FREE_SPEED)
     key = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_KEY, "HOME")
     return m, key
 

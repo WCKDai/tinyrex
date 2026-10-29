@@ -25,7 +25,7 @@ import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from gait import Gait, load, tilt  # noqa: E402
+from gait import FREE_SPEED, Gait, load, tilt  # noqa: E402
 
 # ---------------------------------------------------------------- walking
 WALK = [  # name, low, high
@@ -85,6 +85,8 @@ def walk_episode(m, key, p, seed, secs=10.0):
     mass = m.body_subtreemass[1]
     pushes = [(float(rng.uniform(2.5, 4.5)), rng.normal(0, 0.12, 3) * [0.6, 1, 0]), (float(rng.uniform(6, 8)), rng.normal(0, 0.12, 3) * [0.6, 1, 0])]
     x0 = d.qpos[0]
+    dofs = [m.jnt_dofadr[m.actuator_trnid[a][0]] for a in range(m.nu)]
+    fast, n = 0, 0  # (time with a joint above 75 % of the servo's no-load speed: no headroom left)
     while d.time < secs:
         if int(round(d.time / m.opt.timestep)) % 5 == 0:
             d.ctrl[:] = g.ctrl_fb(d.time - 0.5, d) if d.time > 0.5 else g.home_ctrl
@@ -93,11 +95,13 @@ def walk_episode(m, key, p, seed, secs=10.0):
             if t0 <= d.time < t0 + 0.1:
                 d.xfrc_applied[1, :3] = dv * mass / 0.1
         mujoco.mj_step(m, d)
+        n += 1
+        fast += np.abs(d.qvel[dofs]).max() > 0.75 * FREE_SPEED
         if tilt(d) > 45 or d.qpos[2] < 0.06:
-            return (d.qpos[0] - x0) - 1.0 - 0.1 * (secs - d.time), True
+            return (d.qpos[0] - x0) - 1.0 - 0.1 * (secs - d.time) - 2.0 * fast / n, True
     w, x, y, z = d.qpos[3:7]
     yaw = math.atan2(2 * (w * z + x * y), 1 - 2 * (y * y + z * z))
-    return (d.qpos[0] - x0) - 0.5 * abs(d.qpos[1]) - 0.05 * abs(yaw), False
+    return (d.qpos[0] - x0) - 0.5 * abs(d.qpos[1]) - 0.05 * abs(yaw) - 2.0 * fast / n, False
 
 
 def walk_score(x):
@@ -310,7 +314,7 @@ def main():
     if what == "walk":
         prev = os.path.join(HERE, "walk_params.json")
         if os.path.exists(prev):  # (refine the last result)
-            start, sigma = json.load(open(prev))["params"], 0.12
+            start, sigma = json.load(open(prev))["params"], 0.2
         else:
             start, sigma = json.load(open(os.path.join(HERE, "gait_params.json"))), 0.25
             start.update({"lean": 0.0, "width": 0.0, "sway_phase": 0.0, "k_tail_roll": 0.0, "k_tail_rate": 0.0, "k_hip_roll": 0.0, "k_ankle_pitch": 0.0, "k_ankle_rate": 0.0})

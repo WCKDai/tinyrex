@@ -169,11 +169,19 @@ def object_recipe(o):
     covered = set(filter(None, me.get("pc_recipe_covers", "").split(",")))  # (modifiers the recipe includes)
 
     def flush():
+        # (a union doesn't commute with a cut: only each run of cuts and intersects between unions
+        # is reordered)
         nonlocal node, ops
-        if all(op in ("cut", "intersect") for op, _ in ops):
-            ops.sort(key=lambda t: -tool_size(t[1]))
-        for op, tool in ops:
-            node = {op: [node, tool]}
+        run = []
+        for op, tool in ops + [("union", None)]:
+            if op in ("cut", "intersect"):
+                run.append((op, tool))
+                continue
+            for o2, t2 in sorted(run, key=lambda t: -tool_size(t[1])):
+                node = {o2: [node, t2]}
+            run = []
+            if tool is not None:
+                node = {op: [node, tool]}
         ops = []
 
     for m in o.modifiers:
@@ -193,7 +201,11 @@ def object_recipe(o):
         elif m.type == "BOOLEAN":
             if m.operand_type != "OBJECT" or m.object is None:
                 return None, f"boolean '{m.name}' without a cutter object"
-            tool = base_recipe(m.object.data) if m.object.type == "MESH" else None
+            tool = None
+            if m.object.type == "MESH" and m.object.modifiers:  # (a tool is used as Blender evaluates it: its own fillets and walls)
+                tool, _ = object_recipe(m.object)
+            if tool is None and m.object.type == "MESH":
+                tool = base_recipe(m.object.data)
             if tool is None:
                 return None, f"boolean cutter '{m.object.name}' has no recipe"
             rel = o.matrix_world.inverted() @ m.object.matrix_world

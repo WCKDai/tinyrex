@@ -16,17 +16,17 @@ import xml.etree.ElementTree as ET
 import bpy
 from mathutils import Vector
 
-PLA, TPU, STEEL, NDFEB, ACRYLIC = 1.24, 1.21, 7.85, 7.5, 1.19  # g/cm3
-INFILL = 0.45  # a solid-modelled printed part: 3 walls + 20 % infill, as a fraction of solid
+PETG, TPU, STEEL, CARBON, POLYCARB = 1.27, 1.21, 7.85, 1.55, 1.20  # g/cm3
+INFILL = 0.45  # a solid-modelled printed part: walls + 20 % gyroid, as a fraction of solid (the shells carry the 2.4 mm walls)
 XL330_G = 18.0
 SCREW_G = 0.35  # M2 x 6 button head
 XL330_STALL = 0.52  # N m, XL330-M288 at 5 V
 
 # Microduck's shells, eyes, face and feet - replaced by TinyREX's own parts. (Its reference scene
 # places some meshes twice, a visual and a collision geom: one of each is counted.)
-REPLACED = {"left_shell": PLA, "right_shell": PLA, "top_head_shell": PLA, "bottom_head_shell": PLA, "face_part": PLA,
-            "jaw": PLA, "jaw_soft": PLA, "soft_mouth_top": TPU, "noenoeil": PLA, "foot_left": PLA, "foot_right": PLA,
-            "sole_left": TPU, "sole_right": TPU, "lens": PLA, "m12_lens_holder": PLA}
+REPLACED = {"left_shell": PETG, "right_shell": PETG, "top_head_shell": PETG, "bottom_head_shell": PETG, "face_part": PETG,
+            "jaw": PETG, "jaw_soft": PETG, "soft_mouth_top": TPU, "noenoeil": PETG, "foot_left": PETG, "foot_right": PETG,
+            "sole_left": TPU, "sole_right": TPU, "lens": PETG, "m12_lens_holder": PETG}
 MD_BODY = {"left_shell": "trunk_base", "right_shell": "trunk_base", "foot_left": "ankle_left", "sole_left": "ankle_left",
            "foot_right": "ankle_right", "sole_right": "ankle_right"}  # the rest are the head's
 
@@ -57,16 +57,16 @@ def volume_centroid(o, deps):
 
 
 def density(name, o):
-    if name.startswith(("JawShaft", "CheekPin", "ArmPin")):
+    if name.startswith(("JawShaft", "CheekPin", "ArmPin", "ArmSpring", "TailSpring")):
         return STEEL, 1.0
-    if name.startswith("TailMagnet"):
-        return NDFEB, 1.0
-    if name.startswith("VisorGlass"):
-        return ACRYLIC, 1.0
-    if name.startswith(("TailFlex", "Sole", "ToeSole")):
+    if name.startswith("TailSpine"):
+        return CARBON, 1.0
+    if name.startswith(("VisorGlass", "Eye_")):
+        return POLYCARB, 1.0
+    if name.startswith(("Sole", "ToeSole", "TailTip", "ArmClutch", "TailClutch", "JawClutch")):
         return TPU, 1.0
     hollow = any(m.type == "SOLIDIFY" for m in o.modifiers)
-    return PLA, (1.0 if hollow else INFILL)
+    return PETG, (1.0 if hollow else INFILL)
 
 
 def pose(angles):
@@ -113,7 +113,7 @@ def inventory():
                 plus.append((XL330_G, inv[b] @ volume_centroid(o, deps)[1], n, b))
         elif n in ("CameraHolder", "CameraLens"):
             v, c = volume_centroid(o, deps)
-            plus.append((v * PLA, inv[b] @ c, n, b))
+            plus.append((v * PETG, inv[b] @ c, n, b))
         elif o.get("skin") and not n.startswith("XL330"):
             v, c = volume_centroid(o, deps)
             if "Screw" in n:

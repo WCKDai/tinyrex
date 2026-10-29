@@ -22,29 +22,36 @@ Labelled renders: `renders/labelled-{hero,back,exploded}-annotated.png`.
 
 ## Inventory
 
-The model has **303 parts**:
+The model has **266 parts**:
 - 18 Dynamixel XL330 servos, each named by the joint it drives in the labelled renders;
 - 23 frame brackets and 14 bearings, in Microduck's layout;
 - 13 electronics parts and 3 cables (the camera CSI flex and the two arm-servo leads);
-- 9 printed shells and 71 printed parts;
-- 9 TPU parts (soles, toe soles, tail flex rings);
-- 6 steel pins (jaw shafts, cheek pins, elbow pins), 2 magnets and the acrylic visor window;
-- 112 M2 screws and 22 printed bosses and standoffs for M2 heat-set inserts:
-  - 78 screws on the shells and plates, 8 of them holding the jaw-hinge horn caps;
+- 64 printed parts in PETG: 9 shells and the rest solid-modelled. The spikes, brows, eye sockets, toe caps and every
+  insert boss print with the part they sit on, so none is glued on any more;
+- 11 TPU parts: soles, toe soles, the tail tip, and the friction parts of the four slip clutches;
+- 6 steel pins (jaw shafts, cheek pins, elbow pins), 3 wave springs, the 4 mm carbon tail spine;
+- 3 polycarbonate parts: the two eye domes and the visor window;
+- 107 M2 screws:
+  - 73 on the shells and plates;
   - 34 fixing the frame brackets into the XL330s' own case-screw holes.
 
 The XL330s' own horn and case screws aren't counted; they come with the servos.
 
-The printed parts break down as:
-- 2 head shells, the head back cap, muzzle panel and brow visor;
-- 2 body halves, the backpack and the battery door;
-- jaw, jaw arms and cheeks;
-- arms;
-- thigh shields, feet, toe caps and ankle guards;
-- tail arm, segments and tip;
-- collar, throat and nape plates;
-- flank plates, spikes, eye sockets and brows;
-- insert bosses.
+## Built to tumble
+
+TinyREX falls over and gets itself up with its head, tail and arms, so it has to take knocks. Falls in the simulator
+(60 walking falls, shoved hard) show the hits: the head and tail land first and fastest (about 1.7–1.8 m/s), the arms
+take up to 80 N when it lands on them, the jaw hits in many falls.
+
+- **Slip clutches** on both shoulders, the jaw and the tail. Each holds about 1.2 N·m, above anything its servo pushes
+  with in a get-up (arms 0.65, tail 0.56, jaw 0.23 N·m) and below a hard fall (1.7–3 N·m), so a fall turns the part
+  on its horn instead of stripping the XL330's gears. The tail stays on: it pushes the robot up.
+- **A stiff tail:** rigid collars and a 4 mm carbon spine replace the TPU flex rings, so a push isn't lost to bending.
+  A fall on the tail (47 N at 130 mm, 6 N·m) stresses the spine to about 950 MPa, inside a pultruded rod's strength.
+- **2.4 mm shell walls** (from 2.0) in PETG; polycarbonate eye domes and visor.
+- **No glue joints:** every glued detail now prints with its part.
+
+Mass went from 1002 g to 1028 g (`MASS.md`).
 
 ## Found and fixed in this audit
 
@@ -74,10 +81,10 @@ The printed parts break down as:
   - a printed boss or standoff for an M2 heat-set insert (22 bosses and standoffs).
 - **Walls (3+ perimeters of a 0.4 mm nozzle):**
   - every printed part is at least 1.2 mm;
-  - shells are 1.6–1.9 mm, thinnest where the 2 mm wall wraps a fillet;
+  - shells are 2.4 mm, thinner only where the wall wraps a fillet;
   - plates are 3–9 mm;
   - TPU is 3.4–8 mm;
-  - the eye domes are 1.2 mm acrylic.
+  - the eye domes are 1.2 mm polycarbonate.
 - **Watertight meshes:** the six boolean-cut shells (the body halves, both head shells, the head back cap and the visor) are **not watertight as meshes**. Their cut edges leave open seams. Slicers repair this, and the exact STEP export rebuilds them from their construction, so it is unaffected.
 
 ## Does it look as polished as Microduck?

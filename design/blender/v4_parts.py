@@ -11,7 +11,9 @@ coll = bpy.data.collections.get(f"{SCENE}: skins") or collection("skins")
 
 
 def clear(prefixes):
-    for o in list(coll.objects):
+    rig = bpy.data.collections.get(f"{SCENE}: rig")
+    folded = [o for o in rig.objects if "folded_into" in o] if rig else []  # (details printed with a host)
+    for o in list(coll.objects) + folded:
         if o.name.split(".")[0].startswith(prefixes):
             bpy.data.objects.remove(o, do_unlink=True)
 
@@ -98,7 +100,30 @@ def made(objs, body=None):
     return [o.name.split(".")[0] for o in objs]
 
 
-WALL = 2.0  # printed shell wall, mm (5 perimeters of a 0.4 mm nozzle)
+WALL = 2.4  # printed shell wall, mm (6 perimeters of a 0.4 mm nozzle: it tumbles; PETG)
+CLUTCH_TPU = None  # (the slip clutches' friction discs: TPU 95A, made on first use)
+
+
+def tpu():
+    global CLUTCH_TPU
+    CLUTCH_TPU = CLUTCH_TPU or mat("TPU", "#1C1D1F", 0.85)
+    return CLUTCH_TPU
+
+
+def rod(name, material, p0, p1, r, n=24):
+    """A straight round rod from p0 to p1 (mm)."""
+    p0, p1 = Vector(p0), Vector(p1)
+    d = p1 - p0
+    return part(name, coll, material, cyl_mesh(name, r, 0, d.length, n), Matrix.Translation(p0) @ d.normalized().to_track_quat("Z", "Y").to_matrix().to_4x4(), Matrix.Identity(4), smooth=True)
+
+
+def rod_cutter(name, p0, p1, r):
+    p0, p1 = Vector(p0), Vector(p1)
+    d = p1 - p0
+    o = bpy.data.objects.new(name, cyl_mesh(name, r, 0, d.length, 48))
+    bpy.data.collections[f"{SCENE}: rig"].objects.link(o)
+    o.matrix_world = Matrix.Translation(p0) @ d.normalized().to_track_quat("Z", "Y").to_matrix().to_4x4()
+    return o
 
 
 def hollow(o, wall=WALL, even=True):
@@ -251,6 +276,8 @@ def part_body():
     print("battery corners outside the body:", battery_enclosed())
     # Printed as two halves, left and right, as Microduck's shells are: each screws to the trunk
     # plate on its own bosses; the backpack and the battery door bridge them.
+    fold(body, [o for o in objs if o.name.split(".")[0].startswith("Spike_B")], TRUNK)
+    names = [n for n in names if not n.startswith("Spike_B")]
     names.append(split(body, TRUNK, "y", 0.0, ("BodyL", "BodyR")).name.split(".")[0])
     names[names.index("Body")] = "BodyL"
     return names, HIPS
@@ -281,6 +308,9 @@ def part_tail():
     """A cream root pod round the tail servo (fixed to the body), and a cute moving tail on its horn:
     a yoke over the top, three rounded beads with black rings, a round lime tip."""
     clear(("Tail", "XL330_TailYaw", "Spike_T"))
+    for o in list(scene.objects):
+        if o.name.split(".")[0].startswith(("Cut_Spine_", "Cut_TailClutch")):
+            bpy.data.objects.remove(o)
     tail_body()
     T = Matrix.Translation
     # The servo, horn up: local X (output) onto +Z, the case reaching forward to just behind the battery.
@@ -291,35 +321,48 @@ def part_tail():
         screw_dot(f"TailRootScrew{'L' if sy > 0 else 'R'}", coll, (-84, sy * 14.6, 116), "Y" if sy > 0 else "-Y")
         fixed.append(bpy.data.objects[f"TailRootScrew{'L' if sy > 0 else 'R'}"] if f"TailRootScrew{'L' if sy > 0 else 'R'}" in coll.objects else next(o for o in coll.objects if o.name.split(".")[0] == f"TailRootScrew{'L' if sy > 0 else 'R'}"))
     names = made(fixed, TRUNK)
-    # The moving tail, compliant so a fall can't strip the servo:
-    #  - a magnetic breakaway coupling on the horn (two 6 x 3 mm magnets, two locating pins): a hard
-    #    knock pops the tail off and it snaps back on;
-    #  - cream PLA segments joined by black TPU flexure rings, so it bends about 20 degrees and springs
-    #    back;
-    #  - a soft TPU lime tip.
+    # The moving tail pushes the robot up again, so it stays on and stays stiff:
+    #  - a slip clutch on the horn: the coupling hub carries a TPU friction disc, pressed onto the
+    #    tail arm by one screw through a wave spring. It holds 1.2 N m (the servo pushes with at
+    #    most 0.96; a get-up needs 0.56) and slips in a fall before the servo's gears strip;
+    #  - cream segments on a 4 mm carbon spine through all of them, with black collars between:
+    #    it doesn't bend away from a push;
+    #  - a soft TPU lime tip: the bumper.
     # It continues the back line, rising gently and tapering; its front stays 21.5 mm from the yaw
     # axis, clear of the root pod's corners (17.4 mm) over the whole swing.
     TPU = mat("TPU", "#1C1D1F", 0.85)
     moving = [disc("TailCoupling", coll, LIME, 9.8, 6.0, (TAIL_AXIS.x, 0, 130.6), "Z", bevel_w=0.8)]  # (up through the root's horn opening to the arm)
-    for k, dy in enumerate((-5.5, 5.5)):
-        moving.append(disc(f"TailMagnet{k}", coll, SILVER, 3.0, 0.6, (TAIL_AXIS.x - 3, dy, 136.6), "Z", n=20))
+    moving.append(disc("TailClutch", coll, TPU, 8.0, 1.2, (TAIL_AXIS.x, 0, 135.3), "Z", n=40))
+    moving.append(disc("TailSpring", coll, SILVER, 3.4, 0.6, (TAIL_AXIS.x, 0, 143.1), "Z", n=24))
+    moving.append(screw("TailClutchScrew", (TAIL_AXIS.x, 0, 143.7), "Z"))
     moving.append(loft_skin("TailArm", coll, CREAM, [(-68, 8.5, 136.5, 142.5), (-93, 11, 136.5, 145.5), (-101, 15, 127, 147)], subsurf=2, keep=0.45))
     # (thick at the root and tapering, sweeping up toward the tip as on the boards)
     # (one taper: each segment starts the size the last one ended)
     segs = [(-99, -127, 19.0, 16.5, 128, 134), (-131, -155, 16.5, 13.5, 135, 144), (-160, -180, 13.5, 10.5, 145.5, 156)]
+    seg_spikes = []  # (segment, its spike): printed as one, the spike lime on the cream segment
     for k, (x0, x1, r0, r1, z0, z1) in enumerate(segs):
         moving.append(loft_skin(f"TailSeg{k}", coll, CREAM, [(x0, r0 * 0.95, z0 - r0, z0 + r0 * 0.92), ((x0 + x1) / 2, (r0 + r1) / 2, (z0 + z1) / 2 - (r0 + r1) / 2, (z0 + z1) / 2 + (r0 + r1) / 2 * 0.92), (x1, r1 * 0.95, z1 - r1, z1 + r1 * 0.92)], subsurf=3, keep=0.2))
         for sy in (1, -1):
             moving.append(disc(f"TailScrew{k}{'L' if sy > 0 else 'R'}", coll, INK, 1.5, 1.0, ((x0 + x1) / 2, sy * ((r0 + r1) / 2 - 0.3), (z0 + z1) / 2 + 2), "Y" if sy > 0 else "-Y", n=16, bevel_w=0.4))
-        moving.append(spike(f"Spike_T{k}", (x0 + x1) / 2, (z0 + z1) / 2 + (r0 + r1) / 2 * 0.92, 6.0 - k))
+        seg_spikes.append((moving[-1 - 2], spike(f"Spike_T{k}", (x0 + x1) / 2, (z0 + z1) / 2 + (r0 + r1) / 2 * 0.92, 6.0 - k)))
         nxt = segs[k + 1] if k + 1 < len(segs) else None
         # (each ring reaches 1.5 mm into both neighbours: bonded, it holds them together)
         x_next = nxt[0] if nxt else -182
         ra = (r1 if nxt is None else (r1 + nxt[2]) / 2) * 0.82
-        moving.append(disc(f"TailFlex{k}", coll, TPU, ra, (x1 - x_next) + 3.0, (x1 + 1.5, 0, z1 - 0.5), "-X", bevel_w=1.2))
+        moving.append(disc(f"TailCollar{k}", coll, INK, ra, (x1 - x_next) + 3.0, (x1 + 1.5, 0, z1 - 0.5), "-X", bevel_w=1.2))
+    spine = ((-101.0, 0, 129.6), (-178.0, 0, 154.5))  # (through the segments' centres, from the first segment on)
+    moving.append(rod("TailSpine", mat("Carbon", "#202022", 0.35), *spine, 2.0))  # (4 mm: a fall on the tail, 47 N at 130 mm, is 6 N m)
     moving.append(loft_skin("TailTip", coll, LIME, [(-182, 10.5, 146, 166), (-198, 8.0, 154, 171), (-214, 5.0, 164, 176), (-228, 1.8, 175, 180)], subsurf=3, keep=0.3))
     bpy.context.view_layer.update()
     names += made(moving, "tail")
+    for seg, sp in seg_spikes:
+        made([sp], "tail")
+        fold(seg, [sp], "tail")
+    for o in moving:  # (the spine's bore through the arm, segments and collars)
+        if o.name.split(".")[0].startswith(("TailSeg", "TailCollar")):
+            boolean_cut(o, rod_cutter(f"Cut_Spine_{o.name.split('.')[0]}", *spine, 2.1), "tail", guard=False)
+    hub = next(o for o in moving if o.name.split(".")[0] == "TailCoupling")
+    boolean_cut(hub, cutter_cylinder("Cut_TailClutch", 8.3, 0, 1.4, Vector((TAIL_AXIS.x, 0, 135.25)), "Z"), "tail", guard=False)
     return names, ["tail", "upper_leg_left", "upper_leg_right", "hip_l", "hip_l_2"]
 
 
@@ -380,6 +423,23 @@ def boolean_cut(o, cutter, body=None, op="DIFFERENCE", guard=True):
     cutter.hide_set(True)
     cutter.hide_render = True
     cutter.display_type = "WIRE"
+
+
+def fold(host, details, body):
+    """Print glued-on details as part of the part they sit on: each becomes a union on `host`
+    (fewer parts, and no glue joint to break in a fall). A detail in another colour keeps its
+    colour on its own faces: that part prints in two colours (a multi-material printer)."""
+    rig = bpy.data.collections[f"{SCENE}: rig"]
+    for d in details:
+        boolean_cut(host, d, body, "UNION", guard=False)
+        host.modifiers[-1].material_mode = "TRANSFER"
+        if d.active_material and d.active_material.name not in [m.name for m in host.data.materials if m]:
+            host.data.materials.append(d.active_material)
+        d.pop("skin", None)
+        d["folded_into"] = host.name.split(".")[0]
+        for c in list(d.users_collection):
+            c.objects.unlink(d)
+        rig.objects.link(d)
 
 
 def cutter_cylinder(name, r, z0, z1, at, axis):
@@ -448,7 +508,7 @@ def part_head():
     its own joint on the jaw servo's axis, in front of the neck opening."""
     clear(("Head", "HeadScrew", "MuzzleScrew", "Spike_H", "Eye", "Brow", "Visor", "Cam", "ToF", "HeadIMU", "Grille", "LED", "StatusLED", "Camera", "Cheek", "Jaw", "Mouth", "Tongue", "Fang", "Blush", "Crest", "Chin", "Nostril", "Muzzle"))
     for o in list(scene.objects):
-        if o.name.split(".")[0] in ("Cut_Camera", "Cut_Neck", "Cut_EyeL", "Cut_EyeR", "Cut_MuzzleSlab", "Cut_MuzzleCurve", "Cut_ToF", "Cut_VisorBay", "Cut_VisorFloor", "Cut_VisorSlot", "Cut_Hinge", "Cut_BackSlab", "Cut_NeckBack", "Cut_SplitHeadTop"):
+        if o.name.split(".")[0] in ("Cut_Camera", "Cut_Neck", "Cut_EyeL", "Cut_EyeR", "Cut_MuzzleSlab", "Cut_MuzzleCurve", "Cut_ToF", "Cut_VisorBay", "Cut_VisorFloor", "Cut_VisorSlot", "Cut_Hinge", "Cut_BackSlab", "Cut_NeckBack", "Cut_SplitHeadTop", "Cut_JawClutch", "Cut_JawClutchBore", "Cut_ComputeRelief"):
             bpy.data.objects.remove(o, do_unlink=True)
     jaw_body()
     move_camera()
@@ -535,6 +595,8 @@ def part_head():
         parts.append(hemidome(f"Eye_{side}", EYE, 8.6, Vector((0, 0, 0)), depth=0.55))
         e = parts[-1]
         e.matrix_world = frame @ Matrix.Translation((2.0, -0.5, 1.0)) @ Matrix.Rotation(-math.pi / 2, 4, "Y")
+        if e.matrix_world.determinant() < 0:  # (a mirrored frame turns the dome inside out: keep its wall inside)
+            e.modifiers["Wall"].offset = 1.0
         parts.append(ball(f"EyeShine_{side}", coll, SHINE, 1.6, frame @ Vector((5.0, 3.0, 5.3))))
     # The cream upper lip: a band below the snout, as on the boards (lime above, cream below),
     # following the head's facets just proud of them.
@@ -603,8 +665,16 @@ def part_head():
             jaw.append(disc(f"CheekScrew_{side}{k}", coll, SILVER, 1.0, 0.6, (HINGE.x + 5.4 * math.cos(a), sy * 54.7, HINGE.z + 5.4 * math.sin(a)), ax, n=12))
         for k, (x, z) in enumerate(((44, 216.5), (62, 210.5))):
             jaw.append(screw(f"JawScrew_{side}{k}", (x, sy * 52.4, z), ax))
+    # The driven (left) jaw arm grips its shaft through a TPU friction sleeve in its hub: a slip
+    # clutch, so a fall onto the chin (40 N: about 1.7 N m at the hinge) turns the jaw on its shaft
+    # instead of stripping the jaw servo. A get-up needs 0.23 N m of it.
+    sleeve = disc("JawClutch_L", coll, tpu(), 5.0, 3.0, (HINGE.x, 49.5, HINGE.z), "Y", n=32)
+    jaw.append(sleeve)
     bpy.context.view_layer.update()
     names += made(jaw, "jaw")
+    arm_l = next(o for o in jaw if o.name.split(".")[0] == "JawArm_L")
+    boolean_cut(arm_l, cutter_cylinder("Cut_JawClutch", 5.05, -0.2, 3.2, Vector((HINGE.x, 49.5, HINGE.z)), "Y"), "jaw", guard=False)
+    boolean_cut(sleeve, cutter_cylinder("Cut_JawClutchBore", 3.25, -0.2, 3.2, Vector((HINGE.x, 49.5, HINGE.z)), "Y"), "jaw", guard=False)
     fangs = []
     for sy, side in ((1, "L"), (-1, "R")):  # just in front of the jaw's lip
         # (small rounded cones: a cute overbite, not buck teeth)
@@ -622,6 +692,14 @@ def part_head():
     names += made(fangs, HEAD)
     # The lime shell prints as two parts split at its shoulder crease (z 236), as Microduck's head
     # is top and bottom: the base goes on over the head frame, the top drops on and screws down.
+    # (a 0.15 mm relief round the compute board's edges: the 2.4 mm wall would touch its corners by 0.09)
+    relief = bpy.data.objects.new("Cut_ComputeRelief", box_mesh("Cut_ComputeRelief", (67.15, -32.65, 222.85), (69.05, 32.65, 253.15)))
+    bpy.data.collections[f"{SCENE}: rig"].objects.link(relief)
+    boolean_cut(shell, relief, HEAD)
+    folded = [o for o in parts if o.name.split(".")[0].startswith(("Spike_H", "Brow_", "EyeSocket_"))]
+    fold(shell, folded, HEAD)
+    parts = [o for o in parts if o not in folded]
+    names = [n for n in names if not n.startswith(("Spike_H", "Brow_", "EyeSocket_"))]
     names.append(split(shell, HEAD, "z", 236.0, ("HeadTop", "HeadBase")).name.split(".")[0])
     names[names.index("Head")] = "HeadTop"
     return names, ["neck", "neck_pitch", "yaw_roll_motion", HEAD, "jaw"]
@@ -764,6 +842,9 @@ def part_legs():
         for k, dx in enumerate((-40, -18)):
             foot.append(screw(f"FootScrew_{side}{k}", (dx, yf, 3.4), "-Z"))
         names += made(foot, ankle)
+        caps = [o for o in foot if o.name.split(".")[0].startswith(f"ToeCap_{side}")]
+        fold(foot[1], caps, ankle)  # (lime caps on the cream foot: one two-colour print)
+        names = [n for n in names if not n.startswith(f"ToeCap_{side}")]
     return names, LEG_JOINTS["L"] + LEG_JOINTS["R"]
 
 
@@ -927,7 +1008,10 @@ def part_arms():
     tuck, wave). The servo case sits in a pocket in the body's upper side, horn out; the arm - a
     cream upper arm, a black elbow hub on a fixed bent elbow, a cream forearm, a lime hand with
     two claws - is screwed to the horn."""
-    clear(("XL330_Arm", "ArmUpper", "ArmFore", "ArmElbow", "ArmPin", "Hand", "Claw", "ArmScrew", "Shoulder"))  # (HandScrew too)
+    clear(("XL330_Arm", "ArmUpper", "ArmFore", "ArmElbow", "ArmPin", "Hand", "Claw", "ArmScrew", "ArmClutch", "ArmSpring", "Shoulder"))  # (HandScrew too)
+    for o in list(scene.objects):
+        if o.name.split(".")[0].startswith("Cut_ArmClutch"):
+            bpy.data.objects.remove(o)
     names = []
     for side, sy in (("L", 1), ("R", -1)):
         arm_body(side)
@@ -943,8 +1027,16 @@ def part_arms():
                disc(f"ArmPin_{side}", coll, SILVER, 2.2, 11.8, (38, sy * 45.6, 110), "Y" if sy > 0 else "-Y", n=16),  # (through both arm parts)
                slab(f"ArmFore_{side}", CREAM, [(33, 116), (60, 118.5), (64, 111), (60, 103.5), (35, 102)], *ys(46.4, 53.8)),
                slab(f"Hand_{side}", LIME, [(58, 121), (69, 119.5), (72.5, 111), (68.5, 103), (58, 102)], *ys(45.9, 54.3))]
-        for k, a in enumerate((math.pi / 4, 3 * math.pi / 4, 5 * math.pi / 4, 7 * math.pi / 4)):
-            arm.append(screw(f"ArmScrew_{side}{k}", (27 + 5.6 * math.cos(a), sy * 54.6, 140 + 5.6 * math.sin(a)), "Y" if sy > 0 else "-Y"))
+        # A slip clutch on the horn, not four screws: a TPU friction disc in a pocket in the upper
+        # arm's inner face, pressed onto the horn by one shoulder screw through a wave spring. It
+        # holds 1.2 N m - more than the servo can push with (0.96), so a get-up loses nothing - and
+        # slips in a fall that lands on the arm (80 N on the hand: 3 N m), before the gears strip.
+        ax = "Y" if sy > 0 else "-Y"
+        # (r 6.8: the arm's chamfered back edge passes about 9 mm from the horn axis; the pocket leaves 1.5 mm or more)
+        pocket = cutter_cylinder(f"Cut_ArmClutch_{side}", 6.8, 0, 1.4, Vector((27, sy * 45.45, 140)), ax)
+        arm.append(disc(f"ArmClutch_{side}", coll, tpu(), 6.5, 1.3, (27, sy * 45.5, 140), ax, n=40))
+        arm.append(disc(f"ArmSpring_{side}", coll, SILVER, 3.4, 0.6, (27, sy * 54.6, 140), ax, n=24))
+        arm.append(screw(f"ArmScrew_{side}0", (27, sy * 55.2, 140), ax))
         for k, dy in enumerate((2.6, 7.4)):
             bpy.ops.mesh.primitive_cone_add(vertices=6, radius1=2.1, radius2=0.5, depth=8.0, location=(74.5, sy * (45.9 + dy), 108.5), rotation=(0, math.radians(115), 0))
             claw = bpy.context.active_object
@@ -957,6 +1049,7 @@ def part_arms():
             arm.append(claw)
         arm.append(screw(f"HandScrew_{side}", (59.6, sy * 54.0, 111), "Y" if sy > 0 else "-Y"))
         names += made(arm, f"arm_{side}")
+        boolean_cut(arm[0], pocket, f"arm_{side}", guard=False)
     joints = ["arm_L", "arm_R", "neck", "neck_pitch", "yaw_roll_motion", HEAD, "jaw"] + LEG_JOINTS["L"][:3] + LEG_JOINTS["R"][:3]
     return names, joints
 
@@ -1062,6 +1155,9 @@ def part_bosses():
     behind the panel it passes through (servo horns count - they are threaded); where it's under
     ENGAGE, print a boss behind the panel for an M2 heat-set insert, as deep as the room allows."""
     from mathutils.bvhtree import BVHTree
+    for o in scene.objects:  # (the last run's bosses were folded into their panels: undo that first)
+        for m in [m for m in o.modifiers if m.name.startswith("Cut_Boss_")]:
+            o.modifiers.remove(m)
     clear(("Boss_",))
     rest_all()
     bpy.context.view_layer.update()
@@ -1074,7 +1170,7 @@ def part_bosses():
             mw = o.matrix_world
             meshes[o.name] = (o, BVHTree.FromPolygons([mw @ v.co for v in me.vertices], [tuple(p.vertices) for p in me.polygons]))
             ev.to_mesh_clear()
-    report, names = {}, []
+    report, names, plans = {}, [], {}
     for o in [m[0] for m in meshes.values() if m[0].get("skin") and "Screw" in m[0].name]:
         body = o["body"]
         near = {body, BODIES.get(body, (None,))[0]} | {b for b, v in BODIES.items() if v[0] == body}
@@ -1124,11 +1220,28 @@ def part_bosses():
         if length < 2.0:
             report[tag] = f"no room for a boss behind {plate.split('.')[0]} ({free:.1f} mm)"
             continue
-        at = head - axis * (plate_end - 0.3)
+        plans[tag] = dict(head=head, axis=axis, plate_end=plate_end, length=length, standoff=standoff, to=nxt[1], plate=plate, body=body)
+    # Mirror pairs (a screw and its twin, L for R): two plain bosses get the same length (the
+    # shorter: it fits both sides). A standoff reaching a frame part on one side only stays.
+    def twin(tag):
+        for i, ch in enumerate(tag):
+            if ch in "LR":
+                t = tag[:i] + ("R" if ch == "L" else "L") + tag[i + 1:]
+                if t in plans:
+                    return t
+        return None
+    for tag, pl in plans.items():
+        t = twin(tag)
+        if t and not pl["standoff"] and not plans[t]["standoff"]:
+            pl["length"] = min(pl["length"], plans[t]["length"])
+    for tag, pl in plans.items():
+        head, axis, length, plate = pl["head"], pl["axis"], pl["length"], pl["plate"]
+        at = head - axis * (pl["plate_end"] - 0.3)
         b = part(f"Boss_{tag}", coll, meshes[plate][0].active_material or CREAM, cyl_mesh(f"Boss_{tag}", BOSS_R, 0, length + 0.3, 20),
                  Matrix.Translation(at) @ (axis * -1).to_track_quat("Z", "Y").to_matrix().to_4x4(), Matrix.Identity(4), smooth=True)
-        names += made([b], body)
-        report[tag] = f"{'standoff to ' + nxt[1].split('.')[0] + ',' if standoff else 'boss'} {length + 0.3:.1f} mm behind {plate.split('.')[0]}"
+        made([b], pl["body"])
+        fold(meshes[plate][0], [b], pl["body"])  # (printed with its panel: no glue joint)
+        report[tag] = f"{'standoff to ' + pl['to'].split('.')[0] + ',' if pl['standoff'] else 'boss'} {length + 0.3:.1f} mm behind {plate.split('.')[0]}"
     print("BOSSES", json.dumps(report))
     return names, []
 

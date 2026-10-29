@@ -29,11 +29,13 @@ def role(o):
         return "fastener"
     if n.startswith(("JawShaft", "CheekPin", "ArmPin")):
         return "steel pin"
-    if n.startswith("TailMagnet"):
-        return "magnet"
-    if n.startswith("VisorGlass"):
-        return "acrylic window"
-    if n.startswith(("TailFlex", "Sole", "ToeSole")):
+    if n.startswith(("ArmSpring", "TailSpring")):
+        return "wave spring"
+    if n.startswith("TailSpine"):
+        return "carbon rod"
+    if n.startswith(("VisorGlass", "Eye_")):
+        return "polycarbonate window"
+    if n.startswith(("Sole", "ToeSole", "TailTip", "ArmClutch", "TailClutch", "JawClutch")):
         return "TPU"
     if n.startswith(("ToF", "HeadIMU", "StatusLED", "Cam")):
         return "electronics"

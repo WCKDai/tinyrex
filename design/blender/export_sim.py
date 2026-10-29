@@ -131,7 +131,7 @@ def run():
                 k = XL330_G / m if m else 0
                 items[b].append((XL330_G, c, I * k))
         elif n in ("CameraHolder", "CameraLens"):
-            items[b].append(part_inertia(o, deps, to_body[b], PLA))
+            items[b].append(part_inertia(o, deps, to_body[b], PETG))
         elif o.get("skin") and not n.startswith("XL330"):
             if "Screw" in n:
                 items[b].append((SCREW_G, to_body[b] @ o.matrix_world.translation, Matrix.Identity(3) * 0))

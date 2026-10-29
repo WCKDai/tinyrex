@@ -28,7 +28,7 @@ Microduck's masses and centres of mass come from its MJCF (its authors' CAD). Ti
 - add its own parts: {z['added_g']} g.
 
 Each added part's mass is its mesh volume × material density, placed at its centroid:
-- PLA 1.24 g/cm³; parts modelled solid are counted at 45 % (walls + 20 % infill);
+- PETG 1.27 g/cm³; parts modelled solid are counted at 45 % (walls + 20 % gyroid);
 - TPU 1.21; steel 7.85; NdFeB 7.5; acrylic 1.19;
 - XL330 18 g; M2 screw 0.35 g.
 
