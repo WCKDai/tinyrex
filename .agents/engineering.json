@@ -1,0 +1,59 @@
+{
+  "schema": "eng-config/v1",
+  "project": "tinyrex",
+  "commands": {
+    "fast": [
+      {
+        "name": "py-compile",
+        "run": "python3 -m compileall -q design harness spec tools/polycore-blender",
+        "timeout": 120
+      },
+      {
+        "name": "sim-data-json",
+        "run": "for f in design/sim/*.json design/blender/*.json; do python3 -m json.tool \"$f\" >/dev/null || exit 1; done",
+        "timeout": 60
+      }
+    ],
+    "full": [
+      {
+        "name": "py-compile",
+        "run": "python3 -m compileall -q design harness spec tools/polycore-blender",
+        "timeout": 120
+      },
+      {
+        "name": "polycore-step-tests",
+        "run": "cargo test --manifest-path tools/polycore-step/Cargo.toml --quiet",
+        "timeout": 1800
+      },
+      {
+        "name": "sim-rehearse",
+        "run": "uv run --quiet --python 3.12 --with-requirements design/sim/requirements.txt python design/sim/runtime.py rehearse",
+        "timeout": 1800
+      }
+    ]
+  },
+  "security": {
+    "required": [
+      "gitleaks",
+      "semgrep"
+    ],
+    "optional": [
+      "osv-scanner",
+      "actionlint"
+    ],
+    "gitleaks_config": ".agents/config/gitleaks.toml",
+    "semgrep_config": ".agents/config/semgrep.yml",
+    "gitleaks_history": false,
+    "timeout": 600
+  },
+  "budgets": {
+    "fast_seconds": 300,
+    "full_seconds": 1800
+  },
+  "parallel": {
+    "max_worktrees": 4
+  },
+  "impact": {
+    "base": "origin/main"
+  }
+}

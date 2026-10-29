@@ -6,3 +6,5 @@ __pycache__/
 .venv-mujoco/
 work-bin/
 work-*/
+.agents/evidence/
+.worktrees/
