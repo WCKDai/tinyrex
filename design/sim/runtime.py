@@ -176,6 +176,7 @@ def rehearse():
     for n, ok, note in results:
         print(f"{'PASS' if ok else 'FAIL'}  {n:{w}s}  {note}")
     print(f"{sum(ok for _, ok, _ in results)}/{len(results)} passed")
+    return all(ok for _, ok, _ in results)
 
 
 def run_real(args):
@@ -223,4 +224,4 @@ def run_real(args):
 
 if __name__ == "__main__":
     what = sys.argv[1] if len(sys.argv) > 1 else "sim"
-    {"sim": lambda: run_sim(), "rehearse": lambda: rehearse(), "real": lambda: run_real(sys.argv)}[what]()
+    {"sim": lambda: run_sim(), "rehearse": lambda: sys.exit(0 if rehearse() else 1), "real": lambda: run_real(sys.argv)}[what]()
