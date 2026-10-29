@@ -1133,13 +1133,148 @@ def part_bosses():
     return names, []
 
 
+XL330_CASE = ((-13.0, -10.0, -24.5), (13.0, 10.0, 9.5))  # an XL330's case in its own frame (output along +X)
+FRAME_GAP = 0.3   # clearance round each part a bracket holds
+FRAME_ROUND = 1.5  # the brackets' edge fillet
+
+
+def local_box(o):
+    """An object's mesh bounds in its own coordinates."""
+    vs = [v.co for v in o.data.vertices]
+    return Vector([min(v[i] for v in vs) for i in range(3)]), Vector([max(v[i] for v in vs) for i in range(3)])
+
+
+def world_box(o):
+    pts = [o.matrix_world @ Vector(c) for c in o.bound_box]
+    return Vector([min(p[i] for p in pts) for i in range(3)]), Vector([max(p[i] for p in pts) for i in range(3)])
+
+
+def boxes_meet(a, b, pad=0.0):
+    return all(a[0][i] - pad < b[1][i] and b[0][i] - pad < a[1][i] for i in range(3))
+
+
+def frame_cutters(o):
+    """The pockets a piece of hardware needs in a bracket: (mesh, world matrix) pairs - a servo's
+    case with its horn and hub, a bearing, the battery, a cable's run."""
+    base = o.name.split(".")[0]
+    M = o.matrix_world
+    g = FRAME_GAP
+    T = Matrix.Translation
+    if base.startswith("XL330") and (len(o.name.split(".")) == 1 or o.name.split(".")[1].isdigit()):
+        (x0, y0, z0), (x1, y1, z1) = XL330_CASE
+        return [(box_mesh("Cut_Frame", (x0 - g, y0 - g, z0 - 2.0 - g), (x1 + g, y1 + g, z1 + g)), M),  # (and its sockets)
+                (cyl_mesh("Cut_Frame", 9.0 + g, 0, 1.5 + 2 * g, 40), M @ T((13 - g, 0, 0)) @ axis_matrix("X")),
+                (cyl_mesh("Cut_Frame", 5.0 + g, 0, 1.5 + 2 * g, 32), M @ T((-13 + g, 0, 0)) @ axis_matrix("-X"))]
+    if base.startswith("Bearing"):
+        lo, hi = local_box(o)
+        return [(cyl_mesh("Cut_Frame", (hi.x - lo.x) / 2 + g, lo.z - g, hi.z + g, 40), M)]
+    if base == "Battery":
+        lo, hi = local_box(o)
+        return [(box_mesh("Cut_Frame", tuple(lo - Vector((g, g, g))), tuple(hi + Vector((g, g, g)))), M)]
+    if base.startswith("Cable") and o.data.vertices:
+        n = 10  # (tube(): rings of 10)
+        V = [M @ v.co for v in o.data.vertices]
+        rings = [sum(V[i * n:(i + 1) * n], Vector()) / n for i in range(len(V) // n)]
+        out = []
+        for a, b in zip(rings, rings[1:]):
+            d = b - a
+            if d.length < 0.5:
+                continue
+            rot = d.normalized().to_track_quat("Z", "Y").to_matrix().to_4x4()
+            out.append((cyl_mesh("Cut_Frame", 1.25 + 0.4, -0.6, d.length + 0.6, 16), T(a) @ rot))
+        return out
+    return []
+
+
+def part_frame():
+    """TinyREX's own frame brackets, carved from the clip-checked envelopes of Microduck's (so they
+    can't add a clip): each pocketed round the servos, horns, bearings, battery and cables it holds
+    (a cradle that hugs them), plates lightened with holes where nothing mounts, edges filleted,
+    printed in the boards' dark frame colour. The two battery holders become left and right
+    clamps."""
+    for o in list(scene.objects):
+        if o.name.split(".")[0].startswith("Cut_Frame"):
+            bpy.data.objects.remove(o, do_unlink=True)
+    hardware = [o for o in scene.objects if o.type == "MESH" and "body" in o and not o.get("skin")]
+    brackets = [o for o in hardware if o.name.startswith("Bracket_")]
+    held = [o for o in hardware if not o.name.startswith("Bracket_")]
+    frame_mat = bpy.data.materials.get("Bracket") or BRACKET
+    names = []
+    for b in brackets:
+        for m in [m for m in b.modifiers]:
+            b.modifiers.remove(m)
+        b.data.materials.clear()
+        b.data.materials.append(frame_mat)
+        lo, hi = local_box(b)
+        size = hi - lo
+        # (the placeholder's own corner round, so the bracket stays inside its clip-checked envelope)
+        shown = any(k in b.name for k in ("Bracket_leg", "Bracket_yaw2roll", "Bracket_hip_l", "Bracket_bearing_roll", "Bracket_ankle"))
+        bevel(b, min(4.0 if shown else FRAME_ROUND, min(size) / 2 - 0.05), segments=3)
+        body = b["body"]
+        near = {body, BODIES.get(body, (None,))[0]} | {k for k, v in BODIES.items() if v[0] == body}
+        wb = world_box(b)
+        cut_boxes = []
+        k = 0
+        for h in held:
+            if h["body"] not in near or not boxes_meet(wb, world_box(h)):
+                continue
+            for me, M in frame_cutters(h):
+                c = bpy.data.objects.new(f"Cut_Frame_{b.name.split('.')[0]}_{k}", me)
+                bpy.data.collections[f"{SCENE}: rig"].objects.link(c)
+                c.matrix_world = M
+                k += 1
+                bpy.context.view_layer.update()
+                if not boxes_meet(wb, world_box(c)):
+                    bpy.data.objects.remove(c, do_unlink=True)
+                    continue
+                cut_boxes.append(world_box(c))
+                boolean_cut(b, c, body, guard=False)
+        base = b.name.split(".")[0]
+        if base.startswith("Bracket_power_support"):  # (two clamps, either side of the battery)
+            left = base.endswith("_5")
+            c = bpy.data.objects.new(f"Cut_Frame_{base}_half", box_mesh("Cut_Frame", (-200, -0.3 if left else 0.3, -200), (200, -200 if left else 200, 400)))
+            bpy.data.collections[f"{SCENE}: rig"].objects.link(c)
+            c.matrix_world = Matrix.Identity(4)
+            boolean_cut(b, c, body, guard=False)
+        # Lightening holes through a plate, where nothing is held behind them.
+        thin = min(range(3), key=lambda i: size[i])
+        u, w = [i for i in range(3) if i != thin]
+        if size[thin] <= 6.0 and min(size[u], size[w]) >= 16.0:
+            r = min(4.0, 0.16 * min(size[u], size[w]))
+            pitch, margin = 2.7 * r, 2.5 + r
+            nu = max(1, int((size[u] - 2 * margin) // pitch) + 1)
+            nw = max(1, int((size[w] - 2 * margin) // pitch) + 1)
+            M = b.matrix_world
+            inv = M.inverted()
+            local_cuts = []
+            for cb in cut_boxes:
+                pts = [inv @ Vector((x, y, z)) for x in (cb[0].x, cb[1].x) for y in (cb[0].y, cb[1].y) for z in (cb[0].z, cb[1].z)]
+                local_cuts.append((Vector([min(p[i] for p in pts) for i in range(3)]), Vector([max(p[i] for p in pts) for i in range(3)])))
+            for i in range(nu):
+                for j in range(nw):
+                    cu = lo[u] + (size[u] - (nu - 1) * pitch) / 2 + i * pitch
+                    cw = lo[w] + (size[w] - (nw - 1) * pitch) / 2 + j * pitch
+                    if any(cl[0][u] - 2 < cu + r and cu - r < cl[1][u] + 2 and cl[0][w] - 2 < cw + r and cw - r < cl[1][w] + 2 for cl in local_cuts):
+                        continue
+                    at = Vector((0.0, 0.0, 0.0))
+                    at[u], at[w], at[thin] = cu, cw, lo[thin] - 1.0
+                    axis = ["X", "Y", "Z"][thin]
+                    c = bpy.data.objects.new(f"Cut_Frame_{base}_hole{i}_{j}", cyl_mesh("Cut_Frame", r, 0, size[thin] + 2.0, 32))
+                    bpy.data.collections[f"{SCENE}: rig"].objects.link(c)
+                    c.matrix_world = M @ Matrix.Translation(at) @ axis_matrix(axis)
+                    boolean_cut(b, c, body, guard=False)
+        names.append(base)
+    bpy.context.view_layer.update()
+    return names, [b for b, (_, _, j, _) in BODIES.items() if j]
+
+
 def part_all():
     """No new part: check every shell against every joint (the extra tail and jaw included)."""
     names = [o.name.split(".")[0] for o in coll.objects if o.get("skin")]
     return names, [b for b, (_, _, j, _) in BODIES.items() if j]
 
 
-BUILDERS = {"body": part_body, "tail": part_tail, "head": part_head, "legs": part_legs, "dress": part_dress, "arms": part_arms, "cables": part_cables, "bosses": part_bosses, "all": part_all}
+BUILDERS = {"body": part_body, "tail": part_tail, "head": part_head, "legs": part_legs, "dress": part_dress, "arms": part_arms, "cables": part_cables, "bosses": part_bosses, "frame": part_frame, "all": part_all}
 for _side in ("L", "R"):
     if PART != "arms" and f"B:arm_{_side}" in [o.name.split(".")[0] for o in scene.objects]:
         arm_body(_side)

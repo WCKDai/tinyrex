@@ -81,19 +81,28 @@ The printed parts break down as:
 
 ## Does it look as polished as Microduck?
 
-Not yet. Two things separate it.
+Closer. Two things separated it; the first is done.
 
-1. **The frame is placeholder geometry.** The 23 frame brackets, in Microduck's positions, are plain boxes the size of
-   Microduck's: hip, shin, ankle cradle, neck, head frame, trunk plate and battery holders. In the labelled renders
-   they are the cream blocks at the hips, knees and ankles and the black neck stack. Microduck's brackets are real CAD
-   parts: U-cradles around the servos, filleted links with bosses at the axes, lightening holes. This is the largest
-   gap. It needs TinyREX's own bracket designs, made to the same servo and bearing positions.
+1. **The frame (done).** The 23 frame brackets were plain boxes the size of Microduck's. They are now TinyREX's own
+   (`part_frame` in `v4_parts.py`), carved from those clip-checked envelopes, so they can't add a clip:
+   - each is pocketed round everything it holds, with 0.3 mm clearance: servo cases and sockets, horns and hubs,
+     bearings, the battery, the arm-servo cables. That leaves a cradle that hugs the servos;
+   - plates are lightened with holes where nothing mounts behind them;
+   - the battery holder is two clamps, left and right;
+   - edges keep the placeholders' corner rounds;
+   - they print in the boards' dark frame colour, so the robot reads as a black mechanical frame under lime and
+     cream armour, as on the boards.
+
+   After the change: joint limits unchanged, no clips, nothing floating, all bosses resolved. In the STEP, 22 of the 23
+   brackets are exact. The left battery holder is faceted: PolyCore's exact boolean returned an implausible volume for
+   its battery pocket.
 2. **The surfaces are panelled, not sculpted.** TinyREX's shells are ruled lofts with fillets, which reads as a toy
    robot. That is the boards' language, and the boards ask for it. Microduck's shells are smooth freeform surfaces.
    The head dome, thigh shields and tail could take a smoother loft without losing the boards' hard-surface look.
 
 ## Open items
 
-- TinyREX's own frame brackets, replacing the placeholders. This is the next design job.
+- Bracket details a printed part would also want: screw holes where the servos' case screws go, and ribs on the
+  longest links.
 - Watertight cut shells for printing straight from the Blender meshes.
 - A PolyCore report for the failures the STEP export hit; see `tools/polycore-blender/README.md`.

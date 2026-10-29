@@ -67,7 +67,7 @@
   <worldbody>
     <body name="trunk_base" pos="0 0 0.12" quat="1 0 0 0" childclass="microduck">
       <freejoint name="trunk_base_freejoint" />
-      <inertial pos="-0.0225735 1.41266e-06 0.00649244" mass="0.307195" fullinertia="0.000274018 0.000427838 0.000368005 -7.1918e-08 -6.65301e-05 -6.17939e-08" />
+      <inertial pos="-0.0225735 1.41264e-06 0.00649244" mass="0.307195" fullinertia="0.000274018 0.000427838 0.000368005 -7.19188e-08 -6.65301e-05 -6.17939e-08" />
       <site group="3" name="imu" pos="-0.021 6.64098e-05 -0.0146984" quat="1 -0 -0 -0" />
       <body name="yaw2roll" pos="0.006 0.0175 -0.005" quat="0 -0.707107 -0.707107 -0">
         <joint axis="0 0 1" name="left_hip_yaw" type="hinge" range="-0.13963 0.48869" class="chosen_actuator" />
@@ -109,7 +109,7 @@
             <inertial pos="-0.000166657 -0.00500964 0.0178065" mass="0.0486" fullinertia="6.97903e-06 8.10293e-06 9.57884e-06 3.21657e-07 -3.4797e-08 3.4295e-07" />
             <body name="jaw_soft" pos="-0.0179 0 0.0145" quat="0.707107 0 -0.707107 -0">
               <joint axis="0 0 1" name="head_roll" type="hinge" range="-0.33161 0.33161" class="chosen_actuator" />
-              <inertial pos="0.0120969 0.00135533 -0.0255017" mass="0.178801" fullinertia="0.000344166 0.000284702 0.000164694 2.07518e-06 5.29832e-05 5.13219e-06" />
+              <inertial pos="0.0120969 0.00135533 -0.0255017" mass="0.178801" fullinertia="0.000344166 0.000284702 0.000164694 2.07517e-06 5.29833e-05 5.13221e-06" />
               <site group="3" name="head_camera" pos="0.0155 -9.13778e-05 -0.0733" quat="0.707107 -0 0.707107 0" />
               <camera name="head_camera" pos="0.0155 -9.13778e-05 -0.0733" quat="0 0 -1 0" />
               <site group="3" name="tof" pos="0.0135 0.0224086 -0.0733" quat="0.707107 -0 0.707107 0" />

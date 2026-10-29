@@ -9,7 +9,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 813.6561134459122,
-      "seconds": 0.163072542
+      "seconds": 0.115598958
     },
     {
       "name": "Bracket_banana_pcb_locker_2.002",
@@ -17,8 +17,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 1257.0618884431462,
-      "seconds": 0.375471916
+      "volume_mm3": 1235.1035004030277,
+      "seconds": 4.747831709
     },
     {
       "name": "Bracket_trunk_base_3.002",
@@ -26,8 +26,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 5986.714820278227,
-      "seconds": 0.526217792
+      "volume_mm3": 1262.0007816440905,
+      "seconds": 3.739596042
     },
     {
       "name": "XL330_00.002",
@@ -36,7 +36,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 17583.36452939909,
-      "seconds": 0.522650417
+      "seconds": 0.796553708
     },
     {
       "name": "XL330_00.horn.002",
@@ -45,7 +45,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 381.6800062133021,
-      "seconds": 0.066302791
+      "seconds": 0.044395667
     },
     {
       "name": "XL330_00.hub.002",
@@ -54,7 +54,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 117.80227530515037,
-      "seconds": 0.085855209
+      "seconds": 0.044309875
     },
     {
       "name": "XL330_00.hs0.002",
@@ -63,7 +63,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458764,
-      "seconds": 0.082527
+      "seconds": 0.057050541
     },
     {
       "name": "XL330_00.hs1.002",
@@ -72,7 +72,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587577,
-      "seconds": 0.088844708
+      "seconds": 0.04745475
     },
     {
       "name": "XL330_00.hs2.002",
@@ -81,7 +81,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587573,
-      "seconds": 0.083336083
+      "seconds": 0.056094792
     },
     {
       "name": "XL330_00.hs3.002",
@@ -90,7 +90,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587564,
-      "seconds": 0.09437625
+      "seconds": 0.066157417
     },
     {
       "name": "XL330_00.cs1(-8, 6).002",
@@ -99,7 +99,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444276,
-      "seconds": 0.085267208
+      "seconds": 0.062388083
     },
     {
       "name": "XL330_00.cs1(8, 6).002",
@@ -108,7 +108,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444245,
-      "seconds": 0.060576791
+      "seconds": 0.057799625
     },
     {
       "name": "XL330_00.cs1(-8, -21).002",
@@ -117,7 +117,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444282,
-      "seconds": 0.065813333
+      "seconds": 0.047274917
     },
     {
       "name": "XL330_00.cs1(8, -21).002",
@@ -126,7 +126,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544427,
-      "seconds": 0.06100075
+      "seconds": 0.062316625
     },
     {
       "name": "XL330_00.cs-1(-8, 6).002",
@@ -135,7 +135,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444258,
-      "seconds": 0.035800667
+      "seconds": 0.033087042
     },
     {
       "name": "XL330_00.cs-1(8, 6).002",
@@ -144,7 +144,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444236,
-      "seconds": 0.037903958
+      "seconds": 0.021732667
     },
     {
       "name": "XL330_00.cs-1(-8, -21).002",
@@ -153,7 +153,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444276,
-      "seconds": 0.0419745
+      "seconds": 0.036704667
     },
     {
       "name": "XL330_00.cs-1(8, -21).002",
@@ -162,7 +162,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544423,
-      "seconds": 0.036646875
+      "seconds": 0.034282542
     },
     {
       "name": "XL330_00.jst0.002",
@@ -171,7 +171,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.00000000000001,
-      "seconds": 0.014712792
+      "seconds": 0.007142
     },
     {
       "name": "XL330_00.jst1.002",
@@ -180,16 +180,18 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.00000000000006,
-      "seconds": 0.014947834
+      "seconds": 0.0262555
     },
     {
       "name": "Bracket_power_support_5.002",
       "body": "trunk_base",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 77067.4789328297,
-      "seconds": 0.546856833
+      "status": "faceted",
+      "representation": "faceted_brep",
+      "warnings": [
+        "solid/cut[0]/cut[0]/cut[1]: the operation failed: boolean Cut: implausible result volume 27311.2510; used the tool faceted (tolerance 0.018 mm)"
+      ],
+      "volume_mm3": 27320.734627116693,
+      "seconds": 51.199871125
     },
     {
       "name": "Bracket_power_support_6.002",
@@ -197,8 +199,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 77067.4789328297,
-      "seconds": 0.465649958
+      "volume_mm3": 27194.12244262636,
+      "seconds": 5.431552417
     },
     {
       "name": "XL330_01.002",
@@ -206,8 +208,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 17583.36452939907,
-      "seconds": 0.494150208
+      "volume_mm3": 17583.364529399067,
+      "seconds": 0.550062792
     },
     {
       "name": "XL330_01.horn.002",
@@ -216,7 +218,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 381.6800062133023,
-      "seconds": 0.021761917
+      "seconds": 0.025374291
     },
     {
       "name": "XL330_01.hub.002",
@@ -225,7 +227,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 117.80227530515033,
-      "seconds": 0.070541084
+      "seconds": 0.020973083
     },
     {
       "name": "XL330_01.hs0.002",
@@ -234,7 +236,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587533,
-      "seconds": 0.097580708
+      "seconds": 0.049264417
     },
     {
       "name": "XL330_01.hs1.002",
@@ -243,7 +245,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458763,
-      "seconds": 0.063812084
+      "seconds": 0.037982375
     },
     {
       "name": "XL330_01.hs2.002",
@@ -252,7 +254,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587595,
-      "seconds": 0.076977333
+      "seconds": 0.054528416
     },
     {
       "name": "XL330_01.hs3.002",
@@ -261,7 +263,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458756,
-      "seconds": 0.107983791
+      "seconds": 0.033185959
     },
     {
       "name": "XL330_01.cs1(-8, 6).002",
@@ -270,7 +272,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444262,
-      "seconds": 0.125199791
+      "seconds": 0.052327042
     },
     {
       "name": "XL330_01.cs1(8, 6).002",
@@ -279,7 +281,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444245,
-      "seconds": 0.060427042
+      "seconds": 0.049501583
     },
     {
       "name": "XL330_01.cs1(-8, -21).002",
@@ -288,7 +290,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544428,
-      "seconds": 0.046299916
+      "seconds": 0.049749292
     },
     {
       "name": "XL330_01.cs1(8, -21).002",
@@ -297,7 +299,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544423,
-      "seconds": 0.017940125
+      "seconds": 0.155324792
     },
     {
       "name": "XL330_01.cs-1(-8, 6).002",
@@ -306,7 +308,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444267,
-      "seconds": 0.030817959
+      "seconds": 0.021285875
     },
     {
       "name": "XL330_01.cs-1(8, 6).002",
@@ -315,7 +317,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444251,
-      "seconds": 0.033659292
+      "seconds": 0.15517925
     },
     {
       "name": "XL330_01.cs-1(-8, -21).002",
@@ -324,7 +326,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444282,
-      "seconds": 0.033214
+      "seconds": 0.06231575
     },
     {
       "name": "XL330_01.cs-1(8, -21).002",
@@ -333,7 +335,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444256,
-      "seconds": 0.075214625
+      "seconds": 0.091901167
     },
     {
       "name": "XL330_01.jst0.002",
@@ -342,7 +344,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.0,
-      "seconds": 0.058768459
+      "seconds": 0.030634541
     },
     {
       "name": "XL330_01.jst1.002",
@@ -351,7 +353,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.00000000000006,
-      "seconds": 0.040578792
+      "seconds": 0.101314042
     },
     {
       "name": "Bearing_01.002",
@@ -360,7 +362,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 813.6561134459115,
-      "seconds": 0.139995583
+      "seconds": 0.20416475
     },
     {
       "name": "Bracket_yaw2roll_11.002",
@@ -368,8 +370,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 11298.123247256286,
-      "seconds": 0.532837375
+      "volume_mm3": 2486.5229082014166,
+      "seconds": 8.322899834
     },
     {
       "name": "XL330_02.002",
@@ -378,7 +380,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 17583.364529416373,
-      "seconds": 0.470635666
+      "seconds": 0.354789583
     },
     {
       "name": "XL330_02.horn.002",
@@ -387,7 +389,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 381.680006213302,
-      "seconds": 0.0570895
+      "seconds": 0.046240458
     },
     {
       "name": "XL330_02.hub.002",
@@ -396,7 +398,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 117.80227530515019,
-      "seconds": 0.056578417
+      "seconds": 0.049374542
     },
     {
       "name": "XL330_02.hs0.002",
@@ -405,7 +407,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587506,
-      "seconds": 0.079562167
+      "seconds": 0.100405041
     },
     {
       "name": "XL330_02.hs1.002",
@@ -414,7 +416,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587493,
-      "seconds": 0.063089583
+      "seconds": 0.201350083
     },
     {
       "name": "XL330_02.hs2.002",
@@ -423,7 +425,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458752,
-      "seconds": 0.034831042
+      "seconds": 0.076763084
     },
     {
       "name": "XL330_02.hs3.002",
@@ -432,7 +434,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587484,
-      "seconds": 0.048718666
+      "seconds": 0.07039225
     },
     {
       "name": "XL330_02.cs1(-8, 6).002",
@@ -441,7 +443,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444258,
-      "seconds": 0.056724166
+      "seconds": 0.066500209
     },
     {
       "name": "XL330_02.cs1(8, 6).002",
@@ -450,7 +452,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444256,
-      "seconds": 0.029533958
+      "seconds": 0.028737125
     },
     {
       "name": "XL330_02.cs1(-8, -21).002",
@@ -459,7 +461,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444227,
-      "seconds": 0.041310417
+      "seconds": 0.079960708
     },
     {
       "name": "XL330_02.cs1(8, -21).002",
@@ -468,7 +470,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544423,
-      "seconds": 0.050774084
+      "seconds": 0.052798666
     },
     {
       "name": "XL330_02.cs-1(-8, 6).002",
@@ -477,7 +479,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444273,
-      "seconds": 0.0716655
+      "seconds": 0.016333125
     },
     {
       "name": "XL330_02.cs-1(8, 6).002",
@@ -486,7 +488,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444267,
-      "seconds": 0.068127417
+      "seconds": 0.046326916
     },
     {
       "name": "XL330_02.cs-1(-8, -21).002",
@@ -495,7 +497,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444231,
-      "seconds": 0.114897375
+      "seconds": 0.043531541
     },
     {
       "name": "XL330_02.cs-1(8, -21).002",
@@ -504,7 +506,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444227,
-      "seconds": 0.111570834
+      "seconds": 0.087730958
     },
     {
       "name": "XL330_02.jst0.002",
@@ -513,7 +515,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.00000000000007,
-      "seconds": 0.017516375
+      "seconds": 0.025369542
     },
     {
       "name": "XL330_02.jst1.002",
@@ -522,7 +524,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.0000000000001,
-      "seconds": 0.008483875
+      "seconds": 0.024199084
     },
     {
       "name": "Bearing_02.002",
@@ -531,7 +533,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 813.6561134459183,
-      "seconds": 0.208862875
+      "seconds": 0.085196708
     },
     {
       "name": "Bracket_bearing_roll_14.002",
@@ -539,8 +541,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 2644.8943785591778,
-      "seconds": 0.626986291
+      "volume_mm3": 494.5947608309734,
+      "seconds": 5.104238916
     },
     {
       "name": "Bearing_03.002",
@@ -549,7 +551,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 813.6561134459176,
-      "seconds": 0.207901833
+      "seconds": 0.083037667
     },
     {
       "name": "Bracket_hip_l_16.002",
@@ -557,8 +559,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 20207.656367369535,
-      "seconds": 0.378824542
+      "volume_mm3": 9297.161350719623,
+      "seconds": 5.005350875
     },
     {
       "name": "Bracket_upper_leg_left_17.002",
@@ -566,8 +568,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 81211.92934572321,
-      "seconds": 0.44200575
+      "volume_mm3": 41993.59812105809,
+      "seconds": 4.54206375
     },
     {
       "name": "XL330_03.002",
@@ -576,7 +578,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 17583.36452939925,
-      "seconds": 0.630255333
+      "seconds": 0.39251725
     },
     {
       "name": "XL330_03.horn.002",
@@ -585,7 +587,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 381.6800062133021,
-      "seconds": 0.179963542
+      "seconds": 0.031907292
     },
     {
       "name": "XL330_03.hub.002",
@@ -594,7 +596,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 117.80227530514986,
-      "seconds": 0.034350708
+      "seconds": 0.028558416
     },
     {
       "name": "XL330_03.hs0.002",
@@ -603,7 +605,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587493,
-      "seconds": 0.044886958
+      "seconds": 0.052479917
     },
     {
       "name": "XL330_03.hs1.002",
@@ -612,7 +614,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587773,
-      "seconds": 0.032363958
+      "seconds": 0.17252725
     },
     {
       "name": "XL330_03.hs2.002",
@@ -621,7 +623,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587755,
-      "seconds": 0.058366917
+      "seconds": 0.042050584
     },
     {
       "name": "XL330_03.hs3.002",
@@ -630,7 +632,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458756,
-      "seconds": 0.064443459
+      "seconds": 0.084234625
     },
     {
       "name": "XL330_03.cs1(-8, 6).002",
@@ -639,7 +641,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444296,
-      "seconds": 0.05829075
+      "seconds": 0.1000025
     },
     {
       "name": "XL330_03.cs1(8, 6).002",
@@ -648,7 +650,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444296,
-      "seconds": 0.057400625
+      "seconds": 0.060213916
     },
     {
       "name": "XL330_03.cs1(-8, -21).002",
@@ -657,7 +659,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444242,
-      "seconds": 0.062838125
+      "seconds": 0.075139375
     },
     {
       "name": "XL330_03.cs1(8, -21).002",
@@ -666,7 +668,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444276,
-      "seconds": 0.056018375
+      "seconds": 0.16358275
     },
     {
       "name": "XL330_03.cs-1(-8, 6).002",
@@ -675,7 +677,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444313,
-      "seconds": 0.032448375
+      "seconds": 0.0603865
     },
     {
       "name": "XL330_03.cs-1(8, 6).002",
@@ -684,7 +686,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544429,
-      "seconds": 0.048161834
+      "seconds": 0.049282375
     },
     {
       "name": "XL330_03.cs-1(-8, -21).002",
@@ -693,7 +695,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544431,
-      "seconds": 0.021993959
+      "seconds": 0.045073666
     },
     {
       "name": "XL330_03.cs-1(8, -21).002",
@@ -702,7 +704,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444322,
-      "seconds": 0.040414791
+      "seconds": 0.044695416
     },
     {
       "name": "XL330_03.jst0.002",
@@ -711,7 +713,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 111.99999999999999,
-      "seconds": 0.027608333
+      "seconds": 0.013755583
     },
     {
       "name": "XL330_03.jst1.002",
@@ -720,7 +722,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.0,
-      "seconds": 0.028785083
+      "seconds": 0.014260583
     },
     {
       "name": "Bracket_upper_leg_rigidity_plate_19.002",
@@ -728,8 +730,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 2596.5000722958184,
-      "seconds": 0.479065125
+      "volume_mm3": 944.6408534165279,
+      "seconds": 20.356805167
     },
     {
       "name": "Bearing_04.002",
@@ -738,7 +740,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 813.6561134459197,
-      "seconds": 0.143856041
+      "seconds": 0.182863708
     },
     {
       "name": "XL330_04.002",
@@ -747,7 +749,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 17583.364529416813,
-      "seconds": 0.5090165
+      "seconds": 0.349264792
     },
     {
       "name": "XL330_04.horn.002",
@@ -756,7 +758,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 381.68000621330157,
-      "seconds": 0.051846084
+      "seconds": 0.037302167
     },
     {
       "name": "XL330_04.hub.002",
@@ -765,7 +767,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 117.8022753051502,
-      "seconds": 0.030914167
+      "seconds": 0.0316755
     },
     {
       "name": "XL330_04.hs0.002",
@@ -774,7 +776,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587613,
-      "seconds": 0.085768042
+      "seconds": 0.029779625
     },
     {
       "name": "XL330_04.hs1.002",
@@ -783,7 +785,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587595,
-      "seconds": 0.041439458
+      "seconds": 0.050895667
     },
     {
       "name": "XL330_04.hs2.002",
@@ -792,7 +794,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458758,
-      "seconds": 0.085044
+      "seconds": 0.060107083
     },
     {
       "name": "XL330_04.hs3.002",
@@ -801,7 +803,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587613,
-      "seconds": 0.070478292
+      "seconds": 0.098559916
     },
     {
       "name": "XL330_04.cs1(-8, 6).002",
@@ -810,7 +812,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444256,
-      "seconds": 0.080151958
+      "seconds": 0.034334875
     },
     {
       "name": "XL330_04.cs1(8, 6).002",
@@ -819,7 +821,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444265,
-      "seconds": 0.066166
+      "seconds": 0.034958042
     },
     {
       "name": "XL330_04.cs1(-8, -21).002",
@@ -828,7 +830,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444282,
-      "seconds": 0.05584575
+      "seconds": 0.020518208
     },
     {
       "name": "XL330_04.cs1(8, -21).002",
@@ -837,7 +839,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544419,
-      "seconds": 0.034892334
+      "seconds": 0.030305666
     },
     {
       "name": "XL330_04.cs-1(-8, 6).002",
@@ -846,7 +848,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444265,
-      "seconds": 0.052541583
+      "seconds": 0.028465833
     },
     {
       "name": "XL330_04.cs-1(8, 6).002",
@@ -855,7 +857,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444276,
-      "seconds": 0.032929375
+      "seconds": 0.028364208
     },
     {
       "name": "XL330_04.cs-1(-8, -21).002",
@@ -864,7 +866,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444242,
-      "seconds": 0.030965541
+      "seconds": 0.038340292
     },
     {
       "name": "XL330_04.cs-1(8, -21).002",
@@ -873,7 +875,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544425,
-      "seconds": 0.031992625
+      "seconds": 0.065875708
     },
     {
       "name": "XL330_04.jst0.002",
@@ -882,7 +884,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.0,
-      "seconds": 0.018200625
+      "seconds": 0.001444958
     },
     {
       "name": "XL330_04.jst1.002",
@@ -891,7 +893,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.00000000000004,
-      "seconds": 0.017265917
+      "seconds": 0.001676375
     },
     {
       "name": "Bracket_leg_22.002",
@@ -899,8 +901,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 8210.090989460148,
-      "seconds": 0.339520958
+      "volume_mm3": 4478.060352210953,
+      "seconds": 10.3577155
     },
     {
       "name": "XL330_05.002",
@@ -909,7 +911,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 17583.36452941643,
-      "seconds": 0.602331417
+      "seconds": 0.436744958
     },
     {
       "name": "XL330_05.horn.002",
@@ -918,7 +920,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 381.6800062133016,
-      "seconds": 0.042136667
+      "seconds": 0.050561166
     },
     {
       "name": "XL330_05.hub.002",
@@ -927,7 +929,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 117.80227530515002,
-      "seconds": 0.034331708
+      "seconds": 0.214694042
     },
     {
       "name": "XL330_05.hs0.002",
@@ -936,7 +938,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587644,
-      "seconds": 0.03801975
+      "seconds": 0.0700295
     },
     {
       "name": "XL330_05.hs1.002",
@@ -945,7 +947,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458758,
-      "seconds": 0.070126458
+      "seconds": 0.029985041
     },
     {
       "name": "XL330_05.hs2.002",
@@ -954,7 +956,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587586,
-      "seconds": 0.087691166
+      "seconds": 0.13604175
     },
     {
       "name": "XL330_05.hs3.002",
@@ -963,7 +965,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587595,
-      "seconds": 0.054557542
+      "seconds": 0.024593208
     },
     {
       "name": "XL330_05.cs1(-8, 6).002",
@@ -972,7 +974,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444316,
-      "seconds": 0.054958208
+      "seconds": 0.016330084
     },
     {
       "name": "XL330_05.cs1(8, 6).002",
@@ -981,7 +983,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444338,
-      "seconds": 0.059249334
+      "seconds": 0.013077333
     },
     {
       "name": "XL330_05.cs1(-8, -21).002",
@@ -990,7 +992,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444273,
-      "seconds": 0.048859458
+      "seconds": 0.027918
     },
     {
       "name": "XL330_05.cs1(8, -21).002",
@@ -999,7 +1001,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444265,
-      "seconds": 0.052676042
+      "seconds": 0.0273835
     },
     {
       "name": "XL330_05.cs-1(-8, 6).002",
@@ -1008,7 +1010,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544424,
-      "seconds": 0.039212917
+      "seconds": 0.048173375
     },
     {
       "name": "XL330_05.cs-1(8, 6).002",
@@ -1017,7 +1019,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544423,
-      "seconds": 0.070364833
+      "seconds": 0.047918083
     },
     {
       "name": "XL330_05.cs-1(-8, -21).002",
@@ -1026,7 +1028,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444222,
-      "seconds": 0.089374333
+      "seconds": 0.043644917
     },
     {
       "name": "XL330_05.cs-1(8, -21).002",
@@ -1035,7 +1037,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444265,
-      "seconds": 0.119069
+      "seconds": 0.079001291
     },
     {
       "name": "XL330_05.jst0.002",
@@ -1044,7 +1046,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.0,
-      "seconds": 0.027005791
+      "seconds": 0.088173
     },
     {
       "name": "XL330_05.jst1.002",
@@ -1053,7 +1055,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.00000000000004,
-      "seconds": 0.045645375
+      "seconds": 0.004164916
     },
     {
       "name": "Bearing_05.002",
@@ -1062,7 +1064,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 379.3316121076792,
-      "seconds": 0.223579333
+      "seconds": 0.2295095
     },
     {
       "name": "Bracket_ankle_left_29.002",
@@ -1070,8 +1072,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 35455.506706352804,
-      "seconds": 0.321580458
+      "volume_mm3": 23880.435150023925,
+      "seconds": 3.615283
     },
     {
       "name": "Bracket_neck_30.002",
@@ -1079,8 +1081,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 415.5677830412705,
-      "seconds": 0.431675625
+      "volume_mm3": 37.38866060977773,
+      "seconds": 2.484874958
     },
     {
       "name": "XL330_06.002",
@@ -1088,8 +1090,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 17583.36452941661,
-      "seconds": 0.413938834
+      "volume_mm3": 17583.364529416605,
+      "seconds": 0.782519708
     },
     {
       "name": "XL330_06.horn.002",
@@ -1098,7 +1100,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 381.6800062133023,
-      "seconds": 0.025415166
+      "seconds": 0.310939791
     },
     {
       "name": "XL330_06.hub.002",
@@ -1107,7 +1109,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 117.80227530515019,
-      "seconds": 0.035868208
+      "seconds": 0.058015375
     },
     {
       "name": "XL330_06.hs0.002",
@@ -1116,7 +1118,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587586,
-      "seconds": 0.050772916
+      "seconds": 0.059269292
     },
     {
       "name": "XL330_06.hs1.002",
@@ -1125,7 +1127,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458758,
-      "seconds": 0.087722458
+      "seconds": 0.052398958
     },
     {
       "name": "XL330_06.hs2.002",
@@ -1134,7 +1136,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458758,
-      "seconds": 0.044674375
+      "seconds": 0.139969959
     },
     {
       "name": "XL330_06.hs3.002",
@@ -1143,7 +1145,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458757,
-      "seconds": 0.123802833
+      "seconds": 0.063958042
     },
     {
       "name": "XL330_06.cs1(-8, 6).002",
@@ -1152,7 +1154,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544426,
-      "seconds": 0.039495584
+      "seconds": 0.022547125
     },
     {
       "name": "XL330_06.cs1(8, 6).002",
@@ -1161,7 +1163,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444287,
-      "seconds": 0.052759209
+      "seconds": 0.108285208
     },
     {
       "name": "XL330_06.cs1(-8, -21).002",
@@ -1170,7 +1172,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444307,
-      "seconds": 0.048664792
+      "seconds": 0.14329325
     },
     {
       "name": "XL330_06.cs1(8, -21).002",
@@ -1179,7 +1181,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444227,
-      "seconds": 0.04377925
+      "seconds": 0.05149475
     },
     {
       "name": "XL330_06.cs-1(-8, 6).002",
@@ -1188,7 +1190,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544429,
-      "seconds": 0.052151958
+      "seconds": 0.0266435
     },
     {
       "name": "XL330_06.cs-1(8, 6).002",
@@ -1197,7 +1199,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444256,
-      "seconds": 0.101821417
+      "seconds": 0.029752584
     },
     {
       "name": "XL330_06.cs-1(-8, -21).002",
@@ -1206,7 +1208,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544419,
-      "seconds": 0.101267083
+      "seconds": 0.030733708
     },
     {
       "name": "XL330_06.cs-1(8, -21).002",
@@ -1215,7 +1217,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444327,
-      "seconds": 0.07573475
+      "seconds": 0.038598666
     },
     {
       "name": "XL330_06.jst0.002",
@@ -1224,7 +1226,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 111.99999999999996,
-      "seconds": 0.02692375
+      "seconds": 0.005371958
     },
     {
       "name": "XL330_06.jst1.002",
@@ -1233,7 +1235,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 111.99999999999996,
-      "seconds": 0.024953625
+      "seconds": 0.001112334
     },
     {
       "name": "XL330_07.002",
@@ -1242,7 +1244,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 17583.364529416573,
-      "seconds": 0.325201
+      "seconds": 0.346570334
     },
     {
       "name": "XL330_07.horn.002",
@@ -1251,7 +1253,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 381.6800062133022,
-      "seconds": 0.070971375
+      "seconds": 0.061629292
     },
     {
       "name": "XL330_07.hub.002",
@@ -1260,7 +1262,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 117.8022753051502,
-      "seconds": 0.046404292
+      "seconds": 0.03959625
     },
     {
       "name": "XL330_07.hs0.002",
@@ -1269,7 +1271,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587586,
-      "seconds": 0.069232042
+      "seconds": 0.028186417
     },
     {
       "name": "XL330_07.hs1.002",
@@ -1278,7 +1280,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587604,
-      "seconds": 0.084015709
+      "seconds": 0.020592208
     },
     {
       "name": "XL330_07.hs2.002",
@@ -1287,7 +1289,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587555,
-      "seconds": 0.066160583
+      "seconds": 0.013447542
     },
     {
       "name": "XL330_07.hs3.002",
@@ -1296,7 +1298,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458759,
-      "seconds": 0.053369542
+      "seconds": 0.013636334
     },
     {
       "name": "XL330_07.cs1(-8, 6).002",
@@ -1305,7 +1307,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544427,
-      "seconds": 0.124471125
+      "seconds": 0.011419958
     },
     {
       "name": "XL330_07.cs1(8, 6).002",
@@ -1314,7 +1316,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444282,
-      "seconds": 0.037072584
+      "seconds": 0.022171833
     },
     {
       "name": "XL330_07.cs1(-8, -21).002",
@@ -1323,7 +1325,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544422,
-      "seconds": 0.0950375
+      "seconds": 0.012848458
     },
     {
       "name": "XL330_07.cs1(8, -21).002",
@@ -1332,7 +1334,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544419,
-      "seconds": 0.067244458
+      "seconds": 0.013521333
     },
     {
       "name": "XL330_07.cs-1(-8, 6).002",
@@ -1341,7 +1343,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544419,
-      "seconds": 0.072464292
+      "seconds": 0.011853833
     },
     {
       "name": "XL330_07.cs-1(8, 6).002",
@@ -1350,7 +1352,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444398,
-      "seconds": 0.030636333
+      "seconds": 0.029302166
     },
     {
       "name": "XL330_07.cs-1(-8, -21).002",
@@ -1359,7 +1361,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444296,
-      "seconds": 0.042254042
+      "seconds": 0.091184583
     },
     {
       "name": "XL330_07.cs-1(8, -21).002",
@@ -1368,7 +1370,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544426,
-      "seconds": 0.083506458
+      "seconds": 0.018896375
     },
     {
       "name": "XL330_07.jst0.002",
@@ -1377,7 +1379,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.0,
-      "seconds": 0.079770916
+      "seconds": 0.001189125
     },
     {
       "name": "XL330_07.jst1.002",
@@ -1386,7 +1388,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 111.99999999999996,
-      "seconds": 0.072194083
+      "seconds": 0.001177666
     },
     {
       "name": "Bracket_neck_33.002",
@@ -1394,8 +1396,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 415.5677830412915,
-      "seconds": 0.382154541
+      "volume_mm3": 37.367569513294626,
+      "seconds": 1.338807667
     },
     {
       "name": "Bracket_neck_pitch_34.002",
@@ -1403,8 +1405,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 17299.559664386357,
-      "seconds": 0.525056209
+      "volume_mm3": 7010.527163295782,
+      "seconds": 4.033433542
     },
     {
       "name": "Bearing_06.002",
@@ -1413,7 +1415,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 813.6561134459184,
-      "seconds": 0.115324084
+      "seconds": 0.067412125
     },
     {
       "name": "Bracket_yaw_roll_motion_36.002",
@@ -1421,8 +1423,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 27289.44726056707,
-      "seconds": 0.605318875
+      "volume_mm3": 9304.254371590749,
+      "seconds": 12.936353708
     },
     {
       "name": "XL330_08.002",
@@ -1430,8 +1432,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 17583.36452941639,
-      "seconds": 0.613669833
+      "volume_mm3": 17583.364529416387,
+      "seconds": 0.8820825
     },
     {
       "name": "XL330_08.horn.002",
@@ -1440,7 +1442,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 381.6800062133015,
-      "seconds": 0.045120834
+      "seconds": 0.398718334
     },
     {
       "name": "XL330_08.hub.002",
@@ -1449,7 +1451,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 117.80227530515016,
-      "seconds": 0.050097709
+      "seconds": 0.052718375
     },
     {
       "name": "XL330_08.hs0.002",
@@ -1458,7 +1460,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.28064814545875,
-      "seconds": 0.042708416
+      "seconds": 0.066928208
     },
     {
       "name": "XL330_08.hs1.002",
@@ -1467,7 +1469,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458752,
-      "seconds": 0.050862084
+      "seconds": 0.081434625
     },
     {
       "name": "XL330_08.hs2.002",
@@ -1476,7 +1478,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458755,
-      "seconds": 0.108991042
+      "seconds": 0.029130833
     },
     {
       "name": "XL330_08.hs3.002",
@@ -1485,7 +1487,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458747,
-      "seconds": 0.053940708
+      "seconds": 0.027646958
     },
     {
       "name": "XL330_08.cs1(-8, 6).002",
@@ -1494,7 +1496,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544428,
-      "seconds": 0.027987916
+      "seconds": 0.040142833
     },
     {
       "name": "XL330_08.cs1(8, 6).002",
@@ -1503,7 +1505,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544426,
-      "seconds": 0.025597292
+      "seconds": 0.125322792
     },
     {
       "name": "XL330_08.cs1(-8, -21).002",
@@ -1512,7 +1514,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444242,
-      "seconds": 0.030139167
+      "seconds": 0.146988375
     },
     {
       "name": "XL330_08.cs1(8, -21).002",
@@ -1521,7 +1523,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444333,
-      "seconds": 0.068834417
+      "seconds": 0.139753459
     },
     {
       "name": "XL330_08.cs-1(-8, 6).002",
@@ -1530,7 +1532,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444247,
-      "seconds": 0.088641666
+      "seconds": 0.052896125
     },
     {
       "name": "XL330_08.cs-1(8, 6).002",
@@ -1539,7 +1541,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444265,
-      "seconds": 0.050017791
+      "seconds": 0.060391667
     },
     {
       "name": "XL330_08.cs-1(-8, -21).002",
@@ -1548,7 +1550,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444256,
-      "seconds": 0.075569667
+      "seconds": 0.044436625
     },
     {
       "name": "XL330_08.cs-1(8, -21).002",
@@ -1557,7 +1559,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444251,
-      "seconds": 0.073324
+      "seconds": 0.047005292
     },
     {
       "name": "XL330_08.jst0.002",
@@ -1566,7 +1568,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.00000000000004,
-      "seconds": 0.009287958
+      "seconds": 0.004575666
     },
     {
       "name": "XL330_08.jst1.002",
@@ -1575,7 +1577,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.00000000000007,
-      "seconds": 0.071888625
+      "seconds": 0.003722208
     },
     {
       "name": "Bearing_07.002",
@@ -1584,7 +1586,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 813.656113445919,
-      "seconds": 0.240781042
+      "seconds": 0.114588666
     },
     {
       "name": "Bearing_08.002",
@@ -1593,7 +1595,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 813.6561134459185,
-      "seconds": 0.229554625
+      "seconds": 0.066959792
     },
     {
       "name": "XL330_09.002",
@@ -1602,7 +1604,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 17583.364529416813,
-      "seconds": 0.423042583
+      "seconds": 0.223665792
     },
     {
       "name": "XL330_09.horn.002",
@@ -1611,7 +1613,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 381.6800062133021,
-      "seconds": 0.039050417
+      "seconds": 0.022438833
     },
     {
       "name": "XL330_09.hub.002",
@@ -1620,7 +1622,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 117.80227530515005,
-      "seconds": 0.125661917
+      "seconds": 0.021867584
     },
     {
       "name": "XL330_09.hs0.002",
@@ -1629,7 +1631,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458757,
-      "seconds": 0.0427005
+      "seconds": 0.076701167
     },
     {
       "name": "XL330_09.hs1.002",
@@ -1638,7 +1640,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587577,
-      "seconds": 0.069385792
+      "seconds": 0.035627209
     },
     {
       "name": "XL330_09.hs2.002",
@@ -1647,7 +1649,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.28064814545875,
-      "seconds": 0.033103
+      "seconds": 0.062802917
     },
     {
       "name": "XL330_09.hs3.002",
@@ -1656,7 +1658,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458752,
-      "seconds": 0.075522125
+      "seconds": 0.057818625
     },
     {
       "name": "XL330_09.cs1(-8, 6).002",
@@ -1665,7 +1667,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444378,
-      "seconds": 0.06890375
+      "seconds": 0.044945041
     },
     {
       "name": "XL330_09.cs1(8, 6).002",
@@ -1674,7 +1676,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444247,
-      "seconds": 0.065877875
+      "seconds": 0.0401395
     },
     {
       "name": "XL330_09.cs1(-8, -21).002",
@@ -1683,7 +1685,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444145,
-      "seconds": 0.178802583
+      "seconds": 0.026224667
     },
     {
       "name": "XL330_09.cs1(8, -21).002",
@@ -1692,7 +1694,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444245,
-      "seconds": 0.0814605
+      "seconds": 0.043626625
     },
     {
       "name": "XL330_09.cs-1(-8, 6).002",
@@ -1701,7 +1703,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544433,
-      "seconds": 0.036009916
+      "seconds": 0.025142459
     },
     {
       "name": "XL330_09.cs-1(8, 6).002",
@@ -1710,7 +1712,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544431,
-      "seconds": 0.024396708
+      "seconds": 0.029765542
     },
     {
       "name": "XL330_09.cs-1(-8, -21).002",
@@ -1719,7 +1721,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544417,
-      "seconds": 0.082062958
+      "seconds": 0.023355167
     },
     {
       "name": "XL330_09.cs-1(8, -21).002",
@@ -1728,7 +1730,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444191,
-      "seconds": 0.023512959
+      "seconds": 0.02734475
     },
     {
       "name": "XL330_09.jst0.002",
@@ -1737,7 +1739,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 111.99999999999999,
-      "seconds": 0.003127083
+      "seconds": 0.001470375
     },
     {
       "name": "XL330_09.jst1.002",
@@ -1746,7 +1748,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.0,
-      "seconds": 0.004940083
+      "seconds": 0.0069705
     },
     {
       "name": "Bracket_motor_support_44.002",
@@ -1754,8 +1756,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 74614.91370131918,
-      "seconds": 0.423036833
+      "volume_mm3": 39618.790390937545,
+      "seconds": 6.062821542
     },
     {
       "name": "XL330_10.002",
@@ -1764,7 +1766,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 17583.36452941683,
-      "seconds": 0.475206875
+      "seconds": 0.242597458
     },
     {
       "name": "XL330_10.horn.002",
@@ -1773,7 +1775,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 381.6800062133022,
-      "seconds": 0.073041667
+      "seconds": 0.014265708
     },
     {
       "name": "XL330_10.hub.002",
@@ -1782,7 +1784,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 117.80227530515013,
-      "seconds": 0.104035541
+      "seconds": 0.020727208
     },
     {
       "name": "XL330_10.hs0.002",
@@ -1791,7 +1793,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458756,
-      "seconds": 0.087310083
+      "seconds": 0.069273042
     },
     {
       "name": "XL330_10.hs1.002",
@@ -1800,7 +1802,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458759,
-      "seconds": 0.055608666
+      "seconds": 0.074364708
     },
     {
       "name": "XL330_10.hs2.002",
@@ -1809,7 +1811,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587604,
-      "seconds": 0.037288166
+      "seconds": 0.079490291
     },
     {
       "name": "XL330_10.hs3.002",
@@ -1818,7 +1820,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458756,
-      "seconds": 0.138466667
+      "seconds": 0.031959125
     },
     {
       "name": "XL330_10.cs1(-8, 6).002",
@@ -1827,7 +1829,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444262,
-      "seconds": 0.065022
+      "seconds": 0.088882
     },
     {
       "name": "XL330_10.cs1(8, 6).002",
@@ -1836,7 +1838,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444298,
-      "seconds": 0.061435416
+      "seconds": 0.123319958
     },
     {
       "name": "XL330_10.cs1(-8, -21).002",
@@ -1845,7 +1847,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444251,
-      "seconds": 0.108328625
+      "seconds": 0.075610709
     },
     {
       "name": "XL330_10.cs1(8, -21).002",
@@ -1854,7 +1856,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444256,
-      "seconds": 0.07631425
+      "seconds": 0.0655285
     },
     {
       "name": "XL330_10.cs-1(-8, 6).002",
@@ -1863,7 +1865,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444262,
-      "seconds": 0.105005958
+      "seconds": 0.044568584
     },
     {
       "name": "XL330_10.cs-1(8, 6).002",
@@ -1872,7 +1874,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444265,
-      "seconds": 0.045245208
+      "seconds": 0.038906791
     },
     {
       "name": "XL330_10.cs-1(-8, -21).002",
@@ -1881,7 +1883,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444207,
-      "seconds": 0.072649542
+      "seconds": 0.045577291
     },
     {
       "name": "XL330_10.cs-1(8, -21).002",
@@ -1890,7 +1892,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444322,
-      "seconds": 0.039681042
+      "seconds": 0.036562792
     },
     {
       "name": "XL330_10.jst0.002",
@@ -1899,7 +1901,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.0,
-      "seconds": 0.00177875
+      "seconds": 0.02061825
     },
     {
       "name": "XL330_10.jst1.002",
@@ -1908,7 +1910,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 111.99999999999996,
-      "seconds": 0.084769042
+      "seconds": 0.021009708
     },
     {
       "name": "Bearing_09.002",
@@ -1917,7 +1919,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 379.3316121076793,
-      "seconds": 0.153115167
+      "seconds": 0.099301333
     },
     {
       "name": "Bracket_yaw2roll_56.002",
@@ -1925,8 +1927,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 11298.123247256282,
-      "seconds": 0.376797125
+      "volume_mm3": 2486.522924703339,
+      "seconds": 11.32896475
     },
     {
       "name": "XL330_11.002",
@@ -1935,7 +1937,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 17583.364529416376,
-      "seconds": 0.531122625
+      "seconds": 1.167859416
     },
     {
       "name": "XL330_11.horn.002",
@@ -1944,7 +1946,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 381.68000621330174,
-      "seconds": 0.058483625
+      "seconds": 0.0244765
     },
     {
       "name": "XL330_11.hub.002",
@@ -1953,7 +1955,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 117.80227530515022,
-      "seconds": 0.026955458
+      "seconds": 0.034645667
     },
     {
       "name": "XL330_11.hs0.002",
@@ -1962,7 +1964,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587475,
-      "seconds": 0.074780625
+      "seconds": 0.032915542
     },
     {
       "name": "XL330_11.hs1.002",
@@ -1971,7 +1973,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458752,
-      "seconds": 0.075690291
+      "seconds": 0.063849041
     },
     {
       "name": "XL330_11.hs2.002",
@@ -1980,7 +1982,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587515,
-      "seconds": 0.072032459
+      "seconds": 0.0276015
     },
     {
       "name": "XL330_11.hs3.002",
@@ -1989,7 +1991,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458752,
-      "seconds": 0.061116916
+      "seconds": 0.062979667
     },
     {
       "name": "XL330_11.cs1(-8, 6).002",
@@ -1998,7 +2000,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444271,
-      "seconds": 0.057535417
+      "seconds": 0.048825875
     },
     {
       "name": "XL330_11.cs1(8, 6).002",
@@ -2007,7 +2009,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444265,
-      "seconds": 0.1236875
+      "seconds": 0.050405583
     },
     {
       "name": "XL330_11.cs1(-8, -21).002",
@@ -2016,7 +2018,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444234,
-      "seconds": 0.052032292
+      "seconds": 0.020024875
     },
     {
       "name": "XL330_11.cs1(8, -21).002",
@@ -2025,7 +2027,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444222,
-      "seconds": 0.03848125
+      "seconds": 0.0233035
     },
     {
       "name": "XL330_11.cs-1(-8, 6).002",
@@ -2034,7 +2036,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444265,
-      "seconds": 0.032845667
+      "seconds": 0.027503041
     },
     {
       "name": "XL330_11.cs-1(8, 6).002",
@@ -2043,7 +2045,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544426,
-      "seconds": 0.050123042
+      "seconds": 0.029240792
     },
     {
       "name": "XL330_11.cs-1(-8, -21).002",
@@ -2052,7 +2054,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444231,
-      "seconds": 0.042244833
+      "seconds": 0.045427583
     },
     {
       "name": "XL330_11.cs-1(8, -21).002",
@@ -2061,7 +2063,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544422,
-      "seconds": 0.042286125
+      "seconds": 0.025826042
     },
     {
       "name": "XL330_11.jst0.002",
@@ -2070,7 +2072,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.00000000000007,
-      "seconds": 0.017107042
+      "seconds": 0.034400541
     },
     {
       "name": "XL330_11.jst1.002",
@@ -2079,7 +2081,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.00000000000007,
-      "seconds": 0.013938625
+      "seconds": 0.018009083
     },
     {
       "name": "Bracket_bearing_roll_58.002",
@@ -2087,8 +2089,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 2644.894378559187,
-      "seconds": 0.490353917
+      "volume_mm3": 494.5947519617757,
+      "seconds": 6.698433167
     },
     {
       "name": "Bearing_10.002",
@@ -2097,7 +2099,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 813.6561134459176,
-      "seconds": 0.1787295
+      "seconds": 0.270587792
     },
     {
       "name": "Bracket_hip_l_60.002",
@@ -2105,8 +2107,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 20207.656367377927,
-      "seconds": 0.279760333
+      "volume_mm3": 9297.130952703259,
+      "seconds": 5.01498675
     },
     {
       "name": "Bearing_11.002",
@@ -2115,7 +2117,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 813.6561134459181,
-      "seconds": 0.099728125
+      "seconds": 0.117760541
     },
     {
       "name": "XL330_12.002",
@@ -2124,7 +2126,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 17583.36452939901,
-      "seconds": 0.560733083
+      "seconds": 1.266547708
     },
     {
       "name": "XL330_12.horn.002",
@@ -2133,7 +2135,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 381.680006213302,
-      "seconds": 0.081277958
+      "seconds": 0.037841375
     },
     {
       "name": "XL330_12.hub.002",
@@ -2142,7 +2144,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 117.80227530515009,
-      "seconds": 0.059003
+      "seconds": 0.0671495
     },
     {
       "name": "XL330_12.hs0.002",
@@ -2151,7 +2153,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458755,
-      "seconds": 0.091438541
+      "seconds": 0.03924375
     },
     {
       "name": "XL330_12.hs1.002",
@@ -2160,7 +2162,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458738,
-      "seconds": 0.05519
+      "seconds": 0.028554833
     },
     {
       "name": "XL330_12.hs2.002",
@@ -2169,7 +2171,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458741,
-      "seconds": 0.053288958
+      "seconds": 0.023963459
     },
     {
       "name": "XL330_12.hs3.002",
@@ -2178,7 +2180,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587515,
-      "seconds": 0.037532708
+      "seconds": 0.050651917
     },
     {
       "name": "XL330_12.cs1(-8, 6).002",
@@ -2187,7 +2189,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444211,
-      "seconds": 0.0242095
+      "seconds": 0.048270416
     },
     {
       "name": "XL330_12.cs1(8, 6).002",
@@ -2196,7 +2198,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444305,
-      "seconds": 0.046006041
+      "seconds": 0.084429833
     },
     {
       "name": "XL330_12.cs1(-8, -21).002",
@@ -2205,7 +2207,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444287,
-      "seconds": 0.028402542
+      "seconds": 0.090704916
     },
     {
       "name": "XL330_12.cs1(8, -21).002",
@@ -2214,7 +2216,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444282,
-      "seconds": 0.04522075
+      "seconds": 0.143691958
     },
     {
       "name": "XL330_12.cs-1(-8, 6).002",
@@ -2223,7 +2225,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444207,
-      "seconds": 0.079977917
+      "seconds": 0.137324416
     },
     {
       "name": "XL330_12.cs-1(8, 6).002",
@@ -2232,7 +2234,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444198,
-      "seconds": 0.044465708
+      "seconds": 0.059384292
     },
     {
       "name": "XL330_12.cs-1(-8, -21).002",
@@ -2241,7 +2243,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444236,
-      "seconds": 0.070603042
+      "seconds": 0.095165041
     },
     {
       "name": "XL330_12.cs-1(8, -21).002",
@@ -2250,7 +2252,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444225,
-      "seconds": 0.177635125
+      "seconds": 0.064142709
     },
     {
       "name": "XL330_12.jst0.002",
@@ -2259,7 +2261,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.00000000000004,
-      "seconds": 0.023155125
+      "seconds": 0.007068583
     },
     {
       "name": "XL330_12.jst1.002",
@@ -2268,7 +2270,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.0,
-      "seconds": 0.006021167
+      "seconds": 0.011911917
     },
     {
       "name": "Bearing_12.002",
@@ -2277,7 +2279,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 813.6561134459188,
-      "seconds": 0.170440917
+      "seconds": 0.05926075
     },
     {
       "name": "Bracket_upper_leg_rigidity_plate_64.002",
@@ -2285,8 +2287,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 2596.50007229586,
-      "seconds": 0.276377792
+      "volume_mm3": 944.6533295404588,
+      "seconds": 18.863763042
     },
     {
       "name": "Bracket_upper_leg_right_65.002",
@@ -2294,8 +2296,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 81211.92934572369,
-      "seconds": 0.561270917
+      "volume_mm3": 41993.63677124131,
+      "seconds": 6.189883042
     },
     {
       "name": "XL330_13.002",
@@ -2304,7 +2306,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 17583.364529417064,
-      "seconds": 0.558784333
+      "seconds": 0.353873
     },
     {
       "name": "XL330_13.horn.002",
@@ -2313,7 +2315,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 381.68000621330185,
-      "seconds": 0.05946975
+      "seconds": 0.030186333
     },
     {
       "name": "XL330_13.hub.002",
@@ -2322,7 +2324,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 117.8022753051501,
-      "seconds": 0.055764
+      "seconds": 0.048782458
     },
     {
       "name": "XL330_13.hs0.002",
@@ -2331,7 +2333,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587617,
-      "seconds": 0.101628792
+      "seconds": 0.028842709
     },
     {
       "name": "XL330_13.hs1.002",
@@ -2340,7 +2342,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587604,
-      "seconds": 0.055529334
+      "seconds": 0.02929525
     },
     {
       "name": "XL330_13.hs2.002",
@@ -2349,7 +2351,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587617,
-      "seconds": 0.053608167
+      "seconds": 0.022107208
     },
     {
       "name": "XL330_13.hs3.002",
@@ -2358,7 +2360,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458763,
-      "seconds": 0.045897333
+      "seconds": 0.455637125
     },
     {
       "name": "XL330_13.cs1(-8, 6).002",
@@ -2367,7 +2369,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544425,
-      "seconds": 0.034895833
+      "seconds": 0.030947917
     },
     {
       "name": "XL330_13.cs1(8, 6).002",
@@ -2376,7 +2378,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444251,
-      "seconds": 0.030825625
+      "seconds": 0.01526575
     },
     {
       "name": "XL330_13.cs1(-8, -21).002",
@@ -2385,7 +2387,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544427,
-      "seconds": 0.023575208
+      "seconds": 0.031528208
     },
     {
       "name": "XL330_13.cs1(8, -21).002",
@@ -2394,7 +2396,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544427,
-      "seconds": 0.01457975
+      "seconds": 0.039117625
     },
     {
       "name": "XL330_13.cs-1(-8, 6).002",
@@ -2403,7 +2405,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444258,
-      "seconds": 0.02247125
+      "seconds": 0.020787
     },
     {
       "name": "XL330_13.cs-1(8, 6).002",
@@ -2412,7 +2414,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444287,
-      "seconds": 0.033966375
+      "seconds": 0.026031042
     },
     {
       "name": "XL330_13.cs-1(-8, -21).002",
@@ -2421,7 +2423,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444278,
-      "seconds": 0.057270375
+      "seconds": 0.845538
     },
     {
       "name": "XL330_13.cs-1(8, -21).002",
@@ -2430,7 +2432,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444282,
-      "seconds": 0.027663
+      "seconds": 0.409417125
     },
     {
       "name": "XL330_13.jst0.002",
@@ -2439,7 +2441,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.00000000000013,
-      "seconds": 0.010641375
+      "seconds": 0.037085125
     },
     {
       "name": "XL330_13.jst1.002",
@@ -2448,7 +2450,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 112.00000000000011,
-      "seconds": 0.010001917
+      "seconds": 0.371935833
     },
     {
       "name": "XL330_14.002",
@@ -2457,7 +2459,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 17583.36452939904,
-      "seconds": 0.541029625
+      "seconds": 1.8150850840000001
     },
     {
       "name": "XL330_14.horn.002",
@@ -2466,7 +2468,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 381.6800062133023,
-      "seconds": 0.045368166
+      "seconds": 0.0268565
     },
     {
       "name": "XL330_14.hub.002",
@@ -2475,7 +2477,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 117.8022753051505,
-      "seconds": 0.045116166
+      "seconds": 0.01887525
     },
     {
       "name": "XL330_14.hs0.002",
@@ -2484,7 +2486,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587453,
-      "seconds": 0.116051459
+      "seconds": 0.056248041
     },
     {
       "name": "XL330_14.hs1.002",
@@ -2493,7 +2495,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587484,
-      "seconds": 0.079984709
+      "seconds": 0.028793625
     },
     {
       "name": "XL330_14.hs2.002",
@@ -2502,7 +2504,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587537,
-      "seconds": 0.075778375
+      "seconds": 0.049274375
     },
     {
       "name": "XL330_14.hs3.002",
@@ -2511,7 +2513,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458754,
-      "seconds": 0.0714915
+      "seconds": 0.038091958
     },
     {
       "name": "XL330_14.cs1(-8, 6).002",
@@ -2520,7 +2522,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444105,
-      "seconds": 0.050742625
+      "seconds": 0.09866625
     },
     {
       "name": "XL330_14.cs1(8, 6).002",
@@ -2529,7 +2531,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444085,
-      "seconds": 0.088450333
+      "seconds": 0.079683
     },
     {
       "name": "XL330_14.cs1(-8, -21).002",
@@ -2538,7 +2540,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444218,
-      "seconds": 0.07151425
+      "seconds": 0.07652825
     },
     {
       "name": "XL330_14.cs1(8, -21).002",
@@ -2547,7 +2549,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.01779841354442,
-      "seconds": 0.051490417
+      "seconds": 0.066044083
     },
     {
       "name": "XL330_14.cs-1(-8, 6).002",
@@ -2556,7 +2558,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444287,
-      "seconds": 0.0535675
+      "seconds": 0.078537291
     },
     {
       "name": "XL330_14.cs-1(8, 6).002",
@@ -2565,7 +2567,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444236,
-      "seconds": 0.032455125
+      "seconds": 0.065222167
     },
     {
       "name": "XL330_14.cs-1(-8, -21).002",
@@ -2574,7 +2576,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444202,
-      "seconds": 0.047784375
+      "seconds": 0.037360667
     },
     {
       "name": "XL330_14.cs-1(8, -21).002",
@@ -2583,7 +2585,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444198,
-      "seconds": 0.082426375
+      "seconds": 0.058064042
     },
     {
       "name": "XL330_14.jst0.002",
@@ -2592,7 +2594,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 111.99999999999996,
-      "seconds": 0.007937292
+      "seconds": 0.016706
     },
     {
       "name": "XL330_14.jst1.002",
@@ -2601,7 +2603,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 111.99999999999996,
-      "seconds": 0.023634916
+      "seconds": 0.01462625
     },
     {
       "name": "Bracket_leg_68.002",
@@ -2609,8 +2611,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 8210.090965766944,
-      "seconds": 0.289987709
+      "volume_mm3": 4478.031176391099,
+      "seconds": 11.32556475
     },
     {
       "name": "Bracket_ankle_right_70.002",
@@ -2618,8 +2620,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 35455.50670635157,
-      "seconds": 0.289600833
+      "volume_mm3": 23880.441430535764,
+      "seconds": 7.98339625
     },
     {
       "name": "Bearing_13.002",
@@ -2628,7 +2630,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 379.3316121076801,
-      "seconds": 0.51333325
+      "seconds": 0.09259825
     },
     {
       "name": "Battery.002",
@@ -2637,7 +2639,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 55861.39453442803,
-      "seconds": 0.474300666
+      "seconds": 0.578578416
     },
     {
       "name": "Battery.label.002",
@@ -2646,7 +2648,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 13062.906464728176,
-      "seconds": 0.651096208
+      "seconds": 0.996803083
     },
     {
       "name": "Battery.term0.002",
@@ -2655,7 +2657,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.599999999999941,
-      "seconds": 0.004326375
+      "seconds": 0.005478833
     },
     {
       "name": "Battery.term1.002",
@@ -2664,7 +2666,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.59999999999994,
-      "seconds": 0.004615125
+      "seconds": 0.005429834
     },
     {
       "name": "Battery.term2.002",
@@ -2673,7 +2675,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.59999999999994,
-      "seconds": 0.157543167
+      "seconds": 0.001647542
     },
     {
       "name": "CameraLens.003",
@@ -2682,7 +2684,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 3679.3196943978505,
-      "seconds": 0.081349
+      "seconds": 0.043088083
     },
     {
       "name": "RobotHat.002",
@@ -2691,7 +2693,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1552.613602699684,
-      "seconds": 0.585535083
+      "seconds": 2.034412042
     },
     {
       "name": "RobotHat.bus0.002",
@@ -2699,8 +2701,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 196.06706366013444,
-      "seconds": 0.510548792
+      "volume_mm3": 196.0670636601344,
+      "seconds": 1.032922417
     },
     {
       "name": "RobotHat.bus1.002",
@@ -2708,8 +2710,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 196.06706366013813,
-      "seconds": 0.645347459
+      "volume_mm3": 196.06706366013807,
+      "seconds": 0.279917625
     },
     {
       "name": "RobotHat.bus2.002",
@@ -2717,8 +2719,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 196.06706366014416,
-      "seconds": 0.873508042
+      "volume_mm3": 196.06706366014419,
+      "seconds": 0.214086583
     },
     {
       "name": "RobotHat.bus3.002",
@@ -2727,7 +2729,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 196.0670636601378,
-      "seconds": 0.780436958
+      "seconds": 0.54307125
     },
     {
       "name": "RobotHat.cap.002",
@@ -2736,7 +2738,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 231.59720722046674,
-      "seconds": 0.097850084
+      "seconds": 0.056828166
     },
     {
       "name": "RobotHat.reg.002",
@@ -2745,7 +2747,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 113.85932785322059,
-      "seconds": 0.513675875
+      "seconds": 0.929731708
     },
     {
       "name": "CameraHolder.002",
@@ -2753,8 +2755,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 5637.469784037501,
-      "seconds": 0.702412375
+      "volume_mm3": 5637.469784037502,
+      "seconds": 0.304064292
     },
     {
       "name": "Compute.002",
@@ -2763,7 +2765,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 3106.798067913764,
-      "seconds": 0.612115917
+      "seconds": 0.670788084
     },
     {
       "name": "Compute.soc.002",
@@ -2771,8 +2773,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 199.5321576387951,
-      "seconds": 0.572225959
+      "volume_mm3": 199.53215763879507,
+      "seconds": 0.842454875
     },
     {
       "name": "Compute.ram.002",
@@ -2780,8 +2782,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 98.4117805811696,
-      "seconds": 0.587933708
+      "volume_mm3": 98.41178058116962,
+      "seconds": 0.457953208
     },
     {
       "name": "Compute.usbc.002",
@@ -2789,8 +2791,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 110.48022668699785,
-      "seconds": 0.456074292
+      "volume_mm3": 110.48022668699787,
+      "seconds": 0.904714333
     },
     {
       "name": "Compute.wifi.002",
@@ -2799,7 +2801,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 138.38083715446473,
-      "seconds": 0.442605083
+      "seconds": 1.104713625
     },
     {
       "name": "Compute.pin00.002",
@@ -2808,7 +2810,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321333,
-      "seconds": 0.089845
+      "seconds": 0.123849458
     },
     {
       "name": "Compute.pin01.002",
@@ -2817,7 +2819,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321263,
-      "seconds": 0.186717125
+      "seconds": 0.053100458
     },
     {
       "name": "Compute.pin10.002",
@@ -2826,7 +2828,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321388,
-      "seconds": 0.19570725
+      "seconds": 0.060999083
     },
     {
       "name": "Compute.pin11.002",
@@ -2835,7 +2837,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321238,
-      "seconds": 0.123031458
+      "seconds": 0.075874875
     },
     {
       "name": "Compute.pin20.002",
@@ -2844,7 +2846,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.235590875043214,
-      "seconds": 0.068805833
+      "seconds": 0.081125292
     },
     {
       "name": "Compute.pin21.002",
@@ -2853,7 +2855,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.2355908750432131,
-      "seconds": 0.033632291
+      "seconds": 0.058402625
     },
     {
       "name": "Compute.pin30.002",
@@ -2862,7 +2864,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321266,
-      "seconds": 0.049545208
+      "seconds": 0.035056333
     },
     {
       "name": "Compute.pin31.002",
@@ -2871,7 +2873,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.2355908750432134,
-      "seconds": 0.042546
+      "seconds": 0.026815791
     },
     {
       "name": "Compute.pin40.002",
@@ -2880,7 +2882,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321427,
-      "seconds": 0.129847875
+      "seconds": 0.020302666
     },
     {
       "name": "Compute.pin41.002",
@@ -2889,7 +2891,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321394,
-      "seconds": 0.07778325
+      "seconds": 0.019168666
     },
     {
       "name": "Compute.pin50.002",
@@ -2898,7 +2900,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.2355908750432141,
-      "seconds": 0.11693825
+      "seconds": 0.02671225
     },
     {
       "name": "Compute.pin51.002",
@@ -2907,7 +2909,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.2355908750432135,
-      "seconds": 0.120068042
+      "seconds": 0.031833917
     },
     {
       "name": "Compute.pin60.002",
@@ -2916,7 +2918,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321444,
-      "seconds": 0.104998458
+      "seconds": 0.021333375
     },
     {
       "name": "Compute.pin61.002",
@@ -2925,7 +2927,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321444,
-      "seconds": 0.092988916
+      "seconds": 0.020423666
     },
     {
       "name": "Compute.pin70.002",
@@ -2934,7 +2936,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.235590875043214,
-      "seconds": 0.041762834
+      "seconds": 0.027085
     },
     {
       "name": "Compute.pin71.002",
@@ -2943,7 +2945,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321388,
-      "seconds": 0.031620042
+      "seconds": 0.025531333
     },
     {
       "name": "Compute.pin80.002",
@@ -2952,7 +2954,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321297,
-      "seconds": 0.03557625
+      "seconds": 0.022471875
     },
     {
       "name": "Compute.pin81.002",
@@ -2961,7 +2963,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321363,
-      "seconds": 0.051577333
+      "seconds": 0.031690208
     },
     {
       "name": "Compute.pin90.002",
@@ -2970,7 +2972,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321327,
-      "seconds": 0.076486334
+      "seconds": 0.023746458
     },
     {
       "name": "Compute.pin91.002",
@@ -2979,7 +2981,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321366,
-      "seconds": 0.059745375
+      "seconds": 0.021102458
     },
     {
       "name": "Compute.pin100.002",
@@ -2988,7 +2990,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321322,
-      "seconds": 0.037750541
+      "seconds": 0.02461175
     },
     {
       "name": "Compute.pin101.002",
@@ -2997,7 +2999,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321483,
-      "seconds": 0.040022416
+      "seconds": 0.022924291
     },
     {
       "name": "Compute.pin110.002",
@@ -3006,7 +3008,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321363,
-      "seconds": 0.04191825
+      "seconds": 0.018399042
     },
     {
       "name": "Compute.pin111.002",
@@ -3015,7 +3017,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321333,
-      "seconds": 0.031182125
+      "seconds": 0.16291625
     },
     {
       "name": "Compute.pin120.002",
@@ -3024,7 +3026,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321416,
-      "seconds": 0.044570959
+      "seconds": 0.025246583
     },
     {
       "name": "Compute.pin121.002",
@@ -3033,7 +3035,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321383,
-      "seconds": 0.047712
+      "seconds": 0.020297792
     },
     {
       "name": "Compute.pin130.002",
@@ -3042,7 +3044,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321496,
-      "seconds": 0.070180958
+      "seconds": 0.027901542
     },
     {
       "name": "Compute.pin131.002",
@@ -3051,7 +3053,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321422,
-      "seconds": 0.029759625
+      "seconds": 0.027554041
     },
     {
       "name": "Compute.pin140.002",
@@ -3060,7 +3062,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321444,
-      "seconds": 0.032027667
+      "seconds": 0.057764791
     },
     {
       "name": "Compute.pin141.002",
@@ -3069,7 +3071,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321427,
-      "seconds": 0.020993333
+      "seconds": 0.047606042
     },
     {
       "name": "Compute.pin150.002",
@@ -3078,7 +3080,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321427,
-      "seconds": 0.03671425
+      "seconds": 0.051366375
     },
     {
       "name": "Compute.pin151.002",
@@ -3087,7 +3089,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321327,
-      "seconds": 0.034342458
+      "seconds": 0.021755708
     },
     {
       "name": "Compute.pin160.002",
@@ -3096,7 +3098,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.2355908750432135,
-      "seconds": 0.02887125
+      "seconds": 0.050055542
     },
     {
       "name": "Compute.pin161.002",
@@ -3105,7 +3107,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321388,
-      "seconds": 0.03437125
+      "seconds": 0.463701125
     },
     {
       "name": "Compute.pin170.002",
@@ -3114,7 +3116,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321427,
-      "seconds": 0.027816791
+      "seconds": 0.050526916
     },
     {
       "name": "Compute.pin171.002",
@@ -3123,7 +3125,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321366,
-      "seconds": 0.029298042
+      "seconds": 0.022035709
     },
     {
       "name": "Compute.pin180.002",
@@ -3132,7 +3134,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.2355908750432141,
-      "seconds": 0.024599125
+      "seconds": 0.022839417
     },
     {
       "name": "Compute.pin181.002",
@@ -3141,7 +3143,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.2355908750432135,
-      "seconds": 0.022122792
+      "seconds": 0.024869792
     },
     {
       "name": "Compute.pin190.002",
@@ -3150,7 +3152,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321283,
-      "seconds": 0.02625575
+      "seconds": 0.019926291
     },
     {
       "name": "Compute.pin191.002",
@@ -3159,7 +3161,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.23559087504321338,
-      "seconds": 0.040276417
+      "seconds": 0.025702
     },
     {
       "name": "Compute.hole-29-11.002",
@@ -3168,7 +3170,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2547775098460368,
-      "seconds": 0.064027208
+      "seconds": 0.049144125
     },
     {
       "name": "Compute.hole-2911.002",
@@ -3177,7 +3179,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2547775098460114,
-      "seconds": 0.070286166
+      "seconds": 0.047149042
     },
     {
       "name": "Compute.hole29-11.002",
@@ -3186,7 +3188,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.254777509845841,
-      "seconds": 0.082706666
+      "seconds": 0.0741035
     },
     {
       "name": "Compute.hole2911.002",
@@ -3195,7 +3197,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2547775098460203,
-      "seconds": 0.053848833
+      "seconds": 0.039338458
     },
     {
       "name": "Speaker.002",
@@ -3204,7 +3206,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 5905.527138569606,
-      "seconds": 0.362325292
+      "seconds": 0.190467375
     },
     {
       "name": "Speaker.g00.002",
@@ -3213,7 +3215,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.30784133989560475,
-      "seconds": 0.026212541
+      "seconds": 0.031193583
     },
     {
       "name": "Speaker.g01.002",
@@ -3222,7 +3224,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.30784133989560486,
-      "seconds": 0.019935125
+      "seconds": 0.041670375
     },
     {
       "name": "Speaker.g02.002",
@@ -3231,7 +3233,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.3078413398956053,
-      "seconds": 0.016826875
+      "seconds": 0.048730833
     },
     {
       "name": "Speaker.g10.002",
@@ -3240,7 +3242,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.307841339895605,
-      "seconds": 0.020099542
+      "seconds": 0.023560333
     },
     {
       "name": "Speaker.g11.002",
@@ -3249,7 +3251,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.30784133989560536,
-      "seconds": 0.020297167
+      "seconds": 0.035259917
     },
     {
       "name": "Speaker.g12.002",
@@ -3258,7 +3260,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.30784133989560547,
-      "seconds": 0.015840209
+      "seconds": 0.025924709
     },
     {
       "name": "Speaker.g20.002",
@@ -3267,7 +3269,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.30784133989560464,
-      "seconds": 0.019293208
+      "seconds": 0.021411167
     },
     {
       "name": "Speaker.g21.002",
@@ -3276,7 +3278,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.30784133989560447,
-      "seconds": 0.025546458
+      "seconds": 0.020171584
     },
     {
       "name": "Speaker.g22.002",
@@ -3285,7 +3287,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.3078413398956061,
-      "seconds": 0.019371333
+      "seconds": 0.01315275
     },
     {
       "name": "Speaker.g30.002",
@@ -3294,7 +3296,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.30784133989560547,
-      "seconds": 0.023121666
+      "seconds": 0.01729025
     },
     {
       "name": "Speaker.g31.002",
@@ -3303,7 +3305,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.30784133989560486,
-      "seconds": 0.016056416
+      "seconds": 0.014006333
     },
     {
       "name": "Speaker.g32.002",
@@ -3312,7 +3314,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.30784133989560486,
-      "seconds": 0.024122625
+      "seconds": 0.020046833
     },
     {
       "name": "Speaker.g40.002",
@@ -3321,7 +3323,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.3078413398956052,
-      "seconds": 0.02294025
+      "seconds": 0.014719667
     },
     {
       "name": "Speaker.g41.002",
@@ -3330,7 +3332,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.3078413398956055,
-      "seconds": 0.022136667
+      "seconds": 0.010426875
     },
     {
       "name": "Speaker.g42.002",
@@ -3339,7 +3341,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 0.3078413398956049,
-      "seconds": 0.021561833
+      "seconds": 0.011880625
     },
     {
       "name": "Compute.csi",
@@ -3348,7 +3350,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 216.81244088712882,
-      "seconds": 0.305862416
+      "seconds": 0.301116625
     },
     {
       "name": "Compute.csi.001",
@@ -3357,7 +3359,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 216.81244088712882,
-      "seconds": 0.469505041
+      "seconds": 0.279465792
     },
     {
       "name": "Compute.csi.002",
@@ -3366,7 +3368,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 216.8124408871288,
-      "seconds": 0.265182666
+      "seconds": 0.400897375
     },
     {
       "name": "XL330_TailYaw.002",
@@ -3375,7 +3377,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 17583.364529399063,
-      "seconds": 0.458615417
+      "seconds": 0.245935167
     },
     {
       "name": "XL330_TailYaw.horn.002",
@@ -3384,7 +3386,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 381.68000621330185,
-      "seconds": 0.022333458
+      "seconds": 0.045161292
     },
     {
       "name": "XL330_TailYaw.hub.002",
@@ -3393,7 +3395,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 117.80227530514962,
-      "seconds": 0.019959334
+      "seconds": 0.035486
     },
     {
       "name": "XL330_TailYaw.hs0.002",
@@ -3402,7 +3404,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458773,
-      "seconds": 0.049086583
+      "seconds": 0.037196834
     },
     {
       "name": "XL330_TailYaw.hs1.002",
@@ -3411,7 +3413,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587755,
-      "seconds": 0.041179666
+      "seconds": 0.106413833
     },
     {
       "name": "XL330_TailYaw.hs2.002",
@@ -3420,7 +3422,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458775,
-      "seconds": 0.023552042
+      "seconds": 0.052263208
     },
     {
       "name": "XL330_TailYaw.hs3.002",
@@ -3429,7 +3431,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458774,
-      "seconds": 0.056818625
+      "seconds": 0.131806542
     },
     {
       "name": "XL330_TailYaw.cs1(-8, 6).002",
@@ -3438,7 +3440,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135443952,
-      "seconds": 0.017467125
+      "seconds": 0.191012375
     },
     {
       "name": "XL330_TailYaw.cs1(8, 6).002",
@@ -3447,7 +3449,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135443972,
-      "seconds": 0.022551
+      "seconds": 0.100992709
     },
     {
       "name": "XL330_TailYaw.cs1(-8, -21).002",
@@ -3456,7 +3458,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444313,
-      "seconds": 0.0471075
+      "seconds": 1.214383917
     },
     {
       "name": "XL330_TailYaw.cs1(8, -21).002",
@@ -3465,7 +3467,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444136,
-      "seconds": 0.028006958
+      "seconds": 0.105640667
     },
     {
       "name": "XL330_TailYaw.cs-1(-8, 6).002",
@@ -3474,7 +3476,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135443967,
-      "seconds": 0.0214025
+      "seconds": 0.047905167
     },
     {
       "name": "XL330_TailYaw.cs-1(8, 6).002",
@@ -3483,7 +3485,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544398,
-      "seconds": 0.045828208
+      "seconds": 0.074907125
     },
     {
       "name": "XL330_TailYaw.cs-1(-8, -21).002",
@@ -3492,7 +3494,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444318,
-      "seconds": 0.056296084
+      "seconds": 0.107922917
     },
     {
       "name": "XL330_TailYaw.cs-1(8, -21).002",
@@ -3501,7 +3503,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544414,
-      "seconds": 0.066718208
+      "seconds": 0.053665125
     },
     {
       "name": "XL330_TailYaw.jst0.002",
@@ -3510,7 +3512,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 111.99999999999993,
-      "seconds": 0.002979084
+      "seconds": 0.013967042
     },
     {
       "name": "XL330_TailYaw.jst1.002",
@@ -3519,7 +3521,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 111.99999999999993,
-      "seconds": 0.006971792
+      "seconds": 0.03396725
     },
     {
       "name": "TailRootScrewL",
@@ -3528,7 +3530,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103478,
-      "seconds": 1.519393167
+      "seconds": 0.744718833
     },
     {
       "name": "TailRootScrewR",
@@ -3537,7 +3539,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103861,
-      "seconds": 0.995041833
+      "seconds": 1.172441875
     },
     {
       "name": "TailCoupling",
@@ -3546,7 +3548,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1793.6771251150183,
-      "seconds": 0.926050833
+      "seconds": 1.3112764160000001
     },
     {
       "name": "TailMagnet0",
@@ -3555,7 +3557,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 16.963555831663204,
-      "seconds": 0.07580525
+      "seconds": 0.05028125
     },
     {
       "name": "TailMagnet1",
@@ -3564,7 +3566,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 16.96355583166318,
-      "seconds": 0.094507209
+      "seconds": 0.036819084
     },
     {
       "name": "TailArm",
@@ -3575,7 +3577,7 @@
         "solid/fillet: fillet 4 on all 17 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces; the largest radius that fits is 3.028 mm); applied edge by edge to 4 of them (1 at 2)"
       ],
       "volume_mm3": 5857.293713705812,
-      "seconds": 6.248903625
+      "seconds": 11.393526791
     },
     {
       "name": "TailSeg0",
@@ -3586,7 +3588,7 @@
         "solid/fillet: fillet 4 on all 16 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 387) (the operation failed: not supported yet: only straight edges can be blended)); applied edge by edge to 6 of them (4 at 2)"
       ],
       "volume_mm3": 32701.65336868059,
-      "seconds": 13.614667916
+      "seconds": 16.405540208
     },
     {
       "name": "TailScrew0L",
@@ -3595,7 +3597,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 6.459562719458674,
-      "seconds": 1.264162459
+      "seconds": 1.887409875
     },
     {
       "name": "TailScrew0R",
@@ -3604,7 +3606,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 6.459562719458531,
-      "seconds": 0.984133833
+      "seconds": 0.679327292
     },
     {
       "name": "Spike_T0",
@@ -3613,7 +3615,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 120.1252406459738,
-      "seconds": 2.664176416
+      "seconds": 2.9826145410000002
     },
     {
       "name": "TailFlex0",
@@ -3622,7 +3624,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 3974.143561565999,
-      "seconds": 0.913717875
+      "seconds": 0.685642625
     },
     {
       "name": "TailSeg1",
@@ -3633,7 +3635,7 @@
         "solid/fillet: fillet 4 on all 16 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 387) (the operation failed: not supported yet: only straight edges can be blended)); applied edge by edge to 6 of them (4 at 2)"
       ],
       "volume_mm3": 19888.719884422862,
-      "seconds": 11.566225834
+      "seconds": 13.926677709
     },
     {
       "name": "TailScrew1L.001",
@@ -3642,7 +3644,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 6.459562719458501,
-      "seconds": 1.3269029159999999
+      "seconds": 1.921491709
     },
     {
       "name": "TailScrew1R.001",
@@ -3651,7 +3653,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 6.459562719458538,
-      "seconds": 1.262324375
+      "seconds": 1.665880292
     },
     {
       "name": "Spike_T1",
@@ -3660,7 +3662,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 82.46162285658912,
-      "seconds": 1.660485375
+      "seconds": 2.135124042
     },
     {
       "name": "TailFlex1",
@@ -3669,7 +3671,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 3037.8565695767834,
-      "seconds": 0.632808
+      "seconds": 0.3339805
     },
     {
       "name": "TailSeg2",
@@ -3680,7 +3682,7 @@
         "solid/fillet: fillet 4 on all 16 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 387) (the operation failed: not supported yet: only straight edges can be blended)); applied edge by edge to 6 of them (4 at 2)"
       ],
       "volume_mm3": 10449.024035554938,
-      "seconds": 10.846520208
+      "seconds": 11.738379958
     },
     {
       "name": "TailScrew2L.001",
@@ -3689,7 +3691,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 6.459562719458508,
-      "seconds": 0.882073292
+      "seconds": 0.799735292
     },
     {
       "name": "TailScrew2R.001",
@@ -3698,7 +3700,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 6.459562719458559,
-      "seconds": 1.070563083
+      "seconds": 0.670577333
     },
     {
       "name": "Spike_T2",
@@ -3709,7 +3711,7 @@
         "solid/fillet: fillet 1.399999976158142 failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 1853) (the operation failed: not supported yet: only straight edges can be blended); the largest radius that fits is 1.185 mm); used 1.185"
       ],
       "volume_mm3": 56.527247072206954,
-      "seconds": 2.233806375
+      "seconds": 3.949512125
     },
     {
       "name": "TailFlex2",
@@ -3718,7 +3720,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1132.0341057203473,
-      "seconds": 0.480640834
+      "seconds": 0.624847458
     },
     {
       "name": "TailTip.003",
@@ -3729,7 +3731,7 @@
         "solid/fillet: fillet 4 on all 20 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces; the largest radius that fits is 1.733 mm); applied edge by edge to 5 of them (3 at 2)"
       ],
       "volume_mm3": 9341.15164455974,
-      "seconds": 8.863409417
+      "seconds": 10.656046875
     },
     {
       "name": "Thigh_L.002",
@@ -3738,7 +3740,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 30485.179250872596,
-      "seconds": 0.488725833
+      "seconds": 0.731597042
     },
     {
       "name": "ThighScrew_L0.003",
@@ -3747,7 +3749,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103572,
-      "seconds": 0.733131125
+      "seconds": 1.215153958
     },
     {
       "name": "ThighScrew_L1.003",
@@ -3756,7 +3758,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103698,
-      "seconds": 0.876153417
+      "seconds": 0.835746541
     },
     {
       "name": "ThighScrew_L2",
@@ -3765,7 +3767,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103943,
-      "seconds": 0.749729
+      "seconds": 1.160706584
     },
     {
       "name": "Sole_L.003",
@@ -3773,8 +3775,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 8448.680626578824,
-      "seconds": 0.2019475
+      "volume_mm3": 8448.680626578822,
+      "seconds": 1.2635304170000001
     },
     {
       "name": "Foot_L.003",
@@ -3785,7 +3787,7 @@
         "solid/fillet: fillet 4 on all 16 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces; the largest radius that fits is 2.6 mm); applied edge by edge to 2 of them (0 at 2)"
       ],
       "volume_mm3": 10221.762127520333,
-      "seconds": 5.3737215
+      "seconds": 8.409983125
     },
     {
       "name": "ToeCap_L0.001",
@@ -3796,7 +3798,7 @@
         "solid/fillet: fillet 4 on all 17 edges together failed (the operation failed: the operation failed: not supported yet: the ball doesn't fit along the edge (the operation failed: not supported yet: only straight edges can be blended); the largest radius that fits is 2.927 mm); applied edge by edge to 7 of them (4 at 2)"
       ],
       "volume_mm3": 3896.955938466503,
-      "seconds": 14.718308375
+      "seconds": 18.335771583
     },
     {
       "name": "ToeSole_L0.001",
@@ -3805,7 +3807,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1350.1297661858891,
-      "seconds": 0.217591333
+      "seconds": 0.380487292
     },
     {
       "name": "ToeCap_L2",
@@ -3816,7 +3818,7 @@
         "solid/fillet: fillet 4 on all 17 edges together failed (the operation failed: the operation failed: not supported yet: the ball doesn't fit along the edge (the operation failed: not supported yet: only straight edges can be blended); the largest radius that fits is 2.927 mm); applied edge by edge to 7 of them (4 at 2)"
       ],
       "volume_mm3": 3896.9559384731733,
-      "seconds": 13.880263417
+      "seconds": 17.004998208
     },
     {
       "name": "ToeSole_L2",
@@ -3825,7 +3827,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1350.1297661858837,
-      "seconds": 0.229546417
+      "seconds": 0.182403
     },
     {
       "name": "FootGuardO_L",
@@ -3834,7 +3836,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2169.8101205425055,
-      "seconds": 1.190372959
+      "seconds": 1.2657770830000001
     },
     {
       "name": "FootGuardI_L",
@@ -3843,7 +3845,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1850.751254730085,
-      "seconds": 0.914985417
+      "seconds": 0.987230625
     },
     {
       "name": "GuardScrew_LO",
@@ -3852,7 +3854,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103009,
-      "seconds": 0.7742795
+      "seconds": 0.683577333
     },
     {
       "name": "GuardScrew_LI",
@@ -3861,7 +3863,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103744,
-      "seconds": 0.71250325
+      "seconds": 0.791132667
     },
     {
       "name": "FootScrew_L0",
@@ -3870,7 +3872,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103247,
-      "seconds": 0.604319084
+      "seconds": 0.802269416
     },
     {
       "name": "FootScrew_L1",
@@ -3879,7 +3881,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103826,
-      "seconds": 0.853341167
+      "seconds": 0.723356125
     },
     {
       "name": "Thigh_R.002",
@@ -3888,7 +3890,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 30485.179248645556,
-      "seconds": 0.394137667
+      "seconds": 0.489033292
     },
     {
       "name": "ThighScrew_R0.003",
@@ -3897,7 +3899,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.82360558910367,
-      "seconds": 0.813637583
+      "seconds": 0.878501625
     },
     {
       "name": "ThighScrew_R1.003",
@@ -3906,7 +3908,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103733,
-      "seconds": 0.775466083
+      "seconds": 0.752784667
     },
     {
       "name": "ThighScrew_R2",
@@ -3915,7 +3917,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103531,
-      "seconds": 0.705640791
+      "seconds": 0.634229333
     },
     {
       "name": "Sole_R.003",
@@ -3924,7 +3926,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 8448.680626578143,
-      "seconds": 0.258353542
+      "seconds": 0.401563584
     },
     {
       "name": "Foot_R.003",
@@ -3935,7 +3937,7 @@
         "solid/fillet: fillet 4 on all 16 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 387) (the operation failed: not supported yet: only straight edges can be blended); the largest radius that fits is 2.6 mm); applied edge by edge to 2 of them (0 at 2)"
       ],
       "volume_mm3": 10221.762127348142,
-      "seconds": 5.021595917
+      "seconds": 6.680624459
     },
     {
       "name": "ToeCap_R0.001",
@@ -3946,7 +3948,7 @@
         "solid/fillet: fillet 4 on all 17 edges together failed (the operation failed: the operation failed: not supported yet: the ball doesn't fit along the edge (the operation failed: not supported yet: only straight edges can be blended); the largest radius that fits is 2.927 mm); applied edge by edge to 9 of them (7 at 2)"
       ],
       "volume_mm3": 3910.5640623620784,
-      "seconds": 17.048412792
+      "seconds": 16.327104209
     },
     {
       "name": "ToeSole_R0.001",
@@ -3955,7 +3957,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1350.1297661854214,
-      "seconds": 0.154228292
+      "seconds": 0.222024833
     },
     {
       "name": "ToeCap_R2",
@@ -3966,7 +3968,7 @@
         "solid/fillet: fillet 4 on all 17 edges together failed (the operation failed: the operation failed: not supported yet: the ball doesn't fit along the edge (the operation failed: not supported yet: only straight edges can be blended); the largest radius that fits is 2.927 mm); applied edge by edge to 9 of them (7 at 2)"
       ],
       "volume_mm3": 3910.5640623331524,
-      "seconds": 31.558776042
+      "seconds": 32.806128042
     },
     {
       "name": "ToeSole_R2",
@@ -3974,8 +3976,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 1350.1297661853864,
-      "seconds": 0.1737275
+      "volume_mm3": 1350.1297661853866,
+      "seconds": 0.454913083
     },
     {
       "name": "FootGuardO_R",
@@ -3984,7 +3986,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2169.81014516674,
-      "seconds": 1.150966916
+      "seconds": 1.060691583
     },
     {
       "name": "FootGuardI_R",
@@ -3993,7 +3995,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1850.7512529185435,
-      "seconds": 0.989315667
+      "seconds": 0.997968084
     },
     {
       "name": "GuardScrew_RO",
@@ -4002,7 +4004,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.82360558910293,
-      "seconds": 0.633217708
+      "seconds": 0.696577084
     },
     {
       "name": "GuardScrew_RI",
@@ -4011,7 +4013,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103877,
-      "seconds": 1.122126375
+      "seconds": 0.623712625
     },
     {
       "name": "FootScrew_R0",
@@ -4020,7 +4022,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.82360558910323,
-      "seconds": 0.950242167
+      "seconds": 0.900776459
     },
     {
       "name": "FootScrew_R1",
@@ -4029,7 +4031,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103318,
-      "seconds": 0.986813291
+      "seconds": 0.865451791
     },
     {
       "name": "Throat",
@@ -4038,7 +4040,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1859.167095902237,
-      "seconds": 0.281491042
+      "seconds": 0.246347792
     },
     {
       "name": "Nape",
@@ -4046,8 +4048,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 995.3137354572056,
-      "seconds": 0.26372225
+      "volume_mm3": 995.313735457206,
+      "seconds": 0.199534084
     },
     {
       "name": "NeckCollar0.002",
@@ -4055,8 +4057,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 641.5214650905407,
-      "seconds": 0.319512
+      "volume_mm3": 641.5214650905406,
+      "seconds": 0.286036708
     },
     {
       "name": "NeckCollar1.002",
@@ -4064,8 +4066,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 641.5214650905286,
-      "seconds": 0.168466125
+      "volume_mm3": 641.5214650905287,
+      "seconds": 0.161800083
     },
     {
       "name": "NeckCollar2",
@@ -4074,7 +4076,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 361.8145275106688,
-      "seconds": 0.22361925
+      "seconds": 0.291155917
     },
     {
       "name": "NeckCollar3",
@@ -4082,8 +4084,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 361.81452751065035,
-      "seconds": 0.22067375
+      "volume_mm3": 361.8145275106504,
+      "seconds": 0.273884125
     },
     {
       "name": "ThroatScrew0",
@@ -4092,7 +4094,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103321,
-      "seconds": 0.874040209
+      "seconds": 0.581663
     },
     {
       "name": "ThroatScrew1",
@@ -4101,7 +4103,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103147,
-      "seconds": 0.792208458
+      "seconds": 0.727295709
     },
     {
       "name": "CollarScrew0",
@@ -4110,7 +4112,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103416,
-      "seconds": 0.960137292
+      "seconds": 0.752967667
     },
     {
       "name": "CollarScrew1",
@@ -4119,7 +4121,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103318,
-      "seconds": 0.86267175
+      "seconds": 0.724654291
     },
     {
       "name": "NapeScrew0",
@@ -4128,7 +4130,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.82360558910302,
-      "seconds": 0.681833584
+      "seconds": 0.656664291
     },
     {
       "name": "NapeScrew1",
@@ -4137,7 +4139,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103154,
-      "seconds": 0.716432
+      "seconds": 0.679854583
     },
     {
       "name": "Compute.csi.003",
@@ -4146,7 +4148,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 216.81244088712882,
-      "seconds": 0.329820708
+      "seconds": 0.23464275
     },
     {
       "name": "CableCamera",
@@ -4155,7 +4157,7 @@
       "representation": "faceted_brep",
       "warnings": [],
       "volume_mm3": 153.14068896790062,
-      "seconds": 0.021212875
+      "seconds": 0.062048209
     },
     {
       "name": "CableArmL",
@@ -4164,7 +4166,7 @@
       "representation": "faceted_brep",
       "warnings": [],
       "volume_mm3": 352.70917601072034,
-      "seconds": 0.039501125
+      "seconds": 0.12264025
     },
     {
       "name": "CableArmR",
@@ -4173,7 +4175,7 @@
       "representation": "faceted_brep",
       "warnings": [],
       "volume_mm3": 354.0683665719337,
-      "seconds": 0.093510458
+      "seconds": 0.08742925
     },
     {
       "name": "BodyL",
@@ -4184,7 +4186,7 @@
         "solid/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/fillet: fillet 4 on all 53 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 387) (the operation failed: not supported yet: only straight edges can be blended)); applied edge by edge to 7 of them (4 at 2)"
       ],
       "volume_mm3": 23504.61579640114,
-      "seconds": 41.760444666
+      "seconds": 45.663050666
     },
     {
       "name": "Backpack.001",
@@ -4195,7 +4197,7 @@
         "solid/fillet: fillet 4 on all 16 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces; the largest radius that fits is 3.5 mm); applied edge by edge to 6 of them (4 at 2)"
       ],
       "volume_mm3": 15173.911290440674,
-      "seconds": 9.373902625
+      "seconds": 9.479171083
     },
     {
       "name": "BatteryDoor.002",
@@ -4204,7 +4206,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2061.640913373621,
-      "seconds": 0.258618208
+      "seconds": 0.232982458
     },
     {
       "name": "ChargePort.002",
@@ -4212,8 +4214,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 51.60299093491151,
-      "seconds": 0.217579416
+      "volume_mm3": 51.602990934911524,
+      "seconds": 0.237142833
     },
     {
       "name": "PowerSwitch.002",
@@ -4221,8 +4223,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 74.02465971953144,
-      "seconds": 0.212185458
+      "volume_mm3": 74.02465971953143,
+      "seconds": 0.185012292
     },
     {
       "name": "PackScrew0L",
@@ -4231,7 +4233,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103733,
-      "seconds": 0.974610416
+      "seconds": 0.724070916
     },
     {
       "name": "PackScrew0R",
@@ -4240,7 +4242,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103737,
-      "seconds": 0.843720042
+      "seconds": 0.910866
     },
     {
       "name": "PackScrew1L",
@@ -4249,7 +4251,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.82360558910354,
-      "seconds": 0.84021475
+      "seconds": 0.848452583
     },
     {
       "name": "PackScrew1R",
@@ -4258,7 +4260,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103703,
-      "seconds": 0.707873584
+      "seconds": 0.779948958
     },
     {
       "name": "BodyMount0L",
@@ -4266,8 +4268,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 49.53360472406388,
-      "seconds": 0.313602459
+      "volume_mm3": 49.53360472406387,
+      "seconds": 0.237473792
     },
     {
       "name": "BodyMount0R",
@@ -4275,8 +4277,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 49.53360472406385,
-      "seconds": 0.34156975
+      "volume_mm3": 49.533604724063856,
+      "seconds": 0.203044
     },
     {
       "name": "BodyMount1L",
@@ -4284,8 +4286,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 49.53360472406388,
-      "seconds": 0.29873125
+      "volume_mm3": 49.53360472406387,
+      "seconds": 0.193782041
     },
     {
       "name": "BodyMount1R",
@@ -4294,7 +4296,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 49.533604724063856,
-      "seconds": 0.330332083
+      "seconds": 0.241606791
     },
     {
       "name": "BodyScrew0L",
@@ -4303,7 +4305,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103662,
-      "seconds": 0.848552
+      "seconds": 0.822837542
     },
     {
       "name": "BodyScrew0R",
@@ -4312,7 +4314,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103723,
-      "seconds": 0.816577958
+      "seconds": 0.928142542
     },
     {
       "name": "Flank_L",
@@ -4321,7 +4323,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 3266.9587518330245,
-      "seconds": 1.10568125
+      "seconds": 1.555628375
     },
     {
       "name": "FlankScrew_L0",
@@ -4330,7 +4332,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103625,
-      "seconds": 0.660029
+      "seconds": 0.878768292
     },
     {
       "name": "FlankScrew_L1",
@@ -4339,7 +4341,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103659,
-      "seconds": 0.820514209
+      "seconds": 1.0346365
     },
     {
       "name": "Flank_R",
@@ -4348,7 +4350,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 3266.958751833023,
-      "seconds": 1.157964417
+      "seconds": 1.207315416
     },
     {
       "name": "FlankScrew_R0",
@@ -4357,7 +4359,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103824,
-      "seconds": 0.721497083
+      "seconds": 0.772953625
     },
     {
       "name": "FlankScrew_R1",
@@ -4366,7 +4368,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.8236055891035,
-      "seconds": 0.741957541
+      "seconds": 0.799531083
     },
     {
       "name": "Spike_B0",
@@ -4375,7 +4377,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 215.5299832311227,
-      "seconds": 1.684085709
+      "seconds": 2.329598167
     },
     {
       "name": "DoorScrew0.001",
@@ -4384,7 +4386,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103769,
-      "seconds": 0.713112459
+      "seconds": 0.734077375
     },
     {
       "name": "DoorScrew1.001",
@@ -4393,7 +4395,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.82360558910377,
-      "seconds": 0.810975125
+      "seconds": 0.723244875
     },
     {
       "name": "BodyR",
@@ -4404,205 +4406,7 @@
         "solid/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/intersect[0]/cut[0]/fillet: fillet 4 on all 53 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 387) (the operation failed: not supported yet: only straight edges can be blended)); applied edge by edge to 7 of them (4 at 2)"
       ],
       "volume_mm3": 23558.78450321952,
-      "seconds": 39.996222
-    },
-    {
-      "name": "Boss_TailRootScrewL",
-      "body": "trunk_base",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 85.2639718857677,
-      "seconds": 0.045732667
-    },
-    {
-      "name": "Boss_TailRootScrewR",
-      "body": "trunk_base",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 85.17690932886383,
-      "seconds": 0.035642958
-    },
-    {
-      "name": "Boss_FlankScrew_L0",
-      "body": "trunk_base",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 92.8787603992504,
-      "seconds": 0.051609083
-    },
-    {
-      "name": "Boss_FlankScrew_R0",
-      "body": "trunk_base",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 91.97203572126197,
-      "seconds": 0.048894209
-    },
-    {
-      "name": "Boss_DoorScrew0",
-      "body": "trunk_base",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 152.67587265236992,
-      "seconds": 0.101667042
-    },
-    {
-      "name": "Boss_DoorScrew1",
-      "body": "trunk_base",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 152.67587265236966,
-      "seconds": 0.114575542
-    },
-    {
-      "name": "Boss_HeadScrew_VL1",
-      "body": "jaw_soft",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 112.54428087424132,
-      "seconds": 0.08608075
-    },
-    {
-      "name": "Boss_HeadScrew_VR1",
-      "body": "jaw_soft",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 112.54428087424073,
-      "seconds": 0.04405975
-    },
-    {
-      "name": "Boss_HeadScrew_BL0",
-      "body": "jaw_soft",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 112.5442808742417,
-      "seconds": 0.040109916
-    },
-    {
-      "name": "Boss_HeadScrew_BL1",
-      "body": "jaw_soft",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 112.54428087424157,
-      "seconds": 0.07042625
-    },
-    {
-      "name": "Boss_HeadScrew_BR0",
-      "body": "jaw_soft",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 112.54428087424147,
-      "seconds": 0.051473916
-    },
-    {
-      "name": "Boss_HeadScrew_BR1",
-      "body": "jaw_soft",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 53.74929338312176,
-      "seconds": 0.037838458
-    },
-    {
-      "name": "Boss_HeadScrew_FL",
-      "body": "jaw_soft",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 241.18085810819457,
-      "seconds": 0.046150542
-    },
-    {
-      "name": "Boss_HeadScrew_TL0",
-      "body": "jaw_soft",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 112.54428087424147,
-      "seconds": 0.0712265
-    },
-    {
-      "name": "Boss_HeadScrew_TL1",
-      "body": "jaw_soft",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 112.5442808742413,
-      "seconds": 0.047541458
-    },
-    {
-      "name": "Boss_MuzzleScrew_L",
-      "body": "jaw_soft",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 112.54428087424104,
-      "seconds": 0.058660625
-    },
-    {
-      "name": "Boss_HeadScrew_FR",
-      "body": "jaw_soft",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 124.50795027885437,
-      "seconds": 0.048955583
-    },
-    {
-      "name": "Boss_HeadScrew_TR0",
-      "body": "jaw_soft",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 112.54428087424144,
-      "seconds": 0.079612
-    },
-    {
-      "name": "Boss_HeadScrew_TR1",
-      "body": "jaw_soft",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 112.54428087424117,
-      "seconds": 0.051504541
-    },
-    {
-      "name": "Boss_MuzzleScrew_R",
-      "body": "jaw_soft",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 112.5442808742414,
-      "seconds": 0.059594459
-    },
-    {
-      "name": "Boss_JawScrew_L0",
-      "body": "jaw",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 59.59944008321088,
-      "seconds": 0.055433958
-    },
-    {
-      "name": "Boss_JawScrew_R0",
-      "body": "jaw",
-      "status": "exact",
-      "representation": "brep",
-      "warnings": [],
-      "volume_mm3": 58.89442283431122,
-      "seconds": 0.060460625
+      "seconds": 43.281489833
     },
     {
       "name": "HeadTop",
@@ -4613,7 +4417,7 @@
         "solid/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/fillet: fillet 6 on all 62 edges together failed (the operation failed: the operation failed: not supported yet: a vertex of the edge chain where other faces meet (the operation failed: not supported yet: both faces next to the edge must be planar)); applied edge by edge to 10 of them (6 at 3)"
       ],
       "volume_mm3": 18684.33741973625,
-      "seconds": 51.540644708
+      "seconds": 55.516378625
     },
     {
       "name": "Visor",
@@ -4624,7 +4428,7 @@
         "solid/cut[0]/cut[0]/cut[0]/fillet: fillet 4.5 on all 24 edges together failed (the operation failed: the operation failed: not supported yet: a vertex of the edge chain where other faces meet (the operation failed: not supported yet: both faces next to the edge must be planar)); applied edge by edge to 5 of them (1 at 2.25)"
       ],
       "volume_mm3": 6202.713486793672,
-      "seconds": 24.152150917
+      "seconds": 27.288224334
     },
     {
       "name": "HeadScrew_VL0",
@@ -4633,7 +4437,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103824,
-      "seconds": 1.234332458
+      "seconds": 0.813507875
     },
     {
       "name": "HeadScrew_VL1",
@@ -4642,7 +4446,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103787,
-      "seconds": 1.192581125
+      "seconds": 0.787749333
     },
     {
       "name": "HeadScrew_VR0",
@@ -4651,7 +4455,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103549,
-      "seconds": 1.197329
+      "seconds": 0.83577675
     },
     {
       "name": "HeadScrew_VR1",
@@ -4660,7 +4464,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589104131,
-      "seconds": 0.968804334
+      "seconds": 0.80197125
     },
     {
       "name": "VisorGlass",
@@ -4669,7 +4473,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 323.9906319888968,
-      "seconds": 0.31986975
+      "seconds": 0.215223875
     },
     {
       "name": "CamMount1",
@@ -4678,7 +4482,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 215.23660598905101,
-      "seconds": 0.245797833
+      "seconds": 0.245151291
     },
     {
       "name": "CamMount-1",
@@ -4687,7 +4491,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 215.23660598905724,
-      "seconds": 0.297404417
+      "seconds": 0.215592208
     },
     {
       "name": "StatusLED",
@@ -4696,7 +4500,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 10.178099161551442,
-      "seconds": 0.075597166
+      "seconds": 0.02930075
     },
     {
       "name": "ToFWindow.001",
@@ -4704,8 +4508,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 59.09345611181346,
-      "seconds": 0.305920416
+      "volume_mm3": 59.09345611181345,
+      "seconds": 0.22534625
     },
     {
       "name": "ToFBoard",
@@ -4713,8 +4517,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 164.06104293627996,
-      "seconds": 0.429495875
+      "volume_mm3": 164.06104293627993,
+      "seconds": 0.247430542
     },
     {
       "name": "ToFSensor",
@@ -4722,8 +4526,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 12.451818686939411,
-      "seconds": 0.273126375
+      "volume_mm3": 12.451818686939413,
+      "seconds": 0.20193175
     },
     {
       "name": "EyeSocket_L.001",
@@ -4732,7 +4536,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 951.2487378714253,
-      "seconds": 0.470388833
+      "seconds": 0.39611725
     },
     {
       "name": "Brow_L.001",
@@ -4742,8 +4546,8 @@
       "warnings": [
         "solid/fillet: fillet 0.699999988079071 on all 18 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 1853) (the operation failed: not supported yet: only straight edges can be blended)); applied edge by edge to 10 of them (1 at 0.3499999940395355)"
       ],
-      "volume_mm3": 585.0915074455435,
-      "seconds": 35.397831625
+      "volume_mm3": 585.0915074455429,
+      "seconds": 33.490251917
     },
     {
       "name": "Eye_L.003",
@@ -4754,7 +4558,7 @@
         "exact body not exportable: the operation failed: not supported yet: STEP export of this body (Transform does not keep the surface one of revolution.); wrote its tessellation (265.9 -> 265.8 mm3)"
       ],
       "volume_mm3": 265.81921393175867,
-      "seconds": 8.272785083
+      "seconds": 6.094457166
     },
     {
       "name": "EyeShine_L.002",
@@ -4763,7 +4567,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 17.156067662268278,
-      "seconds": 0.462628458
+      "seconds": 0.400661625
     },
     {
       "name": "EyeSocket_R.001",
@@ -4772,7 +4576,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 951.2487377630081,
-      "seconds": 0.275720208
+      "seconds": 0.275138958
     },
     {
       "name": "Brow_R.001",
@@ -4783,7 +4587,7 @@
         "solid/fillet: fillet 0.699999988079071 on all 18 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 1853) (the operation failed: not supported yet: only straight edges can be blended)); applied edge by edge to 10 of them (1 at 0.3499999940395355)"
       ],
       "volume_mm3": 585.0915069020239,
-      "seconds": 35.452113167
+      "seconds": 32.901954708
     },
     {
       "name": "Eye_R.003",
@@ -4794,7 +4598,7 @@
         "exact body not exportable: the operation failed: not supported yet: STEP export of this body (Transform does not keep the surface one of revolution.); wrote its tessellation (265.9 -> 265.8 mm3)"
       ],
       "volume_mm3": 265.8192140281348,
-      "seconds": 8.072999375
+      "seconds": 5.898637417
     },
     {
       "name": "EyeShine_R.002",
@@ -4803,7 +4607,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 17.15606766226802,
-      "seconds": 0.384296167
+      "seconds": 0.598299416
     },
     {
       "name": "Muzzle",
@@ -4814,7 +4618,7 @@
         "solid/cut[0]/intersect[0]/fillet: fillet 6 on all 62 edges together failed (the operation failed: the operation failed: not supported yet: a vertex of the edge chain where other faces meet (the operation failed: not supported yet: both faces next to the edge must be planar)); applied edge by edge to 10 of them (6 at 3)"
       ],
       "volume_mm3": 7587.124622362327,
-      "seconds": 44.790736333
+      "seconds": 46.926283375
     },
     {
       "name": "HeadBack",
@@ -4825,7 +4629,7 @@
         "solid/cut[0]/cut[0]/intersect[0]/fillet: fillet 6 on all 62 edges together failed (the operation failed: the operation failed: not supported yet: a vertex of the edge chain where other faces meet (the operation failed: not supported yet: both faces next to the edge must be planar)); applied edge by edge to 10 of them (6 at 3)"
       ],
       "volume_mm3": 19956.75531806939,
-      "seconds": 44.045315709
+      "seconds": 46.897812833
     },
     {
       "name": "HeadScrew_BL0",
@@ -4834,7 +4638,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103929,
-      "seconds": 1.062187292
+      "seconds": 0.730540667
     },
     {
       "name": "HeadScrew_BL1",
@@ -4843,7 +4647,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.82360558910399,
-      "seconds": 0.928966208
+      "seconds": 0.783417167
     },
     {
       "name": "HeadScrew_BR0",
@@ -4852,7 +4656,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103934,
-      "seconds": 1.135220708
+      "seconds": 0.710152292
     },
     {
       "name": "HeadScrew_BR1",
@@ -4861,7 +4665,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.82360558910367,
-      "seconds": 1.089495833
+      "seconds": 0.639921667
     },
     {
       "name": "HeadIMU",
@@ -4870,7 +4674,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 370.00545916731426,
-      "seconds": 0.488566583
+      "seconds": 0.289451334
     },
     {
       "name": "Spike_H0",
@@ -4879,7 +4683,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 164.48628336376132,
-      "seconds": 3.295594625
+      "seconds": 1.9717665420000001
     },
     {
       "name": "Spike_H1",
@@ -4888,7 +4692,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 243.55771345248195,
-      "seconds": 2.7049840830000003
+      "seconds": 1.465199458
     },
     {
       "name": "Spike_H2",
@@ -4897,7 +4701,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 304.6158360442626,
-      "seconds": 1.809489708
+      "seconds": 43.213756833
     },
     {
       "name": "Spike_H3",
@@ -4906,7 +4710,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 273.2528295680801,
-      "seconds": 2.097719375
+      "seconds": 2.7719878749999998
     },
     {
       "name": "HeadScrew_FL",
@@ -4915,7 +4719,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103954,
-      "seconds": 1.07640975
+      "seconds": 0.8321925
     },
     {
       "name": "HeadScrew_TL0",
@@ -4924,7 +4728,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103789,
-      "seconds": 0.948081042
+      "seconds": 0.877186042
     },
     {
       "name": "HeadScrew_TL1",
@@ -4933,7 +4737,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103733,
-      "seconds": 0.797466584
+      "seconds": 0.775851667
     },
     {
       "name": "MuzzleScrew_L",
@@ -4942,7 +4746,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.82360558910384,
-      "seconds": 0.784777125
+      "seconds": 0.718385667
     },
     {
       "name": "HeadScrew_FR",
@@ -4951,7 +4755,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103504,
-      "seconds": 0.690212583
+      "seconds": 0.721864709
     },
     {
       "name": "HeadScrew_TR0",
@@ -4960,7 +4764,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589104066,
-      "seconds": 0.852399375
+      "seconds": 0.772860583
     },
     {
       "name": "HeadScrew_TR1",
@@ -4969,7 +4773,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103728,
-      "seconds": 0.850792875
+      "seconds": 0.653656167
     },
     {
       "name": "MuzzleScrew_R",
@@ -4978,7 +4782,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103623,
-      "seconds": 0.744136083
+      "seconds": 0.833637666
     },
     {
       "name": "Jaw.003",
@@ -4989,7 +4793,7 @@
         "solid/fillet: fillet 4 on all 24 edges together failed (the operation failed: the operation failed: not supported yet: a vertex of the edge chain where other faces meet (the operation failed: not supported yet: both faces next to the edge must be planar)); applied edge by edge to 6 of them (2 at 2)"
       ],
       "volume_mm3": 28506.778276590543,
-      "seconds": 15.642242042
+      "seconds": 17.964003792
     },
     {
       "name": "Mouth.003",
@@ -5000,7 +4804,7 @@
         "solid/fillet: fillet 0.5 on all 18 edges together failed (the operation failed: not supported yet: the blend is larger than the neighbouring faces (site 387) (the operation failed: not supported yet: only straight edges can be blended)); applied edge by edge to 10 of them (2 at 0.25)"
       ],
       "volume_mm3": 2877.2684724489955,
-      "seconds": 25.439740583
+      "seconds": 26.540368833
     },
     {
       "name": "Tongue.002",
@@ -5008,8 +4812,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 1013.8007400884791,
-      "seconds": 0.22146775
+      "volume_mm3": 1013.800740088479,
+      "seconds": 0.222716458
     },
     {
       "name": "JawArm_L.002",
@@ -5018,7 +4822,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2618.266372778676,
-      "seconds": 1.455775792
+      "seconds": 1.039298708
     },
     {
       "name": "JawCheek_L",
@@ -5026,8 +4830,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 1158.9730195453892,
-      "seconds": 0.306336292
+      "volume_mm3": 1158.9730195453894,
+      "seconds": 0.256221166
     },
     {
       "name": "JawShaft_L",
@@ -5036,7 +4840,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 418.1534569893974,
-      "seconds": 0.062539833
+      "seconds": 0.089522375
     },
     {
       "name": "CheekCap_L.002",
@@ -5045,7 +4849,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 474.9052812260532,
-      "seconds": 0.40743075
+      "seconds": 0.454753958
     },
     {
       "name": "CheekPin_L",
@@ -5054,7 +4858,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 25.445291465912288,
-      "seconds": 0.055108
+      "seconds": 0.062136125
     },
     {
       "name": "CheekScrew_L0.001",
@@ -5063,7 +4867,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.8848298569124446,
-      "seconds": 0.03711575
+      "seconds": 0.063326125
     },
     {
       "name": "CheekScrew_L1.001",
@@ -5072,7 +4876,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.8848298569124398,
-      "seconds": 0.064386375
+      "seconds": 0.066941375
     },
     {
       "name": "CheekScrew_L2.001",
@@ -5081,7 +4885,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.8848298569124402,
-      "seconds": 0.040526959
+      "seconds": 0.072922
     },
     {
       "name": "CheekScrew_L3.001",
@@ -5090,7 +4894,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.8848298569124442,
-      "seconds": 0.037857208
+      "seconds": 0.073494417
     },
     {
       "name": "JawScrew_L0",
@@ -5099,7 +4903,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103703,
-      "seconds": 0.723180208
+      "seconds": 0.680036542
     },
     {
       "name": "JawScrew_L1",
@@ -5108,7 +4912,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103865,
-      "seconds": 0.649127292
+      "seconds": 0.651101
     },
     {
       "name": "JawArm_R.002",
@@ -5117,7 +4921,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2618.2663731419,
-      "seconds": 1.067370959
+      "seconds": 1.039942208
     },
     {
       "name": "JawCheek_R",
@@ -5125,8 +4929,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 1158.9730195453844,
-      "seconds": 0.214275125
+      "volume_mm3": 1158.9730195453847,
+      "seconds": 0.337279791
     },
     {
       "name": "JawShaft_R",
@@ -5135,7 +4939,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 434.23628225819874,
-      "seconds": 0.066394
+      "seconds": 0.066115
     },
     {
       "name": "CheekCap_R.002",
@@ -5144,7 +4948,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 474.90528122605616,
-      "seconds": 0.374514042
+      "seconds": 0.371362208
     },
     {
       "name": "CheekPin_R",
@@ -5153,7 +4957,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 25.445291465912362,
-      "seconds": 0.053317625
+      "seconds": 0.076271083
     },
     {
       "name": "CheekScrew_R0.001",
@@ -5162,7 +4966,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.8848298569124413,
-      "seconds": 0.039210833
+      "seconds": 0.045074375
     },
     {
       "name": "CheekScrew_R1.001",
@@ -5171,7 +4975,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.8848298569124422,
-      "seconds": 0.199425375
+      "seconds": 0.054144
     },
     {
       "name": "CheekScrew_R2.001",
@@ -5180,7 +4984,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.8848298569124473,
-      "seconds": 0.04816825
+      "seconds": 0.033509208
     },
     {
       "name": "CheekScrew_R3.001",
@@ -5189,7 +4993,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.8848298569124449,
-      "seconds": 0.041161458
+      "seconds": 0.025124917
     },
     {
       "name": "JawScrew_R0",
@@ -5198,7 +5002,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103794,
-      "seconds": 0.649603583
+      "seconds": 0.683370625
     },
     {
       "name": "JawScrew_R1",
@@ -5207,7 +5011,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103993,
-      "seconds": 0.783434042
+      "seconds": 0.779426
     },
     {
       "name": "Fang_L.003",
@@ -5216,7 +5020,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 99.31086646238542,
-      "seconds": 1.105323209
+      "seconds": 0.8691405
     },
     {
       "name": "Fang_R.003",
@@ -5225,7 +5029,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 99.31086646364413,
-      "seconds": 1.021703958
+      "seconds": 1.145117084
     },
     {
       "name": "HeadBase",
@@ -5236,7 +5040,7 @@
         "solid/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/cut[0]/intersect[0]/cut[0]/fillet: fillet 6 on all 62 edges together failed (the operation failed: the operation failed: not supported yet: a vertex of the edge chain where other faces meet (the operation failed: not supported yet: both faces next to the edge must be planar)); applied edge by edge to 10 of them (6 at 3)"
       ],
       "volume_mm3": 13409.63479567837,
-      "seconds": 43.2641505
+      "seconds": 42.555017958
     },
     {
       "name": "XL330_ArmL",
@@ -5245,7 +5049,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 17583.364529416354,
-      "seconds": 0.226999625
+      "seconds": 0.305565125
     },
     {
       "name": "XL330_ArmL.horn",
@@ -5254,7 +5058,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 381.680006213302,
-      "seconds": 0.027977458
+      "seconds": 0.051134416
     },
     {
       "name": "XL330_ArmL.hub",
@@ -5263,7 +5067,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 117.80227530515033,
-      "seconds": 0.047237375
+      "seconds": 0.049313791
     },
     {
       "name": "XL330_ArmL.hs0",
@@ -5272,7 +5076,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458749,
-      "seconds": 0.038045833
+      "seconds": 0.086211709
     },
     {
       "name": "XL330_ArmL.hs1",
@@ -5281,7 +5085,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.28064814545875,
-      "seconds": 0.044738666
+      "seconds": 0.085096417
     },
     {
       "name": "XL330_ArmL.hs2",
@@ -5290,7 +5094,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458766,
-      "seconds": 0.055347125
+      "seconds": 0.064450166
     },
     {
       "name": "XL330_ArmL.hs3",
@@ -5299,7 +5103,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458762,
-      "seconds": 0.047112417
+      "seconds": 0.116121084
     },
     {
       "name": "XL330_ArmL.cs1(-8, 6)",
@@ -5308,7 +5112,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444365,
-      "seconds": 0.049883625
+      "seconds": 0.057413
     },
     {
       "name": "XL330_ArmL.cs1(8, 6)",
@@ -5317,7 +5121,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444291,
-      "seconds": 0.062039042
+      "seconds": 0.081393
     },
     {
       "name": "XL330_ArmL.cs1(-8, -21)",
@@ -5326,7 +5130,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544434,
-      "seconds": 0.030051625
+      "seconds": 0.044414667
     },
     {
       "name": "XL330_ArmL.cs1(8, -21)",
@@ -5335,7 +5139,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444322,
-      "seconds": 0.032429167
+      "seconds": 0.039587792
     },
     {
       "name": "XL330_ArmL.cs-1(-8, 6)",
@@ -5344,7 +5148,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544419,
-      "seconds": 0.042974459
+      "seconds": 0.030348375
     },
     {
       "name": "XL330_ArmL.cs-1(8, 6)",
@@ -5353,7 +5157,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.01779841354443,
-      "seconds": 0.05546175
+      "seconds": 0.043242834
     },
     {
       "name": "XL330_ArmL.cs-1(-8, -21)",
@@ -5362,7 +5166,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444207,
-      "seconds": 0.03438625
+      "seconds": 0.048208917
     },
     {
       "name": "XL330_ArmL.cs-1(8, -21)",
@@ -5371,7 +5175,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444302,
-      "seconds": 0.032584375
+      "seconds": 0.0344285
     },
     {
       "name": "XL330_ArmL.jst0",
@@ -5380,7 +5184,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 111.99999999999996,
-      "seconds": 0.009287584
+      "seconds": 0.029662458
     },
     {
       "name": "XL330_ArmL.jst1",
@@ -5389,7 +5193,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 111.99999999999996,
-      "seconds": 0.018587834
+      "seconds": 0.084360417
     },
     {
       "name": "ArmUpper_L",
@@ -5398,7 +5202,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 7215.829759905432,
-      "seconds": 0.440899042
+      "seconds": 0.350383292
     },
     {
       "name": "ArmElbow_L.001",
@@ -5407,7 +5211,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 220.49418071327344,
-      "seconds": 0.416986416
+      "seconds": 0.308494333
     },
     {
       "name": "ArmPin_L",
@@ -5416,7 +5220,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 179.39407914369497,
-      "seconds": 0.053601834
+      "seconds": 0.085640375
     },
     {
       "name": "ArmFore_L",
@@ -5425,7 +5229,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2844.157602036666,
-      "seconds": 0.349735041
+      "seconds": 0.389554833
     },
     {
       "name": "Hand_L.001",
@@ -5433,8 +5237,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 1726.2602697574712,
-      "seconds": 0.501892792
+      "volume_mm3": 1726.2602697574714,
+      "seconds": 0.376826667
     },
     {
       "name": "ArmScrew_L0",
@@ -5443,7 +5247,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.82360558910307,
-      "seconds": 1.086643208
+      "seconds": 1.128004708
     },
     {
       "name": "ArmScrew_L1",
@@ -5452,7 +5256,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589102991,
-      "seconds": 1.168142958
+      "seconds": 0.927594083
     },
     {
       "name": "ArmScrew_L2",
@@ -5461,7 +5265,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589102845,
-      "seconds": 0.619948333
+      "seconds": 1.126385083
     },
     {
       "name": "ArmScrew_L3",
@@ -5470,7 +5274,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103018,
-      "seconds": 0.683722708
+      "seconds": 1.057354167
     },
     {
       "name": "Claw_L0",
@@ -5479,7 +5283,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 39.56004044361558,
-      "seconds": 0.047381584
+      "seconds": 0.08432025
     },
     {
       "name": "Claw_L1",
@@ -5488,7 +5292,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 39.560040444612994,
-      "seconds": 0.037003916
+      "seconds": 0.040960458
     },
     {
       "name": "HandScrew_L",
@@ -5497,7 +5301,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103133,
-      "seconds": 0.659377417
+      "seconds": 0.628453167
     },
     {
       "name": "XL330_ArmR",
@@ -5506,7 +5310,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 17583.364529416358,
-      "seconds": 0.296338709
+      "seconds": 0.364128875
     },
     {
       "name": "XL330_ArmR.horn",
@@ -5515,7 +5319,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 381.68000621330185,
-      "seconds": 0.034251542
+      "seconds": 0.0433455
     },
     {
       "name": "XL330_ArmR.hub",
@@ -5524,7 +5328,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 117.8022753051502,
-      "seconds": 0.033207208
+      "seconds": 0.035425959
     },
     {
       "name": "XL330_ArmR.hs0",
@@ -5533,7 +5337,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587524,
-      "seconds": 0.0349085
+      "seconds": 0.024811208
     },
     {
       "name": "XL330_ArmR.hs1",
@@ -5542,7 +5346,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587533,
-      "seconds": 0.04819125
+      "seconds": 0.029229084
     },
     {
       "name": "XL330_ArmR.hs2",
@@ -5551,7 +5355,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.2806481454587644,
-      "seconds": 0.044919292
+      "seconds": 0.040122667
     },
     {
       "name": "XL330_ArmR.hs3",
@@ -5560,7 +5364,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2.280648145458765,
-      "seconds": 0.081293625
+      "seconds": 0.078877
     },
     {
       "name": "XL330_ArmR.cs1(-8, 6)",
@@ -5569,7 +5373,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544436,
-      "seconds": 0.071232875
+      "seconds": 0.051988667
     },
     {
       "name": "XL330_ArmR.cs1(8, 6)",
@@ -5578,7 +5382,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444345,
-      "seconds": 0.080474292
+      "seconds": 0.024418792
     },
     {
       "name": "XL330_ArmR.cs1(-8, -21)",
@@ -5587,7 +5391,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544416,
-      "seconds": 0.057912458
+      "seconds": 0.049280583
     },
     {
       "name": "XL330_ArmR.cs1(8, -21)",
@@ -5596,7 +5400,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444347,
-      "seconds": 0.077606542
+      "seconds": 0.036656458
     },
     {
       "name": "XL330_ArmR.cs-1(-8, 6)",
@@ -5605,7 +5409,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444214,
-      "seconds": 0.060231125
+      "seconds": 0.081241459
     },
     {
       "name": "XL330_ArmR.cs-1(8, 6)",
@@ -5614,7 +5418,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.01779841354442,
-      "seconds": 0.048350459
+      "seconds": 0.045326125
     },
     {
       "name": "XL330_ArmR.cs-1(-8, -21)",
@@ -5623,7 +5427,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.017798413544423,
-      "seconds": 0.053227209
+      "seconds": 0.03454575
     },
     {
       "name": "XL330_ArmR.cs-1(8, -21)",
@@ -5632,7 +5436,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 1.0177984135444138,
-      "seconds": 0.039485291
+      "seconds": 0.029144542
     },
     {
       "name": "XL330_ArmR.jst0",
@@ -5641,7 +5445,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 111.99999999999996,
-      "seconds": 0.003930375
+      "seconds": 0.004742417
     },
     {
       "name": "XL330_ArmR.jst1",
@@ -5650,7 +5454,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 111.99999999999996,
-      "seconds": 0.006602083
+      "seconds": 0.00545375
     },
     {
       "name": "ArmUpper_R",
@@ -5658,8 +5462,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 7215.829759905434,
-      "seconds": 0.612848333
+      "volume_mm3": 7215.829759905431,
+      "seconds": 0.398663542
     },
     {
       "name": "ArmElbow_R.001",
@@ -5668,7 +5472,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 220.4941807132732,
-      "seconds": 0.402297458
+      "seconds": 0.335153583
     },
     {
       "name": "ArmPin_R",
@@ -5677,7 +5481,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 179.39407914369517,
-      "seconds": 0.048523584
+      "seconds": 0.064413583
     },
     {
       "name": "ArmFore_R",
@@ -5686,7 +5490,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 2844.157602036669,
-      "seconds": 0.31050075
+      "seconds": 0.464190125
     },
     {
       "name": "Hand_R.001",
@@ -5694,8 +5498,8 @@
       "status": "exact",
       "representation": "brep",
       "warnings": [],
-      "volume_mm3": 1726.2602697574778,
-      "seconds": 0.336547375
+      "volume_mm3": 1726.2602697574775,
+      "seconds": 0.332092625
     },
     {
       "name": "ArmScrew_R0",
@@ -5704,7 +5508,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589102991,
-      "seconds": 0.698775
+      "seconds": 0.792800792
     },
     {
       "name": "ArmScrew_R1",
@@ -5713,7 +5517,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.82360558910307,
-      "seconds": 0.731485042
+      "seconds": 0.903680708
     },
     {
       "name": "ArmScrew_R2",
@@ -5722,7 +5526,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103018,
-      "seconds": 0.720085666
+      "seconds": 0.806613292
     },
     {
       "name": "ArmScrew_R3",
@@ -5731,7 +5535,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589102845,
-      "seconds": 0.640817334
+      "seconds": 0.731368917
     },
     {
       "name": "Claw_R0",
@@ -5740,7 +5544,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 39.56004044481935,
-      "seconds": 0.044999584
+      "seconds": 0.05069575
     },
     {
       "name": "Claw_R1",
@@ -5749,7 +5553,7 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 39.56004044092226,
-      "seconds": 0.0374285
+      "seconds": 0.031427833
     },
     {
       "name": "HandScrew_R",
@@ -5758,22 +5562,220 @@
       "representation": "brep",
       "warnings": [],
       "volume_mm3": 9.823605589103185,
-      "seconds": 0.614748084
+      "seconds": 0.839576459
+    },
+    {
+      "name": "Boss_TailRootScrewL",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 85.26480678005173,
+      "seconds": 0.053367583
+    },
+    {
+      "name": "Boss_TailRootScrewR",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 85.17599831086586,
+      "seconds": 0.060388084
+    },
+    {
+      "name": "Boss_FlankScrew_L0",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 92.87968584409953,
+      "seconds": 0.039251959
+    },
+    {
+      "name": "Boss_FlankScrew_R0",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 91.97254237835062,
+      "seconds": 0.135193583
+    },
+    {
+      "name": "Boss_DoorScrew0",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 152.67626213280144,
+      "seconds": 0.071326542
+    },
+    {
+      "name": "Boss_DoorScrew1",
+      "body": "trunk_base",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 152.67624441312992,
+      "seconds": 0.072122875
+    },
+    {
+      "name": "Boss_HeadScrew_VL1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.54428087424132,
+      "seconds": 0.099915833
+    },
+    {
+      "name": "Boss_HeadScrew_VR1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.54428087424073,
+      "seconds": 0.063864916
+    },
+    {
+      "name": "Boss_HeadScrew_BL0",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.5442808742417,
+      "seconds": 0.055084292
+    },
+    {
+      "name": "Boss_HeadScrew_BL1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.54428087424157,
+      "seconds": 0.095239708
+    },
+    {
+      "name": "Boss_HeadScrew_BR0",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.54428087424147,
+      "seconds": 0.064382833
+    },
+    {
+      "name": "Boss_HeadScrew_BR1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 53.749717180303925,
+      "seconds": 0.053351375
+    },
+    {
+      "name": "Boss_HeadScrew_FL",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 241.18012148158982,
+      "seconds": 0.072924417
+    },
+    {
+      "name": "Boss_HeadScrew_TL0",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.54428087424147,
+      "seconds": 0.050165833
+    },
+    {
+      "name": "Boss_HeadScrew_TL1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.5442808742413,
+      "seconds": 0.100068167
+    },
+    {
+      "name": "Boss_MuzzleScrew_L",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.54428087424104,
+      "seconds": 0.102130542
+    },
+    {
+      "name": "Boss_HeadScrew_FR",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 124.50834358673957,
+      "seconds": 0.077698375
+    },
+    {
+      "name": "Boss_HeadScrew_TR0",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.54428087424144,
+      "seconds": 0.081200041
+    },
+    {
+      "name": "Boss_HeadScrew_TR1",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.54428087424117,
+      "seconds": 0.052938917
+    },
+    {
+      "name": "Boss_MuzzleScrew_R",
+      "body": "jaw_soft",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 112.5442808742414,
+      "seconds": 0.059261167
+    },
+    {
+      "name": "Boss_JawScrew_L0",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 59.600285357272696,
+      "seconds": 0.053972792
+    },
+    {
+      "name": "Boss_JawScrew_R0",
+      "body": "jaw",
+      "status": "exact",
+      "representation": "brep",
+      "warnings": [],
+      "volume_mm3": 58.893662617440725,
+      "seconds": 0.04156625
     }
   ],
   "totals": {
     "parts": 634,
-    "exact": 605,
+    "exact": 604,
     "exact_with_warnings": 24,
-    "faceted": 5,
+    "faceted": 6,
     "failed": 0,
-    "volume_mm3": 1470405.8638344798,
-    "seconds": 89.028782709
+    "volume_mm3": 1145912.9875014275,
+    "seconds": 112.44573775
   },
   "assembly_warnings": [],
   "validation": {
     "valid": true,
-    "entities": 649213,
+    "entities": 677238,
     "reimported": true,
     "solids_expected": 634,
     "solids_read": 634,
