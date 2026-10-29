@@ -1,0 +1,890 @@
+{
+ "BodyL": {
+  "role": "printed shell",
+  "triangles": 1762,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Backpack": {
+  "role": "printed part",
+  "triangles": 3068,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "BatteryDoor": {
+  "role": "printed part",
+  "triangles": 3556,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "ChargePort": {
+  "role": "printed part",
+  "triangles": 12380,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "PowerSwitch": {
+  "role": "printed part",
+  "triangles": 19664,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "BodyMount0L": {
+  "role": "printed part",
+  "triangles": 14456,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "BodyMount0R": {
+  "role": "printed part",
+  "triangles": 14456,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "BodyMount1L": {
+  "role": "printed part",
+  "triangles": 14456,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "BodyMount1R": {
+  "role": "printed part",
+  "triangles": 14456,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Flank_L": {
+  "role": "printed part",
+  "triangles": 7858,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Flank_R": {
+  "role": "printed part",
+  "triangles": 7858,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Spike_B0": {
+  "role": "printed part",
+  "triangles": 14852,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "BodyR": {
+  "role": "printed shell",
+  "triangles": 1586,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_TailRootScrewL": {
+  "role": "insert boss",
+  "triangles": 2286,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_TailRootScrewR": {
+  "role": "insert boss",
+  "triangles": 2286,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_FlankScrew_L0": {
+  "role": "insert boss",
+  "triangles": 2540,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_FlankScrew_R0": {
+  "role": "insert boss",
+  "triangles": 2540,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_DoorScrew0": {
+  "role": "insert boss",
+  "triangles": 4064,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_DoorScrew1": {
+  "role": "insert boss",
+  "triangles": 4064,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Thigh_L": {
+  "role": "printed part",
+  "triangles": 172,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Sole_L": {
+  "role": "TPU",
+  "triangles": 5404,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Foot_L": {
+  "role": "printed part",
+  "triangles": 1708,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "ToeCap_L0": {
+  "role": "printed part",
+  "triangles": 3316,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "ToeSole_L0": {
+  "role": "TPU",
+  "triangles": 8852,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "ToeCap_L2": {
+  "role": "printed part",
+  "triangles": 3316,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "ToeSole_L2": {
+  "role": "TPU",
+  "triangles": 8852,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "FootGuardO_L": {
+  "role": "printed part",
+  "triangles": 8240,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "FootGuardI_L": {
+  "role": "printed part",
+  "triangles": 8190,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Throat": {
+  "role": "printed part",
+  "triangles": 8732,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Nape": {
+  "role": "printed part",
+  "triangles": 7652,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "NeckCollar0": {
+  "role": "printed part",
+  "triangles": 6092,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "NeckCollar1": {
+  "role": "printed part",
+  "triangles": 6092,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "NeckCollar2": {
+  "role": "printed part",
+  "triangles": 13256,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "NeckCollar3": {
+  "role": "printed part",
+  "triangles": 13256,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "HeadTop": {
+  "role": "printed shell",
+  "triangles": 2116,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Visor": {
+  "role": "printed shell",
+  "triangles": 2356,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "EyeSocket_L": {
+  "role": "printed part",
+  "triangles": 5318,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Brow_L": {
+  "role": "printed part",
+  "triangles": 3708,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Eye_L": {
+  "role": "printed shell",
+  "triangles": 21884,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "EyeShine_L": {
+  "role": "printed part",
+  "triangles": 17564,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "EyeSocket_R": {
+  "role": "printed part",
+  "triangles": 5316,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Brow_R": {
+  "role": "printed part",
+  "triangles": 3708,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Eye_R": {
+  "role": "printed shell",
+  "triangles": 21922,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "EyeShine_R": {
+  "role": "printed part",
+  "triangles": 17564,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Muzzle": {
+  "role": "printed shell",
+  "triangles": 478,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "HeadBack": {
+  "role": "printed shell",
+  "triangles": 2260,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Spike_H0": {
+  "role": "printed part",
+  "triangles": 16542,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Spike_H1": {
+  "role": "printed part",
+  "triangles": 11950,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Spike_H2": {
+  "role": "printed part",
+  "triangles": 12244,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Spike_H3": {
+  "role": "printed part",
+  "triangles": 12150,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Fang_L": {
+  "role": "printed part",
+  "triangles": 8732,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Fang_R": {
+  "role": "printed part",
+  "triangles": 8732,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "HeadBase": {
+  "role": "printed shell",
+  "triangles": 1892,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_HeadScrew_VL1": {
+  "role": "insert boss",
+  "triangles": 3048,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_HeadScrew_VR1": {
+  "role": "insert boss",
+  "triangles": 3048,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_HeadScrew_BL0": {
+  "role": "insert boss",
+  "triangles": 3048,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_HeadScrew_BL1": {
+  "role": "insert boss",
+  "triangles": 3048,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_HeadScrew_BR0": {
+  "role": "insert boss",
+  "triangles": 3048,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_HeadScrew_BR1": {
+  "role": "insert boss",
+  "triangles": 1652,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_HeadScrew_FL": {
+  "role": "insert boss",
+  "triangles": 6032,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_HeadScrew_TL0": {
+  "role": "insert boss",
+  "triangles": 3048,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_HeadScrew_TL1": {
+  "role": "insert boss",
+  "triangles": 3048,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_MuzzleScrew_L": {
+  "role": "insert boss",
+  "triangles": 3048,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_HeadScrew_FR": {
+  "role": "insert boss",
+  "triangles": 3302,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_HeadScrew_TR0": {
+  "role": "insert boss",
+  "triangles": 3048,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_HeadScrew_TR1": {
+  "role": "insert boss",
+  "triangles": 3048,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_MuzzleScrew_R": {
+  "role": "insert boss",
+  "triangles": 3048,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Thigh_R": {
+  "role": "printed part",
+  "triangles": 172,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Sole_R": {
+  "role": "TPU",
+  "triangles": 5404,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Foot_R": {
+  "role": "printed part",
+  "triangles": 1708,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "ToeCap_R0": {
+  "role": "printed part",
+  "triangles": 4628,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "ToeSole_R0": {
+  "role": "TPU",
+  "triangles": 8852,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "ToeCap_R2": {
+  "role": "printed part",
+  "triangles": 4628,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "ToeSole_R2": {
+  "role": "TPU",
+  "triangles": 8852,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "FootGuardO_R": {
+  "role": "printed part",
+  "triangles": 8234,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "FootGuardI_R": {
+  "role": "printed part",
+  "triangles": 8190,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "TailCoupling": {
+  "role": "printed part",
+  "triangles": 17160,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "TailArm": {
+  "role": "printed part",
+  "triangles": 2822,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "TailSeg0": {
+  "role": "printed part",
+  "triangles": 3284,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Spike_T0": {
+  "role": "printed part",
+  "triangles": 20094,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "TailFlex0": {
+  "role": "TPU",
+  "triangles": 18954,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "TailSeg1": {
+  "role": "printed part",
+  "triangles": 2494,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Spike_T1": {
+  "role": "printed part",
+  "triangles": 20586,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "TailFlex1": {
+  "role": "TPU",
+  "triangles": 20172,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "TailSeg2": {
+  "role": "printed part",
+  "triangles": 3232,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Spike_T2": {
+  "role": "printed part",
+  "triangles": 22178,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 1,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "TailFlex2": {
+  "role": "TPU",
+  "triangles": 26022,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "TailTip": {
+  "role": "printed part",
+  "triangles": 1550,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Jaw": {
+  "role": "printed part",
+  "triangles": 1600,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Mouth": {
+  "role": "printed part",
+  "triangles": 1660,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Tongue": {
+  "role": "printed part",
+  "triangles": 188,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "Blender mesh (PolyCore's tessellation of its fillets is non-manifold)"
+ },
+ "JawArm_L": {
+  "role": "printed part",
+  "triangles": 348,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "Blender mesh (PolyCore's tessellation of its fillets is non-manifold)"
+ },
+ "JawCheek_L": {
+  "role": "printed part",
+  "triangles": 16272,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "CheekCap_L": {
+  "role": "printed part",
+  "triangles": 16684,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "JawArm_R": {
+  "role": "printed part",
+  "triangles": 348,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "Blender mesh (PolyCore's tessellation of its fillets is non-manifold)"
+ },
+ "JawCheek_R": {
+  "role": "printed part",
+  "triangles": 16272,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "CheekCap_R": {
+  "role": "printed part",
+  "triangles": 16684,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_JawScrew_L0": {
+  "role": "insert boss",
+  "triangles": 1890,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Boss_JawScrew_R0": {
+  "role": "insert boss",
+  "triangles": 1890,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "ArmUpper_L": {
+  "role": "printed part",
+  "triangles": 6040,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "ArmElbow_L": {
+  "role": "printed part",
+  "triangles": 20764,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "ArmFore_L": {
+  "role": "printed part",
+  "triangles": 9964,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Hand_L": {
+  "role": "printed part",
+  "triangles": 12978,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Claw_L0": {
+  "role": "printed part",
+  "triangles": 20,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Claw_L1": {
+  "role": "printed part",
+  "triangles": 20,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "ArmUpper_R": {
+  "role": "printed part",
+  "triangles": 6040,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "ArmElbow_R": {
+  "role": "printed part",
+  "triangles": 20764,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "ArmFore_R": {
+  "role": "printed part",
+  "triangles": 9964,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Hand_R": {
+  "role": "printed part",
+  "triangles": 12978,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Claw_R0": {
+  "role": "printed part",
+  "triangles": 20,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ },
+ "Claw_R1": {
+  "role": "printed part",
+  "triangles": 20,
+  "watertight": true,
+  "bad_edges": 0,
+  "holes_capped": 0,
+  "source": "PolyCore exact solid, via Polykrom's 3MF"
+ }
+}
