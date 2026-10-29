@@ -22,15 +22,16 @@ Labelled renders: `renders/labelled-{hero,back,exploded}-annotated.png`.
 
 ## Inventory
 
-The model has **237 parts**:
+The model has **303 parts**:
 - 18 Dynamixel XL330 servos, each named by the joint it drives in the labelled renders;
 - 23 frame brackets and 14 bearings, in Microduck's layout;
 - 13 electronics parts and 3 cables (the camera CSI flex and the two arm-servo leads);
 - 9 printed shells and 71 printed parts;
 - 9 TPU parts (soles, toe soles, tail flex rings);
 - 6 steel pins (jaw shafts, cheek pins, elbow pins), 2 magnets and the acrylic visor window;
-- 78 M2 screws (including 8 that hold the jaw-hinge horn caps) and 22 printed bosses and standoffs for M2 heat-set
-  inserts.
+- 112 M2 screws and 22 printed bosses and standoffs for M2 heat-set inserts:
+  - 78 screws on the shells and plates, 8 of them holding the jaw-hinge horn caps;
+  - 34 fixing the frame brackets into the XL330s' own case-screw holes.
 
 The XL330s' own horn and case screws aren't counted; they come with the servos.
 
@@ -93,6 +94,10 @@ Closer. Two things separated it; the first is done.
    - they print in the boards' dark frame colour, so the robot reads as a black mechanical frame under lime and
      cream armour, as on the boards.
 
+   - each bracket is screwed to the servos it holds through the XL330s' own threaded case holes. From each case hole,
+     a ray outward finds the bracket wall, and an M2 clearance hole goes through it with a screw head outside. A
+     screw that would touch anything (a bearing, a pocket, a neighbour) is removed with its hole. 34 screws remain.
+
    After the change: joint limits unchanged, no clips, nothing floating, all bosses resolved. In the STEP, 22 of the 23
    brackets are exact. The left battery holder is faceted: PolyCore's exact boolean returned an implausible volume for
    its battery pocket.
@@ -102,7 +107,6 @@ Closer. Two things separated it; the first is done.
 
 ## Open items
 
-- Bracket details a printed part would also want: screw holes where the servos' case screws go, and ribs on the
-  longest links.
+- Ribs on the longest bracket links.
 - Watertight cut shells for printing straight from the Blender meshes.
 - A PolyCore report for the failures the STEP export hit; see `tools/polycore-blender/README.md`.

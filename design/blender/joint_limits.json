@@ -187,15 +187,15 @@
   "tinyrex_home": {
    "left_hip_roll": -0.0873,
    "right_hip_roll": 0.0873,
-   "left_hip_pitch": -0.3406,
-   "right_hip_pitch": 0.3406,
+   "left_hip_pitch": -0.3402,
+   "right_hip_pitch": 0.3402,
    "left_knee": -0.0049,
    "right_knee": 0.0049,
-   "left_ankle": 0.3406,
-   "right_ankle": -0.3406,
+   "left_ankle": 0.3402,
+   "right_ankle": -0.3402,
    "neck_pitch": 0.29,
    "head_pitch": 0.3491
   },
-  "note": "Microduck's HOME (mjlab_microduck microduck_constants.HOME_FRAME) with hip pitch / ankle at 19.51 deg instead of 26.2 and neck pitch 16.6 deg (inside its 18 deg collision-free limit), so TinyREX's centre of mass sits over its ankle axis; feet flat; clip-free"
+  "note": "Microduck's HOME (mjlab_microduck microduck_constants.HOME_FRAME) with hip pitch / ankle at 19.49 deg instead of 26.2 and neck pitch 16.6 deg (inside its 18 deg collision-free limit), so TinyREX's centre of mass sits over its ankle axis; feet flat; clip-free"
  }
 }

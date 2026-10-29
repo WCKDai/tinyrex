@@ -71,19 +71,19 @@
       <site group="3" name="imu" pos="-0.021 6.64098e-05 -0.0146984" quat="1 -0 -0 -0" />
       <body name="yaw2roll" pos="0.006 0.0175 -0.005" quat="0 -0.707107 -0.707107 -0">
         <joint axis="0 0 1" name="left_hip_yaw" type="hinge" range="-0.13963 0.48869" class="chosen_actuator" />
-        <inertial pos="-8.8e-11 0.00099414 0.0168917" mass="0.0230406" fullinertia="4.1964e-06 3.41752e-06 2.3265e-06 0 0 -5.0881e-08" />
+        <inertial pos="6.02559e-11 0.000728944 0.0165853" mass="0.0237406" fullinertia="4.32472e-06 3.58426e-06 2.47484e-06 2.67029e-14 3.43323e-14 -1.14377e-07" />
         <body name="hip_l" pos="0 0.0165 0.0125" quat="0.707107 -0.707107 0 -0">
           <joint axis="0 0 1" name="left_hip_roll" type="hinge" range="-0.20944 0.22689" class="chosen_actuator" />
           <inertial pos="0.014815 1.6179e-08 -0.00829992" mass="0.00618934" fullinertia="8.60626e-07 1.15753e-06 6.51588e-07 1e-12 3.89882e-07 -1e-12" />
           <body name="upper_leg_left" pos="0.025 0 -0.0185" quat="0.5 -0.5 0.5 -0.5">
             <joint axis="0 0 1" name="left_hip_pitch" type="hinge" range="-1.57080 0.92502" class="chosen_actuator" />
-            <inertial pos="0.00705598 0.0206985 0.0182177" mass="0.0635026" fullinertia="2.65619e-05 1.80318e-05 2.78555e-05 -5.35007e-06 -5.2833e-08 2.46938e-06" />
+            <inertial pos="0.00677806 0.0210142 0.0179762" mass="0.0663026" fullinertia="2.84307e-05 1.92208e-05 3.03795e-05 -6.03003e-06 -1.53743e-07 2.58402e-06" />
             <body name="leg" pos="0.022 0.0357771 -0.004" quat="0 0.707107 0.707107 0">
               <joint axis="0 0 1" name="left_knee" type="hinge" range="-1.57080 0.69813" class="chosen_actuator" />
               <inertial pos="-1.52e-10 0.0318937 -0.00953505" mass="0.0215844" fullinertia="5.25056e-06 2.15507e-06 4.33925e-06 -1e-12 0 7.65005e-07" />
               <body name="ankle_left" pos="-0 0.042 -0.026" quat="0 -1 -0 0">
                 <joint axis="0 0 1" name="left_ankle" type="hinge" range="-1.04720 1.55334" class="chosen_actuator" />
-                <inertial pos="-0.00991053 -0.0164727 -0.014789" mass="0.0343524" fullinertia="8.36667e-06 1.51156e-05 1.14134e-05 -1.20081e-06 1.36324e-07 2.33086e-07" />
+                <inertial pos="-0.00966146 -0.0160626 -0.0147777" mass="0.0357524" fullinertia="8.60392e-06 1.57286e-05 1.20842e-05 -1.29041e-06 1.33852e-07 2.29015e-07" />
                 <site group="3" name="left_foot" pos="-0 -0.0238146 -0.0140852" quat="0 -0 -0.707107 -0.707107" />
                 <geom class="visual" type="mesh" mesh="tr_ankle_left" rgba="0.2 0.2 0.22 1" />
                 <geom class="collision" type="box" name="left_foot_collision" pos="-0.00677706 -0.0236997 -0.0145" size="0.028 0.00180002 0.0215" />
@@ -106,10 +106,10 @@
           <inertial pos="-6.533e-09 0.0116641 -0.0145" mass="0.00572" fullinertia="1.09186e-06 9.66855e-07 5.12111e-07 0 -2.48065e-27 0" />
           <body name="yaw_roll_motion" pos="-0 0.0186931 -0.0145" quat="0 -0 -0.707107 -0.707107">
             <joint axis="0 0 1" name="head_yaw" type="hinge" range="-2.96706 2.94961" class="chosen_actuator" />
-            <inertial pos="-0.000166657 -0.00500964 0.0178065" mass="0.0486" fullinertia="6.97903e-06 8.10293e-06 9.57884e-06 3.21657e-07 -3.4797e-08 3.4295e-07" />
+            <inertial pos="-0.00016358 -0.00523668 0.0178731" mass="0.0493" fullinertia="7.17067e-06 8.34496e-06 9.98212e-06 3.24048e-07 -3.54988e-08 3.94739e-07" />
             <body name="jaw_soft" pos="-0.0179 0 0.0145" quat="0.707107 0 -0.707107 -0">
               <joint axis="0 0 1" name="head_roll" type="hinge" range="-0.33161 0.33161" class="chosen_actuator" />
-              <inertial pos="0.0120969 0.00135533 -0.0255017" mass="0.178801" fullinertia="0.000344166 0.000284702 0.000164694 2.07517e-06 5.29833e-05 5.13221e-06" />
+              <inertial pos="0.0121175 0.00138365 -0.0253774" mass="0.180201" fullinertia="0.000345373 0.000285554 0.000165069 2.06174e-06 5.29243e-05 5.33119e-06" />
               <site group="3" name="head_camera" pos="0.0155 -9.13778e-05 -0.0733" quat="0.707107 -0 0.707107 0" />
               <camera name="head_camera" pos="0.0155 -9.13778e-05 -0.0733" quat="0 0 -1 0" />
               <site group="3" name="tof" pos="0.0135 0.0224086 -0.0733" quat="0.707107 -0 0.707107 0" />
@@ -130,19 +130,19 @@
       </body>
       <body name="bearing_roll" pos="0.006 -0.0175 -0.005" quat="0 -0.707107 -0.707107 0">
         <joint axis="0 0 1" name="right_hip_yaw" type="hinge" range="-0.48869 0.13963" class="chosen_actuator" />
-        <inertial pos="-8.8e-11 0.00099414 0.0168917" mass="0.0230406" fullinertia="4.1964e-06 3.41752e-06 2.3265e-06 0 0 -5.0881e-08" />
+        <inertial pos="2.00853e-11 0.000728944 0.0165853" mass="0.0237406" fullinertia="4.32472e-06 3.58426e-06 2.47484e-06 1.14441e-14 2.28882e-14 -1.14377e-07" />
         <body name="hip_l_2" pos="-0 0.0165 0.0125" quat="0 0 0.707107 0.707107">
           <joint axis="0 0 1" name="right_hip_roll" type="hinge" range="-0.22689 0.20944" class="chosen_actuator" />
           <inertial pos="0.014815 1.6212e-08 -0.00829992" mass="0.00618934" fullinertia="8.60626e-07 1.15753e-06 6.51588e-07 1e-12 3.89882e-07 -1e-12" />
           <body name="upper_leg_right" pos="0.025 0 -0.0185" quat="0.5 -0.5 0.5 -0.5">
             <joint axis="0 0 1" name="right_hip_pitch" type="hinge" range="-0.92502 1.55334" class="chosen_actuator" />
-            <inertial pos="-0.00705598 0.0206985 0.0182177" mass="0.0635026" fullinertia="2.65618e-05 1.80318e-05 2.78555e-05 5.35007e-06 5.28342e-08 2.46937e-06" />
+            <inertial pos="-0.00677806 0.0210142 0.0179762" mass="0.0663026" fullinertia="2.84306e-05 1.92207e-05 3.03795e-05 6.03003e-06 1.53741e-07 2.58401e-06" />
             <body name="leg_2" pos="-0.022 0.0357771 -0.004" quat="0 1 -0 -0">
               <joint axis="0 0 1" name="right_knee" type="hinge" range="-0.69813 1.55334" class="chosen_actuator" />
               <inertial pos="-0.0318937 -1.52e-10 -0.00953505" mass="0.0215844" fullinertia="2.15507e-06 5.25056e-06 4.33925e-06 1e-12 -7.65005e-07 0" />
               <body name="ankle_right" pos="-0.042 0 -0.026" quat="0 -0.707107 -0.707107 0">
                 <joint axis="0 0 1" name="right_ankle" type="hinge" range="-1.57080 1.04720" class="chosen_actuator" />
-                <inertial pos="0.00990881 -0.0164726 -0.014789" mass="0.0343528" fullinertia="8.36592e-06 1.51153e-05 1.14137e-05 1.20051e-06 -1.38113e-07 2.33471e-07" />
+                <inertial pos="0.00965981 -0.0160625 -0.0147777" mass="0.0357528" fullinertia="8.60316e-06 1.57282e-05 1.20845e-05 1.29009e-06 -1.35642e-07 2.294e-07" />
                 <site group="3" name="right_foot" pos="0 -0.0238146 -0.0140852" quat="0.707107 -0.707107 -0 0" />
                 <geom class="visual" type="mesh" mesh="tr_ankle_right" rgba="0.2 0.2 0.22 1" />
                 <geom class="collision" type="box" name="right_foot_collision" pos="0.00677714 -0.0236998 -0.0145001" size="0.028 0.0018 0.0214999" />

@@ -34,7 +34,7 @@ behaves.
 
 | | Microduck (its own model) | TinyREX |
 |---|---|---|
-| Mass | 0.737 kg | 0.990 kg |
+| Mass | 0.737 kg | 1.002 kg |
 | Settles in 3 s | sags 0.7 mm, tilts 0.3° | sags 1.6 mm, tilts 0.6° |
 | Peak servo effort (of 0.96 N·m) | knees 7 %, hip roll 4 % | hip roll 19 %, knees 10 % |
 | Largest push survived, forward | 0.28 m/s | 0.52 m/s |

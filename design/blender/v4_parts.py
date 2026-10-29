@@ -1195,6 +1195,7 @@ def part_frame():
     for o in list(scene.objects):
         if o.name.split(".")[0].startswith("Cut_Frame"):
             bpy.data.objects.remove(o, do_unlink=True)
+    clear(("FrameScrew",))
     hardware = [o for o in scene.objects if o.type == "MESH" and "body" in o and not o.get("skin")]
     brackets = [o for o in hardware if o.name.startswith("Bracket_")]
     held = [o for o in hardware if not o.name.startswith("Bracket_")]
@@ -1264,8 +1265,71 @@ def part_frame():
                     c.matrix_world = M @ Matrix.Translation(at) @ axis_matrix(axis)
                     boolean_cut(b, c, body, guard=False)
         names.append(base)
+        frame_screws(b, [h for h in held if h["body"] in near and boxes_meet(wb, world_box(h))], names)
+    # Keep only the screws with a clean seat: one that touches anything (it came out into a pocket,
+    # or onto a bearing or a neighbour) goes, with its hole.
+    rest_all()
+    bpy.context.view_layer.update()
+    bad = {n for pair in clips() for n in pair if n.split(".")[0].startswith("FrameScrew")}
+    for o in [o for o in coll.objects if o.name in bad]:
+        bname, mname = o["frame_hole"]
+        br = bpy.data.objects.get(bname)
+        if br is not None and mname in br.modifiers:
+            cut = br.modifiers[mname].object
+            br.modifiers.remove(br.modifiers[mname])
+            if cut is not None:
+                bpy.data.objects.remove(cut, do_unlink=True)
+        names.remove(o.name.split(".")[0])
+        bpy.data.objects.remove(o, do_unlink=True)
+    print("frame screws kept:", sum(1 for n in names if n.startswith("FrameScrew")), "dropped:", len(bad))
     bpy.context.view_layer.update()
     return names, [b for b, (_, _, j, _) in BODIES.items() if j]
+
+
+XL330_CASE_SCREWS = [(x, side * 10.0, z) for side in (1, -1) for x, z in ((-8, 6), (8, 6), (-8, -21), (8, -21))]
+
+
+def frame_screws(b, held, names):
+    """Fix a bracket to the servos it holds by their own case screws: from each of a held XL330's
+    eight threaded case holes, outward along the hole; where the ray crosses the bracket's wall
+    (within 12 mm), an M2 clearance hole through the wall and a screw head on its outside."""
+    from mathutils.bvhtree import BVHTree
+    bpy.context.view_layer.update()
+    deps = bpy.context.evaluated_depsgraph_get()
+    ev = b.evaluated_get(deps)
+    me = ev.to_mesh()
+    mw = b.matrix_world
+    tree = BVHTree.FromPolygons([mw @ v.co for v in me.vertices], [tuple(p.vertices) for p in me.polygons])
+    ev.to_mesh_clear()
+    base = b.name.split(".")[0]
+    k = 0
+    for h in held:
+        hb = h.name.split(".")[0]
+        if not (hb.startswith("XL330") and (len(h.name.split(".")) == 1 or h.name.split(".")[1].isdigit())):
+            continue
+        M = h.matrix_world
+        for x, y, z in XL330_CASE_SCREWS:
+            at = M @ Vector((x, y, z))
+            out = (M.to_3x3() @ Vector((0, 1 if y > 0 else -1, 0))).normalized()
+            hit = tree.ray_cast(at + out * 0.05, out, 12.0)
+            if hit[0] is None:
+                continue
+            exit_ = tree.ray_cast(hit[0] + out * 0.05, out, 12.0)
+            if exit_[0] is None or exit_[1].dot(out) < 0.3:
+                continue
+            wall_out = exit_[0]
+            depth = (wall_out - at).length
+            c = bpy.data.objects.new(f"Cut_Frame_{base}_screw{k}", cyl_mesh("Cut_Frame", 1.1, -0.5, depth + 1.0, 16))
+            bpy.data.collections[f"{SCENE}: rig"].objects.link(c)
+            c.matrix_world = Matrix.Translation(at) @ out.to_track_quat("Z", "Y").to_matrix().to_4x4()
+            boolean_cut(b, c, b["body"], guard=False)
+            sname = f"FrameScrew_{base}_{k}"
+            screw_dot(sname, coll, wall_out, "Z")
+            s = next(o for o in coll.objects if o.name.split(".")[0] == sname)
+            s.matrix_world = Matrix.Translation(wall_out + out * 0.05) @ out.to_track_quat("Z", "Y").to_matrix().to_4x4()
+            s["frame_hole"] = [b.name, f"Cut_Cut_Frame_{base}_screw{k}"]
+            names += made([s], b["body"])
+            k += 1
 
 
 def part_all():
